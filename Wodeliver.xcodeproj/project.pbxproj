@@ -21,6 +21,8 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		30914A1720027EB3008D6E52 /* StoreFront.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A1620027EB3008D6E52 /* StoreFront.storyboard */; };
+		30914A1920027EC0008D6E52 /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A1820027EC0008D6E52 /* Customer.storyboard */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
 		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
 		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
@@ -89,6 +91,8 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30914A1620027EB3008D6E52 /* StoreFront.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreFront.storyboard; sourceTree = "<group>"; };
+		30914A1820027EC0008D6E52 /* Customer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customer.storyboard; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
 				30331AAC1FE388E100A8B1F1 /* Info.plist */,
 				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
+				30914A1620027EB3008D6E52 /* StoreFront.storyboard */,
+				30914A1820027EC0008D6E52 /* Customer.storyboard */,
 			);
 			path = Wodeliver;
 			sourceTree = "<group>";
@@ -436,9 +442,11 @@
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
+				30914A1920027EC0008D6E52 /* Customer.storyboard in Resources */,
 				53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */,
 				53CB7A5E1FEBB09700D70254 /* HistoryNewTableViewCell.xib in Resources */,
 				30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */,
+				30914A1720027EB3008D6E52 /* StoreFront.storyboard in Resources */,
 				53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */,
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
