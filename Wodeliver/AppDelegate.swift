@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 
 
-//kk
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -1,0 +1,114 @@
+
+/* Class = "UILabel"; text = "Coming Soon..."; ObjectID = "0YE-jn-vO9"; */
+"0YE-jn-vO9.text" = "Coming Soon...";
+
+/* Class = "UIButton"; normalTitle = "Buy Now"; ObjectID = "54r-Jq-HCI"; */
+"54r-Jq-HCI.normalTitle" = "Buy Now";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "5XC-fe-Gol"; */
+"5XC-fe-Gol.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "6Hp-hn-Zpm"; */
+"6Hp-hn-Zpm.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "+1 212-581-1000"; ObjectID = "CW8-V9-FvY"; */
+"CW8-V9-FvY.text" = "+1 212-581-1000";
+
+/* Class = "UILabel"; text = "134 Member"; ObjectID = "DvV-YO-Ec0"; */
+"DvV-YO-Ec0.text" = "134 Member";
+
+/* Class = "UISegmentedControl"; Fxh-U8-CB9.segmentTitles[0] = "Login"; ObjectID = "Fxh-U8-CB9"; */
+"Fxh-U8-CB9.segmentTitles[0]" = "Login";
+
+/* Class = "UISegmentedControl"; Fxh-U8-CB9.segmentTitles[1] = "Sign up"; ObjectID = "Fxh-U8-CB9"; */
+"Fxh-U8-CB9.segmentTitles[1]" = "Sign up";
+
+/* Class = "UISegmentedControl"; IGF-Ab-rK5.segmentTitles[0] = "Login"; ObjectID = "IGF-Ab-rK5"; */
+"IGF-Ab-rK5.segmentTitles[0]" = "Login";
+
+/* Class = "UISegmentedControl"; IGF-Ab-rK5.segmentTitles[1] = "Sign up"; ObjectID = "IGF-Ab-rK5"; */
+"IGF-Ab-rK5.segmentTitles[1]" = "Sign up";
+
+/* Class = "UILabel"; text = "Address: "; ObjectID = "Jkj-6r-eqx"; */
+"Jkj-6r-eqx.text" = "Address: ";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "K7U-ue-Zs4"; */
+"K7U-ue-Zs4.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "LFm-kT-6pf"; */
+"LFm-kT-6pf.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Phone Number: "; ObjectID = "LHz-zz-7Os"; */
+"LHz-zz-7Os.text" = "Phone Number: ";
+
+/* Class = "UILabel"; text = "Track Location On Map"; ObjectID = "V3o-de-YXo"; */
+"V3o-de-YXo.text" = "Track Location On Map";
+
+/* Class = "UILabel"; text = "Coming Soon..."; ObjectID = "Xb1-uN-UcU"; */
+"Xb1-uN-UcU.text" = "Coming Soon...";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "YsP-WI-ltX"; */
+"YsP-WI-ltX.placeholder" = "Email";
+
+/* Class = "UIBarButtonItem"; title = "   "; ObjectID = "eKb-16-oYe"; */
+"eKb-16-oYe.title" = "   ";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "f36-Jy-MzJ"; */
+"f36-Jy-MzJ.title" = "Map";
+
+/* Class = "UILabel"; text = "New York"; ObjectID = "h5f-zh-cNX"; */
+"h5f-zh-cNX.text" = "New York";
+
+/* Class = "UILabel"; text = "Order Placed: 25"; ObjectID = "hGW-gV-dQg"; */
+"hGW-gV-dQg.text" = "Order Placed: 25";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "hQg-KP-hM7"; */
+"hQg-KP-hM7.normalTitle" = "Login";
+
+/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[0] = "Notification"; ObjectID = "iIP-Nn-rzP"; */
+"iIP-Nn-rzP.segmentTitles[0]" = "Notification";
+
+/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[1] = "Current"; ObjectID = "iIP-Nn-rzP"; */
+"iIP-Nn-rzP.segmentTitles[1]" = "Current";
+
+/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[2] = "History"; ObjectID = "iIP-Nn-rzP"; */
+"iIP-Nn-rzP.segmentTitles[2]" = "History";
+
+/* Class = "UILabel"; text = "Order Lists"; ObjectID = "iSN-LT-Wy4"; */
+"iSN-LT-Wy4.text" = "Order Lists";
+
+/* Class = "UILabel"; text = "Member Since: 1995"; ObjectID = "iuq-4f-UaU"; */
+"iuq-4f-UaU.text" = "Member Since: 1995";
+
+/* Class = "UILabel"; text = "59 West 46th street New York City, NY 10036, United States of America"; ObjectID = "lVJ-3s-L5Y"; */
+"lVJ-3s-L5Y.text" = "59 West 46th street New York City, NY 10036, United States of America";
+
+/* Class = "UILabel"; text = "Coming Soon..."; ObjectID = "oz5-CJ-bAT"; */
+"oz5-CJ-bAT.text" = "Coming Soon...";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "p6b-zm-8kA"; */
+"p6b-zm-8kA.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "Chat"; ObjectID = "pfv-Ry-SLe"; */
+"pfv-Ry-SLe.title" = "Chat";
+
+/* Class = "UITabBarItem"; title = "My"; ObjectID = "qu2-tu-dTl"; */
+"qu2-tu-dTl.title" = "My";
+
+/* Class = "UILabel"; text = "City: "; ObjectID = "s5X-xI-xfj"; */
+"s5X-xI-xfj.text" = "City: ";
+
+/* Class = "UILabel"; text = "Chat"; ObjectID = "sv1-f1-VCu"; */
+"sv1-f1-VCu.text" = "Chat";
+
+/* Class = "UILabel"; text = "Noodels"; ObjectID = "wyi-Z4-gCk"; */
+"wyi-Z4-gCk.text" = "Noodels";
+
+/* Class = "UITabBarItem"; title = "Tracing"; ObjectID = "x8x-Ve-KvY"; */
+"x8x-Ve-KvY.title" = "Tracing";
+
+/* Class = "UILabel"; text = "Jitin Bhat"; ObjectID = "y8d-io-f3M"; */
+"y8d-io-f3M.text" = "Jitin Bhat";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "zcA-sm-jMC"; */
+"zcA-sm-jMC.title" = "Item";
