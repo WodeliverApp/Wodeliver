@@ -1,0 +1,967 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD01FE38E34001E6268 /* FloatLabelTextView.swift */; };
+		30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD11FE38E34001E6268 /* FloatLabelTextField.swift */; };
+		30022BD71FE39600001E6268 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD61FE395FF001E6268 /* Extensions.swift */; };
+		30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD91FE39868001E6268 /* CustomButton.swift */; };
+		30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BDC1FE39A85001E6268 /* CustomView.swift */; };
+		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
+		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
+		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
+		30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */; };
+		30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA71FE388E100A8B1F1 /* Assets.xcassets */; };
+		30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */; };
+		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
+		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
+		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
+		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
+		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
+		53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */; };
+		53CB7A461FEB797800D70254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
+		53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A481FEB7A3600D70254 /* LoginViewController.swift */; };
+		53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A4B1FEB9FD200D70254 /* CurrentTableViewCell.swift */; };
+		53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A4C1FEB9FD200D70254 /* CurrentTableViewCell.xib */; };
+		53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A4F1FEBA77100D70254 /* CurrentStatusTableViewCell.swift */; };
+		53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A501FEBA77100D70254 /* CurrentStatusTableViewCell.xib */; };
+		53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A531FEBAC3000D70254 /* HistoryTableViewCell.swift */; };
+		53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A541FEBAC3000D70254 /* HistoryTableViewCell.xib */; };
+		53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A571FEBADEA00D70254 /* HistoryDetailTableViewCell.swift */; };
+		53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A581FEBADEA00D70254 /* HistoryDetailTableViewCell.xib */; };
+		53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A5B1FEBB09700D70254 /* HistoryNewTableViewCell.swift */; };
+		53CB7A5E1FEBB09700D70254 /* HistoryNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A5C1FEBB09700D70254 /* HistoryNewTableViewCell.xib */; };
+		53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A5F1FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift */; };
+		53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53CB7A601FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib */; };
+		53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A631FEBB6F800D70254 /* MyViewController.swift */; };
+		53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A651FEBB71400D70254 /* ChatViewController.swift */; };
+		53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A671FEBB73200D70254 /* MapViewController.swift */; };
+		53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A691FEBB74600D70254 /* TracingViewController.swift */; };
+		53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A6B1FEC11B600D70254 /* HistoryDeatilViewController.swift */; };
+		5A0146AC00B0D6AD7F0B70FB /* Pods_Wodeliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D8F59FE02EC5B602A314F /* Pods_Wodeliver.framework */; };
+		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
+		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30331AB21FE388E200A8B1F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30331A921FE388E100A8B1F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30331A991FE388E100A8B1F1;
+			remoteInfo = Wodeliver;
+		};
+		30331ABD1FE388E200A8B1F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30331A921FE388E100A8B1F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30331A991FE388E100A8B1F1;
+			remoteInfo = Wodeliver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WodeliverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0D8F59FE02EC5B602A314F /* Pods_Wodeliver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wodeliver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30022BD01FE38E34001E6268 /* FloatLabelTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextView.swift; sourceTree = "<group>"; };
+		30022BD11FE38E34001E6268 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		30022BD61FE395FF001E6268 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		30022BD91FE39868001E6268 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		30022BDC1FE39A85001E6268 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30331AA21FE388E100A8B1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30331AA51FE388E100A8B1F1 /* Wodeliver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wodeliver.xcdatamodel; sourceTree = "<group>"; };
+		30331AA71FE388E100A8B1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30331AAA1FE388E100A8B1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30331AAC1FE388E100A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30331AB11FE388E200A8B1F1 /* WodeliverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WodeliverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverTests.swift; sourceTree = "<group>"; };
+		30331AB71FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30331ABC1FE388E200A8B1F1 /* WodeliverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WodeliverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
+		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
+		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
+		53CB7A481FEB7A3600D70254 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		53CB7A4B1FEB9FD200D70254 /* CurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A4C1FEB9FD200D70254 /* CurrentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A4F1FEBA77100D70254 /* CurrentStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A501FEBA77100D70254 /* CurrentStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentStatusTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A531FEBAC3000D70254 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A541FEBAC3000D70254 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A571FEBADEA00D70254 /* HistoryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A581FEBADEA00D70254 /* HistoryDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A5B1FEBB09700D70254 /* HistoryNewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNewTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A5C1FEBB09700D70254 /* HistoryNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryNewTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A5F1FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		53CB7A601FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		53CB7A631FEBB6F800D70254 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		53CB7A651FEBB71400D70254 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		53CB7A671FEBB73200D70254 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		53CB7A691FEBB74600D70254 /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
+		53CB7A6B1FEC11B600D70254 /* HistoryDeatilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDeatilViewController.swift; sourceTree = "<group>"; };
+		661BDC2B100436A6A5BB7D96 /* Pods-Wodeliver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wodeliver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver.debug.xcconfig"; sourceTree = "<group>"; };
+		86B04C9212C37B1D33F64E9A /* Pods-Wodeliver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wodeliver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver.release.xcconfig"; sourceTree = "<group>"; };
+		96B0959EA6AF1828370FC0D4 /* Pods-WodeliverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WodeliverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30331A971FE388E100A8B1F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0146AC00B0D6AD7F0B70FB /* Pods_Wodeliver.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331AAE1FE388E200A8B1F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331AB91FE388E200A8B1F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30022BCE1FE38E34001E6268 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				30022BDB1FE39A5D001E6268 /* CustomView */,
+				30022BD81FE39868001E6268 /* CustomButton */,
+				30022BD51FE395CE001E6268 /* Extensions */,
+				30022BCF1FE38E34001E6268 /* FloatLabelFields */,
+				53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
+		30022BCF1FE38E34001E6268 /* FloatLabelFields */ = {
+			isa = PBXGroup;
+			children = (
+				30022BD01FE38E34001E6268 /* FloatLabelTextView.swift */,
+				30022BD11FE38E34001E6268 /* FloatLabelTextField.swift */,
+			);
+			path = FloatLabelFields;
+			sourceTree = "<group>";
+		};
+		30022BD51FE395CE001E6268 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30022BD61FE395FF001E6268 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30022BD81FE39868001E6268 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				30022BD91FE39868001E6268 /* CustomButton.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		30022BDB1FE39A5D001E6268 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				30022BDC1FE39A85001E6268 /* CustomView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		30331A911FE388E100A8B1F1 = {
+			isa = PBXGroup;
+			children = (
+				30331A9C1FE388E100A8B1F1 /* Wodeliver */,
+				30331AB41FE388E200A8B1F1 /* WodeliverTests */,
+				30331ABF1FE388E200A8B1F1 /* WodeliverUITests */,
+				30331A9B1FE388E100A8B1F1 /* Products */,
+				3670FC2E1F575B7DE2280E7B /* Pods */,
+				3B0E7588A578449CA617B4A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		30331A9B1FE388E100A8B1F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30331A9A1FE388E100A8B1F1 /* Wodeliver.app */,
+				30331AB11FE388E200A8B1F1 /* WodeliverTests.xctest */,
+				30331ABC1FE388E200A8B1F1 /* WodeliverUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30331A9C1FE388E100A8B1F1 /* Wodeliver */ = {
+			isa = PBXGroup;
+			children = (
+				53CB7A4A1FEB9FA700D70254 /* CustonCells */,
+				53CB7A471FEB7A1A00D70254 /* Classes */,
+				30022BCE1FE38E34001E6268 /* CustomClasses */,
+				30331ACE1FE3896300A8B1F1 /* Utility */,
+				30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */,
+				30331A9F1FE388E100A8B1F1 /* ViewController.swift */,
+				30331AA11FE388E100A8B1F1 /* Main.storyboard */,
+				30331AA71FE388E100A8B1F1 /* Assets.xcassets */,
+				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
+				30331AAC1FE388E100A8B1F1 /* Info.plist */,
+				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
+			);
+			path = Wodeliver;
+			sourceTree = "<group>";
+		};
+		30331AB41FE388E200A8B1F1 /* WodeliverTests */ = {
+			isa = PBXGroup;
+			children = (
+				30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */,
+				30331AB71FE388E200A8B1F1 /* Info.plist */,
+			);
+			path = WodeliverTests;
+			sourceTree = "<group>";
+		};
+		30331ABF1FE388E200A8B1F1 /* WodeliverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */,
+				30331AC21FE388E200A8B1F1 /* Info.plist */,
+			);
+			path = WodeliverUITests;
+			sourceTree = "<group>";
+		};
+		30331ACE1FE3896300A8B1F1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				30331ACF1FE3897200A8B1F1 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3670FC2E1F575B7DE2280E7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				661BDC2B100436A6A5BB7D96 /* Pods-Wodeliver.debug.xcconfig */,
+				86B04C9212C37B1D33F64E9A /* Pods-Wodeliver.release.xcconfig */,
+				D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */,
+				C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */,
+				96B0959EA6AF1828370FC0D4 /* Pods-WodeliverUITests.debug.xcconfig */,
+				AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B0E7588A578449CA617B4A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B0D8F59FE02EC5B602A314F /* Pods_Wodeliver.framework */,
+				06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */,
+				D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53CB7A471FEB7A1A00D70254 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				53CB7A481FEB7A3600D70254 /* LoginViewController.swift */,
+				53CB7A631FEBB6F800D70254 /* MyViewController.swift */,
+				53CB7A651FEBB71400D70254 /* ChatViewController.swift */,
+				53CB7A671FEBB73200D70254 /* MapViewController.swift */,
+				53CB7A691FEBB74600D70254 /* TracingViewController.swift */,
+				53CB7A6B1FEC11B600D70254 /* HistoryDeatilViewController.swift */,
+				5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */,
+				5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */,
+				5342D1DC1FED302600B704B1 /* ProfileViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		53CB7A4A1FEB9FA700D70254 /* CustonCells */ = {
+			isa = PBXGroup;
+			children = (
+				53CB7A4B1FEB9FD200D70254 /* CurrentTableViewCell.swift */,
+				53CB7A4C1FEB9FD200D70254 /* CurrentTableViewCell.xib */,
+				53CB7A4F1FEBA77100D70254 /* CurrentStatusTableViewCell.swift */,
+				53CB7A501FEBA77100D70254 /* CurrentStatusTableViewCell.xib */,
+				53CB7A531FEBAC3000D70254 /* HistoryTableViewCell.swift */,
+				53CB7A541FEBAC3000D70254 /* HistoryTableViewCell.xib */,
+				53CB7A571FEBADEA00D70254 /* HistoryDetailTableViewCell.swift */,
+				53CB7A581FEBADEA00D70254 /* HistoryDetailTableViewCell.xib */,
+				53CB7A5B1FEBB09700D70254 /* HistoryNewTableViewCell.swift */,
+				53CB7A5C1FEBB09700D70254 /* HistoryNewTableViewCell.xib */,
+				53CB7A5F1FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift */,
+				53CB7A601FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib */,
+			);
+			path = CustonCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30331A991FE388E100A8B1F1 /* Wodeliver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30331AC51FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "Wodeliver" */;
+			buildPhases = (
+				721E00B3DE8E21079393791E /* [CP] Check Pods Manifest.lock */,
+				30331A961FE388E100A8B1F1 /* Sources */,
+				30331A971FE388E100A8B1F1 /* Frameworks */,
+				30331A981FE388E100A8B1F1 /* Resources */,
+				6BDFB3ED45D8D2192B232627 /* [CP] Embed Pods Frameworks */,
+				EB50482901E17E3BBC1D05A5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wodeliver;
+			productName = Wodeliver;
+			productReference = 30331A9A1FE388E100A8B1F1 /* Wodeliver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30331AB01FE388E200A8B1F1 /* WodeliverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30331AC81FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "WodeliverTests" */;
+			buildPhases = (
+				998A051D5FEC8874FC181FB6 /* [CP] Check Pods Manifest.lock */,
+				30331AAD1FE388E200A8B1F1 /* Sources */,
+				30331AAE1FE388E200A8B1F1 /* Frameworks */,
+				30331AAF1FE388E200A8B1F1 /* Resources */,
+				5DF7BBB7051EA28294A3E532 /* [CP] Embed Pods Frameworks */,
+				C86D6F8E6C36BFCB99C7F875 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30331AB31FE388E200A8B1F1 /* PBXTargetDependency */,
+			);
+			name = WodeliverTests;
+			productName = WodeliverTests;
+			productReference = 30331AB11FE388E200A8B1F1 /* WodeliverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30331ABB1FE388E200A8B1F1 /* WodeliverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30331ACB1FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "WodeliverUITests" */;
+			buildPhases = (
+				FBECE263C6FF0ED285AB2E2E /* [CP] Check Pods Manifest.lock */,
+				30331AB81FE388E200A8B1F1 /* Sources */,
+				30331AB91FE388E200A8B1F1 /* Frameworks */,
+				30331ABA1FE388E200A8B1F1 /* Resources */,
+				57D0CD35ADC43419F7F957BA /* [CP] Embed Pods Frameworks */,
+				771EB54A021B396E6279F289 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30331ABE1FE388E200A8B1F1 /* PBXTargetDependency */,
+			);
+			name = WodeliverUITests;
+			productName = WodeliverUITests;
+			productReference = 30331ABC1FE388E200A8B1F1 /* WodeliverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30331A921FE388E100A8B1F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Anuj Singh";
+				TargetAttributes = {
+					30331A991FE388E100A8B1F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					30331AB01FE388E200A8B1F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 30331A991FE388E100A8B1F1;
+					};
+					30331ABB1FE388E200A8B1F1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 30331A991FE388E100A8B1F1;
+					};
+				};
+			};
+			buildConfigurationList = 30331A951FE388E100A8B1F1 /* Build configuration list for PBXProject "Wodeliver" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30331A911FE388E100A8B1F1;
+			productRefGroup = 30331A9B1FE388E100A8B1F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30331A991FE388E100A8B1F1 /* Wodeliver */,
+				30331AB01FE388E200A8B1F1 /* WodeliverTests */,
+				30331ABB1FE388E200A8B1F1 /* WodeliverUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30331A981FE388E100A8B1F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
+				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
+				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
+				53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */,
+				53CB7A5E1FEBB09700D70254 /* HistoryNewTableViewCell.xib in Resources */,
+				30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */,
+				53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */,
+				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
+				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331AAF1FE388E200A8B1F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331ABA1FE388E200A8B1F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57D0CD35ADC43419F7F957BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DF7BBB7051EA28294A3E532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BDFB3ED45D8D2192B232627 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		721E00B3DE8E21079393791E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wodeliver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771EB54A021B396E6279F289 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		998A051D5FEC8874FC181FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WodeliverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C86D6F8E6C36BFCB99C7F875 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB50482901E17E3BBC1D05A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBECE263C6FF0ED285AB2E2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WodeliverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30331A961FE388E100A8B1F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
+				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
+				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
+				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
+				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
+				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
+				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
+				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
+				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
+				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
+				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
+				53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */,
+				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
+				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
+				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
+				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
+				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
+				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
+				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,
+				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
+				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
+				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
+				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
+				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
+				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331AAD1FE388E200A8B1F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53CB7A461FEB797800D70254 /* ViewController.swift in Sources */,
+				30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30331AB81FE388E200A8B1F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30331AB31FE388E200A8B1F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30331A991FE388E100A8B1F1 /* Wodeliver */;
+			targetProxy = 30331AB21FE388E200A8B1F1 /* PBXContainerItemProxy */;
+		};
+		30331ABE1FE388E200A8B1F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30331A991FE388E100A8B1F1 /* Wodeliver */;
+			targetProxy = 30331ABD1FE388E200A8B1F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30331AA11FE388E100A8B1F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30331AA21FE388E100A8B1F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30331AAA1FE388E100A8B1F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30331AC31FE388E200A8B1F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30331AC41FE388E200A8B1F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30331AC61FE388E200A8B1F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 661BDC2B100436A6A5BB7D96 /* Pods-Wodeliver.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = Wodeliver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.Wodeliver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30331AC71FE388E200A8B1F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B04C9212C37B1D33F64E9A /* Pods-Wodeliver.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = Wodeliver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.Wodeliver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		30331AC91FE388E200A8B1F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = WodeliverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.WodeliverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wodeliver.app/Wodeliver";
+			};
+			name = Debug;
+		};
+		30331ACA1FE388E200A8B1F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = WodeliverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.WodeliverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wodeliver.app/Wodeliver";
+			};
+			name = Release;
+		};
+		30331ACC1FE388E200A8B1F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B0959EA6AF1828370FC0D4 /* Pods-WodeliverUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = WodeliverUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.WodeliverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wodeliver;
+			};
+			name = Debug;
+		};
+		30331ACD1FE388E200A8B1F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				INFOPLIST_FILE = WodeliverUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.WodeliverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wodeliver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30331A951FE388E100A8B1F1 /* Build configuration list for PBXProject "Wodeliver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30331AC31FE388E200A8B1F1 /* Debug */,
+				30331AC41FE388E200A8B1F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30331AC51FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "Wodeliver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30331AC61FE388E200A8B1F1 /* Debug */,
+				30331AC71FE388E200A8B1F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30331AC81FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "WodeliverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30331AC91FE388E200A8B1F1 /* Debug */,
+				30331ACA1FE388E200A8B1F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30331ACB1FE388E200A8B1F1 /* Build configuration list for PBXNativeTarget "WodeliverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30331ACC1FE388E200A8B1F1 /* Debug */,
+				30331ACD1FE388E200A8B1F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30331AA51FE388E100A8B1F1 /* Wodeliver.xcdatamodel */,
+			);
+			currentVersion = 30331AA51FE388E100A8B1F1 /* Wodeliver.xcdatamodel */;
+			path = Wodeliver.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 30331A921FE388E100A8B1F1 /* Project object */;
+}

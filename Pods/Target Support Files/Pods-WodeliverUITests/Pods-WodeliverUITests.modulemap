@@ -1,0 +1,6 @@
+framework module Pods_WodeliverUITests {
+  umbrella header "Pods-WodeliverUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
