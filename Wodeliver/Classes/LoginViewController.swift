@@ -41,7 +41,12 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     @IBAction func btnLoginAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+       // self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+        
+        let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreHomeViewController")
+        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.present(logInViewController, animated: true, completion: nil)
     }
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

@@ -9,6 +9,8 @@ target 'Wodeliver' do
   pod 'Alamofire'
     pod 'AlamofireNetworkActivityIndicator'
     pod 'SwiftyJSON'
+    pod 'ExpyTableView'
+    pod 'Kingfisher'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

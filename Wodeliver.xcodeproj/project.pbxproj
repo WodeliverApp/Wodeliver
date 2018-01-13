@@ -21,8 +21,15 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		307716D120090A2200D073A0 /* StoreHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreHistoryViewController.swift */; };
+		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
+		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
+		307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D6200927B400D073A0 /* StoreProfileViewController.swift */; };
+		30914A20200284B6008D6E52 /* StoreFront.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A22200284B6008D6E52 /* StoreFront.storyboard */; };
 		30914A29200284C1008D6E52 /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A2B200284C1008D6E52 /* Customer.storyboard */; };
 		30914A3720028606008D6E52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30914A3920028606008D6E52 /* Localizable.strings */; };
+		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
+		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
 		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
 		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
@@ -98,6 +105,10 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		307716D020090A2200D073A0 /* StoreHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryViewController.swift; sourceTree = "<group>"; };
+		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		307716D6200927B400D073A0 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
 		30914A1C20028496008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		30914A1D20028497008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		30914A1E200284AA008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -111,6 +122,8 @@
 		30914A3820028606008D6E52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		30914A3A20028608008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		30914A3B20028609008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
+		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +260,7 @@
 		30331A9C1FE388E100A8B1F1 /* Wodeliver */ = {
 			isa = PBXGroup;
 			children = (
+				30CC2E1F2004A1A000A45A6D /* StoreFront */,
 				53CB7A4A1FEB9FA700D70254 /* CustonCells */,
 				53CB7A471FEB7A1A00D70254 /* Classes */,
 				30022BCE1FE38E34001E6268 /* CustomClasses */,
@@ -288,6 +302,27 @@
 				30914A3920028606008D6E52 /* Localizable.strings */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		30CC2E1F2004A1A000A45A6D /* StoreFront */ = {
+			isa = PBXGroup;
+			children = (
+				30CC2E222004C2E600A45A6D /* StoreCell */,
+				30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */,
+				307716D020090A2200D073A0 /* StoreHistoryViewController.swift */,
+				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
+			);
+			path = StoreFront;
+			sourceTree = "<group>";
+		};
+		30CC2E222004C2E600A45A6D /* StoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */,
+				307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */,
+				307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */,
+			);
+			path = StoreCell;
 			sourceTree = "<group>";
 		};
 		3670FC2E1F575B7DE2280E7B /* Pods */ = {
@@ -485,6 +520,7 @@
 				30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */,
 				53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */,
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
+				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,12 +581,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,12 +704,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */,
 				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
+				307716D120090A2200D073A0 /* StoreHistoryViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
@@ -683,10 +725,12 @@
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
+                                307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
 				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,
+				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
@@ -694,6 +738,7 @@
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
+				30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,10 +936,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				DEVELOPMENT_TEAM = 47A8956Q4F;
 				INFOPLIST_FILE = Wodeliver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.Wodeliver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotcodes.wodeliver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -907,10 +953,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99UW7E83Y3;
+				DEVELOPMENT_TEAM = 47A8956Q4F;
 				INFOPLIST_FILE = Wodeliver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anuj.demo3.Wodeliver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotcodes.wodeliver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
