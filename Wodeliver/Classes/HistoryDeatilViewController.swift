@@ -24,6 +24,10 @@ class HistoryDeatilViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+        self.viewCostomization()
+    }
+    func viewCostomization(){
         self.title = "Order Detail"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white

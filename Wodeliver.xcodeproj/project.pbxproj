@@ -21,7 +21,6 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
-		30914A20200284B6008D6E52 /* StoreFront.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A22200284B6008D6E52 /* StoreFront.storyboard */; };
 		30914A29200284C1008D6E52 /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A2B200284C1008D6E52 /* Customer.storyboard */; };
 		30914A3720028606008D6E52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30914A3920028606008D6E52 /* Localizable.strings */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
@@ -48,6 +47,13 @@
 		53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A691FEBB74600D70254 /* TracingViewController.swift */; };
 		53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB7A6B1FEC11B600D70254 /* HistoryDeatilViewController.swift */; };
 		5A0146AC00B0D6AD7F0B70FB /* Pods_Wodeliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0D8F59FE02EC5B602A314F /* Pods_Wodeliver.framework */; };
+		A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C5822003B7D4009C8C0D /* LandingViewController.swift */; };
+		A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C5842003C172009C8C0D /* landingScreenCollectionViewCell.swift */; };
+		A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C5862004651B009C8C0D /* StorepointListingCell.swift */; };
+		A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C5872004651B009C8C0D /* StorepointListingCell.xib */; };
+		A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */; };
+		A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */; };
+		A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */; };
 		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
 		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -96,10 +102,6 @@
 		30914A1D20028497008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		30914A1E200284AA008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		30914A1F200284AA008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		30914A21200284B6008D6E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StoreFront.storyboard; sourceTree = "<group>"; };
-		30914A24200284B9008D6E52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StoreFront.strings; sourceTree = "<group>"; };
-		30914A26200284BA008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/StoreFront.strings; sourceTree = "<group>"; };
-		30914A28200284BC008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/StoreFront.strings"; sourceTree = "<group>"; };
 		30914A2A200284C1008D6E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Customer.storyboard; sourceTree = "<group>"; };
 		30914A2D200284C3008D6E52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Customer.strings; sourceTree = "<group>"; };
 		30914A2F200284C4008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Customer.strings; sourceTree = "<group>"; };
@@ -134,6 +136,13 @@
 		661BDC2B100436A6A5BB7D96 /* Pods-Wodeliver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wodeliver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver.debug.xcconfig"; sourceTree = "<group>"; };
 		86B04C9212C37B1D33F64E9A /* Pods-Wodeliver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wodeliver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver.release.xcconfig"; sourceTree = "<group>"; };
 		96B0959EA6AF1828370FC0D4 /* Pods-WodeliverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1B3C5822003B7D4009C8C0D /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		A1B3C5842003C172009C8C0D /* landingScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landingScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1B3C5862004651B009C8C0D /* StorepointListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorepointListingCell.swift; sourceTree = "<group>"; };
+		A1B3C5872004651B009C8C0D /* StorepointListingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorepointListingCell.xib; sourceTree = "<group>"; };
+		A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePointViewController.swift; sourceTree = "<group>"; };
+		A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByItemCell.swift; sourceTree = "<group>"; };
+		A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByItemCell.xib; sourceTree = "<group>"; };
 		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -249,7 +258,6 @@
 				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
 				30331AAC1FE388E100A8B1F1 /* Info.plist */,
 				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
-				30914A22200284B6008D6E52 /* StoreFront.storyboard */,
 				30914A2B200284C1008D6E52 /* Customer.storyboard */,
 			);
 			path = Wodeliver;
@@ -317,6 +325,8 @@
 				5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */,
 				5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */,
 				5342D1DC1FED302600B704B1 /* ProfileViewController.swift */,
+				A1B3C5822003B7D4009C8C0D /* LandingViewController.swift */,
+				A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -336,6 +346,11 @@
 				53CB7A5C1FEBB09700D70254 /* HistoryNewTableViewCell.xib */,
 				53CB7A5F1FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift */,
 				53CB7A601FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib */,
+				A1B3C5842003C172009C8C0D /* landingScreenCollectionViewCell.swift */,
+				A1B3C5862004651B009C8C0D /* StorepointListingCell.swift */,
+				A1B3C5872004651B009C8C0D /* StorepointListingCell.xib */,
+				A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */,
+				A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -460,13 +475,14 @@
 			files = (
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
+				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
+				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
 				30914A29200284C1008D6E52 /* Customer.storyboard in Resources */,
 				53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */,
 				53CB7A5E1FEBB09700D70254 /* HistoryNewTableViewCell.xib in Resources */,
 				30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */,
-				30914A20200284B6008D6E52 /* StoreFront.storyboard in Resources */,
 				53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */,
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
@@ -655,14 +671,18 @@
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
+				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
+				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
+				A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */,
 				53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */,
 				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
+				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
@@ -672,6 +692,7 @@
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
+				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,17 +750,6 @@
 				30914A33200284CC008D6E52 /* en */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		30914A22200284B6008D6E52 /* StoreFront.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30914A21200284B6008D6E52 /* Base */,
-				30914A24200284B9008D6E52 /* en */,
-				30914A26200284BA008D6E52 /* ar */,
-				30914A28200284BC008D6E52 /* zh-Hant */,
-			);
-			name = StoreFront.storyboard;
 			sourceTree = "<group>";
 		};
 		30914A2B200284C1008D6E52 /* Customer.storyboard */ = {
