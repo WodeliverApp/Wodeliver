@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.viewCustomization()
         // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,9 @@ class LoginViewController: UIViewController {
         let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreHomeViewController")
         logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         self.present(logInViewController, animated: true, completion: nil)
+        
+    
+        
     }
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
