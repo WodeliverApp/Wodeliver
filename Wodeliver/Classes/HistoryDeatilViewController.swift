@@ -35,6 +35,9 @@ class HistoryDeatilViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.dropShadow(color: .lightGray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
         self.view.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     func registerCustomCell()
     {

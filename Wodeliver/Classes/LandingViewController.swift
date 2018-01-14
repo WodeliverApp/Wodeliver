@@ -52,6 +52,9 @@ class LandingViewController: UIViewController {
         self.itemCollectionView.backgroundColor = Colors.viewBackgroundColor
         self.categoryCollectionView.backgroundColor = Colors.viewBackgroundColor
         self.hotspotCollectionView.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
 }

@@ -12,6 +12,8 @@ class StorePointViewController: UIViewController {
 
     @IBOutlet weak var segmentView: MySegmentedControl!
     @IBOutlet weak var storepointTableView: UITableView!
+    
+    var isItem:Bool! = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
@@ -30,13 +32,27 @@ class StorePointViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
         self.navigationController?.navigationBar.isHidden = false
         self.view.backgroundColor = Colors.viewBackgroundColor
+        self.segmentView.selectedSegmentIndex = 0
+         self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
     }
     
     func registerCustomCell()
     {
         self.storepointTableView.register(UINib(nibName: "StorepointListingCell", bundle: nil), forCellReuseIdentifier: "StorepointListingCell")
+        self.storepointTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
+        
     }
     @IBAction func segmentValueChnage(_ sender: Any) {
+    }
+    @objc func changeSegmentValue(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+           isItem = true
+        case 1:
+            isItem = false
+        default: break
+        }
+        self.storepointTableView.reloadData()
     }
     
 }
@@ -46,18 +62,34 @@ extension StorePointViewController: UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1
+        if isItem{
+            return 5
+        }else{
+        return 5
+        }
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StorepointListingCell") as! StorepointListingCell
+         if isItem{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
         return cell
+         }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StorepointListingCell") as! StorepointListingCell
+            return cell
+        }
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return StorepointListingCell.getCellHeight()
+        if isItem{
+        return SearchByItemCell.getCellHeight()
+        }else{
+           return StorepointListingCell.getCellHeight()
+        }
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "orderNewToProfile", sender: nil)
+        if isItem{
+        }else{
+        self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
+        }
     }
 }

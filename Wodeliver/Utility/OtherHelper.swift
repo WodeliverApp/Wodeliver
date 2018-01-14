@@ -81,7 +81,6 @@ class OtherHelper {
         UIGraphicsEndImageContext()
         return newImage!
     }
-    
 }
 
 class ProgressBar{
