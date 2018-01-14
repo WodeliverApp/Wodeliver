@@ -15,6 +15,7 @@
 		30067475200B33430021A08C /* StoreDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067473200B33430021A08C /* StoreDetailCell.swift */; };
 		30067476200B33430021A08C /* StoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30067474200B33430021A08C /* StoreDetailCell.xib */; };
 		30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067477200B37160021A08C /* StoreDetailViewController.swift */; };
+		3006747A200B3D290021A08C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067479200B3D290021A08C /* UserManager.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -100,6 +101,7 @@
 		30067473200B33430021A08C /* StoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailCell.swift; sourceTree = "<group>"; };
 		30067474200B33430021A08C /* StoreDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailCell.xib; sourceTree = "<group>"; };
 		30067477200B37160021A08C /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		30067479200B3D290021A08C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				30331ACF1FE3897200A8B1F1 /* Constants.swift */,
 				30914A3920028606008D6E52 /* Localizable.strings */,
 				307716E3200B253F00D073A0 /* OtherHelper.swift */,
+				30067479200B3D290021A08C /* UserManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
+				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
 				A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */,
 				53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */,

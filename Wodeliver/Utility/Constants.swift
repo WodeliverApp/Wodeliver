@@ -15,3 +15,10 @@ struct Colors {
     static let fullViewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     
 }
+
+
+struct Path {
+    static let baseURL : String = "http://18.217.139.93:8082"
+    static let loginURL : String = "\(baseURL)/login"
+    
+}

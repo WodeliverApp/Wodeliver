@@ -73,8 +73,10 @@ class NetworkHelper{
     static func post(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //  headers["Myu-Auth-Token"] = UserManager.getAuthToken()
-        headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        headers["Content-Type"] = "application/json"
+        headers["cache-control"] = "no-cache"
+        print(headers)
+        print(param)
         Alamofire.request(url, method : .post, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             switch response.result {
             case .success(let value):

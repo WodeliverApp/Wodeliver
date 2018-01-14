@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: FloatLabelTextField!
     @IBOutlet weak var passwordTextField: FloatLabelTextField!
     @IBOutlet weak var redBackgroundView: UIView!
-    
+    //@IBOutlet weak var btnLogin_ref : UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewCustomization()
@@ -49,8 +49,26 @@ class LoginViewController: UIViewController {
         logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         self.present(logInViewController, animated: true, completion: nil)
         
+//        let params = ["email":emailTextField.text!,"password":passwordTextField.text!]
+//        getResponse(param: params)
+//    
+//        
+    }
     
-        
+    func getResponse(param : [String : String]){
+        self.view.endEditing(true)
+  
+//        print(Path.loginURL)
+//        NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
+//            print(json)
+//            print(error)
+//            guard let `self` = self else { return }
+//            guard (json != nil) else {
+////               self.BtnLogin.isEnabled = true
+//                return
+//            }
+//           // self.updateUserInfo(json: json!)
+//        })
     }
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
