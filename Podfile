@@ -11,6 +11,7 @@ target 'Wodeliver' do
     pod 'SwiftyJSON'
     pod 'ExpyTableView'
     pod 'Kingfisher'
+    pod 'SideMenu'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

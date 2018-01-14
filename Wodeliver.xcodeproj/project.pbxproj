@@ -12,6 +12,9 @@
 		30022BD71FE39600001E6268 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD61FE395FF001E6268 /* Extensions.swift */; };
 		30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BD91FE39868001E6268 /* CustomButton.swift */; };
 		30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BDC1FE39A85001E6268 /* CustomView.swift */; };
+		30067475200B33430021A08C /* StoreDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067473200B33430021A08C /* StoreDetailCell.swift */; };
+		30067476200B33430021A08C /* StoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30067474200B33430021A08C /* StoreDetailCell.xib */; };
+		30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067477200B37160021A08C /* StoreDetailViewController.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -25,7 +28,11 @@
 		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
 		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
 		307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D6200927B400D073A0 /* StoreProfileViewController.swift */; };
-		30914A20200284B6008D6E52 /* StoreFront.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A22200284B6008D6E52 /* StoreFront.storyboard */; };
+		307716DA2009FB5900D073A0 /* StoreFront.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307716D82009FB5900D073A0 /* StoreFront.storyboard */; };
+		307716DC200A267200D073A0 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307716DD200A267200D073A0 /* SideMenu.framework */; };
+		307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716DE200A287600D073A0 /* LeftMenuTableViewController.swift */; };
+		307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716E1200B249C00D073A0 /* NetworkHelper.swift */; };
+		307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716E3200B253F00D073A0 /* OtherHelper.swift */; };
 		30914A29200284C1008D6E52 /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30914A2B200284C1008D6E52 /* Customer.storyboard */; };
 		30914A3720028606008D6E52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30914A3920028606008D6E52 /* Localizable.strings */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
@@ -90,6 +97,9 @@
 		30022BD61FE395FF001E6268 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		30022BD91FE39868001E6268 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		30022BDC1FE39A85001E6268 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		30067473200B33430021A08C /* StoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailCell.swift; sourceTree = "<group>"; };
+		30067474200B33430021A08C /* StoreDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailCell.xib; sourceTree = "<group>"; };
+		30067477200B37160021A08C /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +119,11 @@
 		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		307716D6200927B400D073A0 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
+		307716D92009FB5900D073A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StoreFront.storyboard; sourceTree = "<group>"; };
+		307716DD200A267200D073A0 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		307716DE200A287600D073A0 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
+		307716E1200B249C00D073A0 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		307716E3200B253F00D073A0 /* OtherHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherHelper.swift; sourceTree = "<group>"; };
 		30914A1C20028496008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		30914A1D20028497008D6E52 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		30914A1E200284AA008D6E52 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -167,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307716DC200A267200D073A0 /* SideMenu.framework in Frameworks */,
 				5A0146AC00B0D6AD7F0B70FB /* Pods_Wodeliver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +276,7 @@
 		30331A9C1FE388E100A8B1F1 /* Wodeliver */ = {
 			isa = PBXGroup;
 			children = (
+				307716E0200B248500D073A0 /* NetworkClass */,
 				30CC2E1F2004A1A000A45A6D /* StoreFront */,
 				53CB7A4A1FEB9FA700D70254 /* CustonCells */,
 				53CB7A471FEB7A1A00D70254 /* Classes */,
@@ -270,6 +287,7 @@
 				30331AA11FE388E100A8B1F1 /* Main.storyboard */,
 				30331AA71FE388E100A8B1F1 /* Assets.xcassets */,
 				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
+				307716D82009FB5900D073A0 /* StoreFront.storyboard */,
 				30331AAC1FE388E100A8B1F1 /* Info.plist */,
 				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
 				30914A2B200284C1008D6E52 /* Customer.storyboard */,
@@ -300,8 +318,17 @@
 			children = (
 				30331ACF1FE3897200A8B1F1 /* Constants.swift */,
 				30914A3920028606008D6E52 /* Localizable.strings */,
+				307716E3200B253F00D073A0 /* OtherHelper.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		307716E0200B248500D073A0 /* NetworkClass */ = {
+			isa = PBXGroup;
+			children = (
+				307716E1200B249C00D073A0 /* NetworkHelper.swift */,
+			);
+			path = NetworkClass;
 			sourceTree = "<group>";
 		};
 		30CC2E1F2004A1A000A45A6D /* StoreFront */ = {
@@ -341,6 +368,7 @@
 		3B0E7588A578449CA617B4A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				307716DD200A267200D073A0 /* SideMenu.framework */,
 				1B0D8F59FE02EC5B602A314F /* Pods_Wodeliver.framework */,
 				06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */,
 				D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */,
@@ -362,6 +390,8 @@
 				5342D1DC1FED302600B704B1 /* ProfileViewController.swift */,
 				A1B3C5822003B7D4009C8C0D /* LandingViewController.swift */,
 				A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */,
+				307716DE200A287600D073A0 /* LeftMenuTableViewController.swift */,
+				30067477200B37160021A08C /* StoreDetailViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -386,6 +416,8 @@
 				A1B3C5872004651B009C8C0D /* StorepointListingCell.xib */,
 				A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */,
 				A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */,
+				30067473200B33430021A08C /* StoreDetailCell.swift */,
+				30067474200B33430021A08C /* StoreDetailCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -509,8 +541,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
+				307716DA2009FB5900D073A0 /* StoreFront.storyboard in Resources */,
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
+				30067476200B33430021A08C /* StoreDetailCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
@@ -583,6 +617,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -591,6 +626,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */,
+				30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */,
 				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
@@ -725,7 +762,8 @@
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
-                                307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
+				307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
+				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
@@ -733,7 +771,10 @@
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
+				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
+				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
+				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
@@ -795,6 +836,14 @@
 				30914A33200284CC008D6E52 /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		307716D82009FB5900D073A0 /* StoreFront.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				307716D92009FB5900D073A0 /* Base */,
+			);
+			name = StoreFront.storyboard;
 			sourceTree = "<group>";
 		};
 		30914A2B200284C1008D6E52 /* Customer.storyboard */ = {

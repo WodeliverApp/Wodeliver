@@ -19,4 +19,6 @@ class landingScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var soldLbl: UILabel!
     @IBOutlet weak var memberLbl: UILabel!
     @IBOutlet weak var buyNowBtn: UIButton!
+    
+
 }
