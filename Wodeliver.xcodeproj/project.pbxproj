@@ -14,7 +14,6 @@
 		30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BDC1FE39A85001E6268 /* CustomView.swift */; };
 		30067475200B33430021A08C /* StoreDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067473200B33430021A08C /* StoreDetailCell.swift */; };
 		30067476200B33430021A08C /* StoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30067474200B33430021A08C /* StoreDetailCell.xib */; };
-		30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067477200B37160021A08C /* StoreDetailViewController.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -24,7 +23,7 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
-		307716D120090A2200D073A0 /* StoreHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreHistoryViewController.swift */; };
+		307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreItemViewController.swift */; };
 		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
 		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
 		307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D6200927B400D073A0 /* StoreProfileViewController.swift */; };
@@ -68,6 +67,7 @@
 		A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */; };
 		A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */; };
 		A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */; };
+		A1B3C591200B3A4C009C8C0D /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */; };
 		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
 		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -99,7 +99,6 @@
 		30022BDC1FE39A85001E6268 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		30067473200B33430021A08C /* StoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailCell.swift; sourceTree = "<group>"; };
 		30067474200B33430021A08C /* StoreDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailCell.xib; sourceTree = "<group>"; };
-		30067477200B37160021A08C /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +114,7 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		307716D020090A2200D073A0 /* StoreHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryViewController.swift; sourceTree = "<group>"; };
+		307716D020090A2200D073A0 /* StoreItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemViewController.swift; sourceTree = "<group>"; };
 		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		307716D6200927B400D073A0 /* StoreProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProfileViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +170,7 @@
 		A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePointViewController.swift; sourceTree = "<group>"; };
 		A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByItemCell.swift; sourceTree = "<group>"; };
 		A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByItemCell.xib; sourceTree = "<group>"; };
+		A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 			children = (
 				30CC2E222004C2E600A45A6D /* StoreCell */,
 				30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */,
-				307716D020090A2200D073A0 /* StoreHistoryViewController.swift */,
+				307716D020090A2200D073A0 /* StoreItemViewController.swift */,
 				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
 			);
 			path = StoreFront;
@@ -391,7 +391,7 @@
 				A1B3C5822003B7D4009C8C0D /* LandingViewController.swift */,
 				A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */,
 				307716DE200A287600D073A0 /* LeftMenuTableViewController.swift */,
-				30067477200B37160021A08C /* StoreDetailViewController.swift */,
+				A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -741,14 +741,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */,
-				30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */,
+				A1B3C591200B3A4C009C8C0D /* StoreDetailViewController.swift in Sources */,
 				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
-				307716D120090A2200D073A0 /* StoreHistoryViewController.swift in Sources */,
+				307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,

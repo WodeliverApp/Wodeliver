@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
        // self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
         
         let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
-        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreHomeViewController")
+        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
         logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         self.present(logInViewController, animated: true, completion: nil)
         

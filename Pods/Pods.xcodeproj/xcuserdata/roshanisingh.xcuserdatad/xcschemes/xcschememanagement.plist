@@ -39,10 +39,15 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>SideMenu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 	</dict>
 </dict>

@@ -20,5 +20,13 @@ class SearchByItemCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    /**
+     * Function to use for get cell Height
+     * @param None
+     * @return : Hight of cell
+     **/
+    class func getCellHeight() -> CGFloat {
+        return 159.0
+    }
     
 }

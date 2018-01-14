@@ -21,6 +21,12 @@ class StoreProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,4 +45,48 @@ class StoreProfileViewController: UIViewController {
     }
     */
 
+}
+extension StoreProfileViewController: UITextFieldDelegate{
+    //MARK:- UITextField Delegate Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtCategory
+        {
+            txtName.becomeFirstResponder()
+        }else if textField == txtName
+        {
+            txtAddress.becomeFirstResponder()
+        }else if textField == txtAddress
+        {
+            txtCity.becomeFirstResponder()
+        }else if textField == txtCity
+        {
+            txtCountry.becomeFirstResponder()
+        }else if textField == txtCountry
+        {
+            txtTelephone.becomeFirstResponder()
+        }
+        else if textField == txtTelephone
+        {
+            txtDescription.becomeFirstResponder()
+        }else if textField == txtDescription
+        {
+            txtDescription.resignFirstResponder()
+        }
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        animateViewMoving(up: true, moveValue: 100)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        animateViewMoving(up: false, moveValue: 100)
+    }
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
 }

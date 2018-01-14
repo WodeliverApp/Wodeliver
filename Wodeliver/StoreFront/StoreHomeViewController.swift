@@ -52,13 +52,26 @@ class StoreHomeViewController: UIViewController {
         
       //  self.tblHome.backgroundColor = UIColor.lightGray
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
+        self.viewCostomization()
     }
+    
+    func viewCostomization(){
+        self.title = "Home"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.view.backgroundColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+     }
     
     @IBAction func swtValueChange(_ sender: UISegmentedControl) {
        if  sender.selectedSegmentIndex == 0{
             
        }else if sender.selectedSegmentIndex == 1{
-            self.performSegue(withIdentifier: "storeHistorySegue", sender: nil)
+            
         }
     }
     override func didReceiveMemoryWarning() {

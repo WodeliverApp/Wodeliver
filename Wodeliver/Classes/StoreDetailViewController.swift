@@ -10,6 +10,7 @@ import UIKit
 
 class StoreDetailViewController: UIViewController {
 
+    @IBOutlet weak var storeDetailTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +22,38 @@ class StoreDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Storepoint Detail"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.view.backgroundColor = Colors.viewBackgroundColor
     }
-    */
-
+    
+    func registerCustomCell()
+    {
+        self.storeDetailTableView.register(UINib(nibName: "StoreDetailCell", bundle: nil), forCellReuseIdentifier: "StoreDetailCell")
+    }
+    @IBAction func segmentValueChnage(_ sender: Any) {
+    }
+    
+}
+extension StoreDetailViewController: UITableViewDelegate,UITableViewDataSource {
+    // MARK: - UITableView Delegate and datasource Methods
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreDetailCell") as! StoreDetailCell
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return StoreDetailCell.getCellHeight()
+    }
 }
