@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StoreItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tblHistory: UITableView!
     override func viewDidLoad() {
