@@ -9,6 +9,12 @@
 import UIKit
 
 class StoreProfileViewController: UIViewController {
+    
+    let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
+    let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
+    let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
+    var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
+    var animatedDistance: CGFloat!
 
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var txtTelephone: UITextField!
@@ -23,12 +29,42 @@ class StoreProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        self.viewCostomization()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: .UIKeyboardDidShow , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: .UIKeyboardDidHide , object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidHide, object: nil)
+    }
+    @objc func keyboardDidShow(_ notification: NSNotification) {
+        let keyboardSize:CGSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        PORTRAIT_KEYBOARD_HEIGHT = min(keyboardSize.height, keyboardSize.width)
+    }
+    
+    @objc func keyboardDidHide(_ notification: NSNotification) {
+        print("Keyboard will hide!")
+    }
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
 
+    func viewCostomization(){
+        self.title = "My"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,18 +111,37 @@ extension StoreProfileViewController: UITextFieldDelegate{
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        animateViewMoving(up: true, moveValue: 100)
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        animateViewMoving(up: false, moveValue: 100)
-    }
-    func animateViewMoving (up:Bool, moveValue :CGFloat){
-        let movementDuration:TimeInterval = 0.3
-        let movement:CGFloat = ( up ? -moveValue : moveValue)
-        UIView.beginAnimations( "animateView", context: nil)
+        let textFieldRect: CGRect = self.view.window!.convert(textField.bounds, from: textField)
+        let viewRect: CGRect = self.view.window!.convert(self.view.bounds, from: self.view!)
+        let midline: CGFloat = textFieldRect.origin.y + 0.5 * textFieldRect.size.height
+        let numerator: CGFloat = midline - viewRect.origin.y - MINIMUM_SCROLL_FRACTION * viewRect.size.height
+        let denominator: CGFloat = (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION) * viewRect.size.height
+        var heightFraction: CGFloat = numerator / denominator
+        if heightFraction < 0.0 {
+            heightFraction = 0.0
+        }
+        else if heightFraction > 1.0 {
+            heightFraction = 1.0
+        }
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction)
+        var viewFrame: CGRect = self.view.frame
+        viewFrame.origin.y -= animatedDistance
+        UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(movementDuration )
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.setAnimationDuration(0.3)
+        self.view!.frame = viewFrame
         UIView.commitAnimations()
+        self.view.layoutIfNeeded()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        var viewFrame: CGRect = self.view.frame
+        viewFrame.origin.y += animatedDistance
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(0.3)
+        self.view!.frame = viewFrame
+        UIView.commitAnimations()
+        self.view.layoutIfNeeded()
     }
 }

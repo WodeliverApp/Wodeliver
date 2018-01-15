@@ -34,6 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="dDM-z9-6er">
                                 <cells>
@@ -47,8 +49,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qq-Qb-cza">
                                                     <rect key="frame" x="20" y="0.0" width="325" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -64,8 +66,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login/Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNr-d7-uUe">
                                                     <rect key="frame" x="20" y="-6" width="325" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -84,8 +86,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekx-xI-1q6">
                                                     <rect key="frame" x="20" y="-6" width="325" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -101,8 +103,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1E-LN-5vH">
                                                     <rect key="frame" x="20" y="-6" width="325" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -435,7 +437,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="tF1-Ew-fzP">
                         <barButtonItem key="backBarButtonItem" title=" " id="Dd9-mW-nvJ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="0dv-xm-1V2">
+                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="0dv-xm-1V2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Aep-Br-idu" kind="presentation" id="JNl-KQ-FdE"/>
                             </connections>
@@ -474,7 +477,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="32" y="90.5" width="310" height="33"/>
+                                <rect key="frame" x="32" y="90" width="310" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -493,7 +496,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="138" width="375" height="479"/>
+                                <rect key="frame" x="0.0" y="137" width="375" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
@@ -576,7 +579,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvU-iG-dyy" customClass="CustomView" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="175" width="343" height="317"/>
+                                <rect key="frame" x="16" y="175" width="343" height="390"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hp-hn-Zpm" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="25" width="327" height="40"/>
@@ -647,8 +650,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select Registration type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FW-Uf-Uvf" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="235" width="327" height="40"/>
+                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iB1-nn-Zxf"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="j6R-zq-M7K"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw1-Mp-d4h">
+                                        <rect key="frame" x="8" y="279" width="327" height="1"/>
+                                        <color key="backgroundColor" red="0.47120499399999999" green="0.47120499399999999" blue="0.47120499399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="o78-Fe-9Nd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-fe-Gol" customClass="CustomButton" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="262" width="327" height="45"/>
+                                        <rect key="frame" x="8" y="322" width="327" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Xr2-Ce-JEI"/>
                                         </constraints>
@@ -663,21 +689,28 @@
                                     <constraint firstItem="6Hp-hn-Zpm" firstAttribute="top" secondItem="nvU-iG-dyy" secondAttribute="top" constant="25" id="2qF-9K-Hno"/>
                                     <constraint firstAttribute="trailing" secondItem="5XC-fe-Gol" secondAttribute="trailing" constant="8" id="50m-7p-16b"/>
                                     <constraint firstItem="p6b-zm-8kA" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="53G-i6-Viu"/>
+                                    <constraint firstItem="Vw1-Mp-d4h" firstAttribute="top" secondItem="2FW-Uf-Uvf" secondAttribute="bottom" constant="4" id="7vV-f5-94X"/>
+                                    <constraint firstAttribute="trailing" secondItem="2FW-Uf-Uvf" secondAttribute="trailing" constant="8" id="8Vy-qg-mJD"/>
                                     <constraint firstItem="m2x-le-vFS" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="9Se-ec-YEA"/>
-                                    <constraint firstItem="5XC-fe-Gol" firstAttribute="top" secondItem="m2x-le-vFS" secondAttribute="bottom" constant="52" id="ATM-Ut-jXg"/>
                                     <constraint firstAttribute="trailing" secondItem="w7d-cM-aA8" secondAttribute="trailing" constant="8" id="Atz-rJ-KVp"/>
+                                    <constraint firstItem="2FW-Uf-Uvf" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="BEz-19-fIT"/>
                                     <constraint firstItem="Wng-w6-o8i" firstAttribute="top" secondItem="p6b-zm-8kA" secondAttribute="bottom" constant="4" id="Djh-1t-H12"/>
                                     <constraint firstItem="5XC-fe-Gol" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="EqT-Cc-m8i"/>
                                     <constraint firstItem="K7U-ue-Zs4" firstAttribute="top" secondItem="Wng-w6-o8i" secondAttribute="bottom" constant="25" id="IJE-fP-BaW"/>
                                     <constraint firstAttribute="trailing" secondItem="6Hp-hn-Zpm" secondAttribute="trailing" constant="8" id="IsR-n8-KpX"/>
                                     <constraint firstAttribute="trailing" secondItem="Wng-w6-o8i" secondAttribute="trailing" constant="8" id="Jlh-bR-eu2"/>
+                                    <constraint firstItem="2FW-Uf-Uvf" firstAttribute="top" secondItem="m2x-le-vFS" secondAttribute="bottom" constant="25" id="L6O-9U-gYt"/>
                                     <constraint firstAttribute="trailing" secondItem="m2x-le-vFS" secondAttribute="trailing" constant="8" id="SdU-t0-oNm"/>
                                     <constraint firstItem="K7U-ue-Zs4" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="XbD-pP-Uti"/>
                                     <constraint firstItem="w7d-cM-aA8" firstAttribute="top" secondItem="6Hp-hn-Zpm" secondAttribute="bottom" constant="4" id="d1V-M7-xmT"/>
                                     <constraint firstAttribute="trailing" secondItem="p6b-zm-8kA" secondAttribute="trailing" constant="8" id="e5C-d9-utf"/>
-                                    <constraint firstAttribute="height" constant="317" id="eqI-GK-I3J"/>
+                                    <constraint firstItem="Vw1-Mp-d4h" firstAttribute="top" secondItem="2FW-Uf-Uvf" secondAttribute="bottom" constant="4" id="eI3-Yg-2F1"/>
+                                    <constraint firstItem="Vw1-Mp-d4h" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="ePU-5m-GNo"/>
+                                    <constraint firstAttribute="height" constant="390" id="eqI-GK-I3J"/>
                                     <constraint firstAttribute="trailing" secondItem="K7U-ue-Zs4" secondAttribute="trailing" constant="8" id="gUM-1B-vOW"/>
                                     <constraint firstItem="Wng-w6-o8i" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="gbs-qw-KKE"/>
+                                    <constraint firstItem="5XC-fe-Gol" firstAttribute="top" secondItem="Vw1-Mp-d4h" secondAttribute="bottom" constant="42" id="hav-Qj-BTP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vw1-Mp-d4h" secondAttribute="trailing" constant="8" id="mhl-54-42v"/>
                                     <constraint firstItem="m2x-le-vFS" firstAttribute="top" secondItem="K7U-ue-Zs4" secondAttribute="bottom" constant="4" id="nql-cp-Oy3"/>
                                     <constraint firstItem="w7d-cM-aA8" firstAttribute="leading" secondItem="nvU-iG-dyy" secondAttribute="leading" constant="8" id="roT-ux-1hF"/>
                                     <constraint firstItem="p6b-zm-8kA" firstAttribute="top" secondItem="w7d-cM-aA8" secondAttribute="bottom" constant="25" id="vCl-F8-sw6"/>
@@ -730,6 +763,7 @@
                         <outlet property="nameTextField" destination="6Hp-hn-Zpm" id="WcV-9x-IzL"/>
                         <outlet property="passwordTextField" destination="K7U-ue-Zs4" id="lq6-qo-bEu"/>
                         <outlet property="redBackgroundView" destination="bo3-hq-OJg" id="5yr-93-cEw"/>
+                        <outlet property="registrationTypeTextField" destination="2FW-Uf-Uvf" id="KeN-eF-NdC"/>
                         <outlet property="segmentView" destination="IGF-Ab-rK5" id="jO5-Xc-1Co"/>
                         <outlet property="shadowView" destination="nvU-iG-dyy" id="MdT-5P-WN0"/>
                         <segue destination="Ko9-Wz-HH8" kind="show" identifier="signUpToLogin" id="QAh-Tu-dXa"/>
@@ -748,7 +782,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvW-ic-cWY" customClass="CustomView" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="175" width="343" height="247"/>
+                                <rect key="frame" x="16" y="175" width="343" height="286"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsP-WI-ltX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="25" width="327" height="40"/>
@@ -817,7 +851,7 @@
                                     <constraint firstItem="ghY-ta-Dc6" firstAttribute="leading" secondItem="bvW-ic-cWY" secondAttribute="leading" constant="8" id="GaO-Do-UgB"/>
                                     <constraint firstAttribute="trailing" secondItem="hQg-KP-hM7" secondAttribute="trailing" constant="8" id="Pgm-kZ-FZw"/>
                                     <constraint firstItem="ghY-ta-Dc6" firstAttribute="top" secondItem="YsP-WI-ltX" secondAttribute="bottom" constant="4" id="Sqy-c9-8F7"/>
-                                    <constraint firstAttribute="height" constant="247" id="TG4-8c-LNq"/>
+                                    <constraint firstAttribute="height" constant="286" id="TG4-8c-LNq"/>
                                     <constraint firstItem="kKp-7f-VbW" firstAttribute="top" secondItem="LFm-kT-6pf" secondAttribute="bottom" constant="4" id="VdF-Tl-vfb"/>
                                     <constraint firstAttribute="trailing" secondItem="ghY-ta-Dc6" secondAttribute="trailing" constant="8" id="Y6o-TL-8q4"/>
                                     <constraint firstItem="LFm-kT-6pf" firstAttribute="top" secondItem="ghY-ta-Dc6" secondAttribute="bottom" constant="25" id="bB4-lI-Pxp"/>
@@ -832,7 +866,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-U8-CB9" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4ZY-bf-gMC"/>
                                         </constraints>
@@ -870,6 +904,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnLogin_ref" destination="hQg-KP-hM7" id="sD9-7z-4LY"/>
                         <outlet property="emailTextField" destination="YsP-WI-ltX" id="NFz-As-vng"/>
                         <outlet property="passwordTextField" destination="LFm-kT-6pf" id="om7-FZ-4UO"/>
                         <outlet property="redBackgroundView" destination="kiR-Tx-M97" id="USn-78-t5F"/>
@@ -881,7 +916,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuX-m0-ZCc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="134"/>
+            <point key="canvasLocation" x="624.79999999999995" y="133.5832083958021"/>
         </scene>
         <!--Item-->
         <scene sceneID="4D7-qR-DUB">
@@ -967,7 +1002,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
@@ -1445,13 +1480,16 @@
         <image name="Setting" width="42" height="42"/>
         <image name="TrackLocation" width="24" height="24"/>
         <image name="demoImage" width="42" height="42"/>
+        <image name="menu_icon" width="36" height="29"/>
         <image name="pizza" width="42" height="42"/>
         <namedColor name="viewBackgroundColor">
-            <color red="0.88599997758865356" green="0.14100000262260437" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.88627450980392153" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="viewBackgroundColor">
+            <color red="0.8862745098" green="0.14117647059999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ilh-L2-w9K"/>
         <segue reference="QAh-Tu-dXa"/>
     </inferredMetricsTieBreakers>
 </document>

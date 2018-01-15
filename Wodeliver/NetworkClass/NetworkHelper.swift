@@ -52,7 +52,7 @@ class NetworkHelper{
                     if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
                         if let controller = controller{
                             OtherHelper.buttonDialog("new_version_available", updateInfoText, controller, "Update", true, completionHandler: {
-                           })
+                            })
                         }
                     }
                     completionHandler(json, nil)
@@ -74,53 +74,18 @@ class NetworkHelper{
         var json: JSON!
         var headers:[String:String] = [:]
         headers["Content-Type"] = "application/json"
-        headers["cache-control"] = "no-cache"
-        print(headers)
-        print(param)
-        Alamofire.request(url, method : .post, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        Alamofire.request(url, method : .post, parameters : param,  encoding: URLEncoding.default, headers: nil).responseJSON { response in
             switch response.result {
             case .success(let value):
                 json = JSON(value)
                 if json["statusCode"].stringValue != "2XX"{
-                    if json["statusCode"].stringValue == "401" {
-                        let error = NSError.init(domain: "POST", code: 401, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                        // UserManager.logout(isDisable: false)
-                    }else if json["statusCode"].stringValue == "404" {
-                        let error = NSError.init(domain: "POST", code: 404, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                    }else if json["statusCode"].stringValue == "426" {
-                        let error = NSError.init(domain: "POST", code: 426, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", json["updateInfoText"].stringValue, controller, "Update", false, completionHandler: {
-                                // UIApplication.shared.openURL(URL.init(string: AppConstant.appStoreUrl)!)
-                            })
-                        }
-                        completionHandler(nil,error)
-                    }else{
-                        let errorReport: NSError
+                    if json["status"].stringValue == "401" {
                         if let controller = controller {
-                            OtherHelper.simpleDialog("Error", json["errorMessage"].stringValue, controller)
+                            OtherHelper.simpleDialog("Error", json["message"].stringValue, controller)
                         }
-                        if json["statusCode"].stringValue == "4XX"{
-                            let error = NSError.init(domain: "POST", code: 400, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }else{
-                            let error = NSError.init(domain: "POST", code: 500, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }
+                    }else{
+                        completionHandler(json, nil)
                     }
-                }else{
-                    if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", updateInfoText, controller, "Update", true, completionHandler: {
-                                // UIApplication.shared.openURL(URL.init(string: AppConstant.appStoreUrl)!)
-                            })
-                        }
-                    }
-                    completionHandler(json, nil)
                 }
             case .failure(let error):
                 if (error as NSError).code != -999{
@@ -139,55 +104,24 @@ class NetworkHelper{
     static func get(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //        headers["Myu-Auth-Token"] = UserManager.getAuthToken()
+        headers["Content-Type"] = "application/json"
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         Alamofire.request(url, method : .get, parameters : param, headers: headers).responseJSON { response in
             switch response.result {
             case .success(let value):
                 json = JSON(value)
                 if json["statusCode"].stringValue != "2XX"{
-                    if json["statusCode"].stringValue == "401" {
-                        let error = NSError.init(domain: "GET", code: 401, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                        //                        UserManager.logout(isDisable: false)
-                    }else if json["statusCode"].stringValue == "404" {
-                        let error = NSError.init(domain: "GET", code: 404, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                    }else if json["statusCode"].stringValue == "426" {
-                        let error = NSError.init(domain: "GET", code: 426, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", json["updateInfoText"].stringValue, controller, "Update", false, completionHandler: {
-                                //   UIApplication.shared.openURL(URL.init(string: AppConstant.appStoreUrl)!)
-                            })
-                        }
-                        completionHandler(nil,error)
-                    }else {
-                        let errorReport: NSError
+                    if json["status"].stringValue == "401" {
                         if let controller = controller {
-                            OtherHelper.simpleDialog("Error", json["errorMessage"].stringValue, controller)
+                            OtherHelper.simpleDialog("Error", json["message"].stringValue, controller)
                         }
-                        if json["statusCode"].stringValue == "4XX"{
-                            let error = NSError.init(domain: "GET", code: 400, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }else{
-                            let error = NSError.init(domain: "GET", code: 500, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }
+                    }else{
+                        completionHandler(json, nil)
                     }
-                }else{
-                    if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", updateInfoText, controller, "Update", true, completionHandler: {
-                            })
-                        }
-                    }
-                    completionHandler(json, nil)
                 }
             case .failure(let error):
                 if (error as NSError).code != -999{
-                   if let controller = controller {
+                    if let controller = controller {
                         OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
@@ -208,44 +142,6 @@ class NetworkHelper{
             case .success(let value):
                 json = JSON(value)
                 if json["statusCode"].stringValue != "2XX"{
-                    if json["statusCode"].stringValue == "401" {
-                        let error = NSError.init(domain: "PUT", code: 401, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                        //UserManager.logout(isDisable: false)
-                    }else if json["statusCode"].stringValue == "404" {
-                        let error = NSError.init(domain: "PUT", code: 404, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        completionHandler(nil,error)
-                    }else if json["statusCode"].stringValue == "426" {
-                        let error = NSError.init(domain: "PUT", code: 426, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", json["updateInfoText"].stringValue, controller, "Update", false, completionHandler: {
-                                //                                UIApplication.shared.openURL(URL.init(string: AppConstant.appStoreUrl)!)
-                            })
-                        }
-                        completionHandler(nil,error)
-                    }else{
-                        let errorReport: NSError
-                        if let controller = controller {
-                            OtherHelper.simpleDialog("Error", json["errorMessage"].stringValue, controller)
-                        }
-                        if json["statusCode"].stringValue == "4XX"{
-                            let error = NSError.init(domain: "PUT", code: 400, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }else{
-                            let error = NSError.init(domain: "PUT", code: 500, userInfo: [NSLocalizedDescriptionKey: json["errorMessage"].stringValue])
-                            errorReport = error
-                            completionHandler(nil,error)
-                        }
-                    }
-                }else{
-                    if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
-                        if let controller = controller{
-                            OtherHelper.buttonDialog("new_version_available", updateInfoText, controller, "Update", true, completionHandler: {
-                                //  UIApplication.shared.openURL(URL.init(string: AppConstant.appStoreUrl)!)
-                            })
-                        }
-                    }
                     completionHandler(json, nil)
                 }
             case .failure(let error):
