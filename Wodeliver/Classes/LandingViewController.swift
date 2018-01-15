@@ -24,6 +24,16 @@ class LandingViewController: UIViewController {
          self.viewCostomization()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = Colors.viewBackgroundColor
+        
+//        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
+//            guard let `self` = self else { return }
+//           print(json)
+//            print(error)
+//            guard (json != nil) else {
+//                // self.finishProcess()
+//                return
+//            }
+//        })
     }
     
     fileprivate func setupSideMenu() {

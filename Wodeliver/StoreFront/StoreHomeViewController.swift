@@ -35,22 +35,14 @@ class StoreHomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         tblHome.dataSource = self
         tblHome.delegate = self
-        
         tblHome.rowHeight = UITableViewAutomaticDimension
         tblHome.estimatedRowHeight = 55
-        
         //Alter the animations as you want
         tblHome.expandingAnimation = .fade
         tblHome.collapsingAnimation = .fade
-        
         tblHome.tableFooterView = UIView()
-        
-        //navigationItem.title = "iPhones"
-        
-      //  self.tblHome.backgroundColor = UIColor.lightGray
         NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
         self.viewCostomization()
     }
@@ -78,8 +70,7 @@ class StoreHomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     @objc private func orientationDidChange() {
         switch UIDevice.current.orientation {
         case .portrait, .portraitUpsideDown, .landscapeLeft, .landscapeRight:
@@ -175,7 +166,6 @@ extension StoreHomeViewController {
 extension StoreHomeViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return headerTitles.count
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -190,18 +180,14 @@ extension StoreHomeViewController {
             cell.layoutMargins = UIEdgeInsets.zero
             cell.showSeparator()
             return cell
-            
         }else  if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AgentConfirmCell.self)) as! AgentConfirmCell
             cell.layoutMargins = UIEdgeInsets.zero
             cell.showSeparator()
             return cell
-            
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeListingTableViewCell.self)) as! HomeListingTableViewCell
-            // cell.lblProductName.text = (sampleData[indexPath.section])[indexPath.row]
-            print(dataRow[indexPath.row])
             cell.lblProductName.text = dataRow[indexPath.row]["productName"]
             cell.lblUnit.text = dataRow[indexPath.row]["unit"]
             cell.lblPrice.text = dataRow[indexPath.row]["amount"]

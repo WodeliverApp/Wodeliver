@@ -14,8 +14,13 @@
 		30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30022BDC1FE39A85001E6268 /* CustomView.swift */; };
 		30067475200B33430021A08C /* StoreDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067473200B33430021A08C /* StoreDetailCell.swift */; };
 		30067476200B33430021A08C /* StoreDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30067474200B33430021A08C /* StoreDetailCell.xib */; };
-		30067478200B37160021A08C /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067477200B37160021A08C /* StoreDetailViewController.swift */; };
 		3006747A200B3D290021A08C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067479200B3D290021A08C /* UserManager.swift */; };
+		30067484200B7E210021A08C /* StoreNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */; };
+		30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */; };
+		30067487200B86FC0021A08C /* StoreNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067486200B86FC0021A08C /* StoreNotificationViewController.swift */; };
+		30067489200BC4A60021A08C /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067488200BC4A50021A08C /* String+Util.swift */; };
+		3006748B200BC5230021A08C /* Date + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748A200BC5230021A08C /* Date + Util.swift */; };
+		3006748D200C5A290021A08C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748C200C5A290021A08C /* Enum.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -101,8 +106,16 @@
 		30022BDC1FE39A85001E6268 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		30067473200B33430021A08C /* StoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailCell.swift; sourceTree = "<group>"; };
 		30067474200B33430021A08C /* StoreDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreDetailCell.xib; sourceTree = "<group>"; };
-		30067477200B37160021A08C /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		30067479200B3D290021A08C /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3006747D200B7D600021A08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StoreFront.strings; sourceTree = "<group>"; };
+		3006747E200B7D630021A08C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/StoreFront.strings; sourceTree = "<group>"; };
+		3006747F200B7D650021A08C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/StoreFront.strings"; sourceTree = "<group>"; };
+		30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNotificationTableViewCell.swift; sourceTree = "<group>"; };
+		30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreNotificationTableViewCell.xib; sourceTree = "<group>"; };
+		30067486200B86FC0021A08C /* StoreNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNotificationViewController.swift; sourceTree = "<group>"; };
+		30067488200BC4A50021A08C /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		3006748A200BC5230021A08C /* Date + Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Util.swift"; sourceTree = "<group>"; };
+		3006748C200C5A290021A08C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -320,10 +333,13 @@
 		30331ACE1FE3896300A8B1F1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				3006748A200BC5230021A08C /* Date + Util.swift */,
+				30067488200BC4A50021A08C /* String+Util.swift */,
 				30331ACF1FE3897200A8B1F1 /* Constants.swift */,
 				30914A3920028606008D6E52 /* Localizable.strings */,
 				307716E3200B253F00D073A0 /* OtherHelper.swift */,
 				30067479200B3D290021A08C /* UserManager.swift */,
+				3006748C200C5A290021A08C /* Enum.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -343,6 +359,7 @@
 				30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */,
 				307716D020090A2200D073A0 /* StoreItemViewController.swift */,
 				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
+				30067486200B86FC0021A08C /* StoreNotificationViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -353,6 +370,8 @@
 				30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */,
 				307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */,
 				307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */,
+				30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */,
+				30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */,
 			);
 			path = StoreCell;
 			sourceTree = "<group>";
@@ -561,6 +580,7 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30067484200B7E210021A08C /* StoreNotificationTableViewCell.swift in Sources */,
 				307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */,
 				A1B3C591200B3A4C009C8C0D /* StoreDetailViewController.swift in Sources */,
 				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
@@ -752,6 +773,7 @@
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
+				3006748D200C5A290021A08C /* Enum.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
 				307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
@@ -764,11 +786,13 @@
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
 				A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */,
 				53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */,
+				30067489200BC4A60021A08C /* String+Util.swift in Sources */,
 				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
 				307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
+				30067487200B86FC0021A08C /* StoreNotificationViewController.swift in Sources */,
 				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
@@ -779,6 +803,7 @@
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
 				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
+				3006748B200BC5230021A08C /* Date + Util.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
@@ -848,6 +873,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				307716D92009FB5900D073A0 /* Base */,
+				3006747D200B7D600021A08C /* en */,
+				3006747E200B7D630021A08C /* ar */,
+				3006747F200B7D650021A08C /* zh-Hant */,
 			);
 			name = StoreFront.storyboard;
 			sourceTree = "<group>";

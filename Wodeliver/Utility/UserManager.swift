@@ -12,40 +12,65 @@ import SwiftyJSON
 class UserManager{
     
     static let userDetailsKey="UserDetail"
-    static let userIdKey = "id"
+    static let userIdKey = "_id"
     static let userTypeIdKey = "userTypeId"
+    static let userProfile = "userProfile"
+    static let customerId = "customerId"
+    static let deviceToken = "deviceToken"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
-        UserDefaults.standard.set(detail[userIdKey].int64Value, forKey: userIdKey)
+        UserDefaults.standard.set(detail[userIdKey].stringValue, forKey: userIdKey)
+        UserDefaults.standard.set(detail[customerId].int64Value, forKey: customerId)
         UserDefaults.standard.set(detail[userTypeIdKey].int32Value, forKey: userTypeIdKey)
-        var profile: [String:Any] = [
-            "Name": detail["name"].stringValue,                // String
-            "Identity": detail["id"].int64Value,               // String or number
-            "Email": detail["email"].stringValue,              // Email address of the user
-            "MSG-email": true,                     // Disable email notifications
-            "MSG-push": true,                       // Enable push notifications
-            "MSG-sms": true,                        // Disable SMS notifications
-            "UsertypeId": detail["userTypeId"].intValue
+        let profile: [String:Any] = [
+            "name": detail["name"].stringValue,
+            "_id": detail["_id"].stringValue,
+            "email": detail["email"].stringValue,
+            "password": detail["password"].intValue,
+            "phone": detail["phone"].intValue,
+            "__v": detail["__v"].intValue,
+            "updatedAt": detail["updatedAt"].stringValue,
+            "customerId": detail["customerId"].intValue,
+            "address": detail["address"].arrayValue,
+            "password": detail["password"].stringValue
         ]
-        if let profileImage = detail["profileImage"]["mediaPath"].string {
-            profile["Photo"] = profileImage
-        }
-        if let dob = detail["dob"].double {
-            profile["dob"] = Date.init(timeIntervalSince1970: dob/1000)
-        }
-        if let university = detail["university"]["name"].string {
-            profile["Univertsity"] = university
-        }
-        if let gender = detail["gender"].string {
-            if gender == "Male" {
-                profile["Gender"] = "M"
-            }else {
-                profile["Gender"] = "F"
-            }
-        }
-        if let department = detail["department"]["name"].string {
-            profile["Department"] = department
-        }
+        UserDefaults.standard.set(profile, forKey: userProfile)
        }
+    static func getUserDetail() -> JSON {
+        if let json = UserDefaults.standard.string(forKey: userDetailsKey) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static func getUserId() -> String {
+        return UserDefaults.standard.object(forKey: userIdKey) as? String ?? ""
+    }
+    
+    static func getUserType() -> UserType {
+        return UserType(rawValue: Int32(UserDefaults.standard.integer(forKey: userTypeIdKey)))!
+    }
+    
+    static func checkIfLogin() -> Bool {
+        if let _ = UserDefaults.standard.object(forKey: userDetailsKey) {
+            return true
+        }else{
+            return false
+        }
+    }
+    static func logout(isDisable : Bool) {
+        UserDefaults.standard.removeObject(forKey: userDetailsKey)
+        UserDefaults.standard.removeObject(forKey: userIdKey)
+        UserDefaults.standard.removeObject(forKey: userTypeIdKey)
+    }
+    static func setDeviceToken(token: String) {
+        UserDefaults.standard.set(token, forKey: deviceToken)
+    }
+    static func getDeviceToken() -> String {
+        if let token = UserDefaults.standard.string(forKey: deviceToken) {
+            return token
+        }else {
+            return "no-token"
+        }
+    }
 }
