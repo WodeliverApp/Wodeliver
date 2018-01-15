@@ -396,7 +396,7 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-Sy-zR5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="1q4-Sy-zR5">
                                 <rect key="frame" x="0.0" y="510" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="y92-W7-Txl"/>
@@ -472,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
+                                <rect key="frame" x="16" y="69" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -491,14 +491,14 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="110" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="506"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
                                     <outlet property="delegate" destination="cOV-OT-dnl" id="JeD-tA-MH0"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="XUz-TG-MKv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="XUz-TG-MKv">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ilx-HL-Px9"/>
@@ -716,7 +716,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
@@ -861,7 +861,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-U8-CB9" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4ZY-bf-gMC"/>
                                         </constraints>
@@ -913,11 +913,11 @@
             </objects>
             <point key="canvasLocation" x="624.79999999999995" y="133.5832083958021"/>
         </scene>
-        <!--Item-->
+        <!--My-->
         <scene sceneID="4D7-qR-DUB">
             <objects>
                 <navigationController id="zxy-Vp-ZMf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zcA-sm-jMC"/>
+                    <tabBarItem key="tabBarItem" title="My" id="zcA-sm-jMC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ctu-8E-ujn">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -927,7 +927,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1j-0p-K4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="1931"/>
+            <point key="canvasLocation" x="1630" y="1931"/>
         </scene>
         <!--Tracing-->
         <scene sceneID="opb-Hb-ePP">
@@ -952,10 +952,43 @@
                         <viewLayoutGuide key="safeArea" id="E9p-Qm-4CZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracing" id="x8x-Ve-KvY"/>
+                    <navigationItem key="navigationItem" id="pxq-5r-gbK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scu-fA-gug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="1199"/>
+            <point key="canvasLocation" x="2278" y="1096"/>
+        </scene>
+        <!--Tracing-->
+        <scene sceneID="eO7-Mc-Q61">
+            <objects>
+                <navigationController id="Uml-1n-FmZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tracing" id="3ra-H6-11v"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XFD-k9-AuW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FhS-Q2-ehT" kind="relationship" relationship="rootViewController" id="QJZ-de-Pyh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggc-Qx-kko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="1096"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="hp0-BS-e9E">
+            <objects>
+                <navigationController id="Cbl-vm-2FJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="mHt-2x-9Y0"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jYQ-Ww-5nV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="R7r-T9-mI8" kind="relationship" relationship="rootViewController" id="y5h-ri-4br"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxI-b3-ph5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2132" y="439"/>
         </scene>
         <!--Map-->
         <scene sceneID="988-mJ-hyz">
@@ -980,10 +1013,11 @@
                         <viewLayoutGuide key="safeArea" id="dVl-t8-J1Y"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="f36-Jy-MzJ"/>
+                    <navigationItem key="navigationItem" id="WTN-ga-NUA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lee-XE-0vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="466"/>
+            <point key="canvasLocation" x="2823" y="439"/>
         </scene>
         <!--My-->
         <scene sceneID="XCF-X2-x0L">
@@ -997,7 +1031,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
@@ -1112,6 +1146,22 @@
             <point key="canvasLocation" x="3109.5999999999999" y="1924.5877061469266"/>
         </scene>
         <!--Chat-->
+        <scene sceneID="I6F-4h-67R">
+            <objects>
+                <navigationController id="iT6-Tv-On7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" id="q3U-Z2-5qx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFg-gC-c1C">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VM6-ND-Y8c" kind="relationship" relationship="rootViewController" id="2r4-1L-zaL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pet-uB-DY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="-317"/>
+        </scene>
+        <!--Chat-->
         <scene sceneID="VHs-wt-Kxq">
             <objects>
                 <viewController id="VM6-ND-Y8c" customClass="ChatViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
@@ -1119,25 +1169,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-CJ-bAT">
-                                <rect key="frame" x="129.5" y="323" width="117" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Fk-N3-zdo" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="snn-hx-lIL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Current"/>
+                                    <segment title="History"/>
+                                </segments>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-St-zck">
+                                <rect key="frame" x="0.0" y="120" width="375" height="499"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VM6-ND-Y8c" id="Gcn-nx-FdK"/>
+                                    <outlet property="delegate" destination="VM6-ND-Y8c" id="Mui-xn-b1a"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oz5-CJ-bAT" firstAttribute="centerY" secondItem="DuU-Th-vIB" secondAttribute="centerY" id="CuO-Ho-NPC"/>
-                            <constraint firstItem="oz5-CJ-bAT" firstAttribute="centerX" secondItem="DuU-Th-vIB" secondAttribute="centerX" id="uCo-oI-kZi"/>
+                            <constraint firstItem="MZq-St-zck" firstAttribute="trailing" secondItem="Lj7-44-B35" secondAttribute="trailing" id="AHw-OS-MZx"/>
+                            <constraint firstItem="MZq-St-zck" firstAttribute="leading" secondItem="Lj7-44-B35" secondAttribute="leading" id="Cgc-8f-s0g"/>
+                            <constraint firstItem="7Fk-N3-zdo" firstAttribute="centerX" secondItem="DuU-Th-vIB" secondAttribute="centerX" id="KwT-Tc-rbx"/>
+                            <constraint firstItem="MZq-St-zck" firstAttribute="top" secondItem="7Fk-N3-zdo" secondAttribute="bottom" constant="19.5" id="gOv-9y-zjx"/>
+                            <constraint firstItem="7Fk-N3-zdo" firstAttribute="top" secondItem="Lj7-44-B35" secondAttribute="top" constant="4.5" id="jLT-cB-znv"/>
+                            <constraint firstItem="Lj7-44-B35" firstAttribute="trailing" secondItem="7Fk-N3-zdo" secondAttribute="trailing" constant="16" id="rdW-xO-iAd"/>
+                            <constraint firstAttribute="bottom" secondItem="MZq-St-zck" secondAttribute="bottom" constant="48" id="tNs-u3-MPg"/>
+                            <constraint firstItem="7Fk-N3-zdo" firstAttribute="leading" secondItem="Lj7-44-B35" secondAttribute="leading" constant="16" id="xld-Ew-wuj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lj7-44-B35"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" id="pfv-Ry-SLe"/>
+                    <navigationItem key="navigationItem" id="Kjp-NK-5Gs"/>
+                    <connections>
+                        <outlet property="chatSegmentView" destination="7Fk-N3-zdo" id="aFy-E8-cp3"/>
+                        <outlet property="chatTableView" destination="MZq-St-zck" id="MTv-Q3-tfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gj9-Vk-ssR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-199.25037481259372"/>
+            <point key="canvasLocation" x="2728.8000000000002" y="-300"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="M4I-fU-nhg">
@@ -1149,15 +1228,67 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VM6-ND-Y8c" kind="relationship" relationship="viewControllers" id="hvt-4i-2bf"/>
-                        <segue destination="R7r-T9-mI8" kind="relationship" relationship="viewControllers" id="pd2-pj-Bbp"/>
-                        <segue destination="FhS-Q2-ehT" kind="relationship" relationship="viewControllers" id="tf1-Ik-yDN"/>
-                        <segue destination="zxy-Vp-ZMf" kind="relationship" relationship="viewControllers" id="JhM-cw-CfR"/>
+                        <segue destination="iT6-Tv-On7" kind="relationship" relationship="viewControllers" id="Yco-mk-wdQ"/>
+                        <segue destination="Cbl-vm-2FJ" kind="relationship" relationship="viewControllers" id="wWP-RA-lE8"/>
+                        <segue destination="Uml-1n-FmZ" kind="relationship" relationship="viewControllers" id="nBv-Dm-0AT"/>
+                        <segue destination="8hT-0K-YFd" kind="relationship" relationship="viewControllers" id="wk4-jp-TTb"/>
+                        <segue destination="zxy-Vp-ZMf" kind="relationship" relationship="viewControllers" id="ioO-cW-SFE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVq-1H-eWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1426" y="133"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="ihM-so-W8v">
+            <objects>
+                <navigationController id="8hT-0K-YFd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notification" id="ZZz-lc-DfG"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Ny-Lu-4Ut">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h0F-oa-Sbu" kind="relationship" relationship="rootViewController" id="seS-Md-rUi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQo-GQ-4nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2094" y="-1044"/>
+        </scene>
+        <!--Delivery Boy View Controller-->
+        <scene sceneID="P2V-Nd-1Gs">
+            <objects>
+                <viewController id="h0F-oa-Sbu" customClass="DeliveryBoyViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y3p-3Z-2Cr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rc0-JE-p2C">
+                                <rect key="frame" x="0.0" y="74" width="375" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="h0F-oa-Sbu" id="KgC-q0-vAI"/>
+                                    <outlet property="delegate" destination="h0F-oa-Sbu" id="wSc-yo-UfH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="leading" secondItem="g3J-LA-dIn" secondAttribute="leading" id="SkP-Oo-Psp"/>
+                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="top" secondItem="g3J-LA-dIn" secondAttribute="top" constant="10" id="k4j-bQ-Ypv"/>
+                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="bottom" secondItem="g3J-LA-dIn" secondAttribute="bottom" id="qyf-Yn-PTW"/>
+                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="trailing" secondItem="g3J-LA-dIn" secondAttribute="trailing" id="zIV-we-VC4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g3J-LA-dIn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JDf-Ve-s11"/>
+                    <connections>
+                        <outlet property="notificationDBTableView" destination="Rc0-JE-p2C" id="NMt-Ho-p0S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1F-jX-lBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2724" y="-1046.6266866566718"/>
         </scene>
         <!--Order Status View Controller-->
         <scene sceneID="b07-j7-WyJ">
