@@ -32,8 +32,7 @@ class UserManager{
             "__v": detail["__v"].intValue,
             "updatedAt": detail["updatedAt"].stringValue,
             "customerId": detail["customerId"].intValue,
-            "address": detail["address"].arrayValue,
-            "password": detail["password"].stringValue
+            "address": detail["address"].arrayValue
         ]
         UserDefaults.standard.set(profile, forKey: userProfile)
        }
