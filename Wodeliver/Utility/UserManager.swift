@@ -13,7 +13,7 @@ class UserManager{
     
     static let userDetailsKey="UserDetail"
     static let userIdKey = "_id"
-    static let userTypeIdKey = "userTypeId"
+    static let userTypeIdKey = "accountType"
     static let userProfile = "userProfile"
     static let customerId = "customerId"
     static let deviceToken = "deviceToken"
@@ -32,7 +32,8 @@ class UserManager{
             "__v": detail["__v"].intValue,
             "updatedAt": detail["updatedAt"].stringValue,
             "customerId": detail["customerId"].intValue,
-            "address": detail["address"].arrayValue
+            "address": detail["address"].arrayValue,
+            "accountType" : detail["accountType"].intValue
         ]
         UserDefaults.standard.set(profile, forKey: userProfile)
        }

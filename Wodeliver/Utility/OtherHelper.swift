@@ -94,7 +94,7 @@ class ProgressBar{
             let overlay = UIView()
             overlay.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
                 //CGRectMake(0.0, 0.0, view.frame.width, view.frame.height)
-            overlay.layer.backgroundColor = UIColor.black.cgColor
+            overlay.layer.backgroundColor = UIColor.lightText.cgColor
             overlay.alpha = 0.7
             overlay.tag = 1
             
@@ -107,7 +107,7 @@ class ProgressBar{
             superView = overlay
         }
         
-        let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         
         indicator.center = superView.center
         indicator.tag = 1

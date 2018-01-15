@@ -81,6 +81,7 @@ class NetworkHelper{
                 if json["statusCode"].stringValue != "2XX"{
                     if json["status"].stringValue == "401" {
                         if let controller = controller {
+                            ProgressBar.hideActivityIndicator(view: controller.view)
                             OtherHelper.simpleDialog("Error", json["message"].stringValue, controller)
                         }
                     }else{
@@ -113,6 +114,7 @@ class NetworkHelper{
                 if json["statusCode"].stringValue != "2XX"{
                     if json["status"].stringValue == "401" {
                         if let controller = controller {
+                            ProgressBar.hideActivityIndicator(view: controller.view)
                             OtherHelper.simpleDialog("Error", json["message"].stringValue, controller)
                         }
                     }else{

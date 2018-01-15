@@ -93,18 +93,20 @@ class LoginViewController: UIViewController {
         // self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
         self.view.endEditing(true)
         if self.isValidate() {
-            let params = ["email":emailTextField.text!,"password":passwordTextField.text!]
+            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
             self.userLogin(param: params)
         }
     }
     
     func userLogin(param : [String : String]){
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 self.btnLogin_ref.isEnabled = true
                 return
             }
+            ProgressBar.hideActivityIndicator(view: self.view)
             print(json!)
             UserManager.setUserDetail(detail: json!["userData"])
             

@@ -27,3 +27,9 @@ enum UserDetail : String {
     case customerId = "customerId"
     case address = "address"
 }
+
+enum DeviceType: Int32 {
+    case none = -1
+    case iOS = 1
+    case android = 2
+}
