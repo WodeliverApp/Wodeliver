@@ -29,7 +29,6 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken Burger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pak-lQ-tw7">
                         <rect key="frame" x="111" y="4" width="175" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="175" id="1J8-ib-pDn"/>
                             <constraint firstAttribute="height" constant="21" id="GEC-Qx-SEZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -55,7 +54,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhM-e3-Hqo">
-                        <rect key="frame" x="294" y="4" width="24" height="24"/>
+                        <rect key="frame" x="286" y="4" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="fO9-4v-Xk5"/>
+                            <constraint firstAttribute="height" constant="24" id="y57-jk-nEC"/>
+                        </constraints>
                         <state key="normal" image="edit_product"/>
                     </button>
                 </subviews>
@@ -67,13 +70,14 @@
                     <constraint firstItem="far-UV-q1a" firstAttribute="leading" secondItem="7Ew-np-t7w" secondAttribute="leading" id="AYZ-ZF-Eei"/>
                     <constraint firstItem="7Ew-np-t7w" firstAttribute="top" secondItem="pak-lQ-tw7" secondAttribute="bottom" constant="8" symbolic="YES" id="E8V-eb-jUh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="7Ew-np-t7w" secondAttribute="trailing" constant="36" id="GtW-OD-hSm"/>
-                    <constraint firstItem="pak-lQ-tw7" firstAttribute="top" secondItem="QhM-e3-Hqo" secondAttribute="top" id="JzI-TH-u3J"/>
+                    <constraint firstItem="QhM-e3-Hqo" firstAttribute="leading" secondItem="pak-lQ-tw7" secondAttribute="trailing" id="Jdo-9E-Q6r"/>
                     <constraint firstAttribute="trailing" secondItem="far-UV-q1a" secondAttribute="trailing" id="K8W-wP-CL9"/>
+                    <constraint firstItem="QhM-e3-Hqo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Zlr-Vn-7hw"/>
                     <constraint firstItem="5q0-Fg-nmD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="aVs-Jj-NgS"/>
                     <constraint firstItem="YWt-Eb-EOX" firstAttribute="trailing" secondItem="far-UV-q1a" secondAttribute="trailing" id="bKT-22-Nhs"/>
+                    <constraint firstAttribute="trailing" secondItem="QhM-e3-Hqo" secondAttribute="trailing" constant="10" id="cpO-eJ-L42"/>
                     <constraint firstItem="pak-lQ-tw7" firstAttribute="leading" secondItem="5q0-Fg-nmD" secondAttribute="trailing" constant="8" symbolic="YES" id="dUf-cj-Yj2"/>
                     <constraint firstAttribute="bottom" secondItem="5q0-Fg-nmD" secondAttribute="bottom" constant="2.5" id="qc2-US-b1f"/>
-                    <constraint firstItem="QhM-e3-Hqo" firstAttribute="leading" secondItem="pak-lQ-tw7" secondAttribute="trailing" constant="8" symbolic="YES" id="tJZ-IY-h0u"/>
                     <constraint firstItem="pak-lQ-tw7" firstAttribute="top" secondItem="5q0-Fg-nmD" secondAttribute="top" id="v7e-uB-xnM"/>
                     <constraint firstItem="5q0-Fg-nmD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="ySD-7L-7yp"/>
                 </constraints>
