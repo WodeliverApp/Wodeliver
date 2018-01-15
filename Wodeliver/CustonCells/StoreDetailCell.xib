@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="406.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pYI-98-T2M">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="pYI-98-T2M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="140" id="QxT-oa-kQv"/>
@@ -250,6 +250,7 @@
     </objects>
     <resources>
         <image name="Rating" width="33" height="33"/>
+        <image name="burger" width="240" height="137"/>
         <image name="dislike" width="20" height="22"/>
         <image name="like" width="30" height="30"/>
         <image name="location" width="20" height="20"/>

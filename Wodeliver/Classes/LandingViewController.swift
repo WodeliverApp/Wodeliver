@@ -115,21 +115,24 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
        
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch collectionView.tag {
-        case 1:
-          break
-        case 2:
-           break
-        case 3:
-            let padding: CGFloat =  10
-            let collectionViewSize = collectionView.frame.size.width - padding
-            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-        default:
-           break
-        }
-         return CGSize(width: 0, height: 0)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "HomeToListing", sender: nil)
     }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        switch collectionView.tag {
+//        case 1:
+//          break
+//        case 2:
+//           break
+//        case 3:
+//            let padding: CGFloat =  10
+//            let collectionViewSize = collectionView.frame.size.width - padding
+//            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+//        default:
+//           break
+//        }
+//         return CGSize(width: 0, height: 0)
+//    }
 }
 
 extension LandingViewController: UISideMenuNavigationControllerDelegate {

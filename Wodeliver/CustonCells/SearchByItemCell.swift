@@ -9,9 +9,21 @@
 import UIKit
 
 class SearchByItemCell: UITableViewCell {
-
+    
+    @IBOutlet weak var itemImg: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var commentLbl: UILabel!
+    @IBOutlet weak var soldLbl: UILabel!
+    @IBOutlet weak var orderBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
+        self.backView.layer.cornerRadius = 5.0
+        self.backView.clipsToBounds = true
+        self.contentView.backgroundColor = Colors.viewBackgroundColor
         // Initialization code
     }
 
@@ -26,7 +38,7 @@ class SearchByItemCell: UITableViewCell {
      * @return : Hight of cell
      **/
     class func getCellHeight() -> CGFloat {
-        return 159.0
+        return 143.0
     }
     
 }

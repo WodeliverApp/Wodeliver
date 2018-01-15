@@ -24,9 +24,13 @@ class StorepointListingCell: UITableViewCell {
     @IBOutlet weak var rating3Btn: UIButton!
     @IBOutlet weak var rating4Btn: UIButton!
     @IBOutlet weak var rating5Btn: UIButton!
+    @IBOutlet weak var backView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        self.backView.layer.cornerRadius = 5.0
+        self.backView.clipsToBounds = true
+        self.contentView.backgroundColor = Colors.viewBackgroundColor
         // Initialization code
     }
 
@@ -41,7 +45,7 @@ class StorepointListingCell: UITableViewCell {
      * @return : Hight of cell
      **/
     class func getCellHeight() -> CGFloat {
-        return 153.0
+        return 145.0
     }
     
 }

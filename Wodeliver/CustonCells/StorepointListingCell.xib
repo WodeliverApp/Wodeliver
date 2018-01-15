@@ -12,18 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StorepointListingCell" rowHeight="153" id="KGk-i7-Jjw" customClass="StorepointListingCell" customModule="Wodeliver" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StorepointListingCell" rowHeight="145" id="KGk-i7-Jjw" customClass="StorepointListingCell" customModule="Wodeliver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="152.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="144.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-eo-IQm">
-                        <rect key="frame" x="16" y="14" width="288" height="125"/>
+                        <rect key="frame" x="16" y="5" width="288" height="134.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1VU-Lu-Y9i">
-                                <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="1VU-Lu-Y9i">
+                                <rect key="frame" x="0.0" y="0.0" width="125" height="134.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="2nA-4H-lph"/>
                                 </constraints>
@@ -58,17 +58,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SJ-EG-jGG">
-                                <rect key="frame" x="133" y="92" width="155" height="33"/>
+                                <rect key="frame" x="133" y="92" width="155" height="42.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhi-6W-cDs">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="33"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhi-6W-cDs">
+                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="42.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" title="300" image="like">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vof-5e-xg8">
-                                        <rect key="frame" x="51.5" y="0.0" width="52" height="33"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vof-5e-xg8">
+                                        <rect key="frame" x="51.5" y="0.0" width="52" height="42.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
@@ -76,8 +76,8 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9P-rD-xby">
-                                        <rect key="frame" x="103.5" y="0.0" width="51.5" height="33"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9P-rD-xby">
+                                        <rect key="frame" x="103.5" y="0.0" width="51.5" height="42.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" title="300" image="location">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +94,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-Gx-Peo">
                                 <rect key="frame" x="133" y="70" width="130" height="22"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aah-ME-mDf">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aah-ME-mDf">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Zn7-UK-Yfo"/>
@@ -102,7 +102,7 @@
                                         </constraints>
                                         <state key="normal" image="Rating"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-nX-D62">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-nX-D62">
                                         <rect key="frame" x="27" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="92f-WU-d3C"/>
@@ -110,7 +110,7 @@
                                         </constraints>
                                         <state key="normal" image="Rating"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUN-LN-A3E">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUN-LN-A3E">
                                         <rect key="frame" x="54" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="Qa2-V6-7Xs"/>
@@ -118,7 +118,7 @@
                                         </constraints>
                                         <state key="normal" image="Rating"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qg-Up-keO">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qg-Up-keO">
                                         <rect key="frame" x="81" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="KHL-zF-p9e"/>
@@ -126,7 +126,7 @@
                                         </constraints>
                                         <state key="normal" image="Rating"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdX-8f-WBM">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdX-8f-WBM">
                                         <rect key="frame" x="108" y="0.0" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="QHj-g2-Dl4"/>
@@ -165,14 +165,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Y9p-eo-IQm" secondAttribute="trailing" constant="16" id="6RW-yl-SDP"/>
-                    <constraint firstAttribute="bottom" secondItem="Y9p-eo-IQm" secondAttribute="bottom" constant="13.5" id="GUq-eR-dwq"/>
-                    <constraint firstItem="Y9p-eo-IQm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="Ty8-gu-8ZN"/>
+                    <constraint firstAttribute="bottom" secondItem="Y9p-eo-IQm" secondAttribute="bottom" constant="5" id="GUq-eR-dwq"/>
+                    <constraint firstItem="Y9p-eo-IQm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ty8-gu-8ZN"/>
                     <constraint firstItem="Y9p-eo-IQm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gtX-75-hV1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLbl" destination="rUE-xa-HqJ" id="0Q2-MY-LWh"/>
+                <outlet property="backView" destination="Y9p-eo-IQm" id="ZPI-Nh-a8h"/>
                 <outlet property="bottomStack" destination="9SJ-EG-jGG" id="XIt-Xv-4JJ"/>
                 <outlet property="countLbl" destination="kMO-q5-Won" id="1kI-W2-wUy"/>
                 <outlet property="dislikeBtn" destination="vof-5e-xg8" id="afP-Za-4P0"/>
@@ -192,6 +193,7 @@
     </objects>
     <resources>
         <image name="Rating" width="33" height="33"/>
+        <image name="burger" width="240" height="137"/>
         <image name="dislike" width="20" height="22"/>
         <image name="like" width="30" height="30"/>
         <image name="location" width="20" height="20"/>
