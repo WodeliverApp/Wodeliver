@@ -75,6 +75,9 @@
 		A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */; };
 		A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */; };
 		A1B3C591200B3A4C009C8C0D /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */; };
+		A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */; };
+		A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */; };
+		A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */; };
 		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
 		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -188,6 +191,9 @@
 		A1B3C58C2008F4DB009C8C0D /* SearchByItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByItemCell.swift; sourceTree = "<group>"; };
 		A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchByItemCell.xib; sourceTree = "<group>"; };
 		A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBoyViewController.swift; sourceTree = "<group>"; };
 		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -416,6 +422,7 @@
 				A1B3C58A200475C7009C8C0D /* StorePointViewController.swift */,
 				307716DE200A287600D073A0 /* LeftMenuTableViewController.swift */,
 				A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */,
+				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -442,6 +449,8 @@
 				A1B3C58D2008F4DB009C8C0D /* SearchByItemCell.xib */,
 				30067473200B33430021A08C /* StoreDetailCell.swift */,
 				30067474200B33430021A08C /* StoreDetailCell.xib */,
+				A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */,
+				A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -565,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
+				A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */,
 				307716DA2009FB5900D073A0 /* StoreFront.storyboard in Resources */,
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
@@ -804,11 +814,13 @@
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
 				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
 				3006748B200BC5230021A08C /* Date + Util.swift in Sources */,
+				A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
+				A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
 				30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */,
 			);
