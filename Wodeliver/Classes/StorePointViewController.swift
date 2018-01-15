@@ -31,7 +31,8 @@ class StorePointViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
         self.navigationController?.navigationBar.isHidden = false
-        self.view.backgroundColor = Colors.viewBackgroundColor
+        self.storepointTableView.backgroundColor = Colors.viewBackgroundColor
+        self.view.backgroundColor = Colors.redBackgroundColor
         self.segmentView.selectedSegmentIndex = 0
          self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
     }

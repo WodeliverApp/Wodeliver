@@ -13,7 +13,7 @@ class StoreDetailViewController: UIViewController {
     @IBOutlet weak var storeDetailTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.registerCustomCell()
         // Do any additional setup after loading the view.
     }
 
@@ -23,12 +23,17 @@ class StoreDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.title = "Storepoint Detail"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
         self.navigationController?.navigationBar.isHidden = false
         self.view.backgroundColor = Colors.viewBackgroundColor
+        self.storeDetailTableView.layer.cornerRadius = 8.0
+        self.storeDetailTableView.clipsToBounds = true
+        self.navigationController?.navigationBar.topItem?.title = " "
+        
     }
     
     func registerCustomCell()

@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
     var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
     var animatedDistance: CGFloat!
+    var userTypePicker: UIPickerView!
+    let userTypePickerValues = ["Store Front", "Customer", "Delivery Boy"]
+
     
     @IBOutlet weak var segmentView: MySegmentedControl!
     @IBOutlet weak var shadowView: UIView!
@@ -51,6 +54,11 @@ class ViewController: UIViewController {
     }
     
     func viewCustomization(){
+        userTypePicker = UIPickerView()
+        userTypePicker.dataSource = self
+        userTypePicker.delegate = self
+        userTypePicker.backgroundColor = .white
+        registrationTypeTextField.inputView = userTypePicker
         self.segmentView.selectedSegmentIndex = 1
         self.redBackgroundView.backgroundColor = Colors.redBackgroundColor
         self.shadowView.backgroundColor = UIColor.white
@@ -146,9 +154,11 @@ extension ViewController: UITextFieldDelegate{
             passwordTextField.becomeFirstResponder()
         }else if textField == passwordTextField
         {
-            passwordTextField.resignFirstResponder()
+            registrationTypeTextField.becomeFirstResponder()
+        }else if textField == registrationTypeTextField
+        {
+            
         }
-        
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -185,6 +195,25 @@ extension ViewController: UITextFieldDelegate{
         UIView.commitAnimations()
         self.view.layoutIfNeeded()
     }
+}
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return userTypePickerValues.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return userTypePickerValues[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        registrationTypeTextField.text = userTypePickerValues[row]
+        self.view.endEditing(true)
+    }
+
 }
 
 
