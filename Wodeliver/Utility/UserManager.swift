@@ -51,6 +51,19 @@ class UserManager{
         return UserType(rawValue: Int32(UserDefaults.standard.integer(forKey: userTypeIdKey)))!
     }
     
+    static func getUserTypeName(type: UserType) -> String {
+        switch type {
+        case .customer:
+            return "Customer".localized
+        case .deliveryBoy:
+            return "Delivery Boy".localized
+        case .storeManager:
+            return "Store Front".localized
+        default:
+            return ""
+        }
+    }
+    
     static func checkIfLogin() -> Bool {
         if let _ = UserDefaults.standard.object(forKey: userDetailsKey) {
             return true

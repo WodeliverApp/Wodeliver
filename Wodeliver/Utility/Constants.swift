@@ -20,6 +20,7 @@ struct Colors {
 struct Path {
     static let baseURL : String = "http://18.217.139.93:8082"
     static let loginURL : String = "\(baseURL)/login"
+    static let signUpURL : String = "\(baseURL)/user"
     static let categoryURL : String = "\(baseURL)/category"
 }
 
@@ -35,6 +36,7 @@ struct AlertMessages {
     static let userStudentIdValidation = "Please upload your student id."
     static let userEmailValidation = "Please enter a valid email address."
     static let userEmailEmpety = "Please enter email address."
+    static let userTypeSelection = "Please select user role."
     static let passwordValidation =  "Please enter a valid password."
     static let passwordEmpety =  "Please enter a password."
     static let passwordLentValidation =  "The password must be atleast 8 characters long."

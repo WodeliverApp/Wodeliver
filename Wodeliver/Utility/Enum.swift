@@ -7,12 +7,33 @@
 //
 
 import Foundation
+import UIKit
 
 enum UserType: Int32 {
     case none = -1
-    case storeManager = 1
-    case customer = 2
+    case customer = 1
+    case storeManager = 2
     case deliveryBoy = 3
+}
+
+protocol Printable {
+    var description: String { get }
+}
+
+enum UserTypeString: Int, Printable {
+    case customer = 1
+    case storeManager = 2
+    case deliveryBoy = 3
+    static var count: Int { return UserTypeString.deliveryBoy.hashValue + 1  }
+    
+    var description: String {
+        switch self {
+        case .customer: return "Customer"
+        case .storeManager   : return "Delivery Boy"
+        case .deliveryBoy  : return "Store Front"
+       
+        }
+    }
 }
 
 enum UserDetail : String {

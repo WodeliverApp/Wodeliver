@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
         self.viewCustomization()
         // Do any additional setup after loading the view.
         self.navigationController?.isNavigationBarHidden = true
+        emailTextField.autocorrectionType = .no
+        emailTextField.keyboardType = .emailAddress
     }
     
     override func viewWillAppear(_ animated: Bool) {

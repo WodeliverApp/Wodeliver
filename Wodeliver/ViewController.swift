@@ -26,11 +26,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: FloatLabelTextField!
     @IBOutlet weak var redBackgroundView: UIView!
     @IBOutlet weak var registrationTypeTextField: FloatLabelTextField!
-    
+    var selectedUserType:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewCustomization()
-
+        emailTextField.autocorrectionType = .no
+        emailTextField.keyboardType = .emailAddress
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
     @IBAction func btnSignUpAction(_ sender: Any) {
         self.view.endEditing(false)
         if self.isValidate() {
-            let params = ["email":emailTextField.text!,"password":passwordTextField.text!]
+            let params :[String : Any] = ["name":nameTextField.text!,"email":emailTextField.text!,"password":passwordTextField.text!,"accountType": selectedUserType,"phone":""]
             self.userSignUp(param: params)
         }
     }
@@ -102,7 +103,12 @@ class ViewController: UIViewController {
      * @param
      **/
     func isValidate() -> Bool  {
-        if self.emailTextField.text?.isEmpty == true {
+        self.view.endEditing(true)
+        if self.nameTextField.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.userNameValidation, self)
+            return false
+        }
+        else if self.emailTextField.text?.isEmpty == true {
             OtherHelper.simpleDialog("Validation Fails", AlertMessages.userEmailEmpety, self)
             return false
         }
@@ -114,26 +120,22 @@ class ViewController: UIViewController {
             OtherHelper.simpleDialog("Validation Fails", AlertMessages.passwordEmpety, self)
             return false
         }
-        else if self.nameTextField.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.userNameValidation, self)
+        else if self.selectedUserType == 0{
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.userTypeSelection, self)
             return false
         }
         return true
     }
-    func userSignUp(param : [String : String]){
-        self.view.endEditing(true)
-        
-        print(Path.loginURL)
-        NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
-            print(json)
-            print(error)
+    func userSignUp(param : [String : Any]){
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.post(url: Path.signUpURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
-                //               self.BtnLogin.isEnabled = true
                 return
             }
+            ProgressBar.hideActivityIndicator(view: self.view)
             print(json!)
-            // self.updateUserInfo(json: json!)
+            UserManager.setUserDetail(detail: json!["userData"])
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -202,15 +204,16 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return userTypePickerValues.count
+        return UserTypeString.count.hashValue
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return userTypePickerValues[row]
+        return UserTypeString(rawValue: row + 1 )?.description;
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        registrationTypeTextField.text = userTypePickerValues[row]
+        registrationTypeTextField.text = UserTypeString(rawValue: row + 1)?.description
+        selectedUserType =  row + 1
         self.view.endEditing(true)
     }
 
