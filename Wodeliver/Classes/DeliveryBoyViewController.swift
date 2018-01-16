@@ -65,7 +65,7 @@ extension DeliveryBoyViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return StoreHistoryTableViewCell.getCellHeight()
+        return StoreNotificationTableViewCell.getCellHeight()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
