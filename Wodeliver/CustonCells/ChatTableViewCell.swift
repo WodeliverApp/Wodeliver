@@ -13,6 +13,7 @@ class ChatTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,7 +28,7 @@ class ChatTableViewCell: UITableViewCell {
      * @return : Hight of cell
      **/
     class func getCellHeight() -> CGFloat {
-        return 50.0
+        return 83.0
     }
     
 }

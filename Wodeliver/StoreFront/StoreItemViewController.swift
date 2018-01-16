@@ -24,6 +24,7 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.tblHistory.backgroundColor = Colors.viewBackgroundColor
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

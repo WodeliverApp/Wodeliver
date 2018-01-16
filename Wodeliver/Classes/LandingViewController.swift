@@ -9,7 +9,9 @@
 import UIKit
 import SideMenu
 class LandingViewController: UIViewController {
-
+ 
+    
+    
     @IBOutlet weak var itemCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var hotspotCollectionView: UICollectionView!
@@ -17,23 +19,23 @@ class LandingViewController: UIViewController {
     
     var itemsArray  = ["cake","cake","cake","cake","cake"]
     var categoryArray = ["cloth","cloth","cloth","cloth","cloth"]
-   // var hotspotArray = []
+    // var hotspotArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.viewCostomization()
+        self.viewCostomization()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = Colors.viewBackgroundColor
         
-//        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
-//            guard let `self` = self else { return }
-//           print(json)
-//            print(error)
-//            guard (json != nil) else {
-//                // self.finishProcess()
-//                return
-//            }
-//        })
+        //        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
+        //            guard let `self` = self else { return }
+        //           print(json)
+        //            print(error)
+        //            guard (json != nil) else {
+        //                // self.finishProcess()
+        //                return
+        //            }
+        //        })
     }
     
     fileprivate func setupSideMenu() {
@@ -46,13 +48,18 @@ class LandingViewController: UIViewController {
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
         // Set up a cool background image for demo purposes
-       // SideMenuManager.default.menuAnimationBackgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        // SideMenuManager.default.menuAnimationBackgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
     func viewCostomization(){
         self.title = "Home"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -70,20 +77,20 @@ class LandingViewController: UIViewController {
 }
 extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-              return 1
+        return 1
     }
     
     //2
     public func collectionView(_ collectionView: UICollectionView,
-                                 numberOfItemsInSection section: Int) -> Int {
+                               numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
         case 1:
             return self.itemsArray.count
         case 2:
             return self.categoryArray.count
         case 3:
-            return 4
-            //return self.hotspotArray.count
+            return 8
+        //return self.hotspotArray.count
         default:
             return 0
         }
@@ -91,12 +98,12 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     //3
     public func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView.tag {
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemsCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
-        cell.itemImg.image = UIImage.init(named: itemsArray[indexPath.row])
+            cell.itemImg.image = UIImage.init(named: itemsArray[indexPath.row])
             
             return cell
         case 2:
@@ -113,25 +120,40 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         default:
             return UICollectionViewCell()
         }
-       
+        
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "HomeToListing", sender: nil)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsetsMake(0, 0, 0, 0)
+//        // top, left, bottom, right
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0.0
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0.0
+//    }
+
+    
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        switch collectionView.tag {
 //        case 1:
-//          break
+//            break
 //        case 2:
-//           break
+//            break
 //        case 3:
 //            let padding: CGFloat =  10
 //            let collectionViewSize = collectionView.frame.size.width - padding
 //            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
 //        default:
-//           break
+//            break
 //        }
-//         return CGSize(width: 0, height: 0)
+//        return CGSize(width: 0, height: 0)
 //    }
 }
 

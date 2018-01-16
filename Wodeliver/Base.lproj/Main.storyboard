@@ -152,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zgx-6o-Cbb">
+                            <searchBar userInteractionEnabled="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zgx-6o-Cbb">
                                 <rect key="frame" x="0.0" y="64" width="320" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="3dd-Hf-uWB"/>
@@ -247,15 +247,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j9v-7I-bN4">
                                 <rect key="frame" x="0.0" y="388" width="320" height="107"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DCf-yr-5hm">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DCf-yr-5hm">
                                     <size key="itemSize" width="147" height="107"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="5" maxX="10" maxY="5"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hotspotItemCell" id="l1G-oX-L8Z" customClass="landingScreenCollectionViewCell" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="147" height="107"/>
+                                        <rect key="frame" x="86.5" y="10" width="147" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="147" height="107"/>
@@ -472,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="343" height="33"/>
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -491,7 +491,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="111" width="375" height="506"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
@@ -716,7 +716,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
@@ -1031,7 +1031,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
@@ -1264,7 +1264,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rc0-JE-p2C">
-                                <rect key="frame" x="0.0" y="74" width="375" height="544"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="h0F-oa-Sbu" id="KgC-q0-vAI"/>
@@ -1275,7 +1275,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rc0-JE-p2C" firstAttribute="leading" secondItem="g3J-LA-dIn" secondAttribute="leading" id="SkP-Oo-Psp"/>
-                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="top" secondItem="g3J-LA-dIn" secondAttribute="top" constant="10" id="k4j-bQ-Ypv"/>
+                            <constraint firstItem="Rc0-JE-p2C" firstAttribute="top" secondItem="g3J-LA-dIn" secondAttribute="top" id="k4j-bQ-Ypv"/>
                             <constraint firstItem="Rc0-JE-p2C" firstAttribute="bottom" secondItem="g3J-LA-dIn" secondAttribute="bottom" id="qyf-Yn-PTW"/>
                             <constraint firstItem="Rc0-JE-p2C" firstAttribute="trailing" secondItem="g3J-LA-dIn" secondAttribute="trailing" id="zIV-we-VC4"/>
                         </constraints>
@@ -1611,10 +1611,11 @@
         <image name="messageGrey" width="42" height="42"/>
         <image name="pizza" width="42" height="42"/>
         <namedColor name="viewBackgroundColor">
-            <color red="0.88599997758865356" green="0.14100000262260437" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.88627450980392153" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ilh-L2-w9K"/>
         <segue reference="QAh-Tu-dXa"/>
     </inferredMetricsTieBreakers>
 </document>
