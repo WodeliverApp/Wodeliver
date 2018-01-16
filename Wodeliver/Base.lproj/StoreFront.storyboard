@@ -4,11 +4,11 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" name="viewBackgroundColor"/>
+                        <color key="selectedImageTintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="leL-up-rCN" kind="relationship" relationship="viewControllers" id="6Sb-4H-kKS"/>
@@ -374,7 +374,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Name  Time : 15 Min Before" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM7-jG-cpm">
                                                     <rect key="frame" x="15" y="8" width="345" height="39"/>
-                                                    <color key="backgroundColor" name="viewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -475,7 +475,7 @@
                                                         <constraint firstAttribute="width" constant="104" id="Pfy-7L-aRE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" name="viewBackgroundColor"/>
+                                                    <color key="textColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 45.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePm-WC-7aY">
@@ -484,7 +484,7 @@
                                                         <constraint firstAttribute="width" constant="104" id="eKE-C9-HrP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" name="viewBackgroundColor"/>
+                                                    <color key="textColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -548,7 +548,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.88627450980392153" green="0.12549019607843137" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VNe-Uz-BQ8" firstAttribute="leading" secondItem="TxV-70-g6s" secondAttribute="leading" constant="81" id="9t0-5f-8Vy"/>
                             <constraint firstItem="Tqb-GP-I5j" firstAttribute="leading" secondItem="TxV-70-g6s" secondAttribute="leading" id="Fc0-6V-EDO"/>
@@ -561,7 +561,7 @@
                         <viewLayoutGuide key="safeArea" id="TxV-70-g6s"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home_icon" selectedImage="home_icon" id="2qB-P6-ej5">
-                        <color key="badgeColor" name="viewBackgroundColor"/>
+                        <color key="badgeColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="DLe-Wv-wR1"/>
                     <connections>
@@ -598,7 +598,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="viewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qBC-FF-YjQ" firstAttribute="top" secondItem="CCC-fb-NnK" secondAttribute="bottom" constant="12" id="4aC-Wg-YVE"/>
                             <constraint firstItem="qBC-FF-YjQ" firstAttribute="bottom" secondItem="SBq-Un-7MJ" secondAttribute="bottom" id="DMA-Gf-AwC"/>
@@ -628,11 +628,5 @@
         <image name="setting_icon" width="24" height="24"/>
         <image name="store_management" width="24" height="24"/>
         <image name="store_profile" width="24" height="24"/>
-        <namedColor name="viewBackgroundColor">
-            <color red="0.88627450980392153" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="viewBackgroundColor">
-            <color red="0.88627450980392153" green="0.14117647058823529" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

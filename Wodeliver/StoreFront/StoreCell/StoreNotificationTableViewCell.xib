@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +64,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <state key="normal" title="Follow">
-                            <color key="titleColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <state key="selected" title="Following">
                             <color key="titleColor" red="0.65098039220000004" green="0.71764705880000002" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

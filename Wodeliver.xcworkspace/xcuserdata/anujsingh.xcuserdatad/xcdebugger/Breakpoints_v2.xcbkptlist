@@ -282,12 +282,12 @@
                   moduleName = "Wodeliver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anujsingh/Documents/Documents/Rosh/Wodeliver/WorkingCode/Wodeliver/Wodeliver/ViewController.swift"
-                  timestampString = "537780058.6488349"
+                  timestampString = "537801027.7284631"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
                   endingLineNumber = "131"
-                  offsetFromSymbolStart = "197">
+                  offsetFromSymbolStart = "200">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -297,30 +297,14 @@
                   moduleName = "Wodeliver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anujsingh/Documents/Documents/Rosh/Wodeliver/WorkingCode/Wodeliver/Wodeliver/ViewController.swift"
-                  timestampString = "537780058.651822"
+                  timestampString = "537801027.7313991"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
                   endingLineNumber = "131"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "148">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wodeliver/Classes/MyViewController.swift"
-            timestampString = "537780058.285779"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

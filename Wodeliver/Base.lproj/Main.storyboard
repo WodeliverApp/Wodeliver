@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="dDM-z9-6er">
@@ -50,7 +50,7 @@
                                                     <rect key="frame" x="20" y="0.0" width="325" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -288,7 +288,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-Jq-HCI">
                                                     <rect key="frame" x="82" y="76" width="60" height="25"/>
-                                                    <color key="backgroundColor" name="viewBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Juc-9P-PEs"/>
                                                         <constraint firstAttribute="height" constant="25" id="jxQ-DN-wx7"/>
@@ -505,7 +505,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="top" secondItem="lJY-bJ-EUt" secondAttribute="top" constant="4.5" id="79v-jj-RRc"/>
                             <constraint firstItem="lJY-bJ-EUt" firstAttribute="trailing" secondItem="kff-Xb-Ghd" secondAttribute="trailing" constant="16" id="Ecr-PM-EZg"/>
@@ -578,7 +578,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hp-hn-Zpm" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="25" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zBx-hD-bbx"/>
                                         </constraints>
@@ -601,7 +601,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-zm-8kA" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="95" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="svv-Sc-qCT"/>
                                         </constraints>
@@ -624,7 +624,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7U-ue-Zs4" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="165" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="SaQ-Tl-00B"/>
                                         </constraints>
@@ -647,7 +647,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please select Registration type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FW-Uf-Uvf" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="235" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="iB1-nn-Zxf"/>
                                         </constraints>
@@ -781,7 +781,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YsP-WI-ltX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="25" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="LQX-5V-0sU"/>
                                         </constraints>
@@ -804,7 +804,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFm-kT-6pf" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="8" y="95" width="327" height="40"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vJh-8e-MNg"/>
                                         </constraints>
@@ -831,7 +831,7 @@
                                             <constraint firstAttribute="height" constant="45" id="ADT-ok-Kqm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" name="viewBackgroundColor"/>
+                                        <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="btnLoginAction:" destination="Ko9-Wz-HH8" eventType="touchUpInside" id="R47-Pn-tuK"/>
@@ -1190,6 +1190,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="iT6-Tv-On7" kind="relationship" relationship="viewControllers" id="Yco-mk-wdQ"/>
@@ -1574,9 +1575,6 @@
         <image name="menu_icon" width="24" height="19"/>
         <image name="messageGrey" width="42" height="42"/>
         <image name="pizza" width="42" height="42"/>
-        <namedColor name="viewBackgroundColor">
-            <color red="0.88599997758865356" green="0.14100000262260437" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QAh-Tu-dXa"/>

@@ -1036,7 +1036,7 @@
 				DEVELOPMENT_TEAM = 47A8956Q4F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Wodeliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spotcodes.wodeliver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1054,7 +1054,7 @@
 				DEVELOPMENT_TEAM = 47A8956Q4F;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Wodeliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spotcodes.wodeliver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
