@@ -472,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="343" height="33"/>
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -491,7 +491,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="111" width="375" height="506"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
@@ -716,7 +716,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
@@ -861,7 +861,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-U8-CB9" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4ZY-bf-gMC"/>
                                         </constraints>
@@ -930,35 +930,6 @@
             <point key="canvasLocation" x="1630" y="1931"/>
         </scene>
         <!--Tracing-->
-        <scene sceneID="opb-Hb-ePP">
-            <objects>
-                <viewController id="FhS-Q2-ehT" customClass="TracingViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UWJ-L3-HiK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YE-jn-vO9">
-                                <rect key="frame" x="129" y="323" width="117" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="0YE-jn-vO9" firstAttribute="centerY" secondItem="UWJ-L3-HiK" secondAttribute="centerY" id="C7E-hS-h93"/>
-                            <constraint firstItem="0YE-jn-vO9" firstAttribute="centerX" secondItem="UWJ-L3-HiK" secondAttribute="centerX" id="VJY-v2-2oU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="E9p-Qm-4CZ"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Tracing" id="x8x-Ve-KvY"/>
-                    <navigationItem key="navigationItem" id="pxq-5r-gbK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="scu-fA-gug" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2278" y="1096"/>
-        </scene>
-        <!--Tracing-->
         <scene sceneID="eO7-Mc-Q61">
             <objects>
                 <navigationController id="Uml-1n-FmZ" sceneMemberID="viewController">
@@ -967,12 +938,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="FhS-Q2-ehT" kind="relationship" relationship="rootViewController" id="QJZ-de-Pyh"/>
+                        <segue destination="jlX-Bz-DoH" kind="relationship" relationship="rootViewController" id="B4P-xN-I9b"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggc-Qx-kko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="1096"/>
+            <point key="canvasLocation" x="1676" y="1094"/>
         </scene>
         <!--Map-->
         <scene sceneID="hp0-BS-e9E">
@@ -1031,12 +1002,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Notification"/>
                                             <segment title="Current"/>
                                             <segment title="History"/>
                                         </segments>
@@ -1047,11 +1017,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boT-Ed-Wxb">
-                                        <rect key="frame" x="308" y="39" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="Setting"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSN-LT-Wy4">
                                         <rect key="frame" x="119" y="41" width="137" height="21"/>
                                         <constraints>
@@ -1103,7 +1068,6 @@
                         <outlet property="myTableView" destination="a0m-R2-4VF" id="cCa-JA-lKu"/>
                         <outlet property="redBackgroundView" destination="VXm-H0-oRr" id="2Dp-zq-exN"/>
                         <segue destination="ofg-rG-GKN" kind="show" identifier="historyToDetailVC" id="ytW-oC-JMI"/>
-                        <segue destination="jlX-Bz-DoH" kind="show" identifier="currentToOrderStatus" id="nNi-2U-Etk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4et-5O-fNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1170,7 +1134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Fk-N3-zdo" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="343" height="33"/>
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="snn-hx-lIL"/>
                                 </constraints>
@@ -1186,7 +1150,7 @@
                                 </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-St-zck">
-                                <rect key="frame" x="0.0" y="121" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="VM6-ND-Y8c" id="Gcn-nx-FdK"/>
@@ -1225,7 +1189,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cdp-fg-Zgq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="iT6-Tv-On7" kind="relationship" relationship="viewControllers" id="Yco-mk-wdQ"/>
@@ -1290,10 +1254,10 @@
             </objects>
             <point key="canvasLocation" x="2724" y="-1046.6266866566718"/>
         </scene>
-        <!--Order Status View Controller-->
+        <!--Tracing View Controller-->
         <scene sceneID="b07-j7-WyJ">
             <objects>
-                <viewController id="jlX-Bz-DoH" customClass="OrderStatusViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jlX-Bz-DoH" customClass="TracingViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cdi-Sg-aak">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1316,13 +1280,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vjB-t0-qQd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6k7-Fj-G6V"/>
                     <connections>
                         <outlet property="orderStatusTableView" destination="FhV-b2-ELh" id="Jo1-3z-J3A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iib-UP-OwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="2725"/>
+            <point key="canvasLocation" x="2356" y="1094"/>
         </scene>
         <!--New Order View Controller-->
         <scene sceneID="mky-Xb-SOE">
@@ -1603,7 +1568,6 @@
     </scenes>
     <resources>
         <image name="ChatHistory" width="42" height="42"/>
-        <image name="Setting" width="42" height="42"/>
         <image name="TrackLocation" width="24" height="24"/>
         <image name="banner" width="139" height="51"/>
         <image name="demoImage" width="42" height="42"/>

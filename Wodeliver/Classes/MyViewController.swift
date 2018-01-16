@@ -12,7 +12,6 @@ class MyViewController: UIViewController {
 
     //MARK: Public Variables
     struct SegmentDetail {
-        var isNotification = false
         var isCurrent = false
         var isHistory = false
         var isHistoryDetail = false
@@ -48,7 +47,7 @@ class MyViewController: UIViewController {
         self.myTableView.register(UINib(nibName: "HistoryHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryHeaderTableViewCell")
     }
     func viewCustomization(){
-        self.mySegmentView.selectedSegmentIndex = 1
+        self.mySegmentView.selectedSegmentIndex = 0
         self.view.backgroundColor = Colors.viewBackgroundColor
         self.redBackgroundView.backgroundColor = Colors.redBackgroundColor
         //self.mySegmentView.backgroundColor = UIColor.white
@@ -66,19 +65,12 @@ class MyViewController: UIViewController {
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-           segmentDetail.isNotification = true
-             segmentDetail.isCurrent = false
+             segmentDetail.isCurrent = true
             segmentDetail.isHistory = false
             segmentDetail.isHistoryDetail = false
         case 1:
-            segmentDetail.isCurrent = true
-            segmentDetail.isHistory = false
-            segmentDetail.isNotification = false
-            segmentDetail.isHistoryDetail = false
-        case 2:
             segmentDetail.isCurrent = false
             segmentDetail.isHistory = true
-            segmentDetail.isNotification = false
             segmentDetail.isHistoryDetail = false
         default: break
         }

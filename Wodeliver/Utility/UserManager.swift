@@ -75,6 +75,8 @@ class UserManager{
         UserDefaults.standard.removeObject(forKey: userDetailsKey)
         UserDefaults.standard.removeObject(forKey: userIdKey)
         UserDefaults.standard.removeObject(forKey: userTypeIdKey)
+        let appDomain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: appDomain) 
     }
     static func setDeviceToken(token: String) {
         UserDefaults.standard.set(token, forKey: deviceToken)

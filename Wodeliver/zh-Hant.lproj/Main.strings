@@ -65,11 +65,11 @@
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "hQg-KP-hM7"; */
 "hQg-KP-hM7.normalTitle" = "Login";
 
-/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[0] = "Notification"; ObjectID = "iIP-Nn-rzP"; */
-"iIP-Nn-rzP.segmentTitles[0]" = "Notification";
+/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[0] = "Current"; ObjectID = "iIP-Nn-rzP"; */
+"iIP-Nn-rzP.segmentTitles[0]" = "Current";
 
-/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[1] = "Current"; ObjectID = "iIP-Nn-rzP"; */
-"iIP-Nn-rzP.segmentTitles[1]" = "Current";
+/* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[1] = "History"; ObjectID = "iIP-Nn-rzP"; */
+"iIP-Nn-rzP.segmentTitles[1]" = "History";
 
 /* Class = "UISegmentedControl"; iIP-Nn-rzP.segmentTitles[2] = "History"; ObjectID = "iIP-Nn-rzP"; */
 "iIP-Nn-rzP.segmentTitles[2]" = "History";
@@ -110,5 +110,5 @@
 /* Class = "UILabel"; text = "Jitin Bhat"; ObjectID = "y8d-io-f3M"; */
 "y8d-io-f3M.text" = "Jitin Bhat";
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "zcA-sm-jMC"; */
-"zcA-sm-jMC.title" = "Item";
+/* Class = "UITabBarItem"; title = "My"; ObjectID = "zcA-sm-jMC"; */
+"zcA-sm-jMC.title" = "My";
