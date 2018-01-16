@@ -12,6 +12,7 @@ target 'Wodeliver' do
     pod 'ExpyTableView'
     pod 'Kingfisher'
     pod 'SideMenu'
+    pod 'MBProgressHUD', '~> 1.1.0'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

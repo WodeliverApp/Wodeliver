@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Foundation
+import MBProgressHUD
+import QuartzCore
 
 extension UIButton {
     func customizeButton(){
@@ -128,6 +131,28 @@ extension String
     }
 }
 
+extension UITableViewController {
+    func showHudForTable(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        hud.isUserInteractionEnabled = false
+        hud.layer.zPosition = 2
+        self.tableView.layer.zPosition = 1
+    }
+}
+
+extension UIViewController {
+    func showHud(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        view.isUserInteractionEnabled = false
+    }
+    
+    func hideHUD() {
+        view.isUserInteractionEnabled = true
+        MBProgressHUD.hide(for: self.view, animated: true)
+    }
+}
 
 
 

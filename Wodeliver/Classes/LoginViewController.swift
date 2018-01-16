@@ -95,15 +95,15 @@ class LoginViewController: UIViewController {
         // self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
         self.view.endEditing(true)
         
-        let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
-        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
-        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-        self.present(logInViewController, animated: true, completion: nil)
+//        let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+//        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+//        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+//        self.present(logInViewController, animated: true, completion: nil)
         
-//        if self.isValidate() {
-//            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
-//            self.userLogin(param: params)
-//        }
+        if self.isValidate() {
+            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
+            self.userLogin(param: params)
+        }
     }
     
     func userLogin(param : [String : String]){
@@ -115,9 +115,7 @@ class LoginViewController: UIViewController {
                 return
             }
             ProgressBar.hideActivityIndicator(view: self.view)
-            print(json!)
             UserManager.setUserDetail(detail: json!["userData"])
-            
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
                 let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
