@@ -36,7 +36,9 @@ class ChatViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.view.backgroundColor = Colors.redBackgroundColor
     }
+  
     func registerCustomCell()
     {
         self.chatTableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")

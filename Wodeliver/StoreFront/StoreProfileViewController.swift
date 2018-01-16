@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreProfileViewController: UIViewController {
+class StoreProfileViewController: UIViewController{
     
     let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
     let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
@@ -23,6 +23,8 @@ class StoreProfileViewController: UIViewController {
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCategory: UITextField!
+    @IBOutlet weak var imgProfile: UIImageView!
+    var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,11 @@ class StoreProfileViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
         self.view.addGestureRecognizer(tapGesture)
         self.viewCostomization()
+        
+        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(self.imagePicker(_:)))
+        imgProfile.addGestureRecognizer(imageGesture)
+        imgProfile.isUserInteractionEnabled = true
+        imagePicker.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +59,41 @@ class StoreProfileViewController: UIViewController {
     }
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+    @IBAction func setting_Action(_ sender: Any) {
+        let alertController = UIAlertController(title: nil, message:nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let logoutAction = UIAlertAction(title: "Logout".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            
+            UserManager.logout(isDisable: true)
+            
+            let strBoard = UIStoryboard(name: "Main", bundle: nil)
+            let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
+            logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+            self.present(logInViewController, animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized, style: UIAlertActionStyle.cancel)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func imagePicker(_ sender: UITapGestureRecognizer) {
+        let alertController = UIAlertController(title: nil, message:nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let TakePhoto = UIAlertAction(title: "Take Photo".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+                self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        }
+        let ChoosePhoto = UIAlertAction(title: "Choose from gallery".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized, style: UIAlertActionStyle.cancel)
+        alertController.addAction(TakePhoto)
+        alertController.addAction(ChoosePhoto)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func viewCostomization(){
@@ -144,4 +186,22 @@ extension StoreProfileViewController: UITextFieldDelegate{
         UIView.commitAnimations()
         self.view.layoutIfNeeded()
     }
+}
+
+extension StoreProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+    
+    // MARK: - UIImagePickerController Delegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: {
+            if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                self.imgProfile.image = pickedImage
+            }
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }

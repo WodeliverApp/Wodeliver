@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_profile" translatesAutoresizingMaskIntoConstraints="NO" id="IcF-9V-LW8" customClass="MyUImageView" customModule="Wodeliver" customModuleProvider="target">
-                        <rect key="frame" x="9" y="4" width="50" height="50"/>
+                        <rect key="frame" x="9" y="11" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="CUz-iA-Wyd"/>
                             <constraint firstAttribute="height" constant="50" id="Hwm-7M-eyH"/>
@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" text="Your order has been dispatch check order detail for more info" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-Ug-Nnf">
-                        <rect key="frame" x="59" y="29" width="349" height="51"/>
+                        <rect key="frame" x="68" y="29" width="330" height="51"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -97,13 +97,13 @@
                     <constraint firstAttribute="trailing" secondItem="xMY-r0-vAi" secondAttribute="trailing" constant="8" id="ISi-8j-BhA"/>
                     <constraint firstItem="XuC-xn-MC0" firstAttribute="leading" secondItem="Odr-6b-bFF" secondAttribute="leading" id="Kck-MC-RmH"/>
                     <constraint firstAttribute="bottom" secondItem="XuC-xn-MC0" secondAttribute="bottom" constant="2" id="Mpk-mh-74D"/>
-                    <constraint firstAttribute="trailing" secondItem="fKW-Ug-Nnf" secondAttribute="trailing" id="YhD-6c-AXM"/>
+                    <constraint firstAttribute="trailing" secondItem="fKW-Ug-Nnf" secondAttribute="trailing" constant="10" id="YhD-6c-AXM"/>
                     <constraint firstItem="xMY-r0-vAi" firstAttribute="leading" secondItem="Bj1-6w-hgS" secondAttribute="trailing" constant="8" id="ZXz-M7-DhE"/>
                     <constraint firstItem="Bj1-6w-hgS" firstAttribute="top" secondItem="Odr-6b-bFF" secondAttribute="top" constant="12" id="ati-8C-c99"/>
                     <constraint firstItem="IcF-9V-LW8" firstAttribute="leading" secondItem="XuC-xn-MC0" secondAttribute="trailing" constant="5" id="bXo-9K-X5a"/>
                     <constraint firstAttribute="bottom" secondItem="ore-RB-0PW" secondAttribute="bottom" constant="8" id="fzr-PF-34C"/>
-                    <constraint firstItem="IcF-9V-LW8" firstAttribute="top" secondItem="Odr-6b-bFF" secondAttribute="top" constant="4" id="hBL-Dq-mBx"/>
-                    <constraint firstItem="fKW-Ug-Nnf" firstAttribute="leading" secondItem="IcF-9V-LW8" secondAttribute="trailing" id="nMs-SO-Xg5"/>
+                    <constraint firstItem="IcF-9V-LW8" firstAttribute="top" secondItem="Odr-6b-bFF" secondAttribute="top" constant="11" id="hBL-Dq-mBx"/>
+                    <constraint firstItem="fKW-Ug-Nnf" firstAttribute="leading" secondItem="IcF-9V-LW8" secondAttribute="trailing" constant="9" id="nMs-SO-Xg5"/>
                     <constraint firstItem="XuC-xn-MC0" firstAttribute="top" secondItem="Odr-6b-bFF" secondAttribute="top" constant="2" id="o1G-t6-k7V"/>
                     <constraint firstItem="Bj1-6w-hgS" firstAttribute="leading" secondItem="IcF-9V-LW8" secondAttribute="trailing" constant="8" id="ztz-dH-vj3"/>
                 </constraints>

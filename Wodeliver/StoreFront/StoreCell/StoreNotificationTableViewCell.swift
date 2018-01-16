@@ -19,6 +19,12 @@ class StoreNotificationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
+        
+//        let sidePadding: CGFloat = 20.0
+//      let  titleEdgeInsets = UIEdgeInsets(top: 0.0, left: sidePadding, bottom: 0.0, right:  sidePadding)
+//      let  contentEdgeInsets = UIEdgeInsets(top: 0.0, left: sidePadding, bottom: 0.0, right: sidePadding)
+//        self.contentView.contentEdgeInsets = contentEdgeInsets
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,7 +33,7 @@ class StoreNotificationTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     class func getCellHeight() -> CGFloat {
-        return 70.0
+        return 75.0
     }
     
 }

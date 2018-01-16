@@ -148,17 +148,18 @@ extension StoreHomeViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 55
-        }
-        if indexPath.row == tableView.numberOfSections - 1 || indexPath.row == indexPath.section {
-//            if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-//                return 100
-//            }
-            return 85
-        }else{
+//        if indexPath.section == 0 {
+//            return 55
+//        }
+//        if indexPath.row == tableView.numberOfSections - 1 || indexPath.row == indexPath.section {
+////            if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+////                return 100
+////            }
+//            return 85
+//        }else{
+//        return 55
+//        }
         return 55
-        }
     }
 }
 

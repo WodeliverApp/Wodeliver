@@ -94,10 +94,16 @@ class LoginViewController: UIViewController {
     @IBAction func btnLoginAction(_ sender: Any) {
         // self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
         self.view.endEditing(true)
-        if self.isValidate() {
-            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
-            self.userLogin(param: params)
-        }
+        
+        let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+        let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.present(logInViewController, animated: true, completion: nil)
+        
+//        if self.isValidate() {
+//            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
+//            self.userLogin(param: params)
+//        }
     }
     
     func userLogin(param : [String : String]){
@@ -112,10 +118,17 @@ class LoginViewController: UIViewController {
             print(json!)
             UserManager.setUserDetail(detail: json!["userData"])
             
-            let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
-            let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
-            logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-            self.present(logInViewController, animated: true, completion: nil)
+            if UserManager.getUserType() == .storeManager{
+                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                self.present(logInViewController, animated: true, completion: nil)
+            }else if UserManager.getUserType() == .deliveryBoy{
+                self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+            }else{
+                OtherHelper.simpleDialog("Error", "Coming soon", self)
+            }
+            
         })
     }
     

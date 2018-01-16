@@ -60,6 +60,7 @@ class NetworkHelper{
             case .failure(let error):
                 if (error as NSError).code != -999{
                     if let controller = controller {
+                        ProgressBar.hideActivityIndicator(view: controller.view)
                         OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
@@ -91,6 +92,7 @@ class NetworkHelper{
             case .failure(let error):
                 if (error as NSError).code != -999{
                     if let controller = controller {
+                        ProgressBar.hideActivityIndicator(view: controller.view)
                         OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
@@ -124,6 +126,7 @@ class NetworkHelper{
             case .failure(let error):
                 if (error as NSError).code != -999{
                     if let controller = controller {
+                        ProgressBar.hideActivityIndicator(view: controller.view)
                         OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
@@ -149,6 +152,7 @@ class NetworkHelper{
             case .failure(let error):
                 if (error as NSError).code != -999{
                     if let controller = controller {
+                        ProgressBar.hideActivityIndicator(view: controller.view)
                         OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)

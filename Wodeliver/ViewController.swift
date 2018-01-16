@@ -136,6 +136,16 @@ class ViewController: UIViewController {
             ProgressBar.hideActivityIndicator(view: self.view)
             print(json!)
             UserManager.setUserDetail(detail: json!["userData"])
+            if UserManager.getUserType() == .storeManager{
+                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+                //logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                self.present(logInViewController, animated: true, completion: nil)
+            }else if UserManager.getUserType() == .deliveryBoy{
+                self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+            }else{
+                OtherHelper.simpleDialog("Error", "Coming soon", self)
+            }
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
