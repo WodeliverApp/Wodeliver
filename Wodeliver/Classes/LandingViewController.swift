@@ -75,7 +75,7 @@ class LandingViewController: UIViewController {
     }
     
 }
-extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -126,35 +126,34 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         self.performSegue(withIdentifier: "HomeToListing", sender: nil)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsetsMake(0, 0, 0, 0)
-//        // top, left, bottom, right
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.0
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.0
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0,5,0,5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
 
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        switch collectionView.tag {
-//        case 1:
-//            break
-//        case 2:
-//            break
-//        case 3:
-//            let padding: CGFloat =  10
-//            let collectionViewSize = collectionView.frame.size.width - padding
-//            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-//        default:
-//            break
-//        }
-//        return CGSize(width: 0, height: 0)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch collectionView.tag {
+        case 1:
+            return CGSize(width: 78, height: 80)
+        case 2:
+            return CGSize(width: 78, height: 80)
+        case 3:
+            let padding: CGFloat =  0
+            let collectionViewSize = collectionView.frame.size.width - padding
+            return CGSize(width: collectionViewSize/2-10, height: 107)
+        default:
+            break
+        }
+        return CGSize(width: 0, height: 0)
+    }
 }
 
 extension LandingViewController: UISideMenuNavigationControllerDelegate {

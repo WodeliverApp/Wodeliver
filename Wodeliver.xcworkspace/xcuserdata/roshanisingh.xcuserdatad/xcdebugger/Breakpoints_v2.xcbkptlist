@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wodeliver/Classes/StoreDetailViewController.swift"
-            timestampString = "537731123.787608"
+            timestampString = "537773540.337041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -74,7 +74,7 @@
                   moduleName = "Wodeliver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/roshanisingh/Documents/WorkingCode/Wodeliver/LatestCode/Wodeliver/Wodeliver/ViewController.swift"
-                  timestampString = "537729641.0959769"
+                  timestampString = "537772321.534501"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
@@ -89,7 +89,7 @@
                   moduleName = "Wodeliver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/roshanisingh/Documents/WorkingCode/Wodeliver/LatestCode/Wodeliver/Wodeliver/ViewController.swift"
-                  timestampString = "537729641.101758"
+                  timestampString = "537772321.539742"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
@@ -106,45 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wodeliver/NetworkClass/NetworkHelper.swift"
-            timestampString = "537722659.925487"
+            timestampString = "537773540.3397191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "post(url:param:_:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Wodeliver.NetworkHelper.post(url: Swift.String, param: Swift.Dictionary&lt;Swift.String, Any&gt;, Swift.Optional&lt;__ObjC.UIViewController&gt;, completionHandler: (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Wodeliver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roshanisingh/Documents/WorkingCode/Wodeliver/LatestCode/Wodeliver/Wodeliver/NetworkClass/NetworkHelper.swift"
-                  timestampString = "537729641.12207"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "514">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static Wodeliver.NetworkHelper.post(url: Swift.String, param: Swift.Dictionary&lt;Swift.String, Any&gt;, Swift.Optional&lt;__ObjC.UIViewController&gt;, completionHandler: (Swift.Optional&lt;SwiftyJSON.JSON&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Wodeliver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roshanisingh/Documents/WorkingCode/Wodeliver/LatestCode/Wodeliver/Wodeliver/NetworkClass/NetworkHelper.swift"
-                  timestampString = "537729641.127405"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wodeliver/NetworkClass/NetworkHelper.swift"
-            timestampString = "537722659.9378591"
+            timestampString = "537773540.340479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
