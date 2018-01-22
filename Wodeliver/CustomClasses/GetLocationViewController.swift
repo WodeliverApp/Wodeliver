@@ -29,10 +29,11 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
     // MARK: - CLLocationManager Delegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        getAddressFromLatLon(pdblLatitude: String(locValue.latitude), withLongitude: String(locValue.longitude))
-        // print(addressString)
+        if let locatiobValue = manager.location?.coordinate{
+            locationManager.stopUpdatingLocation()
+            print("locations = \(locatiobValue.latitude) \(locatiobValue.longitude)")
+            getAddressFromLatLon(pdblLatitude: String(locatiobValue.latitude), withLongitude: String(locatiobValue.longitude))
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -45,7 +46,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
 //            locationManager.stopUpdatingLocation()
         }
     }
@@ -96,6 +97,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                     address ["full_address"] =  addressString
                     UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
                     UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
+                    self.dismiss(animated: true, completion: nil)
                 }
         })
     }
@@ -164,7 +166,9 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         }
         UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
         UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: ({
+            self.dismiss(animated: true, completion: nil)
+        }))
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
