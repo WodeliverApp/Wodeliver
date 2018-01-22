@@ -8,50 +8,98 @@
 
 import UIKit
 import CoreData
-
-
+import CoreLocation
+import GooglePlaces
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+    
+    var locationManager = CLLocationManager()
     var window: UIWindow?
-
-
+   var  clLocationCoordinate: CLLocationCoordinate2D?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSPlacesClient.provideAPIKey(GooglePlace.googlePlaceKey)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if UserDefaults.standard.value(forKey: AppConstant.currentUserLocation) == nil{
+            UserDefaults.standard.set(false, forKey: AppConstant.isCurrentLocationSaved)
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        // Saves changes in the application's managed object context before the application terminates.
- 
+     
     }
 
-    // MARK: - Core Data stack
-
-
-
-    // MARK: - Core Data Saving support
-
-
-
+    // MARK: - CLLocationManager Delegate
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        getAddressFromLatLon(pdblLatitude: String(locValue.latitude), withLongitude: String(locValue.longitude))
+//       // print(addressString)
+//    }
+//
+//    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+//        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+//        let lat: Double = Double("\(pdblLatitude)")!
+//        //21.228124
+//        let lon: Double = Double("\(pdblLongitude)")!
+//        //72.833770
+//        let ceo: CLGeocoder = CLGeocoder()
+//        center.latitude = lat
+//        center.longitude = lon
+//
+//        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+//
+//
+//        ceo.reverseGeocodeLocation(loc, completionHandler:
+//            {(placemarks, error) in
+//                if (error != nil)
+//                {
+//                    print("reverse geodcode fail: \(error!.localizedDescription)")
+//                }
+//                let pm = placemarks! as [CLPlacemark]
+//
+//                if pm.count > 0 {
+//                    let pm = placemarks![0]
+//                    print(pm.country)
+//                    print(pm.locality)
+//                    print(pm.subLocality)
+//                    print(pm.thoroughfare)
+//                    print(pm.postalCode)
+//                    print(pm.subThoroughfare)
+//                    var addressString : String = ""
+//                    if pm.subLocality != nil {
+//                        addressString = addressString + pm.subLocality! + ", "
+//                    }
+//                    if pm.thoroughfare != nil {
+//                        addressString = addressString + pm.thoroughfare! + ", "
+//                    }
+//                    if pm.locality != nil {
+//                        addressString = addressString + pm.locality! + ", "
+//                    }
+//                    if pm.country != nil {
+//                        addressString = addressString + pm.country! + ", "
+//                    }
+//                    if pm.postalCode != nil {
+//                        addressString = addressString + pm.postalCode! + " "
+//                    }
+//
+//
+//                    print(addressString)
+//                }
+//        })
+//
+//    }
 }
 

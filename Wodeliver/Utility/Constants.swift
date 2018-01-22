@@ -22,6 +22,8 @@ struct Path {
     static let loginURL : String = "\(baseURL)/login"
     static let signUpURL : String = "\(baseURL)/user"
     static let categoryURL : String = "\(baseURL)/category"
+    static let storeListURL : String = "\(baseURL)/store/category/location/?"
+    static let itemListURL : String = "\(baseURL)/menu/itemCategory/?"
 }
 
 struct AlertMessages {
@@ -93,4 +95,13 @@ struct AlertMessages {
     
     static let ComingSoonMessage = "Coming soon.."
     
+}
+
+struct AppConstant {
+    static let isCurrentLocationSaved = "_isCurrentLocationSaved"
+    static let currentUserLocation = "_userLocation"
+}
+
+struct GooglePlace {
+    static let googlePlaceKey = "AIzaSyCl4DiAtMzojEJPBMxDoknyveoez1lOt10"
 }

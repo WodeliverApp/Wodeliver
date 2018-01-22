@@ -20,5 +20,15 @@ class landingScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var memberLbl: UILabel!
     @IBOutlet weak var buyNowBtn: UIButton!
     
+    
+
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // Initialization code
+        
+            
+    }
 
 }

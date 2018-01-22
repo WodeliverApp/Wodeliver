@@ -14,6 +14,7 @@ class StorePointViewController: UIViewController {
     @IBOutlet weak var storepointTableView: UITableView!
     
     var isItem:Bool! = true
+    var comingFrom:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
@@ -55,7 +56,29 @@ class StorePointViewController: UIViewController {
         }
         self.storepointTableView.reloadData()
     }
-    
+    func getListing(param : [String : String]){
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard (json != nil) else {
+              
+                return
+            }
+            ProgressBar.hideActivityIndicator(view: self.view)
+            UserManager.setUserDetail(detail: json!["userData"])
+            if UserManager.getUserType() == .storeManager{
+                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                self.present(logInViewController, animated: true, completion: nil)
+            }else if UserManager.getUserType() == .deliveryBoy{
+                self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+            }else{
+                OtherHelper.simpleDialog("Error", "Coming soon", self)
+            }
+            
+        })
+    }
 }
 extension StorePointViewController: UITableViewDelegate,UITableViewDataSource {
     // MARK: - UITableView Delegate and datasource Methods

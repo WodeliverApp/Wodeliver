@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w88-5U-Lqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="-533"/>
+            <point key="canvasLocation" x="-1846" y="-581"/>
         </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="WWa-iJ-HYX">
@@ -152,11 +152,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar userInteractionEnabled="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zgx-6o-Cbb">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zgx-6o-Cbb">
                                 <rect key="frame" x="0.0" y="64" width="320" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="3dd-Hf-uWB"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="c5b-dP-JHq" id="xfu-WA-qb6"/>
@@ -182,7 +183,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="78" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZuP-xM-A8i">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZuP-xM-A8i">
                                                     <rect key="frame" x="14" y="15" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
@@ -223,7 +224,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="76" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5H7-wR-U5A">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5H7-wR-U5A">
                                                     <rect key="frame" x="13" y="16" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
@@ -446,15 +447,16 @@
                         <outlet property="categoryCollectionView" destination="pnH-Eu-6EZ" id="sCi-5B-VyO"/>
                         <outlet property="hotspotCollectionView" destination="j9v-7I-bN4" id="ERg-Hu-Mmq"/>
                         <outlet property="itemCollectionView" destination="bDX-kN-Olp" id="czU-NU-UxK"/>
-                        <outlet property="searchDisplayController" destination="j1X-qz-ixs" id="Emn-0R-Vwc"/>
+                        <outlet property="searchBar_ref" destination="Zgx-6o-Cbb" id="JCX-PQ-V85"/>
+                        <outlet property="searchController_ref" destination="j1X-qz-ixs" id="uxI-3f-UVJ"/>
                         <segue destination="cOV-OT-dnl" kind="show" identifier="HomeToListing" id="KJo-8K-JM2"/>
+                        <segue destination="jRf-Hl-8zV" kind="presentation" identifier="getLocationSegue" id="WVN-88-dMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAb-hh-uML" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="j1X-qz-ixs">
                     <connections>
                         <outlet property="delegate" destination="c5b-dP-JHq" id="xrk-rq-bIP"/>
-                        <outlet property="searchBar" destination="Zgx-6o-Cbb" id="3z6-jT-Cv3"/>
                         <outlet property="searchContentsController" destination="c5b-dP-JHq" id="jO1-2y-vBr"/>
                         <outlet property="searchResultsDataSource" destination="c5b-dP-JHq" id="EtP-1Q-XQZ"/>
                         <outlet property="searchResultsDelegate" destination="c5b-dP-JHq" id="ay5-Pp-NKG"/>
@@ -471,8 +473,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
+                                <rect key="frame" x="16" y="69" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -491,7 +493,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="110" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
@@ -508,16 +510,16 @@
                         <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="top" secondItem="lJY-bJ-EUt" secondAttribute="top" constant="4.5" id="79v-jj-RRc"/>
+                            <constraint firstItem="sci-Qj-S4m" firstAttribute="trailing" secondItem="lJY-bJ-EUt" secondAttribute="trailing" id="9LK-uu-W98"/>
                             <constraint firstItem="lJY-bJ-EUt" firstAttribute="trailing" secondItem="kff-Xb-Ghd" secondAttribute="trailing" constant="16" id="Ecr-PM-EZg"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="trailing" secondItem="lJY-bJ-EUt" secondAttribute="trailing" id="HMe-a3-qD4"/>
-                            <constraint firstItem="sci-Qj-S4m" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" id="IIB-mQ-me3"/>
+                            <constraint firstItem="sci-Qj-S4m" firstAttribute="top" secondItem="lJY-bJ-EUt" secondAttribute="top" id="K8i-Az-LiE"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" id="LQx-CY-ML3"/>
-                            <constraint firstItem="sci-Qj-S4m" firstAttribute="trailing" secondItem="lJY-bJ-EUt" secondAttribute="trailing" id="Vrl-pH-GyE"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="bottom" secondItem="lJY-bJ-EUt" secondAttribute="bottom" id="knK-bu-YfU"/>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" constant="16" id="l96-fe-Kv3"/>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="centerX" secondItem="nHw-35-siJ" secondAttribute="centerX" id="muJ-a6-a2E"/>
-                            <constraint firstItem="XUz-TG-MKv" firstAttribute="top" secondItem="sci-Qj-S4m" secondAttribute="bottom" id="rg8-tM-S5u"/>
-                            <constraint firstItem="sci-Qj-S4m" firstAttribute="top" secondItem="kff-Xb-Ghd" secondAttribute="bottom" constant="9.5" id="ycz-K4-n5h"/>
+                            <constraint firstItem="sci-Qj-S4m" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" id="n9J-Vb-VMe"/>
+                            <constraint firstItem="XUz-TG-MKv" firstAttribute="top" secondItem="sci-Qj-S4m" secondAttribute="bottom" id="x0Y-y6-dbm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lJY-bJ-EUt"/>
                     </view>
@@ -564,6 +566,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJ7-Os-1a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1316" y="-559.07046476761627"/>
+        </scene>
+        <!--Get Location View Controller-->
+        <scene sceneID="NZM-dk-4cH">
+            <objects>
+                <viewController id="jRf-Hl-8zV" customClass="GetLocationViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLW-P9-n8H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select your current location for better service " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDn-YO-GwC">
+                                <rect key="frame" x="0.0" y="119" width="375" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJk-nY-kPE">
+                                <rect key="frame" x="99" y="309" width="178" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Detech My Location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDetectMyLocation_Action:" destination="jRf-Hl-8zV" eventType="touchUpInside" id="iYm-Bb-NnV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-lx-R6q">
+                                <rect key="frame" x="99" y="391" width="178" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Use Manually">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnUseMannual_Action:" destination="jRf-Hl-8zV" eventType="touchUpInside" id="cz8-g8-Pcw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ayP-PK-HPP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qd-TG-sEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1804" y="138.98050974512745"/>
+        </scene>
+        <!--Search Controller View Controller-->
+        <scene sceneID="FYL-MC-e5S">
+            <objects>
+                <viewController storyboardIdentifier="SearchControllerViewController" id="Bxh-c8-6dU" customClass="SearchControllerViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cl1-HF-85S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h9Y-Aj-Fx7">
+                                <rect key="frame" x="0.0" y="111" width="375" height="561"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Bxh-c8-6dU" id="E4D-WL-4D7"/>
+                                    <outlet property="delegate" destination="Bxh-c8-6dU" id="Zyr-O8-KlW"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o2h-XW-7XU" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
+                                <rect key="frame" x="52" y="75" width="270" height="29"/>
+                                <segments>
+                                    <segment title="Menu"/>
+                                    <segment title="StoreFront"/>
+                                </segments>
+                                <color key="tintColor" red="0.89699000120162964" green="0.10953419655561447" blue="0.13760128617286682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o2h-XW-7XU" firstAttribute="top" secondItem="2bc-gh-BjR" secondAttribute="top" constant="55" id="8AR-yN-PrG"/>
+                            <constraint firstItem="h9Y-Aj-Fx7" firstAttribute="centerX" secondItem="Cl1-HF-85S" secondAttribute="centerX" id="BEh-za-mXe"/>
+                            <constraint firstItem="h9Y-Aj-Fx7" firstAttribute="trailing" secondItem="2bc-gh-BjR" secondAttribute="trailing" id="G3e-lN-IBi"/>
+                            <constraint firstItem="h9Y-Aj-Fx7" firstAttribute="bottom" secondItem="2bc-gh-BjR" secondAttribute="bottom" constant="5" id="a70-mE-qpp"/>
+                            <constraint firstItem="h9Y-Aj-Fx7" firstAttribute="leading" secondItem="2bc-gh-BjR" secondAttribute="leading" id="fH0-Uf-nR5"/>
+                            <constraint firstItem="2bc-gh-BjR" firstAttribute="trailing" secondItem="o2h-XW-7XU" secondAttribute="trailing" constant="53" id="pjk-kW-tNy"/>
+                            <constraint firstItem="o2h-XW-7XU" firstAttribute="leading" secondItem="2bc-gh-BjR" secondAttribute="leading" constant="52" id="wGt-Mh-Z1h"/>
+                            <constraint firstItem="h9Y-Aj-Fx7" firstAttribute="top" secondItem="o2h-XW-7XU" secondAttribute="bottom" constant="8" id="ze8-AL-su6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2bc-gh-BjR"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchTableView" destination="h9Y-Aj-Fx7" id="0hg-xn-ilm"/>
+                        <outlet property="segmentView" destination="o2h-XW-7XU" id="ZZq-58-7PN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-Tb-a1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -716,7 +813,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
