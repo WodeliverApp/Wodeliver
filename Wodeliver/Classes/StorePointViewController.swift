@@ -15,6 +15,8 @@ class StorePointViewController: UIViewController {
     
     var isItem:Bool! = true
     var comingFrom:String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
@@ -60,7 +62,7 @@ class StorePointViewController: UIViewController {
     
     func getDataFromServer()  {
         //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
-        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
+        NetworkHelper.get(url: Path.storeListURL, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard let json = json else {
                 return
