@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -493,7 +492,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sci-Qj-S4m">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cOV-OT-dnl" id="1rE-8e-f6E"/>
@@ -513,13 +512,13 @@
                             <constraint firstItem="sci-Qj-S4m" firstAttribute="trailing" secondItem="lJY-bJ-EUt" secondAttribute="trailing" id="9LK-uu-W98"/>
                             <constraint firstItem="lJY-bJ-EUt" firstAttribute="trailing" secondItem="kff-Xb-Ghd" secondAttribute="trailing" constant="16" id="Ecr-PM-EZg"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="trailing" secondItem="lJY-bJ-EUt" secondAttribute="trailing" id="HMe-a3-qD4"/>
-                            <constraint firstItem="sci-Qj-S4m" firstAttribute="top" secondItem="lJY-bJ-EUt" secondAttribute="top" id="K8i-Az-LiE"/>
+                            <constraint firstItem="sci-Qj-S4m" firstAttribute="top" secondItem="lJY-bJ-EUt" secondAttribute="top" constant="45" id="K8i-Az-LiE"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" id="LQx-CY-ML3"/>
                             <constraint firstItem="XUz-TG-MKv" firstAttribute="bottom" secondItem="lJY-bJ-EUt" secondAttribute="bottom" id="knK-bu-YfU"/>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" constant="16" id="l96-fe-Kv3"/>
                             <constraint firstItem="kff-Xb-Ghd" firstAttribute="centerX" secondItem="nHw-35-siJ" secondAttribute="centerX" id="muJ-a6-a2E"/>
                             <constraint firstItem="sci-Qj-S4m" firstAttribute="leading" secondItem="lJY-bJ-EUt" secondAttribute="leading" id="n9J-Vb-VMe"/>
-                            <constraint firstItem="XUz-TG-MKv" firstAttribute="top" secondItem="sci-Qj-S4m" secondAttribute="bottom" id="x0Y-y6-dbm"/>
+                            <constraint firstItem="XUz-TG-MKv" firstAttribute="top" secondItem="sci-Qj-S4m" secondAttribute="bottom" constant="-2" id="x0Y-y6-dbm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lJY-bJ-EUt"/>
                     </view>
@@ -885,7 +884,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>

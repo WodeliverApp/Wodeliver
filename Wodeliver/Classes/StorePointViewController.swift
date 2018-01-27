@@ -56,27 +56,15 @@ class StorePointViewController: UIViewController {
         }
         self.storepointTableView.reloadData()
     }
-    func getListing(param : [String : String]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
-        NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
+    //MARK: - Server Action
+    
+    func getDataFromServer()  {
+        //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
-            guard (json != nil) else {
-              
+            guard let json = json else {
                 return
             }
-            ProgressBar.hideActivityIndicator(view: self.view)
-            UserManager.setUserDetail(detail: json!["userData"])
-            if UserManager.getUserType() == .storeManager{
-                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
-                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
-                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-                self.present(logInViewController, animated: true, completion: nil)
-            }else if UserManager.getUserType() == .deliveryBoy{
-                self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
-            }else{
-                OtherHelper.simpleDialog("Error", "Coming soon", self)
-            }
-            
         })
     }
 }
