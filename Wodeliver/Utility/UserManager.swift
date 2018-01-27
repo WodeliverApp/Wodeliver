@@ -18,6 +18,7 @@ class UserManager{
     static let customerId = "customerId"
     static let deviceToken = "deviceToken"
     
+    
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
         UserDefaults.standard.set(detail[userIdKey].stringValue, forKey: userIdKey)
