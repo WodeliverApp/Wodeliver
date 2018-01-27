@@ -111,6 +111,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                     print(addressString)
                     UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
                     UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
+                    self.lblAddressDetails.text = addressString
                     self.dismiss(animated: true, completion: nil)
                 }
         })
@@ -178,8 +179,10 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
                 }
             }
         }
+        address ["full_address"] =  googlePlace.formattedAddress
         UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
         UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
+         lblAddressDetails.text = googlePlace.formattedAddress
         dismiss(animated: false, completion: ({
             self.dismiss(animated: true, completion: nil)
         }))
