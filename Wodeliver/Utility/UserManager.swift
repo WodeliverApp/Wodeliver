@@ -17,7 +17,8 @@ class UserManager{
     static let userProfile = "userProfile"
     static let customerId = "customerId"
     static let deviceToken = "deviceToken"
-    
+    static let latitude = "_latitude"
+    static let longitude = "_longitude"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
@@ -37,7 +38,7 @@ class UserManager{
             "accountType" : detail["accountType"].intValue
         ]
         UserDefaults.standard.set(profile, forKey: userProfile)
-       }
+    }
     static func getUserDetail() -> JSON {
         if let json = UserDefaults.standard.string(forKey: userDetailsKey) {
             return JSON.init(parseJSON: json)
@@ -88,5 +89,17 @@ class UserManager{
         }else {
             return "no-token"
         }
+    }
+    static func setUserLatitude(token: Double) {
+        UserDefaults.standard.set(token, forKey: latitude)
+    }
+    static func setUserLongitude(token: Double) {
+        UserDefaults.standard.set(token, forKey: longitude)
+    }
+    static func getUserLatitude() -> Double {
+        return UserDefaults.standard.double(forKey: latitude)
+    }
+    static func getUserLongitude() -> Double {
+        return UserDefaults.standard.double(forKey: longitude)
     }
 }

@@ -41,6 +41,8 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         if let locatiobValue = manager.location?.coordinate{
             locationManager.stopUpdatingLocation()
             print("locations = \(locatiobValue.latitude) \(locatiobValue.longitude)")
+            UserManager.setUserLatitude(token: locatiobValue.latitude)
+            UserManager.setUserLongitude(token: locatiobValue.longitude)
             getAddressFromLatLon(pdblLatitude: String(locatiobValue.latitude), withLongitude: String(locatiobValue.longitude))
         }
     }
@@ -139,6 +141,8 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         var address: [String:Any] = [:]
         address["place_name"] = place.name
         googlePlace = place
+        UserManager.setUserLatitude(token: place.coordinate.latitude)
+        UserManager.setUserLongitude(token: place.coordinate.longitude)
         if let webSite = place.website {
             address["web_site"] = String(describing: webSite)
         }
@@ -149,10 +153,8 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         if let addressLines = place.addressComponents {
             // Populate all of the address fields we can find.
             for field in addressLines {
-                //  print("Type: \(field.type), Name: \(field.name)")
                 switch field.type {
                 case kGMSPlaceTypeStreetNumber:
-                    // street_number = field.name
                     address["stree_number"] = field.name
                     break
                 case kGMSPlaceTypeRoute:
