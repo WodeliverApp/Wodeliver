@@ -14,6 +14,10 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var googlePlace : GMSPlace!
+    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var lblAddressDetails: UILabel!
+    @IBOutlet weak var btnUseMyLocation_ref: UIButton!
+    @IBOutlet weak var btnPickAddress_ref: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +28,11 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         //            locationManager.startUpdatingLocation()
         //        }
+        
+        btnPickAddress_ref.layer.cornerRadius = 5.0
+        btnPickAddress_ref.clipsToBounds = true
+        btnUseMyLocation_ref.layer.cornerRadius = 5.0
+        btnUseMyLocation_ref.clipsToBounds  = true
     }
     
     // MARK: - CLLocationManager Delegate
@@ -75,6 +84,10 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                     let pm = placemarks![0]
                     var address: [String:Any] = [:]
                     var addressString : String = ""
+                    if pm.name != nil{
+                        address["name"] = pm.name
+                        addressString = addressString + pm.name! + ", "
+                    }
                     if pm.subLocality != nil {
                         address["sub_locality"] = pm.subLocality!
                         addressString = addressString + pm.subLocality! + ", "
@@ -95,6 +108,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                         addressString = addressString + pm.postalCode! + " "
                     }
                     address ["full_address"] =  addressString
+                    print(addressString)
                     UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
                     UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
                     self.dismiss(animated: true, completion: nil)

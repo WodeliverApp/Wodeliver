@@ -53,9 +53,9 @@ class LandingViewController: UIViewController {
         searchBar_ref.isHidden = true
         self.getDataFromServer()
       
-        if !UserDefaults.standard.bool(forKey: AppConstant.isCurrentLocationSaved){
+        //if !UserDefaults.standard.bool(forKey: AppConstant.isCurrentLocationSaved){
             self.performSegue(withIdentifier: "getLocationSegue", sender: nil)
-        }
+        //}
     }
     
     fileprivate func setupSideMenu() {
