@@ -14,25 +14,35 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var googlePlace : GMSPlace!
+    @IBOutlet weak var doneNavigation_ref: UIBarButtonItem!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblAddressDetails: UILabel!
     @IBOutlet weak var btnUseMyLocation_ref: UIButton!
     @IBOutlet weak var btnPickAddress_ref: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        //        self.locationManager.requestWhenInUseAuthorization()
-        //        if CLLocationManager.locationServicesEnabled() {
-        //            locationManager.delegate = self
-        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        //            locationManager.startUpdatingLocation()
-        //        }
-        
         btnPickAddress_ref.layer.cornerRadius = 5.0
         btnPickAddress_ref.clipsToBounds = true
         btnUseMyLocation_ref.layer.cornerRadius = 5.0
         btnUseMyLocation_ref.clipsToBounds  = true
+        doneNavigation_ref.isEnabled = false
+        self.viewCostomization()
+    }
+    
+    func viewCostomization(){
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.view.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    @IBAction func doneAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - CLLocationManager Delegate
@@ -41,6 +51,8 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         if let locatiobValue = manager.location?.coordinate{
             locationManager.stopUpdatingLocation()
             print("locations = \(locatiobValue.latitude) \(locatiobValue.longitude)")
+            UserManager.setUserLatitude(token: locatiobValue.latitude)
+            UserManager.setUserLongitude(token: locatiobValue.longitude)
             getAddressFromLatLon(pdblLatitude: String(locatiobValue.latitude), withLongitude: String(locatiobValue.longitude))
         }
     }
@@ -112,7 +124,8 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                     UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
                     UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
                     self.lblAddressDetails.text = addressString
-                    self.dismiss(animated: true, completion: nil)
+                    self.doneNavigation_ref.isEnabled = true
+                    //self.dismiss(animated: true, completion: nil)
                 }
         })
     }
@@ -139,6 +152,8 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         var address: [String:Any] = [:]
         address["place_name"] = place.name
         googlePlace = place
+        UserManager.setUserLatitude(token: place.coordinate.latitude)
+        UserManager.setUserLongitude(token: place.coordinate.longitude)
         if let webSite = place.website {
             address["web_site"] = String(describing: webSite)
         }
@@ -149,10 +164,8 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         if let addressLines = place.addressComponents {
             // Populate all of the address fields we can find.
             for field in addressLines {
-                //  print("Type: \(field.type), Name: \(field.name)")
                 switch field.type {
                 case kGMSPlaceTypeStreetNumber:
-                    // street_number = field.name
                     address["stree_number"] = field.name
                     break
                 case kGMSPlaceTypeRoute:
@@ -183,8 +196,9 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
         UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
          lblAddressDetails.text = googlePlace.formattedAddress
+         self.doneNavigation_ref.isEnabled = true
         dismiss(animated: false, completion: ({
-            self.dismiss(animated: true, completion: nil)
+           // self.dismiss(animated: true, completion: nil)
         }))
     }
     

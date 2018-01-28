@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -449,7 +450,7 @@
                         <outlet property="searchBar_ref" destination="Zgx-6o-Cbb" id="JCX-PQ-V85"/>
                         <outlet property="searchController_ref" destination="j1X-qz-ixs" id="uxI-3f-UVJ"/>
                         <segue destination="cOV-OT-dnl" kind="show" identifier="HomeToListing" id="KJo-8K-JM2"/>
-                        <segue destination="jRf-Hl-8zV" kind="presentation" identifier="getLocationSegue" id="WVN-88-dMd"/>
+                        <segue destination="xtw-y6-S9R" kind="presentation" identifier="getLocationSegue" id="FZd-dV-GT3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAb-hh-uML" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -472,7 +473,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
                                 <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
@@ -566,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="1316" y="-559.07046476761627"/>
         </scene>
-        <!--Title-->
+        <!--Delivery Address-->
         <scene sceneID="NZM-dk-4cH">
             <objects>
                 <viewController id="jRf-Hl-8zV" customClass="GetLocationViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
@@ -595,7 +596,7 @@
                                     <action selector="btnDetectMyLocation_Action:" destination="jRf-Hl-8zV" eventType="touchUpInside" id="iYm-Bb-NnV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g81-oB-m5g">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g81-oB-m5g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                 <color key="backgroundColor" red="0.89632189273834229" green="0.11224130541086197" blue="0.13725781440734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -603,16 +604,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Delivery Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVo-u9-ISq">
-                                <rect key="frame" x="78" y="32" width="220" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="CXb-rO-2ck"/>
-                                    <constraint firstAttribute="width" constant="220" id="pfa-mO-1WV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Current Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsy-ok-vjs">
@@ -657,7 +648,6 @@
                             <constraint firstItem="8NF-lx-R6q" firstAttribute="leading" secondItem="ayP-PK-HPP" secondAttribute="leading" constant="41" id="8fz-eA-aa1"/>
                             <constraint firstItem="nKz-Te-uZc" firstAttribute="top" secondItem="RJk-nY-kPE" secondAttribute="bottom" constant="22" id="Adb-C5-V0p"/>
                             <constraint firstItem="ayP-PK-HPP" firstAttribute="trailing" secondItem="RJk-nY-kPE" secondAttribute="trailing" constant="39" id="BOm-HW-VvK"/>
-                            <constraint firstItem="n1x-H2-Up6" firstAttribute="top" secondItem="g81-oB-m5g" secondAttribute="bottom" constant="50" id="DWH-JS-iP0"/>
                             <constraint firstItem="g81-oB-m5g" firstAttribute="trailing" secondItem="ayP-PK-HPP" secondAttribute="trailing" id="K7i-LN-cZs"/>
                             <constraint firstItem="8NF-lx-R6q" firstAttribute="top" secondItem="nKz-Te-uZc" secondAttribute="bottom" constant="18" id="MMk-Y0-M3e"/>
                             <constraint firstItem="UDn-YO-GwC" firstAttribute="trailing" secondItem="ayP-PK-HPP" secondAttribute="trailing" id="N58-3w-Fow"/>
@@ -665,23 +655,28 @@
                             <constraint firstItem="UDn-YO-GwC" firstAttribute="leading" secondItem="ayP-PK-HPP" secondAttribute="leading" id="TNA-T5-wIj"/>
                             <constraint firstItem="ayP-PK-HPP" firstAttribute="trailing" secondItem="nKz-Te-uZc" secondAttribute="trailing" constant="167" id="TRd-d2-4bD"/>
                             <constraint firstItem="Gsy-ok-vjs" firstAttribute="top" secondItem="n1x-H2-Up6" secondAttribute="bottom" constant="37" id="VYk-EM-sOo"/>
-                            <constraint firstItem="RVo-u9-ISq" firstAttribute="top" secondItem="ayP-PK-HPP" secondAttribute="top" constant="12" id="aU1-8u-y8e"/>
-                            <constraint firstItem="RVo-u9-ISq" firstAttribute="leading" secondItem="ayP-PK-HPP" secondAttribute="leading" constant="78" id="bI1-PU-QG5"/>
                             <constraint firstItem="g81-oB-m5g" firstAttribute="top" secondItem="eLW-P9-n8H" secondAttribute="top" id="dkD-ac-WEh"/>
                             <constraint firstItem="Gsy-ok-vjs" firstAttribute="leading" secondItem="g81-oB-m5g" secondAttribute="leading" id="hvJ-Fm-D4H"/>
+                            <constraint firstItem="n1x-H2-Up6" firstAttribute="top" secondItem="g81-oB-m5g" secondAttribute="bottom" constant="50" id="mRq-h8-UXU"/>
                             <constraint firstItem="nKz-Te-uZc" firstAttribute="leading" secondItem="ayP-PK-HPP" secondAttribute="leading" constant="166" id="pA3-9S-W9x"/>
                             <constraint firstItem="RJk-nY-kPE" firstAttribute="leading" secondItem="ayP-PK-HPP" secondAttribute="leading" constant="41" id="pWJ-9c-ACR"/>
                             <constraint firstItem="UDn-YO-GwC" firstAttribute="top" secondItem="Gsy-ok-vjs" secondAttribute="bottom" constant="29" id="peP-Z3-k9q"/>
                             <constraint firstItem="RJk-nY-kPE" firstAttribute="top" secondItem="UDn-YO-GwC" secondAttribute="bottom" constant="49" id="ukl-Q4-3Ip"/>
-                            <constraint firstItem="ayP-PK-HPP" firstAttribute="trailing" secondItem="RVo-u9-ISq" secondAttribute="trailing" constant="77" id="vpQ-p5-3nU"/>
                             <constraint firstItem="ayP-PK-HPP" firstAttribute="trailing" secondItem="n1x-H2-Up6" secondAttribute="trailing" constant="141" id="zjl-Cr-YpW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ayP-PK-HPP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="03T-eq-mui"/>
+                    <navigationItem key="navigationItem" title="Delivery Address" id="03T-eq-mui">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="XAc-p9-EkK">
+                            <connections>
+                                <action selector="doneAction:" destination="jRf-Hl-8zV" id="fBt-yd-EUN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnPickAddress_ref" destination="8NF-lx-R6q" id="tmI-SI-RiP"/>
                         <outlet property="btnUseMyLocation_ref" destination="RJk-nY-kPE" id="x1B-LR-01A"/>
+                        <outlet property="doneNavigation_ref" destination="XAc-p9-EkK" id="22g-uD-0sC"/>
                         <outlet property="imgLogo" destination="n1x-H2-Up6" id="bsy-oV-Xfr"/>
                         <outlet property="lblAddressDetails" destination="UDn-YO-GwC" id="xFW-4c-AaQ"/>
                     </connections>
@@ -689,6 +684,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qd-TG-sEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1804" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="znu-Mk-geP">
+            <objects>
+                <navigationController id="xtw-y6-S9R" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ROe-KX-qCb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jRf-Hl-8zV" kind="relationship" relationship="rootViewController" id="ZXF-i7-lvr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0T-kJ-CID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1124" y="133"/>
         </scene>
         <!--Search Controller View Controller-->
         <scene sceneID="FYL-MC-e5S">
@@ -731,7 +742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-Tb-a1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-522.39999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-385" y="173"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -884,7 +895,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
@@ -1029,7 +1040,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-U8-CB9" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4ZY-bf-gMC"/>
                                         </constraints>
@@ -1170,7 +1181,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
