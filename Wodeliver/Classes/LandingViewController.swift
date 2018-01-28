@@ -130,9 +130,9 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
                                numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
         case 1:
-            return self.itemJson.count
-        case 2:
             return self.categoryJson.count
+        case 2:
+            return self.itemJson.count
         case 3:
             return self.hotspotJson.count
         //return self.hotspotArray.count
@@ -148,7 +148,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemsCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
-            cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + itemJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + categoryJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             cell.itemImg.layer.cornerRadius = cell.itemImg.frame.size.width / 2
             cell.itemImg.clipsToBounds = true
             
@@ -156,7 +156,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
-            cell.categoryImg.sd_setImage(with: URL(string:Path.baseURL + categoryJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            cell.categoryImg.sd_setImage(with: URL(string:Path.baseURL + itemJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             
             cell.categoryImg.layer.cornerRadius = cell.categoryImg.frame.size.width / 2
             cell.categoryImg.clipsToBounds = true
