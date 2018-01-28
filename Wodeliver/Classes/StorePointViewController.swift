@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import SDWebImage
 
 class StorePointViewController: UIViewController {
 
@@ -15,11 +17,13 @@ class StorePointViewController: UIViewController {
     
     var isItem:Bool! = true
     var comingFrom:String!
-    
+    var selectedItemId:String!
+    var storeList: [JSON] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
+        self.getDataFromServer()
         // Do any additional setup after loading the view.
     }
 
@@ -62,11 +66,24 @@ class StorePointViewController: UIViewController {
     
     func getDataFromServer()  {
         //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
-        NetworkHelper.get(url: Path.storeListURL, param: [:], self, completionHandler: {[weak self] json, error in
+        var urlStr:String! = ""
+        let lat = "28.5622497"
+        let long = "77.3846662"
+        if isItem{
+        let param = "categoryId=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
+        urlStr = "\(Path.storeListURL)\(param)"
+        }else{
+            let param = "itemCategory=\("5a37fc227c67920e2ccebeda")"
+            urlStr = "\(Path.itemListURL)\(param)"
+        }
+        NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard let json = json else {
                 return
             }
+            print(json)
+            self.storeList = json["response"].arrayValue
+            self.storepointTableView.reloadData()
         })
     }
 }
@@ -89,6 +106,7 @@ extension StorePointViewController: UITableViewDelegate,UITableViewDataSource {
         return cell
          }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "StorepointListingCell") as! StorepointListingCell
+            //cell.
             return cell
         }
     }

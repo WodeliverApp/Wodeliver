@@ -27,6 +27,7 @@ class LandingViewController: UIViewController {
     var hotspotJson : [JSON] = []
     var searchController: UISearchController!
     var comingFrom:String = "store"
+    var selectedItemId:String! = ""
     //    var hotspotItem = [HotspotItem]()
     //    var itemCategory = [ItemCategory]()
     //    var category = [CategoryItem]()
@@ -116,6 +117,7 @@ class LandingViewController: UIViewController {
         if segue.identifier == "HomeToListing" {
             if let viewController = segue.destination as? StorePointViewController {
                     viewController.comingFrom = self.comingFrom
+                    viewController.selectedItemId = self.selectedItemId
             }
         }
     }
@@ -181,11 +183,13 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
         case 1:
-            comingFrom = "store"
+            self.comingFrom = "store"
+            self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
         case 2:
-            comingFrom = "category"
+            self.comingFrom = "category"
+            self.selectedItemId = categoryJson[indexPath.row]["_id"].stringValue
         case 2:
-            comingFrom = "hotsPot"
+            self.comingFrom = "hotsPot"
         default:
             break
         }
