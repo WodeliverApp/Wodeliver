@@ -89,9 +89,10 @@
                                     <constraint firstItem="vof-5e-xg8" firstAttribute="width" secondItem="Bhi-6W-cDs" secondAttribute="width" id="WDy-RF-XlR"/>
                                     <constraint firstItem="vof-5e-xg8" firstAttribute="height" secondItem="Bhi-6W-cDs" secondAttribute="height" id="f2K-AP-j2H"/>
                                     <constraint firstItem="k9P-rD-xby" firstAttribute="width" secondItem="Bhi-6W-cDs" secondAttribute="width" id="uI2-hA-YJf"/>
+                                    <constraint firstAttribute="height" constant="42.5" id="vKe-VJ-vZw"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-Gx-Peo">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G3F-Gx-Peo">
                                 <rect key="frame" x="133" y="70" width="130" height="22"/>
                                 <subviews>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aah-ME-mDf">
@@ -136,6 +137,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="5lU-pd-RYo"/>
                                     <constraint firstAttribute="height" constant="22" id="weS-me-JHt"/>
                                 </constraints>
                             </stackView>
@@ -154,7 +156,6 @@
                             <constraint firstItem="G3F-Gx-Peo" firstAttribute="top" secondItem="rUE-xa-HqJ" secondAttribute="bottom" constant="5" id="RuF-Pm-0g4"/>
                             <constraint firstAttribute="trailing" secondItem="9SJ-EG-jGG" secondAttribute="trailing" id="TVG-gv-0Hj"/>
                             <constraint firstItem="1VU-Lu-Y9i" firstAttribute="top" secondItem="Y9p-eo-IQm" secondAttribute="top" id="fF5-bR-LKk"/>
-                            <constraint firstAttribute="trailing" secondItem="G3F-Gx-Peo" secondAttribute="trailing" constant="25" id="kj6-gw-3il"/>
                             <constraint firstItem="kMO-q5-Won" firstAttribute="top" secondItem="Y9p-eo-IQm" secondAttribute="top" id="mou-r0-wSB"/>
                             <constraint firstItem="G3F-Gx-Peo" firstAttribute="leading" secondItem="1VU-Lu-Y9i" secondAttribute="trailing" constant="8" id="s4D-Ky-2Cc"/>
                             <constraint firstItem="1VU-Lu-Y9i" firstAttribute="leading" secondItem="Y9p-eo-IQm" secondAttribute="leading" id="sMW-5X-upg"/>
