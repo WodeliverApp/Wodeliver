@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 import GooglePlaces
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
    var  clLocationCoordinate: CLLocationCoordinate2D?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey(GooglePlace.googlePlaceKey)
+        GMSServices.provideAPIKey(GooglePlace.googleAPIKey)
         return true
     }
 

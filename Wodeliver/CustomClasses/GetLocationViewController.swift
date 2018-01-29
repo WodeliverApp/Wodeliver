@@ -9,11 +9,13 @@
 import UIKit
 import CoreLocation
 import GooglePlaces
+import GoogleMaps
 
 class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var googlePlace : GMSPlace!
+    var placesClient: GMSPlacesClient!
     @IBOutlet weak var doneNavigation_ref: UIBarButtonItem!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblAddressDetails: UILabel!
@@ -28,6 +30,9 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         btnUseMyLocation_ref.clipsToBounds  = true
         doneNavigation_ref.isEnabled = false
         self.viewCostomization()
+        self.locationManager.requestWhenInUseAuthorization()
+        placesClient = GMSPlacesClient.shared()
+        
     }
     
     func viewCostomization(){
@@ -63,13 +68,33 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
     
     @IBAction func btnDetectMyLocation_Action(_ sender: Any) {
         // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-//            locationManager.stopUpdatingLocation()
-        }
+        
+        //        if CLLocationManager.locationServicesEnabled() {
+        //            locationManager.delegate = self
+        //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        //            locationManager.startUpdatingLocation()
+        ////            locationManager.stopUpdatingLocation()
+        //        }
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                OtherHelper.simpleDialog("Error", error.localizedDescription, self)
+                return
+            }
+            
+            self.lblAddressDetails.text = "No current place"
+            self.lblAddressDetails.text = ""
+            
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                let place = placeLikelihoodList.likelihoods.first?.place
+                if let place = place {
+                    self.lblAddressDetails.text =  (place.formattedAddress?.components(separatedBy: ", ")
+                        .joined(separator: " "))!
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        })
     }
     @IBAction func btnUseMannual_Action(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -158,7 +183,7 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
             address["web_site"] = String(describing: webSite)
         }
         else{
-           address["web_site"] = ""
+            address["web_site"] = ""
         }
         // Get the address components.
         if let addressLines = place.addressComponents {
@@ -195,10 +220,10 @@ extension GetLocationViewController : GMSAutocompleteViewControllerDelegate{
         address ["full_address"] =  googlePlace.formattedAddress
         UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
         UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
-         lblAddressDetails.text = googlePlace.formattedAddress
-         self.doneNavigation_ref.isEnabled = true
+        lblAddressDetails.text = googlePlace.formattedAddress
+        self.doneNavigation_ref.isEnabled = true
         dismiss(animated: false, completion: ({
-           // self.dismiss(animated: true, completion: nil)
+            // self.dismiss(animated: true, completion: nil)
         }))
     }
     

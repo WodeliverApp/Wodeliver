@@ -104,4 +104,5 @@ struct AppConstant {
 
 struct GooglePlace {
     static let googlePlaceKey = "AIzaSyCl4DiAtMzojEJPBMxDoknyveoez1lOt10"
+    static let googleAPIKey = "AIzaSyDdRtWVaZ7JWm-uaLRronAx036agZx07dU"
 }
