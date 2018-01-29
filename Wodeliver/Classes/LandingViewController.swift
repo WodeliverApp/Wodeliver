@@ -25,6 +25,7 @@ class LandingViewController: UIViewController {
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
     var hotspotJson : [JSON] = []
+    var bannerJson : JSON = []
     var searchController: UISearchController!
     var comingFrom:String! = "store"
     var selectedItemId:String! = ""
@@ -108,6 +109,8 @@ class LandingViewController: UIViewController {
             self.categoryJson = json["response"]["category"].arrayValue
             self.itemJson = json["response"]["itemcategory"].arrayValue
             self.hotspotJson = json["response"]["hotspot"].arrayValue
+            self.bannerJson = json["response"]["banner"]
+            self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             self.itemCollectionView.reloadData()
             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()
