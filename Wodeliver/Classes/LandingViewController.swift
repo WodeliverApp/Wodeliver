@@ -26,7 +26,7 @@ class LandingViewController: UIViewController {
     var itemJson : [JSON] = []
     var hotspotJson : [JSON] = []
     var searchController: UISearchController!
-    var comingFrom:String = "store"
+    var comingFrom:String! = "store"
     var selectedItemId:String! = ""
     //    var hotspotItem = [HotspotItem]()
     //    var itemCategory = [ItemCategory]()
