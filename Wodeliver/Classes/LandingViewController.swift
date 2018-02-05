@@ -25,7 +25,7 @@ class LandingViewController: UIViewController {
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
     var hotspotJson : [JSON] = []
-    var bannerJson : JSON = []
+    var bannerJson : [JSON] = []
     var searchController: UISearchController!
     var comingFrom:String! = "store"
     var selectedItemId:String! = ""
@@ -109,8 +109,9 @@ class LandingViewController: UIViewController {
             self.categoryJson = json["response"]["category"].arrayValue
             self.itemJson = json["response"]["itemcategory"].arrayValue
             self.hotspotJson = json["response"]["hotspot"].arrayValue
-            self.bannerJson = json["response"]["banner"]
-            self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            self.bannerJson = json["response"]["banner"].arrayValue
+            print(self.bannerJson)
+            self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             self.itemCollectionView.reloadData()
             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()
@@ -156,7 +157,8 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + categoryJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             cell.itemImg.layer.cornerRadius = cell.itemImg.frame.size.width / 2
             cell.itemImg.clipsToBounds = true
-            
+            cell.itemImg.layer.borderWidth = 1.5
+            cell.itemImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell",
@@ -165,6 +167,8 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             
             cell.categoryImg.layer.cornerRadius = cell.categoryImg.frame.size.width / 2
             cell.categoryImg.clipsToBounds = true
+            cell.categoryImg.layer.borderWidth = 1.5
+            cell.categoryImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotspotItemCell",
