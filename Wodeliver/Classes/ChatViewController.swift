@@ -10,9 +10,11 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatSegmentView: MySegmentedControl!
+    @IBOutlet weak var chatTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.registerCustomCell()
         // Do any additional setup after loading the view.
     }
 
@@ -20,16 +22,49 @@ class ChatViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewCostomization()
+    }
+    func viewCostomization(){
+        self.title = "Chat"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.view.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.view.backgroundColor = Colors.redBackgroundColor
+    }
+  
+    func registerCustomCell()
+    {
+        self.chatTableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
+    }
+
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
+    // MARK: - UITableView Delegate and datasource Methods
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+            return 5
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return ChatTableViewCell.getCellHeight()
+    }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
 }

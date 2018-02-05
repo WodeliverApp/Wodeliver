@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Foundation
+import MBProgressHUD
+import QuartzCore
 
 extension UIButton {
     func customizeButton(){
@@ -77,8 +80,79 @@ extension CGFloat {
         }
     }
 }
+extension String
+{
+    func replace(target: String, withString: String) -> String{
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
+    
+    //    var length: Int {
+    //        return self.characters.count
+    //    }
+    
+    subscript (i: Int) -> String {
+        return self[Range(i ..< i + 1)]
+    }
+    
+    func substring(from: Int) -> String {
+        return self[Range(min(from, count) ..< count)]
+    }
+    
+    func substring(to: Int) -> String {
+        return self[Range(0 ..< max(0, to))]
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(count, r.lowerBound)),
+                                            upper: min(count, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[Range(start ..< end)])
+    }
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+    var enocoded: String {
+        let plainData = self.data(using: .utf8)
+        return plainData!.base64EncodedString()
+    }
+    
+    var decoded: String {
+        if let decodedData = Data(base64Encoded: self), let decodedString = String(data: decodedData, encoding: .utf8) {
+            return decodedString
+        }
+        return ""
+    }
+    func htmlAttributedString() -> NSMutableAttributedString? {
+        guard let data = self.data(using: String.Encoding.utf16, allowLossyConversion: false) else { return nil }
+        guard let html = try? NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) else { return nil }
+        return html
+    }
+}
 
+extension UITableViewController {
+    func showHudForTable(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        hud.isUserInteractionEnabled = false
+        hud.layer.zPosition = 2
+        self.tableView.layer.zPosition = 1
+    }
+}
 
+extension UIViewController {
+    func showHud(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = message
+        view.isUserInteractionEnabled = false
+    }
+    
+    func hideHUD() {
+        view.isUserInteractionEnabled = true
+        MBProgressHUD.hide(for: self.view, animated: true)
+    }
+}
 
 
 

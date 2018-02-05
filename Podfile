@@ -9,6 +9,12 @@ target 'Wodeliver' do
   pod 'Alamofire'
     pod 'AlamofireNetworkActivityIndicator'
     pod 'SwiftyJSON'
+    pod 'ExpyTableView'
+    pod 'SDWebImage', '~> 4.0'
+    pod 'SideMenu'
+    pod 'MBProgressHUD', '~> 1.1.0'
+    pod 'GooglePlaces'
+    pod 'GoogleMaps'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

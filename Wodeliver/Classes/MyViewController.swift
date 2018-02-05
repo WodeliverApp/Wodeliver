@@ -12,7 +12,6 @@ class MyViewController: UIViewController {
 
     //MARK: Public Variables
     struct SegmentDetail {
-        var isNotification = false
         var isCurrent = false
         var isHistory = false
         var isHistoryDetail = false
@@ -48,7 +47,7 @@ class MyViewController: UIViewController {
         self.myTableView.register(UINib(nibName: "HistoryHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryHeaderTableViewCell")
     }
     func viewCustomization(){
-        self.mySegmentView.selectedSegmentIndex = 1
+        self.mySegmentView.selectedSegmentIndex = 0
         self.view.backgroundColor = Colors.viewBackgroundColor
         self.redBackgroundView.backgroundColor = Colors.redBackgroundColor
         //self.mySegmentView.backgroundColor = UIColor.white
@@ -60,69 +59,22 @@ class MyViewController: UIViewController {
         let statusBarColor = Colors.redBackgroundColor
         statusBarView.backgroundColor = statusBarColor
         view.addSubview(statusBarView)
-        self.addShadowToTableView()
        
     }
-    func addShadowToTableView(){
-//        //for table view border
-        self.myTableView.layer.borderColor = UIColor.lightGray.cgColor
-        self.myTableView.layer.borderWidth = 1.0
 
-        //for shadow
-        let containerView:UIView = UIView(frame:self.myTableView.frame)
-        //dont use clear color,fit blue color
-        containerView.backgroundColor = UIColor.blue
-        //shadow view also need cornerRadius
-        containerView.layer.cornerRadius = 10
-        containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOffset = CGSize(width: -1, height: 1) //Left-Bottom shadow
-        //containerView.layer.shadowOffset = CGSizeMake(10, 10); //Right-Bottom shadow
-        containerView.layer.shadowOpacity = 1.0
-        containerView.layer.shadowRadius = 2
-
-        //for rounded corners
-        self.myTableView.layer.cornerRadius = 10
-        self.myTableView.layer.masksToBounds = true
-        self.view.addSubview(containerView)
-        self.view.addSubview(self.myTableView)
-        
-//        self.myTableView.layer.shadowPath = UIBezierPath(rect: self.myTableView.bounds).cgPath
-//        self.myTableView.layer.shadowColor = UIColor.black.cgColor
-//        self.myTableView.layer.shadowOpacity = 1
-//        self.myTableView.layer.shadowOffset = CGSize.zero
-//        self.myTableView.layer.shadowRadius = 10
-//        self.myTableView.clipsToBounds = false
-    }
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-           segmentDetail.isNotification = true
-             segmentDetail.isCurrent = false
+             segmentDetail.isCurrent = true
             segmentDetail.isHistory = false
             segmentDetail.isHistoryDetail = false
         case 1:
-            segmentDetail.isCurrent = true
-            segmentDetail.isHistory = false
-            segmentDetail.isNotification = false
-            segmentDetail.isHistoryDetail = false
-        case 2:
             segmentDetail.isCurrent = false
             segmentDetail.isHistory = true
-            segmentDetail.isNotification = false
             segmentDetail.isHistoryDetail = false
         default: break
         }
         self.myTableView.reloadData()
-    }
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
-        self.myTableView.layer.masksToBounds = false
-        self.myTableView.layer.shadowColor = color.cgColor
-        self.myTableView.layer.shadowOpacity = opacity
-        self.myTableView.layer.shadowOffset = offSet
-        self.myTableView.layer.shadowRadius = radius
-        self.myTableView.layer.cornerRadius = 5.0
-        self.myTableView.layer.shouldRasterize = true
-        self.myTableView.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
 
 }
