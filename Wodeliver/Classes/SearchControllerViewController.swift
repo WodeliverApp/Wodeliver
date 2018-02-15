@@ -7,25 +7,26 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UISearchDisplayDelegate,UISearchResultsUpdating{
 
     @IBOutlet weak var searchTableView: UITableView!
-    @IBOutlet weak var segmentView: MySegmentedControl!
     var isItem:Bool! = true
     var searchByText = ""
+    var searchItem : [JSON] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.searchTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
+//        self.searchTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
+        self.searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchControllerCell")
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.segmentView.selectedSegmentIndex = 0
-        self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,32 +34,65 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func changeSegmentValue(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            isItem = true
-        case 1:
-            isItem = false
-        default: break
-        }
-        self.searchTableView.reloadData()
-    }
-    
     // MARK: - UISearchController Delegate and Data Source
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchByText != searchText {
             NetworkHelper.stopAllSessions()
-//            searchByText = searchText
+            searchByText = searchText
 //            page = 0
 //            isSearching = true
 //            searchExploreUser = []
 //            tableView.reloadData()
 //            tableView.backgroundView?.isHidden = true
-//            if searchByText.count > 0 {
-//                generateRequest()
-//            }
+            if searchByText.count > 0 {
+                generateRequest()
+            }
         }
+    }
+    
+    // MARK: - Get User List From Server
+    
+    func generateRequest() {
+    
+        let param:[String:Any] = ["text":searchByText,"&searchOn":0]
+        getResponse(param)
+    }
+    
+    func getResponse(_ param:[String:Any]){
+        NetworkHelper.get(url: Path.searchURL, param: param, self, completionHandler: {[weak self] json, error in
+            guard self != nil else { return }
+            guard let json = json else {
+                return
+            }
+//            self.loadMore = true
+//            self.isSearching = false
+         
+                if let searchData = json["data"].array {
+                    print(searchData)
+                    if searchData.count > 0 {
+//                        if self.page == 0 {
+//                            self.searchExploreUser = []
+//                            self.perform(#selector(self.sendSearchEvent(sender:)), with: param["query"], afterDelay: 2.0)
+//                        }
+//                        for item in exploreUser {
+//                            let storedUser = ExploreUser()
+//                            storedUser.user = try self.saveUser(user: item)
+//                            self.searchExploreUser.append(storedUser)
+//                        }
+//                    }else {
+//                        if self.page == 0 {
+//                            self.tableView.backgroundView?.isHidden = false
+//                        }
+//                        self.loadMore = false
+//                    }
+//                }
+              // self.searchTableView.reloadData()
+                //try self.appDelegate.mainThreadFeedManagedObjectContext.save()
+            
+                    }
+            }
+        })
     }
     /*
     // MARK: - Navigation
@@ -77,34 +111,23 @@ extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSou
         return 1
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if isItem{
-            return 5
-        }else{
-            return 5
-        }
+        return 5
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isItem{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchControllerCell") as UITableViewCell!
+
+        cell.textLabel?.text = "Demo Data"
+        cell.textLabel?.textColor = UIColor.gray
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
-            return cell
-        }
+       
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if isItem{
-            return SearchByItemCell.getCellHeight()
-        }else{
-            return SearchByItemCell.getCellHeight()
-        }
+       return 60
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isItem{
-        }else{
-           // self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
-        }
+      
+        
     }
 }

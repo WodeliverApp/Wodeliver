@@ -19,11 +19,15 @@ struct Colors {
 
 struct Path {
     static let baseURL : String = "http://18.217.139.93:8082"
+    static let userURL : String = "\(baseURL)/user"
     static let loginURL : String = "\(baseURL)/login"
     static let signUpURL : String = "\(baseURL)/user"
     static let categoryURL : String = "\(baseURL)/category"
     static let storeListURL : String = "\(baseURL)/store/category/location/?"
     static let itemListURL : String = "\(baseURL)/menu/itemCategory/?"
+    static let searchURL : String = "\(baseURL)/search/?"
+    static let forgotPasswordURL = "\(userURL)/forgotPassword"
+    static let changePasswordURL = "\(userURL)/changePassword"
 }
 
 struct AlertMessages {

@@ -51,6 +51,7 @@
 		30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */; };
 		30A0E15320148AFF002EA101 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E15220148AFF002EA101 /* CoreLocation.framework */; };
 		30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */; };
+		30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
 		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
@@ -176,6 +177,7 @@
 		30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerViewController.swift; sourceTree = "<group>"; };
 		30A0E15220148AFF002EA101 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewController.swift; sourceTree = "<group>"; };
+		30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
 		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */,
 				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 				30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */,
+				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -877,6 +880,7 @@
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
 				A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
+				30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */,
 				30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

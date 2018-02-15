@@ -11,7 +11,7 @@ import SwiftyJSON
 import SDWebImage
 
 class StorePointViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentView: MySegmentedControl!
     @IBOutlet weak var storepointTableView: UITableView!
     
@@ -20,13 +20,13 @@ class StorePointViewController: UIViewController {
     var selectedItemId:String!
     var storeList: [JSON] = []
     var categoryList: [JSON] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
         // Do any additional setup after loading the view.
+        self.getDataFromServer()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,15 +41,15 @@ class StorePointViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.storepointTableView.backgroundColor = Colors.viewBackgroundColor
         self.view.backgroundColor = Colors.redBackgroundColor
-         self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
-         if self.comingFrom == "store"{
+        self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
+        if self.comingFrom == "store"{
             self.isItem = false
             self.segmentView.selectedSegmentIndex = 1
-         }else{
-             self.isItem = true
-             self.segmentView.selectedSegmentIndex = 0
+        }else{
+            self.isItem = true
+            self.segmentView.selectedSegmentIndex = 0
         }
-        self.getDataFromServer()
+        
     }
     
     func registerCustomCell()
@@ -63,11 +63,12 @@ class StorePointViewController: UIViewController {
     @objc func changeSegmentValue(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-           isItem = true
+            isItem = true
         case 1:
             isItem = false
         default: break
         }
+        self.getDataFromServer()
         self.storepointTableView.reloadData()
     }
     //MARK: - Server Action
@@ -75,13 +76,13 @@ class StorePointViewController: UIViewController {
     func getDataFromServer()  {
         //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         var urlStr:String! = ""
-        let lat = "28.5622497"
-        let long = "77.3846662"
+        let lat = UserManager.getUserLatitude()
+        let long = UserManager.getUserLongitude()
         if !isItem{
-        let param = "categoryId=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
-        urlStr = "\(Path.storeListURL)\(param)"
+            let param = "categoryId=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
+            urlStr = "\(Path.storeListURL)\(param)"
         }else{
-            let param = "itemCategory=\("5a37fc227c67920e2ccebeda")"
+            let param = "itemCategory=\(selectedItemId)"
             urlStr = "\(Path.itemListURL)\(param)"
         }
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
@@ -91,15 +92,21 @@ class StorePointViewController: UIViewController {
             }
             print(json)
             if !self.isItem{
-             }else{
-            self.categoryList = json["response"].arrayValue
+                self.storeList = json["response"].arrayValue
+            }else{
+                self.categoryList = json["response"].arrayValue
             }
-            self.storepointTableView.reloadData()
+            DispatchQueue.main.async {
+               self.storepointTableView.reloadData()
+            }
+            
         })
     }
 }
 extension StorePointViewController: UITableViewDelegate,UITableViewDataSource {
+    
     // MARK: - UITableView Delegate and datasource Methods
+    
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -107,36 +114,43 @@ extension StorePointViewController: UITableViewDelegate,UITableViewDataSource {
         if isItem{
             return self.categoryList.count
         }else{
-        return 5
+            return self.storeList.count
         }
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         if isItem{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
+        if isItem{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
             cell.titleLbl.text = self.categoryList[indexPath.row]["item"].stringValue
             cell.priceLbl.text = String(self.categoryList[indexPath.row]["price"].intValue)
             cell.commentLbl.text = String(self.categoryList[indexPath.row]["commentsCount"].intValue)
             cell.soldLbl.text = String(self.categoryList[indexPath.row]["sold"].intValue)
             cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + categoryList[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
-        return cell
-         }else{
+            return cell
+        }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "StorepointListingCell") as! StorepointListingCell
+            cell.titleLbl.text = storeList[indexPath.row]["item"].stringValue
+            cell.itemImage.sd_setImage(with: URL(string:Path.baseURL + storeList[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            cell.addressLbl.text = storeList[indexPath.row]["address"].stringValue
+            cell.countLbl.text = String(storeList[indexPath.row]["commentCounts"].intValue)
+            cell.likeBtn.titleLabel?.text = String( storeList[indexPath.row]["likes"].intValue)
+            cell.dislikeBtn.titleLabel?.text = String(storeList[indexPath.row]["dislikes"].intValue)
+            cell.locationBtn.titleLabel?.text = String(storeList[indexPath.row]["sequence"].intValue)
             return cell
         }
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if isItem{
-        return SearchByItemCell.getCellHeight()
+            return SearchByItemCell.getCellHeight()
         }else{
-           return StorepointListingCell.getCellHeight()
+            return StorepointListingCell.getCellHeight()
         }
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isItem{
         }else{
-        self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
+            self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
         }
     }
 }
