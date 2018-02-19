@@ -15,6 +15,7 @@ target 'Wodeliver' do
     pod 'MBProgressHUD', '~> 1.1.0'
     pod 'GooglePlaces'
     pod 'GoogleMaps'
+    pod 'HockeySDK'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

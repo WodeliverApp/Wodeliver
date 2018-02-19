@@ -25,7 +25,7 @@ struct Path {
     static let categoryURL : String = "\(baseURL)/category"
     static let storeListURL : String = "\(baseURL)/store/category/location/?"
     static let itemListURL : String = "\(baseURL)/menu/itemCategory/?"
-    static let searchURL : String = "\(baseURL)/search/?"
+    static let searchURL : String = "\(baseURL)/searchlist"
     static let forgotPasswordURL = "\(userURL)/forgotPassword"
     static let changePasswordURL = "\(userURL)/changePassword"
 }

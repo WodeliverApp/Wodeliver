@@ -10,25 +10,23 @@ import UIKit
 import SwiftyJSON
 
 class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UISearchDisplayDelegate,UISearchResultsUpdating{
-
+    
     @IBOutlet weak var searchTableView: UITableView!
     var isItem:Bool! = true
     var searchByText = ""
     var searchItem : [JSON] = []
+    var filteredArray : [JSON] = []
+    var isActiveSearch : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        self.searchTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
         self.searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchControllerCell")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        self.generateRequest()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,15 +36,15 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchByText != searchText {
-            NetworkHelper.stopAllSessions()
+            
             searchByText = searchText
-//            page = 0
-//            isSearching = true
-//            searchExploreUser = []
-//            tableView.reloadData()
-//            tableView.backgroundView?.isHidden = true
-            if searchByText.count > 0 {
-                generateRequest()
+            if searchText.count > 0 {
+                isActiveSearch = true
+                filteredArray = searchItem.filter { $0["name"].stringValue.contains(searchText) }
+                print("** Result ** \n\(filteredArray)")
+                searchTableView.reloadData()
+            }else{
+                isActiveSearch = false
             }
         }
     }
@@ -54,56 +52,35 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
     // MARK: - Get User List From Server
     
     func generateRequest() {
-    
-        let param:[String:Any] = ["text":searchByText,"&searchOn":0]
+        
+        let param:[String:Any] = [:]
         getResponse(param)
     }
     
     func getResponse(_ param:[String:Any]){
+        NetworkHelper.stopAllSessions()
         NetworkHelper.get(url: Path.searchURL, param: param, self, completionHandler: {[weak self] json, error in
             guard self != nil else { return }
             guard let json = json else {
                 return
             }
-//            self.loadMore = true
-//            self.isSearching = false
-         
-                if let searchData = json["data"].array {
-                    print(searchData)
-                    if searchData.count > 0 {
-//                        if self.page == 0 {
-//                            self.searchExploreUser = []
-//                            self.perform(#selector(self.sendSearchEvent(sender:)), with: param["query"], afterDelay: 2.0)
-//                        }
-//                        for item in exploreUser {
-//                            let storedUser = ExploreUser()
-//                            storedUser.user = try self.saveUser(user: item)
-//                            self.searchExploreUser.append(storedUser)
-//                        }
-//                    }else {
-//                        if self.page == 0 {
-//                            self.tableView.backgroundView?.isHidden = false
-//                        }
-//                        self.loadMore = false
-//                    }
-//                }
-              // self.searchTableView.reloadData()
-                //try self.appDelegate.mainThreadFeedManagedObjectContext.save()
-            
-                    }
+            if let searchData = json["response"].array {
+                if searchData.count > 0 {
+                    self?.searchItem = searchData
+                }
             }
         })
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSource {
     // MARK: - UITableView Delegate and datasource Methods
@@ -111,23 +88,26 @@ extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSou
         return 1
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        if isActiveSearch{
+            return filteredArray.count
+        }else{
+            return 0
+        }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchControllerCell") as UITableViewCell!
-
-        cell.textLabel?.text = "Demo Data"
+        cell.textLabel?.text = filteredArray[indexPath.row]["name"].stringValue
         cell.textLabel?.textColor = UIColor.gray
-            return cell
-       
+        return cell
+        
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 60
+        return 60
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
         
     }
 }
