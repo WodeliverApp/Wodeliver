@@ -82,7 +82,7 @@ class StorePointViewController: UIViewController {
             let param = "categoryId=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
             urlStr = "\(Path.storeListURL)\(param)"
         }else{
-            let param = "itemCategory=\(selectedItemId)"
+            let param = "itemCategory=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
             urlStr = "\(Path.itemListURL)\(param)"
         }
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
@@ -93,13 +93,17 @@ class StorePointViewController: UIViewController {
             print(json)
             if !self.isItem{
                 self.storeList = json["response"].arrayValue
+                
             }else{
                 self.categoryList = json["response"].arrayValue
             }
-            DispatchQueue.main.async {
-               self.storepointTableView.reloadData()
+            if self.storeList.count == 0 || self.categoryList.count == 0{
+                OtherHelper.simpleDialog("Error", "No record found.", self)
+            }else{
+                DispatchQueue.main.async {
+                    self.storepointTableView.reloadData()
+                }
             }
-            
         })
     }
 }
