@@ -407,6 +407,7 @@
 				307716D020090A2200D073A0 /* StoreItemViewController.swift */,
 				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
 				30067486200B86FC0021A08C /* StoreNotificationViewController.swift */,
+				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -467,7 +468,6 @@
 				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 				30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */,
 				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
-				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

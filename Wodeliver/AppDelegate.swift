@@ -23,7 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey(GooglePlace.googlePlaceKey)
         GMSServices.provideAPIKey(GooglePlace.googleAPIKey)
-        
+        if UserManager.checkIfLogin(){
+            if UserManager.getUserType() == .storeManager{
+                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                //self.present(logInViewController, animated: true, completion: nil)
+                self.window?.rootViewController = logInViewController
+            }
+        }
         if !hockeySDKIsSetup {
             BITHockeyManager.shared().configure(withIdentifier: HockeyKeys.appId)
             BITHockeyManager.shared().start()

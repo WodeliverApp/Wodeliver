@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class StoreItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tblHistory: UITableView!
+    var storeItemList : [JSON] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,10 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         self.viewCostomization()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getDataFromServer()
+    }
     func viewCostomization(){
         self.title = "Store Management"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -31,6 +37,13 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    @IBAction func addButton_Action(_ sender: Any) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+        let viewController : AddItemViewController = storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+        viewController.modalPresentationStyle = .overFullScreen
+        viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.present(viewController, animated: false, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,7 +77,7 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
             //self.isEditing = false
             print("more button tapped")
         }
-        delete.backgroundColor = UIColor.red
+        delete.backgroundColor = Colors.redBackgroundColor
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             //self.isEditing = false
@@ -80,8 +93,25 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
 //            
             self.present(viewController, animated: false, completion: nil)
         }
-        edit.backgroundColor = UIColor.red
+        edit.backgroundColor = UIColor.gray
         return [delete, edit]
     }
 
+}
+
+extension StoreItemViewController{
+    //MARK: - Server Action
+    
+    func getDataFromServer()  {
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.get(url: Path.storeMenuItem+"storeId=\(UserManager.getUserId())", param: [:], self, completionHandler: {[weak self] json, error in
+            ProgressBar.hideActivityIndicator(view: (self?.view)!)
+            guard let `self` = self else { return }
+            guard let json = json else {
+                return
+            }
+            print(json)
+            self.storeItemList = json["response"]["category"].arrayValue
+        })
+    }
 }

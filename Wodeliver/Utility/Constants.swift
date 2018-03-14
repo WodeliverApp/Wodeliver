@@ -28,6 +28,7 @@ struct Path {
     static let searchURL : String = "\(baseURL)searchlist"
     static let forgotPasswordURL = "\(userURL)forgotPassword"
     static let changePasswordURL = "\(userURL)changePassword"
+    static let storeMenuItem = "\(baseURL)menu/?"
 }
 
 struct AlertMessages {
