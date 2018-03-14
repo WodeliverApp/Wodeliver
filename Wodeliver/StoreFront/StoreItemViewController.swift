@@ -58,14 +58,30 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            //self.isEditing = false
+            print("more button tapped")
+        }
+        delete.backgroundColor = UIColor.red
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            //self.isEditing = false
+            let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+            let viewController : AddItemViewController = storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            viewController.modalPresentationStyle = .overFullScreen
+            viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            
+//            let animation = CATransition()
+//            animation.duration = 1
+//            animation.type = kCATransitionFade
+//            self.view.window?.layer.add(animation, forKey: kCATransition)
+//            
+            self.present(viewController, animated: false, completion: nil)
+        }
+        edit.backgroundColor = UIColor.red
+        return [delete, edit]
     }
-    */
 
 }

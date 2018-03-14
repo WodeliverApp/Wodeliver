@@ -89,6 +89,7 @@
 		A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */; };
 		A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */; };
 		A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */; };
+		A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */; };
 		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
 		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -216,6 +217,7 @@
 		A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBoyViewController.swift; sourceTree = "<group>"; };
+		A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 				30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */,
 				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
+				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -867,6 +870,7 @@
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
+				A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */,
 				30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */,
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
 				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
