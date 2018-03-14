@@ -20,8 +20,6 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var bannerView: UIImageView!
     @IBOutlet weak var searchBar_ref: UISearchBar!
     @IBOutlet weak var searchController_ref: UISearchController!
-    var itemsArray  = ["cake","cake","cake","cake","cake"]
-    var categoryArray = ["cloth","cloth","cloth","cloth","cloth"]
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
     var hotspotJson : [JSON] = []
@@ -141,7 +139,6 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             return self.itemJson.count
         case 3:
             return self.hotspotJson.count
-        //return self.hotspotArray.count
         default:
             return 0
         }
@@ -190,12 +187,12 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
         case 1:
-            self.comingFrom = "store"
-            self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
-        case 2:
             self.comingFrom = "category"
             self.selectedItemId = categoryJson[indexPath.row]["_id"].stringValue
         case 2:
+            self.comingFrom = "store"
+            self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
+        case 3:
             self.comingFrom = "hotsPot"
         default:
             break
