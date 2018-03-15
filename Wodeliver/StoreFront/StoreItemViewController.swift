@@ -13,6 +13,8 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var tblHistory: UITableView!
     var storeItemList : [JSON] = []
+    var itemCategory = UserManager.getItemCategory()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -116,7 +116,6 @@ class LoginViewController: UIViewController {
             }
             ProgressBar.hideActivityIndicator(view: self.view)
             UserManager.setUserDetail(detail: json!["userData"])
-            print(json)
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
                 let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")

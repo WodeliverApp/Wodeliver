@@ -97,22 +97,23 @@ class LandingViewController: UIViewController {
     //MARK: - Server Action
     
     func getDataFromServer()  {
-        //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+          ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
+            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
             }
-            //  ProgressBar.hideActivityIndicator(view: self.view)
             self.categoryJson = json["response"]["category"].arrayValue
             self.itemJson = json["response"]["itemcategory"].arrayValue
             self.hotspotJson = json["response"]["hotspot"].arrayValue
             self.bannerJson = json["response"]["banner"].arrayValue
-            print(self.bannerJson)
             self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             self.itemCollectionView.reloadData()
             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()
+            UserManager.setCategory(detail: json["response"]["category"])
+            UserManager.setItemCategory(detail: json["response"]["itemcategory"])
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {

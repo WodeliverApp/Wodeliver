@@ -20,6 +20,8 @@ class UserManager{
     static let latitude = "_latitude"
     static let longitude = "_longitude"
     static let storeId = "storeId"
+    static let categoryItem = "_categoryItem"
+    static let category = "_category"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
@@ -105,5 +107,23 @@ class UserManager{
     }
     static func getUserLongitude() -> Double {
         return UserDefaults.standard.double(forKey: longitude)
+    }
+    static public func setItemCategory(detail:JSON)    {
+        UserDefaults.standard.set(detail.rawString()!, forKey: categoryItem)
+    }
+    static func getItemCategory() -> JSON  {
+        if let json = UserDefaults.standard.string(forKey: categoryItem) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static public func setCategory(detail:JSON)   {
+        UserDefaults.standard.set(detail.rawString()!, forKey: category)
+    }
+    static func getCategory() -> JSON {
+        if let json = UserDefaults.standard.string(forKey: category) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
     }
 }
