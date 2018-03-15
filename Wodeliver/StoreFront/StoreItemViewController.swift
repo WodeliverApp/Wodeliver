@@ -23,6 +23,10 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+      //  self.getDataFromServer()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.getDataFromServer()
     }
     func viewCostomization(){
@@ -55,12 +59,17 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         return 1
     }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return self.storeItemList.count
     }
  
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreHistoryTableViewCell") as! StoreHistoryTableViewCell
-       // cell.lblHeaderName
+        let item = self.storeItemList[indexPath.row]
+        cell.lblProductName.text = item["item"].stringValue
+        cell.lblProductPrice.text = "\("Price: ")\(item["price"].stringValue)"
+      //  cell.lblProdcutCategory.text = item["item"].stringValue
+        cell.lblDescription.text = "\("Description: ")\(item["description"].stringValue)"
+        cell.imgProduct.sd_setImage(with: URL(string:Path.baseURL + item["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
         return cell
     }
     
@@ -83,6 +92,7 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
             //self.isEditing = false
             let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
             let viewController : AddItemViewController = storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            viewController.itemObject = self.storeItemList[indexPath.row].dictionaryValue
             viewController.modalPresentationStyle = .overFullScreen
             viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
             
@@ -104,14 +114,16 @@ extension StoreItemViewController{
     
     func getDataFromServer()  {
         ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
-        NetworkHelper.get(url: Path.storeMenuItem+"storeId=\(UserManager.getUserId())", param: [:], self, completionHandler: {[weak self] json, error in
+        let urlStr = Path.storeMenuItem+"storeId=\(UserManager.getStoreId())"
+        NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
             ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
             }
-            print(json)
-            self.storeItemList = json["response"]["category"].arrayValue
+            self.storeItemList = json["response"].arrayValue
+            print(self.storeItemList)
+            self.tblHistory.reloadData()
         })
     }
 }

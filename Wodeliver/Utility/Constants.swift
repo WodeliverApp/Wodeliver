@@ -29,6 +29,7 @@ struct Path {
     static let forgotPasswordURL = "\(userURL)forgotPassword"
     static let changePasswordURL = "\(userURL)changePassword"
     static let storeMenuItem = "\(baseURL)menu/?"
+    static let storeAddItem = "\(baseURL)menu"
 }
 
 struct AlertMessages {
@@ -99,7 +100,12 @@ struct AlertMessages {
     static let textViewPlaceholderText = "  Write an answer here..."
     
     static let ComingSoonMessage = "Coming soon.."
-    
+    // Store: Item
+   static let itemValidation = "Please enter Item."
+    static let itemPriceValidation = "Please enter Price."
+    static let itemCatValidation = "Please select Category."
+     static let itemDescValidation = "Please enter Description."
+    static let itemImgValidation = "Please enter Item Image."
 }
 
 struct AppConstant {

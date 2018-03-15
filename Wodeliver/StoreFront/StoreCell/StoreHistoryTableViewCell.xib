@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken Burger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pak-lQ-tw7">
-                                <rect key="frame" x="153" y="13" width="195" height="21"/>
+                                <rect key="frame" x="153" y="13" width="93" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cxa-8b-FCM"/>
                                 </constraints>
@@ -49,14 +50,6 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhM-e3-Hqo">
-                                <rect key="frame" x="354" y="9" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="35I-p3-WdV"/>
-                                    <constraint firstAttribute="height" constant="24" id="rag-06-D19"/>
-                                </constraints>
-                                <state key="normal" image="edit_product"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price            $76" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ew-np-t7w">
                                 <rect key="frame" x="153" y="46" width="184" height="16"/>
                                 <constraints>
@@ -69,14 +62,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QhM-e3-Hqo" firstAttribute="leading" secondItem="pak-lQ-tw7" secondAttribute="trailing" constant="6" id="2le-D6-Sue"/>
                             <constraint firstItem="far-UV-q1a" firstAttribute="top" secondItem="7Ew-np-t7w" secondAttribute="bottom" constant="12" id="CKP-PG-Gcc"/>
                             <constraint firstItem="far-UV-q1a" firstAttribute="leading" secondItem="YWt-Eb-EOX" secondAttribute="leading" id="Ji9-N9-8O3"/>
-                            <constraint firstItem="QhM-e3-Hqo" firstAttribute="leading" secondItem="pak-lQ-tw7" secondAttribute="trailing" constant="6" id="QiF-g3-nPu"/>
                             <constraint firstItem="7Ew-np-t7w" firstAttribute="top" secondItem="pak-lQ-tw7" secondAttribute="bottom" constant="12" id="RGm-EW-Wt3"/>
                             <constraint firstItem="pak-lQ-tw7" firstAttribute="top" secondItem="vej-ef-ugB" secondAttribute="top" constant="13" id="RRA-5O-Gbc"/>
                             <constraint firstItem="7Ew-np-t7w" firstAttribute="leading" secondItem="5q0-Fg-nmD" secondAttribute="trailing" constant="10" id="VqG-Vh-QVj"/>
-                            <constraint firstAttribute="trailing" secondItem="QhM-e3-Hqo" secondAttribute="trailing" constant="4" id="YCd-IM-gld"/>
                             <constraint firstItem="pak-lQ-tw7" firstAttribute="leading" secondItem="5q0-Fg-nmD" secondAttribute="trailing" constant="10" id="aSi-b3-EsJ"/>
                             <constraint firstAttribute="trailing" secondItem="far-UV-q1a" secondAttribute="trailing" constant="-11" id="ckm-Em-7ha"/>
                             <constraint firstItem="pak-lQ-tw7" firstAttribute="leading" secondItem="5q0-Fg-nmD" secondAttribute="trailing" constant="10" id="fI3-ai-KEj"/>
@@ -87,7 +77,6 @@
                             <constraint firstItem="7Ew-np-t7w" firstAttribute="top" secondItem="pak-lQ-tw7" secondAttribute="bottom" constant="12" id="ldj-rZ-lhQ"/>
                             <constraint firstItem="5q0-Fg-nmD" firstAttribute="leading" secondItem="vej-ef-ugB" secondAttribute="leading" constant="6" id="v2G-LE-jKb"/>
                             <constraint firstItem="YWt-Eb-EOX" firstAttribute="top" secondItem="far-UV-q1a" secondAttribute="bottom" constant="12" id="wDo-YB-9eS"/>
-                            <constraint firstItem="QhM-e3-Hqo" firstAttribute="top" secondItem="vej-ef-ugB" secondAttribute="top" constant="9" id="yCT-jT-4pV"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -101,7 +90,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backView" destination="vej-ef-ugB" id="tbg-40-1XJ"/>
-                <outlet property="btnEdit_ref" destination="QhM-e3-Hqo" id="9DG-o9-cH1"/>
                 <outlet property="imgProduct" destination="5q0-Fg-nmD" id="j4i-WL-A2u"/>
                 <outlet property="lblDescription" destination="YWt-Eb-EOX" id="N32-oa-htO"/>
                 <outlet property="lblProdcutCategory" destination="far-UV-q1a" id="1ol-RI-vpO"/>
@@ -113,6 +101,5 @@
     </objects>
     <resources>
         <image name="burger" width="240" height="137"/>
-        <image name="edit_product" width="24" height="24"/>
     </resources>
 </document>

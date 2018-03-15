@@ -53,6 +53,6 @@ class StoreHistoryTableViewCell: UITableViewCell {
 //        self.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 //    }
     class func getCellHeight() -> CGFloat {
-        return 135.0
+        return 165.0
     }
 }

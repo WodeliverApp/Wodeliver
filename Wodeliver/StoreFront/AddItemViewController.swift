@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -16,8 +17,10 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
     var animatedDistance: CGFloat!
     var pickerView : UIPickerView!
-    var pickOption = ["one", "two", "three", "seven", "fifteen"]
+    var pickOption: [JSON] = []
     var imagePicker = UIImagePickerController()
+    var isItemImg:Bool! = false
+    var itemObject: [String: JSON]?
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemTF: FloatLabelTextField!
     @IBOutlet weak var priceTF: UITextField!
@@ -34,14 +37,28 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         itemTF.delegate = self
         categoryTF.delegate = self
         descriptionTF.delegate = self
+        self.getItemCategory()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.updateUI()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+    func updateUI(){
+        if itemObject != nil{
+            self.itemTF.text = itemObject!["item"]?.stringValue
+            self.priceTF.text = itemObject!["price"]?.stringValue
+        //  cell.lblProdcutCategory.text = item["item"].stringValue
+            self.descriptionTF.text = itemObject!["description"]?.stringValue
+            self.itemImageView.sd_setImage(with: URL(string:Path.baseURL + (itemObject!["image"]?.stringValue.replace(target: " ", withString: "%20"))!), placeholderImage: UIImage(named: "no_image"))
+            self.isItemImg = true
+        }
     }
     func createPicker(){
         self.pickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
@@ -98,13 +115,45 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         categoryTF.resignFirstResponder()
     }
     @IBAction func doneButtonAction(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        self.view.endEditing(true)
+        if self.isValidate() {
+            let imgBase64 = OtherHelper.convertImageToBase64(image: self.itemImageView.image!)
+            let param = ["itemCategory": self.categoryTF.text ?? "", "category": "", "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
+            if itemObject != nil{
+              self.updateItem(param: param)
+            }else{
+            self.saveItem(param: param)
+            }
+        }
     }
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cameraButtonAction(_ sender: Any) {
+    }
+    func isValidate() -> Bool  {
+        if self.itemTF.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemValidation, self)
+            return false
+        }
+        else if self.priceTF.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemPriceValidation, self)
+            return false
+        }
+        else if self.categoryTF.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemCatValidation, self)
+            return false
+        }
+        else if self.descriptionTF.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemDescValidation, self)
+            return false
+        }
+        else if (self.isItemImg != true){
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemImgValidation, self)
+            return false
+        }
+        return true
     }
 }
 extension AddItemViewController: UITextFieldDelegate{
@@ -158,10 +207,10 @@ extension AddItemViewController{
         return pickOption.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickOption[row]
+        return pickOption[row]["name"].stringValue
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryTF.text = pickOption[row]
+        categoryTF.text = pickOption[row]["name"].stringValue
     }
 }
 extension AddItemViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
@@ -172,6 +221,7 @@ extension AddItemViewController: UINavigationControllerDelegate, UIImagePickerCo
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 self.itemImageView.image = pickedImage
+                self.isItemImg = true
             }
         })
     }
@@ -180,4 +230,46 @@ extension AddItemViewController: UINavigationControllerDelegate, UIImagePickerCo
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+extension AddItemViewController{
+
+    func saveItem(param : [String : Any]){
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.post(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard (json != nil) else {
+                return
+            }
+            ProgressBar.hideActivityIndicator(view: self.view)
+            print(json)
+             self.dismiss(animated: true, completion: nil)
+        })
+    }
+    func updateItem(param : [String : Any]){
+        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.put(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard (json != nil) else {
+                return
+            }
+            ProgressBar.hideActivityIndicator(view: self.view)
+            print(json)
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    //MARK: - Server Action
+    
+    func getItemCategory()  {
+         ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+        NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard let json = json else {
+                return
+            }
+            ProgressBar.hideActivityIndicator(view: self.view)
+            self.pickOption = json["response"]["itemcategory"].arrayValue
+            print(self.pickOption)
+            self.pickerView.reloadAllComponents()
+        })
+    }
 }

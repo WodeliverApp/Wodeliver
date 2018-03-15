@@ -19,12 +19,14 @@ class UserManager{
     static let deviceToken = "deviceToken"
     static let latitude = "_latitude"
     static let longitude = "_longitude"
+    static let storeId = "storeId"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
         UserDefaults.standard.set(detail[userIdKey].stringValue, forKey: userIdKey)
         UserDefaults.standard.set(detail[customerId].int64Value, forKey: customerId)
         UserDefaults.standard.set(detail[userTypeIdKey].int32Value, forKey: userTypeIdKey)
+         UserDefaults.standard.set(detail[storeId].stringValue, forKey: storeId)
         let profile: [String:Any] = [
             "name": detail["name"].stringValue,
             "_id": detail["_id"].stringValue,
@@ -48,7 +50,9 @@ class UserManager{
     static func getUserId() -> String {
         return UserDefaults.standard.object(forKey: userIdKey) as? String ?? ""
     }
-    
+    static func getStoreId() -> String {
+        return UserDefaults.standard.object(forKey: storeId) as? String ?? ""
+    }
     static func getUserType() -> UserType {
         return UserType(rawValue: Int32(UserDefaults.standard.integer(forKey: userTypeIdKey)))!
     }

@@ -81,6 +81,11 @@ class OtherHelper {
         UIGraphicsEndImageContext()
         return newImage!
     }
+    static func convertImageToBase64(image: UIImage) -> String {
+        let imageData = UIImageJPEGRepresentation(image, 0.5)!
+        return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+    }
+
 }
 
 class ProgressBar{
