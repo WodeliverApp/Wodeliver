@@ -1,11 +1,6 @@
 .DS_Store
-
 *.xcuserstate
-
 Pods/
-
 Podfile.lock
-
 Wodeliver.xcworkspace/
-
 Wodeliver.xcodeproj/xcuserdata/
