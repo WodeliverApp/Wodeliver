@@ -27,10 +27,6 @@ class LandingViewController: UIViewController {
     var searchController: UISearchController!
     var comingFrom:String! = "store"
     var selectedItemId:String! = ""
-    //    var hotspotItem = [HotspotItem]()
-    //    var itemCategory = [ItemCategory]()
-    //    var category = [CategoryItem]()
-    // var banner = Banner(from: <#Decoder#>)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,12 +101,15 @@ class LandingViewController: UIViewController {
                 return
             }
             self.categoryJson = json["response"]["category"].arrayValue
+           
             self.itemJson = json["response"]["itemcategory"].arrayValue
+            print(self.categoryJson)
+            print(self.itemJson)
             self.hotspotJson = json["response"]["hotspot"].arrayValue
             self.bannerJson = json["response"]["banner"].arrayValue
             self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             self.itemCollectionView.reloadData()
-            self.categoryCollectionView.reloadData()
+             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()
             UserManager.setCategory(detail: json["response"]["category"])
             UserManager.setItemCategory(detail: json["response"]["itemcategory"])
@@ -134,12 +133,13 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             return self.categoryJson.count
-        case 2:
+        case 1002:
             return self.itemJson.count
-        case 3:
-            return self.hotspotJson.count
+        case 1003:
+           return 30
+           // return self.hotspotJson.count
         default:
             return 0
         }
@@ -149,7 +149,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemsCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
             cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + categoryJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
@@ -158,7 +158,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.itemImg.layer.borderWidth = 1.5
             cell.itemImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
-        case 2:
+        case 1002:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
             cell.categoryImg.sd_setImage(with: URL(string:Path.baseURL + itemJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
@@ -168,17 +168,10 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.categoryImg.layer.borderWidth = 1.5
             cell.categoryImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
-        case 3:
+        case 1003:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotspotItemCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
-            cell.buyNowBtn.layer.cornerRadius = 3.0
-            cell.buyNowBtn.clipsToBounds = true
-            cell.hotspotImg.sd_setImage(with: URL(string:Path.baseURL + hotspotJson[indexPath.row]["item"]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
-            cell.titleLbl.text = hotspotJson[indexPath.row]["item"]["item"].stringValue
-            cell.memberLbl.text = hotspotJson[indexPath.row]["item"]["member"].stringValue + " Member"
-            cell.messageLbl.text = hotspotJson[indexPath.row]["item"]["commentsCount"].stringValue
-            cell.soldLbl.text = "Sold "+hotspotJson[indexPath.row]["item"]["sold"].stringValue
-            cell.priceLbl.text = "$"+hotspotJson[indexPath.row]["price"].stringValue
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -187,13 +180,13 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             self.comingFrom = "category"
             self.selectedItemId = categoryJson[indexPath.row]["_id"].stringValue
-        case 2:
+        case 1002:
             self.comingFrom = "store"
             self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
-        case 3:
+        case 1003:
             self.comingFrom = "hotsPot"
         default:
             break
@@ -216,11 +209,11 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             return CGSize(width: 78, height: 80)
-        case 2:
+        case 1002:
             return CGSize(width: 78, height: 80)
-        case 3:
+        case 1003:
             let padding: CGFloat =  0
             let collectionViewSize = collectionView.frame.size.width - padding
             return CGSize(width: collectionViewSize/2-10, height: 107)

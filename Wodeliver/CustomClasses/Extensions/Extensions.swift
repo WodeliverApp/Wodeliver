@@ -178,3 +178,10 @@ extension UINavigationBar {
     }
     
 }
+extension DateFormatter {
+    static let standardDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM yyyy"
+        return dateFormatter
+    }()
+}

@@ -30,6 +30,9 @@ struct Path {
     static let changePasswordURL = "\(userURL)changePassword"
     static let storeMenuItem = "\(baseURL)menu/?"
     static let storeAddItem = "\(baseURL)menu"
+    static let storeCurrentOrder = "\(baseURL)order/storeId/current?storeId="
+    static let storeHistorytOrder = "\(baseURL)order/storeId/completed?storeId="
+    static let deleteItem = "\(baseURL)menu/delete?itemId="
 }
 
 struct AlertMessages {

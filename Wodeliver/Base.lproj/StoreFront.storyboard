@@ -539,6 +539,9 @@
                                                 <constraint firstItem="D29-pT-BtS" firstAttribute="firstBaseline" secondItem="ePm-WC-7aY" secondAttribute="firstBaseline" id="dHU-wk-efW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblTotalAmount" destination="ePm-WC-7aY" id="tI8-41-wcQ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgentConfirmCell" rowHeight="44" id="uIz-1P-EQP" customClass="AgentConfirmCell" customModule="Wodeliver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="202" width="375" height="44"/>
@@ -700,7 +703,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Ouy-eU-yvG"/>
                                         </constraints>
                                         <color key="tintColor" red="0.89632189273834229" green="0.11224130541086197" blue="0.13725781440734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button" image="Cancel.png">
+                                        <state key="normal" title="Close" image="Cancel.png">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>

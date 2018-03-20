@@ -77,6 +77,7 @@ class HomeListingTableViewCell: UITableViewCell {
 
 class TotalOrderTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var lblTotalAmount: UILabel!
     
 }
 

@@ -93,7 +93,7 @@ class NetworkHelper{
                 if (error as NSError).code != -999{
                     if let controller = controller {
                         ProgressBar.hideActivityIndicator(view: controller.view)
-                        OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
+                        OtherHelper.simpleDialog("Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
                 }else {

@@ -30,6 +30,9 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
+		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
+		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
 		307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreItemViewController.swift */; };
 		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
 		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
@@ -146,6 +149,9 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
+		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
+		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		307716D020090A2200D073A0 /* StoreItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemViewController.swift; sourceTree = "<group>"; };
 		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -373,6 +379,7 @@
 				307716E3200B253F00D073A0 /* OtherHelper.swift */,
 				30067479200B3D290021A08C /* UserManager.swift */,
 				3006748C200C5A290021A08C /* Enum.swift */,
+				30617D27205B8F170010948E /* TimeAgo.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -496,6 +503,8 @@
 				30067474200B33430021A08C /* StoreDetailCell.xib */,
 				A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */,
 				A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */,
+				30617D23205AF80E0010948E /* RemarkCell.swift */,
+				30617D24205AF80E0010948E /* RemarkCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -624,6 +633,7 @@
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
 				30067476200B33430021A08C /* StoreDetailCell.xib in Resources */,
+				30617D26205AF80E0010948E /* RemarkCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
@@ -845,6 +855,7 @@
 				307732F5201069290045A4B0 /* StoreCategory.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
+				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
@@ -862,6 +873,7 @@
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
 				307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
 				30067487200B86FC0021A08C /* StoreNotificationViewController.swift in Sources */,
+				30617D25205AF80E0010948E /* RemarkCell.swift in Sources */,
 				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,

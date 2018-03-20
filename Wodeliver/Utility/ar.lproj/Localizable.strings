@@ -5,3 +5,42 @@
   Created by Anuj Singh on 07/01/18.
   Copyright © 2018 Anuj Singh. All rights reserved.
 */
+"%d_years_ago" = "%d اعوام";
+"last_year" = "العام الماضي";
+"%d_months_ago" = "%d  اشهر";
+"last_month" = "الشهر الماضي ";
+"%d_weeks_ago" = "%d اسابيع";
+"last_week" = "الاسبوع الماضى";
+"%d_days_ago" = "%d ايام";
+"a_day_ago" = "من يوم  ";
+"%d_hours_ago" = "%d ساعات";
+"an_hour_ago" = "منذ ساعة ";
+"%d_minutes_ago" = "%d دقائق";
+"a_minute_ago" = "منذ دقيقة";
+"%d_seconds_ago" = "%d ثوان"; //thin
+"just_now" = "الآن";
+"%d sec" = "ثانيا %d";
+"1 min" = "١ دقائق";
+"%d mins" = "دقائق %d";
+"1 hour" = "١ ساعات";
+"%d hours" = "ساعات %d";
+"%d days" = "يوم %d";
+"%d weeks" = "أسبوع %d";
+"%d months" = "شهر %d";
+"%d years" = "سنة %d";
+"%d_thin_years_ago" = "%d اعوام";
+"thin_last_year" = "العام الماضي";
+"%d_thin_months_ago" = "%d  اشهر";
+"thin_last_month" = "الشهر الماضي ";
+"%d_thin_weeks_ago" = "%d اسابيع";
+"thin_last_week" = "الاسبوع الماضى";
+"%d_thin_days_ago" = "%d ايام";
+"thin_a_day_ago" = "من يوم  ";
+"%d_thin_hours_ago" = "%d ساعات";
+"an_thin_hour_ago" = "منذ ساعة ";
+"%d_thin_minutes_ago" = "%d دقائق";
+"a_thin_minute_ago" = "منذ دقيقة";
+"%d_thin_seconds_ago" = "%d ثوان"; //thin
+"thin_just_now" = "الآن";
+"today" = "اليوم";
+"yesterday" = "الأمس";

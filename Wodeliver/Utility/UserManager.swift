@@ -72,6 +72,17 @@ class UserManager{
         }
     }
     
+    static func getOrderStatus(type: OrderStatus) -> String {
+        switch type {
+        case .inProgress:
+            return "InProgress".localized
+        case .completed:
+            return "Completed".localized
+        case .delivery:
+            return "Delivery".localized
+        }
+    }
+    
     static func checkIfLogin() -> Bool {
         if let _ = UserDefaults.standard.object(forKey: userDetailsKey) {
             return true

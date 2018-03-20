@@ -276,7 +276,6 @@ extension AddItemViewController{
                 return
             }
             ProgressBar.hideActivityIndicator(view: self.view)
-            print(json)
             self.dismiss(animated: true, completion: nil)
         })
     }

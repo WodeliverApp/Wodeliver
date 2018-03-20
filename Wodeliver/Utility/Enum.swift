@@ -16,6 +16,13 @@ enum UserType: Int32 {
     case deliveryBoy = 3
 }
 
+enum OrderStatus: Int32 {
+    case inProgress = 1
+    case completed = 2
+    case delivery = 3
+}
+
+
 protocol Printable {
     var description: String { get }
 }

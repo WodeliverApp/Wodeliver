@@ -5,3 +5,42 @@
   Created by Anuj Singh on 07/01/18.
   Copyright © 2018 Anuj Singh. All rights reserved.
 */
+"%d_years_ago" = "%d years ago";
+"last_year" = "Last year";
+"%d_months_ago" = "%d months ago";
+"last_month" = "Last month";
+"%d_weeks_ago" = "%d weeks ago";
+"last_week" = "Last week";
+"%d_days_ago" = "%d days ago";
+"a_day_ago" = "A day ago";
+"%d_hours_ago" = "%d hours ago";
+"an_hour_ago" = "An hour ago";
+"%d_minutes_ago" = "%d minutes ago";
+"a_minute_ago" = "A minute ago";
+"%d_seconds_ago" = "%d seconds ago";
+"just_now" = "Just now";
+"%d sec" = "%d sec";
+"1 min" = "1 min";
+"%d mins" = "%d mins";
+"1 hour" = "1 hour";
+"%d hours" = "%d hours";
+"%d days" = "%d days";
+"%d weeks" = "%d weeks";
+"%d months" = "%d months";
+"%d years" = "%d years";
+"%d_thin_years_ago" = "%d y";
+"thin_last_year" = "1 y";
+"%d_thin_months_ago" = "%d m";
+"thin_last_month" = "1 m";
+"%d_thin_weeks_ago" = "%d w";
+"%d_thin_last_week" = "%d w";
+"%d_thin_days_ago" = "%d d";
+"thin_a_day_ago" = "d";
+"%d_thin_hours_ago" = "%d h";
+"an_thin_hour_ago" = "1 h";
+"%d_thin_minutes_ago" = "%d m";
+"a_thin_minute_ago" = "1 m";
+"%d_thin_seconds_ago" = "%d s";
+"thin_just_now" = "just";
+"today" = "Today";
+"yesterday" = "Yesterday";

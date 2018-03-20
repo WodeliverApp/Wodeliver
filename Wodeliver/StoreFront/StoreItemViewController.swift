@@ -86,7 +86,10 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
             //self.isEditing = false
+            
             print("more button tapped")
+            self.deleteStoreItem(itemId: self.storeItemList[indexPath.row]["_id"].stringValue, indexPath: indexPath)
+            
         }
         delete.backgroundColor = Colors.redBackgroundColor
         
@@ -126,6 +129,19 @@ extension StoreItemViewController{
             self.storeItemList = json["response"].arrayValue
             print(self.storeItemList)
             self.tblHistory.reloadData()
+        })
+    }
+    
+    func deleteStoreItem(itemId : String, indexPath : IndexPath)  {
+        
+        NetworkHelper.post(url: Path.deleteItem + itemId , param: [:], self, completionHandler: {[weak self] json, error in
+            ProgressBar.hideActivityIndicator(view: (self?.view)!)
+            guard let `self` = self else { return }
+            guard (json != nil) else {
+                return
+            }
+            self.storeItemList.remove(at: indexPath.row)
+           self.tblHistory.reloadData()
         })
     }
 }
