@@ -110,6 +110,23 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0bI-0h-oMH">
+                                        <rect key="frame" x="0.0" y="187" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0bI-0h-oMH" id="uup-Ox-dle">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hD-Ml-d9R">
+                                                    <rect key="frame" x="20" y="-6" width="325" height="55"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.035690911110000001" blue="0.1331423223" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -457,7 +474,9 @@
                         <outlet property="bannerView" destination="1q4-Sy-zR5" id="JzW-S1-hZt"/>
                         <outlet property="categoryCollectionView" destination="bDX-kN-Olp" id="lW7-3r-cLm"/>
                         <outlet property="hotspotCollectionView" destination="j9v-7I-bN4" id="ERg-Hu-Mmq"/>
+                        <outlet property="hotstarHeightConstant" destination="NtU-4H-IjY" id="Tl9-bO-AAu"/>
                         <outlet property="itemCollectionView" destination="pnH-Eu-6EZ" id="M6q-vz-qmu"/>
+                        <outlet property="scrollView" destination="8cg-w0-PRA" id="5nN-fw-bma"/>
                         <outlet property="searchBar_ref" destination="Zgx-6o-Cbb" id="JCX-PQ-V85"/>
                         <outlet property="searchController_ref" destination="j1X-qz-ixs" id="uxI-3f-UVJ"/>
                         <segue destination="cOV-OT-dnl" kind="show" identifier="HomeToListing" id="KJo-8K-JM2"/>
@@ -485,7 +504,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kff-Xb-Ghd" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="343" height="33"/>
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6e5-n6-rbH"/>
                                 </constraints>
@@ -547,7 +566,7 @@
         <!--                      -->
         <scene sceneID="i3a-G4-wTZ">
             <objects>
-                <viewController title="                      " id="o3p-Ck-Q3p" customClass="StoreDetailViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreDetailViewController" title="                      " id="o3p-Ck-Q3p" customClass="StoreDetailViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DAf-yo-rOW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -570,6 +589,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Qn-5h-Rnk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lEA-wP-3zY"/>
                     <connections>
                         <outlet property="storeDetailTableView" destination="01J-7u-3a0" id="YbK-dq-Yn7"/>
                     </connections>
@@ -710,7 +730,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0T-kJ-CID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1124" y="133"/>
+            <point key="canvasLocation" x="-1102" y="-394"/>
         </scene>
         <!--Search Controller View Controller-->
         <scene sceneID="FYL-MC-e5S">
@@ -750,11 +770,12 @@
                     </view>
                     <connections>
                         <outlet property="searchTableView" destination="h9Y-Aj-Fx7" id="0hg-xn-ilm"/>
+                        <segue destination="hIB-qb-VAc" kind="show" identifier="storeListToDetail" id="6zx-TZ-lWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-Tb-a1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="288"/>
+            <point key="canvasLocation" x="-927" y="279"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -907,7 +928,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IGF-Ab-rK5" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="stU-SX-d7E"/>
                                         </constraints>
@@ -1067,7 +1088,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-U8-CB9" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="4ZY-bf-gMC"/>
                                         </constraints>
@@ -1134,6 +1155,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1j-0p-K4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1630" y="1931"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0t7-7K-sSY">
+            <objects>
+                <navigationController id="hIB-qb-VAc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W2Z-5G-09P">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="o3p-Ck-Q3p" kind="relationship" relationship="rootViewController" id="rGm-sC-4N5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSt-J2-CjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="879"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="dUM-oc-qNf">
@@ -1313,7 +1350,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Nn-rzP" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                        <rect key="frame" x="33" y="80.5" width="310" height="33"/>
+                                        <rect key="frame" x="33" y="80" width="310" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="VQJ-k0-I24"/>
                                         </constraints>
@@ -1445,7 +1482,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Fk-N3-zdo" customClass="MySegmentedControl" customModule="Wodeliver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="69" width="343" height="33"/>
+                                <rect key="frame" x="16" y="68.5" width="343" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="snn-hx-lIL"/>
                                 </constraints>
@@ -1461,7 +1498,7 @@
                                 </userDefinedRuntimeAttributes>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-St-zck">
-                                <rect key="frame" x="0.0" y="121" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="VM6-ND-Y8c" id="Gcn-nx-FdK"/>
@@ -1888,6 +1925,7 @@
         <image name="pizza" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QAh-Tu-dXa"/>
+        <segue reference="syT-Ut-obv"/>
+        <segue reference="rGm-sC-4N5"/>
     </inferredMetricsTieBreakers>
 </document>

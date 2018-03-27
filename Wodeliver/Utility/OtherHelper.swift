@@ -102,13 +102,10 @@ class ProgressBar{
             overlay.layer.backgroundColor = UIColor.lightText.cgColor
             overlay.alpha = 0.7
             overlay.tag = 1
-            
             overlay.center = superView.center
             overlay.isHidden = false
             superView.addSubview(overlay)
             superView.bringSubview(toFront: overlay)
-            
-            // now we'll work on adding the indicator to the overlay (now superView)
             superView = overlay
         }
         

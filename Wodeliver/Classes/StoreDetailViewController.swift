@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
+import SDWebImage
 
 class StoreDetailViewController: UIViewController {
 
     @IBOutlet weak var storeDetailTableView: UITableView!
+    var storeDetail : JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
@@ -55,6 +59,42 @@ extension StoreDetailViewController: UITableViewDelegate,UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreDetailCell") as! StoreDetailCell
+        if let store = storeDetail{
+            cell.storeName.text = store["name"].stringValue
+            cell.cityLbl.text = store["address"].stringValue
+            cell.likeBtn.setTitle(store["likes"].stringValue, for: .normal)
+            cell.dislikeBtn.setTitle(store["dislikes"].stringValue, for: .normal)
+            cell.storeImg.sd_setImage(with: URL(string:Path.baseURL + store["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            switch store[indexPath.row]["sequence"].intValue {
+            case 1:
+                cell.rating1Btn.isSelected = true
+            case 2:
+                cell.rating1Btn.isSelected = true
+                cell.rating2Btn.isSelected = true
+            case 3:
+                cell.rating1Btn.isSelected = true
+                cell.rating2Btn.isSelected = true
+                cell.rating3Btn.isSelected = true
+            case 4:
+                cell.rating1Btn.isSelected = true
+                cell.rating2Btn.isSelected = true
+                cell.rating3Btn.isSelected = true
+                cell.rating4Btn.isSelected = true
+            case 5:
+                cell.rating1Btn.isSelected = true
+                cell.rating2Btn.isSelected = true
+                cell.rating3Btn.isSelected = true
+                cell.rating4Btn.isSelected = true
+                cell.rating5Btn.isSelected = true
+            default:
+                cell.rating1Btn.isSelected = false
+                cell.rating2Btn.isSelected = false
+                cell.rating3Btn.isSelected = false
+                cell.rating4Btn.isSelected = false
+                cell.rating5Btn.isSelected = false
+                break
+            }
+        }
         return cell
     }
     

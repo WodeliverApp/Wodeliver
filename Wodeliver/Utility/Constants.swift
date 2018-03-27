@@ -19,12 +19,14 @@ struct Colors {
 
 struct Path {
     static let baseURL : String = "http://18.217.139.93:8082/"
+    static let iosBaseURL : String = "http://18.217.139.93:8082/ios/"
     static let userURL : String = "\(baseURL)user"
     static let loginURL : String = "\(baseURL)login"
     static let signUpURL : String = "\(baseURL)user"
     static let categoryURL : String = "\(baseURL)category"
-    static let storeListURL : String = "\(baseURL)store/category/location/?"
-    static let itemListURL : String = "\(baseURL)menu/itemCategory/?"
+    static let storeListURL : String = "\(iosBaseURL)store/category/location/?"
+    static let itemListURL : String = "\(iosBaseURL)menu/itemCategory/?"
+    static let hotspotListURL : String = "\(baseURL)hotspot?storeId="
     static let searchURL : String = "\(baseURL)searchlist"
     static let forgotPasswordURL = "\(userURL)forgotPassword"
     static let changePasswordURL = "\(userURL)changePassword"

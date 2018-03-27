@@ -21,6 +21,8 @@
 		30067489200BC4A60021A08C /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067488200BC4A50021A08C /* String+Util.swift */; };
 		3006748B200BC5230021A08C /* Date + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748A200BC5230021A08C /* Date + Util.swift */; };
 		3006748D200C5A290021A08C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748C200C5A290021A08C /* Enum.swift */; };
+		30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013236F206966FF003D4DF7 /* AddBannerViewController.swift */; };
+		3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013237120696782003D4DF7 /* AddHotspotViewController.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -134,6 +136,8 @@
 		30067488200BC4A50021A08C /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3006748A200BC5230021A08C /* Date + Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Util.swift"; sourceTree = "<group>"; };
 		3006748C200C5A290021A08C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		3013236F206966FF003D4DF7 /* AddBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBannerViewController.swift; sourceTree = "<group>"; };
+		3013237120696782003D4DF7 /* AddHotspotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotspotViewController.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +419,8 @@
 				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
 				30067486200B86FC0021A08C /* StoreNotificationViewController.swift */,
 				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
+				3013236F206966FF003D4DF7 /* AddBannerViewController.swift */,
+				3013237120696782003D4DF7 /* AddHotspotViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -847,12 +853,14 @@
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
+				30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				3006748D200C5A290021A08C /* Enum.swift in Sources */,
 				307732FB20106D330045A4B0 /* Items.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
 				307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */,
 				307732F5201069290045A4B0 /* StoreCategory.swift in Sources */,
+				3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
 				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,

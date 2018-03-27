@@ -20,11 +20,12 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchControllerCell")
+         self.generateRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.generateRequest()
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,12 +37,10 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchByText != searchText {
-            
             searchByText = searchText
             if searchText.count > 0 {
                 isActiveSearch = true
                 filteredArray = searchItem.filter { $0["name"].stringValue.contains(searchText) }
-                print("** Result ** \n\(filteredArray)")
                 searchTableView.reloadData()
             }else{
                 isActiveSearch = false
@@ -52,7 +51,6 @@ class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UIS
     // MARK: - Get User List From Server
     
     func generateRequest() {
-        
         let param:[String:Any] = [:]
         getResponse(param)
     }
@@ -108,6 +106,16 @@ extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSou
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//        print(filteredArray[indexPath.row])
+//       self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
         
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "StoreDetailViewController") as! StoreDetailViewController
+//        self.navigationController?.pushViewController(nextViewController, animated: true)
+//
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreDetailViewController") as! StoreDetailViewController
+//        let navigationController1 = UINavigationController(rootViewController: vc)
+//        navigationController?.pushViewController(navigationController1, animated: true)
+       // self.present(navigationController, animated: true, completion: nil)
     }
 }

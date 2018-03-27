@@ -9,8 +9,8 @@
 import UIKit
 import SwiftyJSON
 
-class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+   
     let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
     let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
     let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
@@ -263,9 +263,9 @@ extension AddItemViewController{
                 return
             }
             DispatchQueue.main.async {
+                  NotificationCenter.default.post(name: Notification.Name.init("refreshItemData"), object: nil, userInfo: nil)
                 self.dismiss(animated: true, completion: nil)
             }
-            // self.dismiss(animated: true, completion: nil)
         })
     }
     func updateItem(param : [String : Any]){

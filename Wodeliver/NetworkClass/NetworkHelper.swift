@@ -16,7 +16,13 @@ class NetworkHelper{
         var json: JSON!
         var headers:[String:String] = [:]
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : method, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -75,7 +81,13 @@ class NetworkHelper{
         var json: JSON!
         var headers:[String:String] = [:]
         headers["Content-Type"] = "application/json"
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .post, parameters : param,  encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -109,7 +121,13 @@ class NetworkHelper{
         var headers:[String:String] = [:]
         headers["Content-Type"] = "application/json"
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .get, parameters : param, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -142,7 +160,13 @@ class NetworkHelper{
         var headers:[String:String] = [:]
         //  headers["Myu-Auth-Token"] = UserManager.getAuthToken()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .put, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -167,7 +191,13 @@ class NetworkHelper{
         var json: JSON!
         var headers:[String:String] = [:]
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .patch, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -226,7 +256,13 @@ class NetworkHelper{
         var json: JSON!
         var headers:[String:String] = [:]
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .delete, parameters : param, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -290,7 +326,13 @@ class NetworkHelper{
         var headers:[String:String] = [:]
         //        headers["Myu-Auth-Token"] = UserManager.getAuthToken()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .post, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
