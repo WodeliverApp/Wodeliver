@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="ALs-0d-KTL">
@@ -72,7 +67,7 @@
                                     <constraint firstAttribute="height" constant="50" id="B2j-7x-PZN"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xsq-Im-rHz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="Xsq-Im-rHz">
                                 <rect key="frame" x="0.0" y="128" width="375" height="123"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="123" id="xiv-HI-mBM"/>
@@ -191,7 +186,7 @@
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="LZS-I2-d8a" id="tzH-i4-nYn"/>
                                                 </connections>
@@ -735,7 +730,7 @@
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="aMX-3L-j53" id="DHe-Wp-fe6"/>
                                                 </connections>
@@ -916,72 +911,109 @@
                                             <action selector="btnClose_Action:" destination="g2f-ko-QyQ" eventType="touchUpInside" id="Jjg-gR-Prg"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="hxZ-eH-rwI">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="hxZ-eH-rwI">
                                         <rect key="frame" x="8" y="53" width="327" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="h1l-Rh-bJd"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xVg-Lh-OCd">
-                                        <rect key="frame" x="8" y="240" width="323" height="35"/>
+                                        <rect key="frame" x="8" y="250" width="323" height="45"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-sK-VpX">
-                                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="35"/>
+                                            <textField opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-sK-VpX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="45"/>
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="8K7-J5-OUI"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-Dt-KQt">
-                                                <rect key="frame" x="161.5" y="0.0" width="161.5" height="35"/>
+                                            <textField opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-Dt-KQt" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="161.5" y="0.0" width="161.5" height="45"/>
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="g2f-ko-QyQ" id="7i5-mp-xDw"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="pOI-HC-6WF"/>
+                                            <constraint firstAttribute="height" constant="45" id="pOI-HC-6WF"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-tV-XIe">
-                                        <rect key="frame" x="8" y="287" width="327" height="35"/>
+                                        <rect key="frame" x="8" y="307" width="327" height="45"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-z2-G4H">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="35"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-z2-G4H" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="guU-4u-n8O"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="DdD-ca-thu"/>
+                                            <constraint firstAttribute="height" constant="45" id="DdD-ca-thu"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PYs-QB-28G">
-                                        <rect key="frame" x="8" y="193" width="327" height="35"/>
+                                        <rect key="frame" x="8" y="193" width="327" height="45"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-P7-vFO" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="35"/>
+                                            <textField opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-P7-vFO" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="45"/>
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="eV7-5a-C2M"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ix2-u9-phi" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="168.5" y="0.0" width="158.5" height="35"/>
+                                            <textField opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ix2-u9-phi" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="168.5" y="0.0" width="158.5" height="45"/>
                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="zC3-dh-b66"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="V4Y-TW-gei"/>
+                                            <constraint firstAttribute="height" constant="45" id="V4Y-TW-gei"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-O7-6NY">
@@ -1036,14 +1068,245 @@
                         <viewLayoutGuide key="safeArea" id="rhI-60-Cdi"/>
                     </view>
                     <connections>
+                        <outlet property="bannerImageView" destination="hxZ-eH-rwI" id="fYm-2C-bZ4"/>
                         <outlet property="btnClose_ref" destination="8MR-tj-28h" id="vaL-hi-TLm"/>
                         <outlet property="btnDone_ref" destination="Nax-O7-6NY" id="RVP-w6-5Hh"/>
+                        <outlet property="txtEndDate" destination="ix2-u9-phi" id="Zhw-ez-K9G"/>
+                        <outlet property="txtEndTime" destination="4dJ-Dt-KQt" id="LNb-OZ-f4i"/>
+                        <outlet property="txtLocation" destination="0wH-z2-G4H" id="J50-Yr-lj4"/>
                         <outlet property="txtStartDate" destination="c7r-P7-vFO" id="9Qa-z4-WfE"/>
+                        <outlet property="txtStartTime" destination="z5v-sK-VpX" id="Rp8-kz-0H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ad-l3-0nF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="324"/>
+            <point key="canvasLocation" x="1046" y="337"/>
+        </scene>
+        <!--Add Hotspot View Controller-->
+        <scene sceneID="x1D-KH-reB">
+            <objects>
+                <viewController storyboardIdentifier="AddHotspotViewController" id="WjI-If-nhi" customClass="AddHotspotViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AP8-C9-tb4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="06H-kG-4Qb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zi5-Mv-aJE">
+                                <rect key="frame" x="16" y="108" width="343" height="487"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add HotSpot Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpX-kb-9tW">
+                                        <rect key="frame" x="111" y="20" width="122.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="PDC-pf-dlH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNM-2X-MpX">
+                                        <rect key="frame" x="295" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="KNO-dA-WWN"/>
+                                            <constraint firstAttribute="width" constant="40" id="ZCN-Yq-lhD"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.89632189269999996" green="0.1122413054" blue="0.13725781440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="cancel_icon">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnClose_Action:" destination="WjI-If-nhi" eventType="touchUpInside" id="kfC-83-TDQ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-o7-qxw">
+                                        <rect key="frame" x="8" y="53" width="327" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Hei-lo-IgV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Jny-Or-R4H">
+                                        <rect key="frame" x="8" y="250" width="323" height="45"/>
+                                        <subviews>
+                                            <textField opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Time Slot" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhp-fB-o6j" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="TTX-wC-bNE"/>
+                                                </connections>
+                                            </textField>
+                                            <textField hidden="YES" opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JgG-yD-Lq8" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="-24" y="0.0" width="0.0" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="TOA-lB-cbj"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="BBy-pL-q27"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-Ig-KFd">
+                                        <rect key="frame" x="8" y="307" width="327" height="105"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-QP-10r" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="oP0-Go-YzI"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-uy-anw" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="327" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="uUS-Xu-EjP"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="105" id="yqk-NR-BtC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-Xe-g43">
+                                        <rect key="frame" x="8" y="193" width="327" height="45"/>
+                                        <subviews>
+                                            <textField opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6C-QZ-XTX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="hLA-mI-Sen"/>
+                                                </connections>
+                                            </textField>
+                                            <textField hidden="YES" opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="det-Xs-RMz" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="-24" y="0.0" width="0.0" height="45"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="iEg-6v-BTz"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="bTn-XO-GQU"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-r9-NZf">
+                                        <rect key="frame" x="12" y="444" width="319" height="35"/>
+                                        <color key="backgroundColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="nwz-nH-NYh"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDone_Action:" destination="WjI-If-nhi" eventType="touchUpInside" id="lcY-tt-9ub"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VfV-Ig-KFd" firstAttribute="top" secondItem="Jny-Or-R4H" secondAttribute="bottom" constant="12" id="353-8p-u6H"/>
+                                    <constraint firstAttribute="trailing" secondItem="GNM-2X-MpX" secondAttribute="trailing" constant="8" id="6bW-JJ-oPW"/>
+                                    <constraint firstItem="w9r-o7-qxw" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="7cI-W9-sAw"/>
+                                    <constraint firstItem="YV9-Xe-g43" firstAttribute="top" secondItem="w9r-o7-qxw" secondAttribute="bottom" constant="12" id="8VN-Nq-cpQ"/>
+                                    <constraint firstItem="Jny-Or-R4H" firstAttribute="top" secondItem="YV9-Xe-g43" secondAttribute="bottom" constant="12" id="C4H-FT-z2P"/>
+                                    <constraint firstAttribute="height" constant="487" id="KUO-U4-bXP"/>
+                                    <constraint firstAttribute="trailing" secondItem="vcH-r9-NZf" secondAttribute="trailing" constant="12" id="LRk-OA-svN"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcH-r9-NZf" secondAttribute="bottom" constant="8" id="XBN-4F-nIw"/>
+                                    <constraint firstAttribute="trailing" secondItem="YV9-Xe-g43" secondAttribute="trailing" constant="8" id="Zd1-h0-Mwx"/>
+                                    <constraint firstAttribute="trailing" secondItem="w9r-o7-qxw" secondAttribute="trailing" constant="8" id="bgk-PX-0sX"/>
+                                    <constraint firstItem="ZpX-kb-9tW" firstAttribute="top" secondItem="Zi5-Mv-aJE" secondAttribute="top" constant="20" id="fnd-Td-xhU"/>
+                                    <constraint firstItem="vcH-r9-NZf" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="12" id="g82-Tj-Fjz"/>
+                                    <constraint firstItem="ZpX-kb-9tW" firstAttribute="centerX" secondItem="Zi5-Mv-aJE" secondAttribute="centerX" id="hiB-0X-H1a"/>
+                                    <constraint firstItem="VfV-Ig-KFd" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="jon-fJ-eoS"/>
+                                    <constraint firstAttribute="trailing" secondItem="VfV-Ig-KFd" secondAttribute="trailing" constant="8" id="kIR-aT-Gpy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jny-Or-R4H" secondAttribute="trailing" constant="12" id="qd5-9I-9Ih"/>
+                                    <constraint firstItem="Jny-Or-R4H" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="sP6-lG-quy"/>
+                                    <constraint firstItem="YV9-Xe-g43" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="uY7-S1-QHz"/>
+                                    <constraint firstItem="w9r-o7-qxw" firstAttribute="top" secondItem="ZpX-kb-9tW" secondAttribute="bottom" constant="12" id="xdj-uZ-0WY"/>
+                                    <constraint firstItem="GNM-2X-MpX" firstAttribute="top" secondItem="Zi5-Mv-aJE" secondAttribute="top" constant="8" id="z43-CP-GVu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="opI-Lx-zjj" firstAttribute="trailing" secondItem="06H-kG-4Qb" secondAttribute="trailing" id="0zZ-YE-XjL"/>
+                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="leading" secondItem="opI-Lx-zjj" secondAttribute="leading" constant="16" id="57R-Rt-6uP"/>
+                            <constraint firstItem="opI-Lx-zjj" firstAttribute="bottom" secondItem="06H-kG-4Qb" secondAttribute="bottom" id="6Jd-m8-xSE"/>
+                            <constraint firstItem="06H-kG-4Qb" firstAttribute="top" secondItem="opI-Lx-zjj" secondAttribute="top" id="AmE-18-sml"/>
+                            <constraint firstItem="opI-Lx-zjj" firstAttribute="trailing" secondItem="Zi5-Mv-aJE" secondAttribute="trailing" constant="16" id="K9x-1k-FHz"/>
+                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerX" secondItem="AP8-C9-tb4" secondAttribute="centerX" id="YGY-FZ-GVo"/>
+                            <constraint firstItem="06H-kG-4Qb" firstAttribute="leading" secondItem="opI-Lx-zjj" secondAttribute="leading" id="dVc-Hw-z5O"/>
+                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerY" secondItem="AP8-C9-tb4" secondAttribute="centerY" constant="18" id="lTi-OO-K7K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="opI-Lx-zjj"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose_ref" destination="GNM-2X-MpX" id="cQI-Ef-l6h"/>
+                        <outlet property="btnDone_ref" destination="vcH-r9-NZf" id="A0e-43-c1d"/>
+                        <outlet property="hotSpotImageView" destination="w9r-o7-qxw" id="Ry5-F8-qMz"/>
+                        <outlet property="txtEndDate" destination="det-Xs-RMz" id="XaT-GI-7Zp"/>
+                        <outlet property="txtEndTime" destination="JgG-yD-Lq8" id="1EE-mI-8oS"/>
+                        <outlet property="txtLocation" destination="hLn-QP-10r" id="hgD-tx-Rbe"/>
+                        <outlet property="txtStartDate" destination="q6C-QZ-XTX" id="hp6-NS-U68"/>
+                        <outlet property="txtStartTime" destination="Bhp-fB-o6j" id="PvO-Gv-4nd"/>
+                        <outlet property="txtStoreItem" destination="LiC-uy-anw" id="7og-hF-25q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZC-xd-4Ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="336.88155922038982"/>
         </scene>
     </scenes>
     <resources>

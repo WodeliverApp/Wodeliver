@@ -59,6 +59,10 @@
 		30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
 		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
+		30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */; };
+		30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57F2073D4D500791A81 /* MenuViewController.swift */; };
+		30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */; };
+		30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
 		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
 		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
@@ -191,6 +195,10 @@
 		30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
 		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
+		30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaksViewController.swift; sourceTree = "<group>"; };
+		30EBB57F2073D4D500791A81 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +429,8 @@
 				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
 				3013236F206966FF003D4DF7 /* AddBannerViewController.swift */,
 				3013237120696782003D4DF7 /* AddHotspotViewController.swift */,
+				30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */,
+				30EBB57F2073D4D500791A81 /* MenuViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -511,6 +521,8 @@
 				A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */,
 				30617D23205AF80E0010948E /* RemarkCell.swift */,
 				30617D24205AF80E0010948E /* RemarkCell.xib */,
+				30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */,
+				30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -587,7 +599,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Anuj Singh";
 				TargetAttributes = {
 					30331A991FE388E100A8B1F1 = {
@@ -651,6 +663,7 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */,
 				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -868,6 +881,7 @@
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
+				30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */,
 				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				307732F32010689C0045A4B0 /* ItemCategory.swift in Sources */,
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
@@ -876,6 +890,7 @@
 				30067489200BC4A60021A08C /* String+Util.swift in Sources */,
 				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
 				30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */,
+				30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */,
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
@@ -890,6 +905,7 @@
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
+				30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */,
 				A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */,
 				30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */,
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
@@ -1016,6 +1032,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1023,6 +1040,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1074,6 +1092,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1081,6 +1100,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

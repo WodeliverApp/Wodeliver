@@ -104,7 +104,7 @@ class ForgotPasswordViewController: UIViewController {
                 self.forgotPasswordButton.isEnabled = true
                 return
             }
-            print(json)
+           // print(json)
             ProgressBar.hideActivityIndicator(view: self.view)
 //            if UserManager.getUserType() == .storeManager{
 //                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)

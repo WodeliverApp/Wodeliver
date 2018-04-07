@@ -297,7 +297,7 @@ class NetworkHelper{
                             errorReport = error
                             completionHandler(nil,error)
                         }
-                        var reportParam = param
+                     //   var reportParam = param
                     }
                 }else{
                     if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {

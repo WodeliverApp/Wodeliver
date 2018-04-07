@@ -57,7 +57,8 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         if itemObject != nil{
             self.itemTF.text = itemObject!["item"]?.stringValue
             self.priceTF.text = itemObject!["price"]?.stringValue
-        //  cell.lblProdcutCategory.text = item["item"].stringValue
+            self.categoryTF.text = itemObject!["itemCategory"]?.arrayValue[0]["name"].stringValue
+            self.selectedItemCategory = itemObject!["itemCategory"]?.arrayValue[0]["_id"].stringValue
             self.descriptionTF.text = itemObject!["description"]?.stringValue
             self.itemImageView.sd_setImage(with: URL(string:Path.baseURL + (itemObject!["image"]?.stringValue.replace(target: " ", withString: "%20"))!), placeholderImage: UIImage(named: "no_image"))
             self.isItemImg = true
@@ -88,6 +89,7 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         categoryTF.inputAccessoryView = toolBar
+        priceTF.inputAccessoryView = toolBar
 
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(self.imagePicker(_:)))
         itemImageView.addGestureRecognizer(imageGesture)
@@ -119,10 +121,12 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     //MARK:- UIToolBar Button Actions
     
    @objc func doneClick() {
-        categoryTF.resignFirstResponder()
+        //categoryTF.resignFirstResponder()
+        self.view.endEditing(true)
     }
     @objc func cancelClick() {
-        categoryTF.resignFirstResponder()
+        //categoryTF.resignFirstResponder()
+        self.view.endEditing(true)
     }
     
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
@@ -135,7 +139,7 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         self.view.endEditing(true)
         if self.isValidate() {
             let imgBase64 = OtherHelper.convertImageToBase64(image: self.itemImageView.image!)
-            let param = ["itemCategory": self.selectedItemCategory, "category": "", "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
+            let param = ["itemCategory": self.selectedItemCategory, "category": [], "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
             if itemObject != nil{
               self.updateItem(param: param)
             }else{
@@ -255,13 +259,13 @@ extension AddItemViewController{
     //MARK: - Server Action
     
     func saveItem(param : [String : Any]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.post(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
             ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
             }
+           // print(json)
             DispatchQueue.main.async {
                   NotificationCenter.default.post(name: Notification.Name.init("refreshItemData"), object: nil, userInfo: nil)
                 self.dismiss(animated: true, completion: nil)

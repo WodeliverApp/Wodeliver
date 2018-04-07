@@ -12,6 +12,7 @@ import SDWebImage
 
 class StoreDetailViewController: UIViewController {
 
+    @IBOutlet weak var menuSegment_ref: UISegmentedControl!
     @IBOutlet weak var storeDetailTableView: UITableView!
     var storeDetail : JSON?
     
@@ -19,6 +20,13 @@ class StoreDetailViewController: UIViewController {
         super.viewDidLoad()
         self.registerCustomCell()
         // Do any additional setup after loading the view.
+        
+    }
+    
+  
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +35,7 @@ class StoreDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        menuSegment_ref.selectedSegmentIndex = -1
         super.viewWillAppear(animated)
         self.title = "Storepoint Detail"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -37,7 +46,6 @@ class StoreDetailViewController: UIViewController {
         self.storeDetailTableView.layer.cornerRadius = 8.0
         self.storeDetailTableView.clipsToBounds = true
         self.navigationController?.navigationBar.topItem?.title = " "
-        
     }
     
     func registerCustomCell()
@@ -46,7 +54,30 @@ class StoreDetailViewController: UIViewController {
     }
     @IBAction func segmentValueChnage(_ sender: Any) {
     }
+    @IBAction func menuSegmentAction(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            self.performSegue(withIdentifier: "menuSegue", sender: nil)
+        }else{
+            self.performSegue(withIdentifier: "remarksSegue", sender: nil)
+        }
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if segue.identifier == "menuSegue" {
+            if let viewController = segue.destination as? MenuViewController {
+               if let store = storeDetail{
+                    viewController.itemCategoryId = store["_id"].stringValue
+                }
+            }
+        }
+        if segue.identifier == "remarksSegue" {
+            if let viewController = segue.destination as? RemaksViewController {
+                if let store = storeDetail{
+                    viewController.entityId = store["_id"].stringValue
+                }
+            }
+        }
+    }
 }
 extension StoreDetailViewController: UITableViewDelegate,UITableViewDataSource {
     // MARK: - UITableView Delegate and datasource Methods

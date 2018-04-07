@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Colors {
-     static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+    static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
     static let viewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     static let fullViewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     
@@ -30,11 +30,16 @@ struct Path {
     static let searchURL : String = "\(baseURL)searchlist"
     static let forgotPasswordURL = "\(userURL)forgotPassword"
     static let changePasswordURL = "\(userURL)changePassword"
-    static let storeMenuItem = "\(baseURL)menu/?"
+    static let storeMenuItem = "\(iosBaseURL)menu/?"
     static let storeAddItem = "\(baseURL)menu"
     static let storeCurrentOrder = "\(baseURL)order/storeId/current?storeId="
     static let storeHistorytOrder = "\(baseURL)order/storeId/completed?storeId="
     static let deleteItem = "\(baseURL)menu/delete?itemId="
+    static let addHotSpotItem = "\(baseURL)hotspot"
+    static let addBannner = "\(baseURL)banner"
+    static let commentList = "\(baseURL)comment/?entity="
+    static let menuListUrl : String = "\(baseURL)menu/itemCategory/?"
+    static let getTimeSlot : String = "\(baseURL)getEmptySlotList?"
 }
 
 struct AlertMessages {
@@ -105,12 +110,31 @@ struct AlertMessages {
     static let textViewPlaceholderText = "  Write an answer here..."
     
     static let ComingSoonMessage = "Coming soon.."
+    
     // Store: Item
-   static let itemValidation = "Please enter Item."
-    static let itemPriceValidation = "Please enter Price."
-    static let itemCatValidation = "Please select Category."
-     static let itemDescValidation = "Please enter Description."
-    static let itemImgValidation = "Please enter Item Image."
+    static let itemValidation = "Please Enter Item Name."
+    static let itemPriceValidation = "Please Enter Price."
+    static let itemCatValidation = "Please Eelect Category."
+    static let itemDescValidation = "Please Enter Description."
+    static let itemImgValidation = "Please Select Item Image."
+    
+    // Store: Banner
+    static let startDateValidation = "Please Select Start Date."
+    static let endDateValidation = "Please Select End Date."
+    static let startTimeValidation = "Please Select Start Time."
+    static let endTimeValidation = "Please Select End Time."
+    static let locationValidation = "Please Select Banner Location"
+    static let hotspotImgValidation = "Please Select Banner Image."
+    
+    // Store: Profile
+    static let storeCategory = "Please Select Category."
+    static let storeProfileImage = "Please Select Image."
+    static let storeName = "Please Enter Store Name."
+    static let storeAddress = "Please Enter Store Address."
+    static let storeCity = "Please Enter Store City."
+    static let storeCountry = "Please Enter Store Country."
+    static let storePhone = "Please Enter Store Phone Number."
+    static let storeDescription = "Please Enter Store Description."
 }
 
 struct AppConstant {

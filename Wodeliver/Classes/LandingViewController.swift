@@ -22,6 +22,8 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var searchController_ref: UISearchController!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var hotstarHeightConstant: NSLayoutConstraint!
+    @IBOutlet weak var itemCategoryLabel_ref: UILabel!
+    @IBOutlet weak var hotStarLable_ref: UILabel!
     
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
@@ -107,9 +109,7 @@ class LandingViewController: UIViewController {
     //MARK: - Server Action
     
     func getDataFromServer()  {
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
@@ -118,7 +118,22 @@ class LandingViewController: UIViewController {
             self.itemJson = json["response"]["itemcategory"].arrayValue
             self.hotspotJson = json["response"]["hotspot"].arrayValue
             self.bannerJson = json["response"]["banner"].arrayValue
-            self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            if self.itemJson.count > 0{
+                self.itemCategoryLabel_ref.isHidden = false
+            }else{
+                self.itemCategoryLabel_ref.isHidden = true
+            }
+            if self.hotspotJson.count > 0{
+                self.hotStarLable_ref.isHidden = false
+            }else{
+                self.hotStarLable_ref.isHidden = true
+            }
+            if self.bannerJson.count > 0{
+                self.bannerView.isHidden = false
+                 self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            }else{
+                self.bannerView.isHidden = true
+            }
             self.itemCollectionView.reloadData()
             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()

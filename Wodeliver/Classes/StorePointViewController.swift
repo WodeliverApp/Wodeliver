@@ -106,7 +106,7 @@ class StorePointViewController: UIViewController {
           //  let param = "itemCategory=\(selectedItemId!)\("&lat=")\(lat)\("&long=")\(long)"
             urlStr = "\(Path.hotspotListURL)\(selectedItemId!)"
         }
-        print(urlStr)
+       // print(urlStr)
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard let json = json else {

@@ -62,7 +62,6 @@ class StoreHomeViewController: UIViewController {
     
     @IBAction func swtValueChange(_ sender: UISegmentedControl) {
         if  sender.selectedSegmentIndex == 0{
-            currentOrderList = []
             tabIndex = 1
             self.getCurrentOrderList()
         }else if sender.selectedSegmentIndex == 1{
@@ -77,11 +76,11 @@ class StoreHomeViewController: UIViewController {
     }
     
     @objc private func orientationDidChange() {
-        switch UIDevice.current.orientation {
-        case .portrait, .portraitUpsideDown, .landscapeLeft, .landscapeRight:
-            tblHome.reloadSections(IndexSet(Array(tblHome.visibleSections.keys)), with: .none)
-        default:break
-        }
+//        switch UIDevice.current.orientation {
+//        case .portrait, .portraitUpsideDown, .landscapeLeft, .landscapeRight:
+//            tblHome.reloadSections(IndexSet(Array(tblHome.visibleSections.keys)), with: .none)
+//        default:break
+//        }
     }
     /*
      // MARK: - Navigation
@@ -117,16 +116,17 @@ extension StoreHomeViewController: ExpyTableViewDelegate {
         
         switch state {
         case .willExpand:
-            print("WILL EXPAND")
-            
+           // print("WILL EXPAND")
+            break
         case .willCollapse:
-            print("WILL COLLAPSE")
-            
+           // print("WILL COLLAPSE")
+            break
         case .didExpand:
-            print("DID EXPAND")
-            
+           // print("DID EXPAND")
+            break
         case .didCollapse:
-            print("DID COLLAPSE")
+           // print("DID COLLAPSE")
+            break
         }
     }
 }
@@ -143,7 +143,7 @@ extension StoreHomeViewController {
         //Check here for detail: https://stackoverflow.com/questions/18924589/uitableviewcell-separator-disappearing-in-ios7
         
         tableView.deselectRow(at: indexPath, animated: false)
-        print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
+    //    print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
         
     }
     
@@ -175,7 +175,6 @@ extension StoreHomeViewController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(currentItemData[section])
         if tabIndex == 1{
              return currentItemData[section].count + 3
         }else{
@@ -249,20 +248,20 @@ extension StoreHomeViewController{
             guard let json = json else {
                 return
             }
-            print(json)
+            self.currentHeaderTitles = []
+            self.currentItemData = []
             self.currentOrderList = json["response"].arrayValue
             for item in self.currentOrderList{
-                
-                //                let dateFormatter = DateFormatter()
-                //                dateFormatter.dateFormat = "dd-mm-yyyy" //Your date format
-                //                dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
-                //                let date = dateFormatter.date(from: item["createdAt"].stringValue) //according to date format your date string
-                //                print(date ?? "") //Convert String to Date
-                //
-                print(item["createdAt"].stringValue)
-                self.currentHeaderTitles.append(" " + item["user"]["name"].stringValue + " Time: " + item["createdAt"].stringValue)
+                let formatter = Foundation.DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                formatter.timeZone = TimeZone.init(abbreviation: "UTC")
+                formatter.locale = Locale.init(identifier: "en_US")
+                let date1  = formatter.date(from: item["createdAt"].string!)
+                formatter.timeZone = TimeZone(abbreviation: "UTC")
+                formatter.dateFormat = "dd-MMM-yyyy hh:mm a"
+                let resultTime = formatter.string(from: date1!)
+                self.currentHeaderTitles.append(" " + item["user"]["name"].stringValue + " Time: " + resultTime)
                 self.currentItemData.append(item["items"])
-                
             }
             self.tblHome.reloadData()
         })
@@ -277,7 +276,6 @@ extension StoreHomeViewController{
             guard let json = json else {
                 return
             }
-            print(json)
             self.historyOrderList = json["response"].arrayValue
             for item in self.historyOrderList{
                 

@@ -31,20 +31,20 @@ class StoreHomeTableViewCell: UITableViewCell, ExpyTableViewHeaderCell {
         
         switch state {
         case .willExpand:
-            print("WILL EXPAND")
+          //  print("WILL EXPAND")
             hideSeparator()
             arrowDown(animated: !cellReuse)
             
         case .willCollapse:
-            print("WILL COLLAPSE")
+           // print("WILL COLLAPSE")
             arrowRight(animated: !cellReuse)
             
         case .didExpand:
-            print("DID EXPAND")
-            
+           // print("DID EXPAND")
+            break
         case .didCollapse:
             showSeparator()
-            print("DID COLLAPSE")
+           // print("DID COLLAPSE")
         }
     }
     

@@ -123,7 +123,7 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
             let item = self.storeItemList[indexPath.row]
             cell.lblProductName.text = item["item"].stringValue
             cell.lblProductPrice.text = "\("Price: ")\(item["price"].stringValue)"
-            //  cell.lblProdcutCategory.text = item["item"].stringValue
+            cell.lblProdcutCategory.text = "\("Item Category: ")\(item["itemCategory"].arrayValue[0]["name"].stringValue)"  
             cell.lblDescription.text = "\("Description: ")\(item["description"].stringValue)"
             cell.imgProduct.sd_setImage(with: URL(string:Path.baseURL + item["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
             return cell
@@ -155,7 +155,6 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         delete.backgroundColor = Colors.redBackgroundColor
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            //self.isEditing = false
             let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
             let viewController : AddItemViewController = storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             viewController.itemObject = self.storeItemList[indexPath.row].dictionaryValue
@@ -174,10 +173,8 @@ extension StoreItemViewController{
     //MARK: - Server Action
     
     func getItemList()  {
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         let urlStr = Path.storeMenuItem+"storeId=\(UserManager.getStoreId())"
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
@@ -206,16 +203,25 @@ extension StoreItemViewController{
     }
     
     func deleteStoreItem(itemId : String, indexPath : IndexPath)  {
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
-        NetworkHelper.get(url: Path.deleteItem + itemId , param: [:], self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
-            guard let `self` = self else { return }
-            guard (json != nil) else {
-                return
-            }
-            OtherHelper.simpleDialog("Success", "Item Deleted Sucessfully.", self)
-            self.storeItemList.remove(at: indexPath.row)
-            self.tblHistory.reloadData()
+        
+        let alertController : UIAlertController = UIAlertController.init(title: "Confirm", message: "Are you sure to delete selected item ?", preferredStyle: .alert)
+        
+        let deleteAction : UIAlertAction = UIAlertAction.init(title: "Delete", style: .destructive, handler: {_ in
+            ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
+            NetworkHelper.get(url: Path.deleteItem + itemId , param: [:], self, completionHandler: {[weak self] json, error in
+                ProgressBar.hideActivityIndicator(view: (self?.view)!)
+                guard let `self` = self else { return }
+                guard (json != nil) else {
+                    return
+                }
+                OtherHelper.simpleDialog("Success", "Item Deleted Sucessfully.", self)
+                self.storeItemList.remove(at: indexPath.row)
+                self.tblHistory.reloadData()
+            })
         })
+        let cancelAction : UIAlertAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

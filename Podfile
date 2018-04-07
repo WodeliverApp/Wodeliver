@@ -9,7 +9,7 @@ target 'Wodeliver' do
   pod 'Alamofire'
     pod 'AlamofireNetworkActivityIndicator'
     pod 'SwiftyJSON'
-    pod 'ExpyTableView'
+    pod 'ExpyTableView', '~> 0.3.1'
     pod 'SDWebImage', '~> 4.0'
     pod 'SideMenu'
     pod 'MBProgressHUD', '~> 1.1.0'

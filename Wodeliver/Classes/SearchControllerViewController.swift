@@ -94,7 +94,7 @@ extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchControllerCell") as UITableViewCell!
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchControllerCell") as! UITableViewCell
         cell.textLabel?.text = filteredArray[indexPath.row]["name"].stringValue
         cell.textLabel?.textColor = UIColor.gray
         return cell
