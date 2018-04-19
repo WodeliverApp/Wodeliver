@@ -20,8 +20,11 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var bannerView: UIImageView!
     @IBOutlet weak var searchBar_ref: UISearchBar!
     @IBOutlet weak var searchController_ref: UISearchController!
-    var itemsArray  = ["cake","cake","cake","cake","cake"]
-    var categoryArray = ["cloth","cloth","cloth","cloth","cloth"]
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var hotstarHeightConstant: NSLayoutConstraint!
+    @IBOutlet weak var itemCategoryLabel_ref: UILabel!
+    @IBOutlet weak var hotStarLable_ref: UILabel!
+    
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
     var hotspotJson : [JSON] = []
@@ -29,11 +32,7 @@ class LandingViewController: UIViewController {
     var searchController: UISearchController!
     var comingFrom:String! = "store"
     var selectedItemId:String! = ""
-    //    var hotspotItem = [HotspotItem]()
-    //    var itemCategory = [ItemCategory]()
-    //    var category = [CategoryItem]()
-    // var banner = Banner(from: <#Decoder#>)
-    
+    var hotStarHeight : CGFloat?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewCostomization()
@@ -54,12 +53,23 @@ class LandingViewController: UIViewController {
         self.view.addSubview(searchController.searchBar)
         searchBar_ref.isHidden = true
         self.getDataFromServer()
-      
+        
         if !UserDefaults.standard.bool(forKey: AppConstant.isCurrentLocationSaved){
             self.performSegue(withIdentifier: "getLocationSegue", sender: nil)
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if let height = hotStarHeight{
+            scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: height + 320)
+        }
+    }
     fileprivate func setupSideMenu() {
         // Define the menus
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
@@ -99,29 +109,51 @@ class LandingViewController: UIViewController {
     //MARK: - Server Action
     
     func getDataFromServer()  {
-        //  ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.get(url: Path.categoryURL, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard let json = json else {
                 return
             }
-            //  ProgressBar.hideActivityIndicator(view: self.view)
             self.categoryJson = json["response"]["category"].arrayValue
             self.itemJson = json["response"]["itemcategory"].arrayValue
             self.hotspotJson = json["response"]["hotspot"].arrayValue
             self.bannerJson = json["response"]["banner"].arrayValue
-            print(self.bannerJson)
-            self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            if self.itemJson.count > 0{
+                self.itemCategoryLabel_ref.isHidden = false
+            }else{
+                self.itemCategoryLabel_ref.isHidden = true
+            }
+            if self.hotspotJson.count > 0{
+                self.hotStarLable_ref.isHidden = false
+            }else{
+                self.hotStarLable_ref.isHidden = true
+            }
+            if self.bannerJson.count > 0{
+                self.bannerView.isHidden = false
+                 self.bannerView.sd_setImage(with: URL(string:Path.baseURL + self.bannerJson[0]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            }else{
+                self.bannerView.isHidden = true
+            }
             self.itemCollectionView.reloadData()
             self.categoryCollectionView.reloadData()
             self.hotspotCollectionView.reloadData()
+            UserManager.setCategory(detail: json["response"]["category"])
+            UserManager.setItemCategory(detail: json["response"]["itemcategory"])
+            
+            self.hotStarHeight = self.hotspotCollectionView.collectionViewLayout.collectionViewContentSize.height;
+            if let height = self.hotStarHeight{
+                self.hotstarHeightConstant.constant = height
+                self.hotspotCollectionView.contentSize = CGSize(width: self.view.frame.size.width, height: height)
+            }
+            
+            self.viewWillLayoutSubviews()
         })
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
         if segue.identifier == "HomeToListing" {
             if let viewController = segue.destination as? StorePointViewController {
-                    viewController.comingFrom = self.comingFrom
-                    viewController.selectedItemId = self.selectedItemId
+                viewController.comingFrom = self.comingFrom
+                viewController.selectedItemId = self.selectedItemId
             }
         }
     }
@@ -135,13 +167,13 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             return self.categoryJson.count
-        case 2:
+        case 1002:
             return self.itemJson.count
-        case 3:
+        case 1003:
+            //return 30
             return self.hotspotJson.count
-        //return self.hotspotArray.count
         default:
             return 0
         }
@@ -151,7 +183,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     public func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemsCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
             cell.itemImg.sd_setImage(with: URL(string:Path.baseURL + categoryJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
@@ -160,7 +192,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.itemImg.layer.borderWidth = 1.5
             cell.itemImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
-        case 2:
+        case 1002:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
             cell.categoryImg.sd_setImage(with: URL(string:Path.baseURL + itemJson[indexPath.row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
@@ -170,7 +202,7 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.categoryImg.layer.borderWidth = 1.5
             cell.categoryImg.layer.borderColor = UIColor.lightGray.cgColor
             return cell
-        case 3:
+        case 1003:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotspotItemCell",
                                                           for: indexPath) as! landingScreenCollectionViewCell
             cell.buyNowBtn.layer.cornerRadius = 3.0
@@ -189,14 +221,15 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             self.comingFrom = "store"
-            self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
-        case 2:
-            self.comingFrom = "category"
             self.selectedItemId = categoryJson[indexPath.row]["_id"].stringValue
-        case 2:
+        case 1002:
+            self.comingFrom = "category"
+            self.selectedItemId = itemJson[indexPath.row]["_id"].stringValue
+        case 1003:
             self.comingFrom = "hotsPot"
+            self.selectedItemId = hotspotJson[indexPath.row]["_id"].stringValue
         default:
             break
         }
@@ -218,11 +251,11 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView.tag {
-        case 1:
+        case 1001:
             return CGSize(width: 78, height: 80)
-        case 2:
+        case 1002:
             return CGSize(width: 78, height: 80)
-        case 3:
+        case 1003:
             let padding: CGFloat =  0
             let collectionViewSize = collectionView.frame.size.width - padding
             return CGSize(width: collectionViewSize/2-10, height: 107)

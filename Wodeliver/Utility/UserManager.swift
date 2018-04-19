@@ -19,12 +19,17 @@ class UserManager{
     static let deviceToken = "deviceToken"
     static let latitude = "_latitude"
     static let longitude = "_longitude"
+    static let storeId = "storeId"
+    static let categoryItem = "_categoryItem"
+    static let category = "_category"
+    static let storeMenu = "_storeMenu"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
         UserDefaults.standard.set(detail[userIdKey].stringValue, forKey: userIdKey)
         UserDefaults.standard.set(detail[customerId].int64Value, forKey: customerId)
         UserDefaults.standard.set(detail[userTypeIdKey].int32Value, forKey: userTypeIdKey)
+         UserDefaults.standard.set(detail[storeId].stringValue, forKey: storeId)
         let profile: [String:Any] = [
             "name": detail["name"].stringValue,
             "_id": detail["_id"].stringValue,
@@ -48,7 +53,9 @@ class UserManager{
     static func getUserId() -> String {
         return UserDefaults.standard.object(forKey: userIdKey) as? String ?? ""
     }
-    
+    static func getStoreId() -> String {
+        return UserDefaults.standard.object(forKey: storeId) as? String ?? ""
+    }
     static func getUserType() -> UserType {
         return UserType(rawValue: Int32(UserDefaults.standard.integer(forKey: userTypeIdKey)))!
     }
@@ -63,6 +70,17 @@ class UserManager{
             return "Store Front".localized
         default:
             return ""
+        }
+    }
+    
+    static func getOrderStatus(type: OrderStatus) -> String {
+        switch type {
+        case .inProgress:
+            return "InProgress".localized
+        case .completed:
+            return "Completed".localized
+        case .delivery:
+            return "Delivery".localized
         }
     }
     
@@ -101,5 +119,32 @@ class UserManager{
     }
     static func getUserLongitude() -> Double {
         return UserDefaults.standard.double(forKey: longitude)
+    }
+    static public func setItemCategory(detail:JSON)    {
+        UserDefaults.standard.set(detail.rawString()!, forKey: categoryItem)
+    }
+    static func getItemCategory() -> JSON  {
+        if let json = UserDefaults.standard.string(forKey: categoryItem) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static public func setCategory(detail:JSON)   {
+        UserDefaults.standard.set(detail.rawString()!, forKey: category)
+    }
+    static func getCategory() -> JSON {
+        if let json = UserDefaults.standard.string(forKey: category) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static public func setStoreItemList(detail:JSON)    {
+        UserDefaults.standard.set(detail.rawString()!, forKey: storeMenu)
+    }
+    static func getStoreItemList() -> JSON  {
+        if let json = UserDefaults.standard.string(forKey: storeMenu) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
     }
 }

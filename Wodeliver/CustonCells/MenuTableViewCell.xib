@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="120" id="KGk-i7-Jjw" customClass="MenuTableViewCell" customModule="Wodeliver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="FnJ-rf-k9C">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="VTC-Hh-T05"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soft Drinks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rko-ws-EhH">
+                        <rect key="frame" x="128" y="11" width="214" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CEL-4K-u19"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price : 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA2-UA-wut">
+                        <rect key="frame" x="128" y="40" width="214" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Usa-yD-xTd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments : 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdM-GK-enL">
+                        <rect key="frame" x="128" y="63" width="214" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sold : 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzQ-ZV-iLM">
+                        <rect key="frame" x="128" y="86" width="214" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="BuE-ib-dYk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fzQ-ZV-iLM" firstAttribute="leading" secondItem="FnJ-rf-k9C" secondAttribute="trailing" constant="8" symbolic="YES" id="5zZ-3k-E7h"/>
+                    <constraint firstItem="TdM-GK-enL" firstAttribute="leading" secondItem="FnJ-rf-k9C" secondAttribute="trailing" constant="8" symbolic="YES" id="798-qW-KjK"/>
+                    <constraint firstItem="GA2-UA-wut" firstAttribute="leading" secondItem="TdM-GK-enL" secondAttribute="leading" id="JpH-t3-gbe"/>
+                    <constraint firstItem="rko-ws-EhH" firstAttribute="trailing" secondItem="TdM-GK-enL" secondAttribute="trailing" id="Opj-O3-V84"/>
+                    <constraint firstItem="rko-ws-EhH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="PfD-IS-OyK"/>
+                    <constraint firstItem="FnJ-rf-k9C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UJU-rE-kgo"/>
+                    <constraint firstItem="TdM-GK-enL" firstAttribute="top" secondItem="GA2-UA-wut" secondAttribute="bottom" constant="8" symbolic="YES" id="Z7d-VU-8Cs"/>
+                    <constraint firstItem="GA2-UA-wut" firstAttribute="top" secondItem="rko-ws-EhH" secondAttribute="bottom" constant="8" symbolic="YES" id="b7K-GY-YDQ"/>
+                    <constraint firstAttribute="bottom" secondItem="FnJ-rf-k9C" secondAttribute="bottom" id="i8l-lf-Nxx"/>
+                    <constraint firstItem="rko-ws-EhH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mih-fx-d3R"/>
+                    <constraint firstItem="fzQ-ZV-iLM" firstAttribute="top" secondItem="TdM-GK-enL" secondAttribute="bottom" constant="7" id="qk3-Zu-orB"/>
+                    <constraint firstItem="FnJ-rf-k9C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wR3-Vp-6Uy"/>
+                    <constraint firstItem="rko-ws-EhH" firstAttribute="leading" secondItem="FnJ-rf-k9C" secondAttribute="trailing" constant="8" symbolic="YES" id="zC9-rl-Lfe"/>
+                    <constraint firstItem="GA2-UA-wut" firstAttribute="trailing" secondItem="TdM-GK-enL" secondAttribute="trailing" id="zxL-2f-f6B"/>
+                    <constraint firstItem="rko-ws-EhH" firstAttribute="trailing" secondItem="fzQ-ZV-iLM" secondAttribute="trailing" id="zxb-tz-ov1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblCommentConut" destination="TdM-GK-enL" id="Snx-eb-0dj"/>
+                <outlet property="lblMenuName" destination="rko-ws-EhH" id="nNI-YR-MS8"/>
+                <outlet property="lblPrice" destination="GA2-UA-wut" id="rMl-cA-N2a"/>
+                <outlet property="lblSoldCount" destination="fzQ-ZV-iLM" id="4gM-3I-M0H"/>
+                <outlet property="menuImageView" destination="FnJ-rf-k9C" id="BAa-FE-w8P"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="32"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="no_image" width="50" height="50"/>
+    </resources>
+</document>

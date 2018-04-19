@@ -7,15 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class StoreProfileViewController: UIViewController{
+class StoreProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
-    let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
-    let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
-    var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
-    var animatedDistance: CGFloat!
-
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var txtTelephone: UITextField!
     @IBOutlet weak var txtCountry: UITextField!
@@ -24,7 +19,18 @@ class StoreProfileViewController: UIViewController{
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCategory: UITextField!
     @IBOutlet weak var imgProfile: UIImageView!
+    
+    let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
+    let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
+    let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
+    var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
+    var animatedDistance: CGFloat!
     var imagePicker = UIImagePickerController()
+    var isImage : Bool = false
+    var pickerView : UIPickerView!
+    var pickOption: [JSON] = []
+    var selectedItemCategory : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +43,13 @@ class StoreProfileViewController: UIViewController{
         imgProfile.addGestureRecognizer(imageGesture)
         imgProfile.isUserInteractionEnabled = true
         imagePicker.delegate = self
+        
+        self.pickOption = UserManager.getCategory().arrayValue
+        self.pickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        self.pickerView.backgroundColor = UIColor.white
+        txtCategory.inputView = self.pickerView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +73,10 @@ class StoreProfileViewController: UIViewController{
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-    @IBAction func setting_Action(_ sender: Any) {
+    @IBAction func save_Action(_ sender: UIBarButtonItem) {
+        
+    }
+    @IBAction func setting_Action(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message:nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         let logoutAction = UIAlertAction(title: "Logout".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             
@@ -107,13 +123,76 @@ class StoreProfileViewController: UIViewController{
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    func customToolBar()  {
+        
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = Colors.redBackgroundColor
+        toolBar.sizeToFit()
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        txtCategory.inputAccessoryView = toolBar
+        txtTelephone.inputAccessoryView = toolBar
+    }
+    
+    //MARK:- UIToolBar Button Actions
+    
+    @objc func doneClick() {
+        self.view.endEditing(true)
+    }
+    @objc func cancelClick() {
+        self.view.endEditing(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
+    //MARK:- Validation All Field
+    
+    func isValidate() -> Bool  {
+        if self.txtName.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeName, self)
+            return false
+        }
+        else if self.txtCity.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeCity, self)
+            return false
+        }
+        else if self.txtAddress.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeAddress, self)
+            return false
+        }
+        else if self.txtCountry.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeCountry, self)
+            return false
+        }
+        else if self.txtTelephone.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storePhone, self)
+            return false
+        }
+        else if self.txtDescription.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeDescription, self)
+            return false
+        }
+        else if (self.isImage != true){
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.storeProfileImage, self)
+            return false
+        }
+        return true
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -121,8 +200,6 @@ class StoreProfileViewController: UIViewController{
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
 extension StoreProfileViewController: UITextFieldDelegate{
     //MARK:- UITextField Delegate Methods
@@ -195,6 +272,7 @@ extension StoreProfileViewController: UINavigationControllerDelegate, UIImagePic
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                UIImageJPEGRepresentation(pickedImage, 0.5)
                 self.imgProfile.image = pickedImage
             }
         })
@@ -204,4 +282,19 @@ extension StoreProfileViewController: UINavigationControllerDelegate, UIImagePic
         picker.dismiss(animated: true, completion: nil)
     }
     
+}
+extension StoreProfileViewController{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickOption.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickOption[row]["name"].stringValue
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        txtCategory.text = pickOption[row]["name"].stringValue
+        selectedItemCategory = pickOption[row]["_id"].stringValue
+    }
 }

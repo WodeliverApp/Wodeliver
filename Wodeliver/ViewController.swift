@@ -139,6 +139,7 @@ class ViewController: UIViewController {
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
                 let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")
+                
                 //logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
                 self.present(logInViewController, animated: true, completion: nil)
             }else if UserManager.getUserType() == .deliveryBoy{

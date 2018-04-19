@@ -15,8 +15,15 @@ class NetworkHelper{
     static func request(method: HTTPMethod, url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : method, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -74,8 +81,15 @@ class NetworkHelper{
     static func post(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["Content-Type"] = "application/json"
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .post, parameters : param,  encoding: URLEncoding.default, headers: nil).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -93,7 +107,7 @@ class NetworkHelper{
                 if (error as NSError).code != -999{
                     if let controller = controller {
                         ProgressBar.hideActivityIndicator(view: controller.view)
-                        OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
+                        OtherHelper.simpleDialog("Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
                 }else {
@@ -107,9 +121,16 @@ class NetworkHelper{
     static func get(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["Content-Type"] = "application/json"
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .get, parameters : param, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -127,7 +148,7 @@ class NetworkHelper{
                 if (error as NSError).code != -999{
                     if let controller = controller {
                         ProgressBar.hideActivityIndicator(view: controller.view)
-                        OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
+                        OtherHelper.simpleDialog("Network Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
                 }else {
@@ -140,9 +161,15 @@ class NetworkHelper{
     static func put(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //  headers["Myu-Auth-Token"] = UserManager.getAuthToken()
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .put, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -153,7 +180,7 @@ class NetworkHelper{
                 if (error as NSError).code != -999{
                     if let controller = controller {
                         ProgressBar.hideActivityIndicator(view: controller.view)
-                        OtherHelper.simpleDialog("Network_Error", error.localizedDescription, controller)
+                        OtherHelper.simpleDialog("Network Error", error.localizedDescription, controller)
                     }
                     completionHandler(nil, error)
                 }else {
@@ -166,8 +193,15 @@ class NetworkHelper{
     static func patch(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .patch, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -225,8 +259,15 @@ class NetworkHelper{
     static func delete(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .delete, parameters : param, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)
@@ -261,7 +302,7 @@ class NetworkHelper{
                             errorReport = error
                             completionHandler(nil,error)
                         }
-                        var reportParam = param
+                        //   var reportParam = param
                     }
                 }else{
                     if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
@@ -288,9 +329,15 @@ class NetworkHelper{
     static func upload(url: String, param: [String: Any], _ controller:UIViewController?, _ media: Any, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //        headers["Myu-Auth-Token"] = UserManager.getAuthToken()
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        if let controller = controller {
+            ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
+        }
         Alamofire.request(url, method : .post, parameters : param,  encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            if let controller = controller {
+                ProgressBar.hideActivityIndicator(view: controller.view)
+            }
             switch response.result {
             case .success(let value):
                 json = JSON(value)

@@ -7,69 +7,78 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SearchControllerViewController: UIViewController ,UISearchBarDelegate, UISearchDisplayDelegate,UISearchResultsUpdating{
-
+    
     @IBOutlet weak var searchTableView: UITableView!
-    @IBOutlet weak var segmentView: MySegmentedControl!
     var isItem:Bool! = true
     var searchByText = ""
+    var searchItem : [JSON] = []
+    var filteredArray : [JSON] = []
+    var isActiveSearch : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.searchTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
-        
+        self.searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchControllerCell")
+         self.generateRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.segmentView.selectedSegmentIndex = 0
-        self.segmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
+       
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func changeSegmentValue(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            isItem = true
-        case 1:
-            isItem = false
-        default: break
-        }
-        self.searchTableView.reloadData()
     }
     
     // MARK: - UISearchController Delegate and Data Source
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchByText != searchText {
-            NetworkHelper.stopAllSessions()
-//            searchByText = searchText
-//            page = 0
-//            isSearching = true
-//            searchExploreUser = []
-//            tableView.reloadData()
-//            tableView.backgroundView?.isHidden = true
-//            if searchByText.count > 0 {
-//                generateRequest()
-//            }
+            searchByText = searchText
+            if searchText.count > 0 {
+                isActiveSearch = true
+                filteredArray = searchItem.filter { $0["name"].stringValue.contains(searchText) }
+                searchTableView.reloadData()
+            }else{
+                isActiveSearch = false
+            }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Get User List From Server
+    
+    func generateRequest() {
+        let param:[String:Any] = [:]
+        getResponse(param)
     }
-    */
-
+    
+    func getResponse(_ param:[String:Any]){
+        NetworkHelper.stopAllSessions()
+        NetworkHelper.get(url: Path.searchURL, param: param, self, completionHandler: {[weak self] json, error in
+            guard self != nil else { return }
+            guard let json = json else {
+                return
+            }
+            if let searchData = json["response"].array {
+                if searchData.count > 0 {
+                    self?.searchItem = searchData
+                }
+            }
+        })
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSource {
     // MARK: - UITableView Delegate and datasource Methods
@@ -77,34 +86,36 @@ extension SearchControllerViewController: UITableViewDelegate,UITableViewDataSou
         return 1
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        if isItem{
-            return 5
+        if isActiveSearch{
+            return filteredArray.count
         }else{
-            return 5
+            return 0
         }
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isItem{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
-            return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchByItemCell") as! SearchByItemCell
-            return cell
-        }
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SearchControllerCell") as! UITableViewCell
+        cell.textLabel?.text = filteredArray[indexPath.row]["name"].stringValue
+        cell.textLabel?.textColor = UIColor.gray
+        return cell
+        
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if isItem{
-            return SearchByItemCell.getCellHeight()
-        }else{
-            return SearchByItemCell.getCellHeight()
-        }
+        return 60
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isItem{
-        }else{
-           // self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
-        }
+        
+//        print(filteredArray[indexPath.row])
+//       self.performSegue(withIdentifier: "storeListToDetail", sender: nil)
+        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "StoreDetailViewController") as! StoreDetailViewController
+//        self.navigationController?.pushViewController(nextViewController, animated: true)
+//
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreDetailViewController") as! StoreDetailViewController
+//        let navigationController1 = UINavigationController(rootViewController: vc)
+//        navigationController?.pushViewController(navigationController1, animated: true)
+       // self.present(navigationController, animated: true, completion: nil)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Colors {
-     static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
+    static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
     static let viewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     static let fullViewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     
@@ -18,12 +18,30 @@ struct Colors {
 
 
 struct Path {
-    static let baseURL : String = "http://18.217.139.93:8082"
-    static let loginURL : String = "\(baseURL)/login"
-    static let signUpURL : String = "\(baseURL)/user"
-    static let categoryURL : String = "\(baseURL)/category"
-    static let storeListURL : String = "\(baseURL)/store/category/location/?"
-    static let itemListURL : String = "\(baseURL)/menu/itemCategory/?"
+    static let baseURL : String = "http://18.217.139.93:8082/"
+    static let iosBaseURL : String = "http://18.217.139.93:8082/ios/"
+    static let userURL : String = "\(baseURL)user"
+    static let loginURL : String = "\(baseURL)login"
+    static let signUpURL : String = "\(baseURL)user"
+    static let categoryURL : String = "\(baseURL)category"
+    static let storeListURL : String = "\(iosBaseURL)store/category/location/?"
+    static let itemListURL : String = "\(iosBaseURL)menu/itemCategory/?"
+    static let hotspotListURL : String = "\(baseURL)hotspot?storeId="
+    static let searchURL : String = "\(baseURL)searchlist"
+    static let forgotPasswordURL = "\(userURL)forgotPassword"
+    static let changePasswordURL = "\(userURL)changePassword"
+    static let storeMenuItem = "\(iosBaseURL)menu/?"
+    static let storeAddItem = "\(baseURL)menu"
+    static let storeCurrentOrder = "\(baseURL)order/storeId/current?storeId="
+    static let storeHistorytOrder = "\(baseURL)order/storeId/completed?storeId="
+    static let deleteItem = "\(baseURL)menu/delete?itemId="
+    static let addHotSpotItem = "\(baseURL)hotspot"
+    static let addBannner = "\(baseURL)banner"
+    static let commentList = "\(baseURL)comment/?entity="
+    static let menuListUrl : String = "\(baseURL)menu/itemCategory/?"
+    static let getTimeSlot : String = "\(baseURL)getEmptySlotList"
+    static let bannerList = "\(baseURL)banner?storeId="
+    static let hotspotList = "\(baseURL)hotspot?storeId="
 }
 
 struct AlertMessages {
@@ -95,6 +113,35 @@ struct AlertMessages {
     
     static let ComingSoonMessage = "Coming soon.."
     
+    // Store: Item
+    static let itemValidation = "Please Enter Item Name."
+    static let itemPriceValidation = "Please Enter Price."
+    static let itemCatValidation = "Please Eelect Category."
+    static let itemDescValidation = "Please Enter Description."
+    static let itemImgValidation = "Please Select Item Image."
+    
+    // Store: Banner
+    static let startDateValidation = "Please Select Start Date."
+    static let endDateValidation = "Please Select End Date."
+    static let startTimeValidation = "Please Time Slot."
+    static let endTimeValidation = "Please Select End Time."
+    static let locationValidation = "Please Select Banner Location"
+    static let bannerImgValidation = "Please Select Banner Image."
+    
+    // Store: Banner
+
+    static let hotSpotLocationValidation = "Please Select Hotspot Location"
+    static let hotspotImgValidation = "Please Select Hotspot Image."
+    
+    // Store: Profile
+    static let storeCategory = "Please Select Category."
+    static let storeProfileImage = "Please Select Image."
+    static let storeName = "Please Enter Store Name."
+    static let storeAddress = "Please Enter Store Address."
+    static let storeCity = "Please Enter Store City."
+    static let storeCountry = "Please Enter Store Country."
+    static let storePhone = "Please Enter Store Phone Number."
+    static let storeDescription = "Please Enter Store Description."
 }
 
 struct AppConstant {
@@ -105,4 +152,9 @@ struct AppConstant {
 struct GooglePlace {
     static let googlePlaceKey = "AIzaSyCl4DiAtMzojEJPBMxDoknyveoez1lOt10"
     static let googleAPIKey = "AIzaSyDdRtWVaZ7JWm-uaLRronAx036agZx07dU"
+}
+
+struct HockeyKeys {
+    static let appId = "9b325bb316c2440a8c1de3a4e6da73ab"
+    static let secret = "21fc1ba22633acdb6def9d05f009556d"
 }

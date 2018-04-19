@@ -21,6 +21,8 @@
 		30067489200BC4A60021A08C /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067488200BC4A50021A08C /* String+Util.swift */; };
 		3006748B200BC5230021A08C /* Date + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748A200BC5230021A08C /* Date + Util.swift */; };
 		3006748D200C5A290021A08C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748C200C5A290021A08C /* Enum.swift */; };
+		30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013236F206966FF003D4DF7 /* AddBannerViewController.swift */; };
+		3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013237120696782003D4DF7 /* AddHotspotViewController.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -30,6 +32,9 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
+		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
+		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
 		307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreItemViewController.swift */; };
 		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
 		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
@@ -51,8 +56,15 @@
 		30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */; };
 		30A0E15320148AFF002EA101 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E15220148AFF002EA101 /* CoreLocation.framework */; };
 		30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */; };
+		30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
 		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
+		30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */; };
+		30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57F2073D4D500791A81 /* MenuViewController.swift */; };
+		30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */; };
+		30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */; };
+		30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */; };
+		30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
 		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
 		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
@@ -88,6 +100,7 @@
 		A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */; };
 		A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */; };
 		A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */; };
+		A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */; };
 		A5517E80C584152BEA2DB019 /* Pods_WodeliverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AF21CCAE42317C222536EA /* Pods_WodeliverTests.framework */; };
 		DCA5F973820AD04BA3873F7E /* Pods_WodeliverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55387D523416EE09A6B3CC4 /* Pods_WodeliverUITests.framework */; };
 /* End PBXBuildFile section */
@@ -129,6 +142,8 @@
 		30067488200BC4A50021A08C /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3006748A200BC5230021A08C /* Date + Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Util.swift"; sourceTree = "<group>"; };
 		3006748C200C5A290021A08C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		3013236F206966FF003D4DF7 /* AddBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBannerViewController.swift; sourceTree = "<group>"; };
+		3013237120696782003D4DF7 /* AddHotspotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotspotViewController.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +159,9 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
+		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
+		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		307716D020090A2200D073A0 /* StoreItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemViewController.swift; sourceTree = "<group>"; };
 		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -176,13 +194,20 @@
 		30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerViewController.swift; sourceTree = "<group>"; };
 		30A0E15220148AFF002EA101 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewController.swift; sourceTree = "<group>"; };
+		30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
 		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
+		30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaksViewController.swift; sourceTree = "<group>"; };
+		30EBB57F2073D4D500791A81 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotViewController.swift; sourceTree = "<group>"; };
+		30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
-		53CB7A481FEB7A3600D70254 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		53CB7A481FEB7A3600D70254 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		53CB7A4B1FEB9FD200D70254 /* CurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTableViewCell.swift; sourceTree = "<group>"; };
 		53CB7A4C1FEB9FD200D70254 /* CurrentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTableViewCell.xib; sourceTree = "<group>"; };
 		53CB7A4F1FEBA77100D70254 /* CurrentStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +239,7 @@
 		A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBoyViewController.swift; sourceTree = "<group>"; };
+		A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		AF718D71FE37233DD2584211 /* Pods-WodeliverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C1C183238FCA08C1026A95BB /* Pods-WodeliverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2A7AE76D92A62C9F52F0410 /* Pods-WodeliverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WodeliverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +395,7 @@
 				307716E3200B253F00D073A0 /* OtherHelper.swift */,
 				30067479200B3D290021A08C /* UserManager.swift */,
 				3006748C200C5A290021A08C /* Enum.swift */,
+				30617D27205B8F170010948E /* TimeAgo.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -403,6 +430,12 @@
 				307716D020090A2200D073A0 /* StoreItemViewController.swift */,
 				307716D6200927B400D073A0 /* StoreProfileViewController.swift */,
 				30067486200B86FC0021A08C /* StoreNotificationViewController.swift */,
+				A1CDCD0E2058457A008877D2 /* AddItemViewController.swift */,
+				3013236F206966FF003D4DF7 /* AddBannerViewController.swift */,
+				3013237120696782003D4DF7 /* AddHotspotViewController.swift */,
+				30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */,
+				30EBB57F2073D4D500791A81 /* MenuViewController.swift */,
+				30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -415,6 +448,7 @@
 				307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */,
 				30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */,
 				30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */,
+				30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */,
 			);
 			path = StoreCell;
 			sourceTree = "<group>";
@@ -462,6 +496,7 @@
 				A1B3C590200B3A4C009C8C0D /* StoreDetailViewController.swift */,
 				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 				30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */,
+				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -490,6 +525,10 @@
 				30067474200B33430021A08C /* StoreDetailCell.xib */,
 				A1B3C592200D031A009C8C0D /* ChatTableViewCell.swift */,
 				A1B3C593200D031A009C8C0D /* ChatTableViewCell.xib */,
+				30617D23205AF80E0010948E /* RemarkCell.swift */,
+				30617D24205AF80E0010948E /* RemarkCell.xib */,
+				30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */,
+				30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -566,7 +605,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Anuj Singh";
 				TargetAttributes = {
 					30331A991FE388E100A8B1F1 = {
@@ -618,6 +657,7 @@
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
 				30067476200B33430021A08C /* StoreDetailCell.xib in Resources */,
+				30617D26205AF80E0010948E /* RemarkCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
@@ -629,6 +669,7 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */,
 				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,11 +826,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/HockeySDK/HockeySDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HockeySDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -829,18 +872,23 @@
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
+				30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				3006748D200C5A290021A08C /* Enum.swift in Sources */,
 				307732FB20106D330045A4B0 /* Items.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
 				307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */,
 				307732F5201069290045A4B0 /* StoreCategory.swift in Sources */,
+				3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
+				30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */,
+				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
+				30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */,
 				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				307732F32010689C0045A4B0 /* ItemCategory.swift in Sources */,
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
@@ -849,19 +897,24 @@
 				30067489200BC4A60021A08C /* String+Util.swift in Sources */,
 				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
 				30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */,
+				30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */,
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
 				A1B3C5852003C172009C8C0D /* landingScreenCollectionViewCell.swift in Sources */,
 				307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
 				30067487200B86FC0021A08C /* StoreNotificationViewController.swift in Sources */,
+				30617D25205AF80E0010948E /* RemarkCell.swift in Sources */,
 				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
+				30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
 				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
 				30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */,
+				30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */,
+				A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */,
 				30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */,
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
 				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
@@ -877,6 +930,7 @@
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
 				A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
+				30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */,
 				30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -986,6 +1040,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -993,6 +1048,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1044,6 +1100,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1051,6 +1108,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
