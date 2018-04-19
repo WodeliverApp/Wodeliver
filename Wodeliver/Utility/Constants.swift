@@ -39,7 +39,9 @@ struct Path {
     static let addBannner = "\(baseURL)banner"
     static let commentList = "\(baseURL)comment/?entity="
     static let menuListUrl : String = "\(baseURL)menu/itemCategory/?"
-    static let getTimeSlot : String = "\(baseURL)getEmptySlotList?"
+    static let getTimeSlot : String = "\(baseURL)getEmptySlotList"
+    static let bannerList = "\(baseURL)banner?storeId="
+    static let hotspotList = "\(baseURL)hotspot?storeId="
 }
 
 struct AlertMessages {
@@ -121,10 +123,15 @@ struct AlertMessages {
     // Store: Banner
     static let startDateValidation = "Please Select Start Date."
     static let endDateValidation = "Please Select End Date."
-    static let startTimeValidation = "Please Select Start Time."
+    static let startTimeValidation = "Please Time Slot."
     static let endTimeValidation = "Please Select End Time."
     static let locationValidation = "Please Select Banner Location"
-    static let hotspotImgValidation = "Please Select Banner Image."
+    static let bannerImgValidation = "Please Select Banner Image."
+    
+    // Store: Banner
+
+    static let hotSpotLocationValidation = "Please Select Hotspot Location"
+    static let hotspotImgValidation = "Please Select Hotspot Image."
     
     // Store: Profile
     static let storeCategory = "Please Select Category."

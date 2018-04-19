@@ -139,7 +139,7 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         self.view.endEditing(true)
         if self.isValidate() {
             let imgBase64 = OtherHelper.convertImageToBase64(image: self.itemImageView.image!)
-            let param = ["itemCategory": self.selectedItemCategory, "category": [], "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
+            let param = ["itemCategory": [self.selectedItemCategory!], "category": [], "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
             if itemObject != nil{
               self.updateItem(param: param)
             }else{
@@ -243,6 +243,7 @@ extension AddItemViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                UIImageJPEGRepresentation(pickedImage, 0.5)
                 self.itemImageView.image = pickedImage
                 self.isItemImg = true
             }
@@ -265,13 +266,15 @@ extension AddItemViewController{
             guard (json != nil) else {
                 return
             }
-           // print(json)
             DispatchQueue.main.async {
                   NotificationCenter.default.post(name: Notification.Name.init("refreshItemData"), object: nil, userInfo: nil)
-                self.dismiss(animated: true, completion: nil)
+                OtherHelper.buttonDialog("Success", "Store Item added Successfully", self, "OK", false, completionHandler: {
+                    self.dismiss(animated: true, completion: nil)
+                })
             }
         })
     }
+    
     func updateItem(param : [String : Any]){
         ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.put(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in

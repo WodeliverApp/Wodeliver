@@ -252,10 +252,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="My" image="store_profile" id="zFe-aU-IsE"/>
                     <navigationItem key="navigationItem" id="feg-fy-gfs">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting_icon" id="a5M-iB-z7B">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="setting_icon" id="lnO-ST-WdV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="setting_Action:" destination="LZS-I2-d8a" id="PVJ-YO-nHH"/>
+                                <action selector="setting_Action:" destination="LZS-I2-d8a" id="nMm-Ke-aBb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="a5M-iB-z7B">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="save_Action:" destination="LZS-I2-d8a" id="XPw-7d-hkh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -885,7 +891,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="085-OS-SI0">
-                                <rect key="frame" x="16" y="108" width="343" height="427"/>
+                                <rect key="frame" x="16" y="108" width="343" height="477"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TK-cf-II2">
                                         <rect key="frame" x="132" y="20" width="80" height="21"/>
@@ -921,8 +927,8 @@
                                         <rect key="frame" x="8" y="250" width="323" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-sK-VpX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="161.5" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="45"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -935,32 +941,29 @@
                                                     <outlet property="delegate" destination="g2f-ko-QyQ" id="8K7-J5-OUI"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-Dt-KQt" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="161.5" y="0.0" width="161.5" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
-                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="7i5-mp-xDw"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="pOI-HC-6WF"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-tV-XIe">
-                                        <rect key="frame" x="8" y="307" width="327" height="45"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8eJ-tV-XIe">
+                                        <rect key="frame" x="8" y="307" width="327" height="100"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-z2-G4H" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                            <textField opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tA3-rQ-r4p" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-z2-G4H" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="327" height="45"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -975,15 +978,15 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="DdD-ca-thu"/>
+                                            <constraint firstAttribute="height" constant="100" id="DdD-ca-thu"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PYs-QB-28G">
                                         <rect key="frame" x="8" y="193" width="327" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-P7-vFO" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -996,28 +999,13 @@
                                                     <outlet property="delegate" destination="g2f-ko-QyQ" id="eV7-5a-C2M"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ix2-u9-phi" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="168.5" y="0.0" width="158.5" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
-                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="zC3-dh-b66"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="V4Y-TW-gei"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-O7-6NY">
-                                        <rect key="frame" x="12" y="376" width="319" height="35"/>
+                                        <rect key="frame" x="12" y="434" width="319" height="35"/>
                                         <color key="backgroundColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="8Jx-6N-liF"/>
@@ -1038,7 +1026,7 @@
                                     <constraint firstItem="PYs-QB-28G" firstAttribute="top" secondItem="hxZ-eH-rwI" secondAttribute="bottom" constant="12" id="7AR-wm-r4B"/>
                                     <constraint firstAttribute="trailing" secondItem="xVg-Lh-OCd" secondAttribute="trailing" constant="12" id="85B-T2-ZIm"/>
                                     <constraint firstItem="8MR-tj-28h" firstAttribute="top" secondItem="085-OS-SI0" secondAttribute="top" constant="8" id="8uE-H1-b2v"/>
-                                    <constraint firstAttribute="height" constant="427" id="Cf4-S3-lha"/>
+                                    <constraint firstAttribute="height" constant="477" id="Cf4-S3-lha"/>
                                     <constraint firstItem="Nax-O7-6NY" firstAttribute="leading" secondItem="085-OS-SI0" secondAttribute="leading" constant="12" id="DNb-3V-ObP"/>
                                     <constraint firstItem="xVg-Lh-OCd" firstAttribute="leading" secondItem="085-OS-SI0" secondAttribute="leading" constant="8" id="EbE-68-Q0a"/>
                                     <constraint firstAttribute="trailing" secondItem="8eJ-tV-XIe" secondAttribute="trailing" constant="8" id="EyX-JA-B1U"/>
@@ -1048,7 +1036,7 @@
                                     <constraint firstAttribute="trailing" secondItem="8MR-tj-28h" secondAttribute="trailing" constant="8" id="PyC-Kk-CYR"/>
                                     <constraint firstItem="hxZ-eH-rwI" firstAttribute="leading" secondItem="085-OS-SI0" secondAttribute="leading" constant="8" id="QiD-Kq-2FA"/>
                                     <constraint firstAttribute="trailing" secondItem="hxZ-eH-rwI" secondAttribute="trailing" constant="8" id="f7S-ou-1fK"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nax-O7-6NY" secondAttribute="bottom" constant="16" id="gGP-ea-J6P"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nax-O7-6NY" secondAttribute="bottom" constant="8" id="gGP-ea-J6P"/>
                                     <constraint firstItem="PYs-QB-28G" firstAttribute="leading" secondItem="085-OS-SI0" secondAttribute="leading" constant="8" id="hf1-06-YJz"/>
                                     <constraint firstItem="hxZ-eH-rwI" firstAttribute="top" secondItem="7TK-cf-II2" secondAttribute="bottom" constant="12" id="qf3-t4-epn"/>
                                     <constraint firstItem="7TK-cf-II2" firstAttribute="top" secondItem="085-OS-SI0" secondAttribute="top" constant="20" id="rcX-1b-uA1"/>
@@ -1057,7 +1045,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="085-OS-SI0" firstAttribute="leading" secondItem="rhI-60-Cdi" secondAttribute="leading" constant="16" id="IkB-hJ-9bD"/>
-                            <constraint firstItem="085-OS-SI0" firstAttribute="centerY" secondItem="AJw-wP-gDr" secondAttribute="centerY" constant="-12" id="IlX-gj-6JK"/>
+                            <constraint firstItem="085-OS-SI0" firstAttribute="centerY" secondItem="AJw-wP-gDr" secondAttribute="centerY" constant="13" id="IlX-gj-6JK"/>
                             <constraint firstItem="rhI-60-Cdi" firstAttribute="trailing" secondItem="dEo-22-g5y" secondAttribute="trailing" id="gBb-WI-cId"/>
                             <constraint firstItem="dEo-22-g5y" firstAttribute="leading" secondItem="rhI-60-Cdi" secondAttribute="leading" id="geb-oF-q4y"/>
                             <constraint firstItem="rhI-60-Cdi" firstAttribute="trailing" secondItem="085-OS-SI0" secondAttribute="trailing" constant="16" id="hFw-mn-gmj"/>
@@ -1071,16 +1059,15 @@
                         <outlet property="bannerImageView" destination="hxZ-eH-rwI" id="fYm-2C-bZ4"/>
                         <outlet property="btnClose_ref" destination="8MR-tj-28h" id="vaL-hi-TLm"/>
                         <outlet property="btnDone_ref" destination="Nax-O7-6NY" id="RVP-w6-5Hh"/>
-                        <outlet property="txtEndDate" destination="ix2-u9-phi" id="Zhw-ez-K9G"/>
-                        <outlet property="txtEndTime" destination="4dJ-Dt-KQt" id="LNb-OZ-f4i"/>
                         <outlet property="txtLocation" destination="0wH-z2-G4H" id="J50-Yr-lj4"/>
+                        <outlet property="txtPrice" destination="tA3-rQ-r4p" id="ggD-sN-nEg"/>
                         <outlet property="txtStartDate" destination="c7r-P7-vFO" id="9Qa-z4-WfE"/>
                         <outlet property="txtStartTime" destination="z5v-sK-VpX" id="Rp8-kz-0H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ad-l3-0nF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="337"/>
+            <point key="canvasLocation" x="1045.5999999999999" y="336.88155922038982"/>
         </scene>
         <!--Add Hotspot View Controller-->
         <scene sceneID="x1D-KH-reB">
@@ -1095,7 +1082,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zi5-Mv-aJE">
-                                <rect key="frame" x="16" y="108" width="343" height="487"/>
+                                <rect key="frame" x="16" y="80" width="343" height="525"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add HotSpot Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpX-kb-9tW">
                                         <rect key="frame" x="111" y="20" width="122.5" height="21"/>
@@ -1132,7 +1119,7 @@
                                         <subviews>
                                             <textField opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Time Slot" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhp-fB-o6j" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1145,32 +1132,17 @@
                                                     <outlet property="delegate" destination="WjI-If-nhi" id="TTX-wC-bNE"/>
                                                 </connections>
                                             </textField>
-                                            <textField hidden="YES" opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JgG-yD-Lq8" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="-24" y="0.0" width="0.0" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
-                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="delegate" destination="WjI-If-nhi" id="TOA-lB-cbj"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="BBy-pL-q27"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-Ig-KFd">
-                                        <rect key="frame" x="8" y="307" width="327" height="105"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-Ig-KFd">
+                                        <rect key="frame" x="8" y="307" width="327" height="155"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-QP-10r" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                            <textField opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-QP-10r" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1183,9 +1155,9 @@
                                                     <outlet property="delegate" destination="WjI-If-nhi" id="oP0-Go-YzI"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-uy-anw" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="60" width="327" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <textField opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Store Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-uy-anw" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55" width="327" height="45"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1198,9 +1170,24 @@
                                                     <outlet property="delegate" destination="WjI-If-nhi" id="uUS-Xu-EjP"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itH-hJ-Zik" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="110" width="327" height="45"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                        <color key="value" red="0.84081500769999995" green="0.1102929339" blue="0.1329464018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="WjI-If-nhi" id="E6I-os-Wws"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="105" id="yqk-NR-BtC"/>
+                                            <constraint firstAttribute="height" constant="155" id="yqk-NR-BtC"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-Xe-g43">
@@ -1208,7 +1195,7 @@
                                         <subviews>
                                             <textField opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6C-QZ-XTX" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -1221,28 +1208,13 @@
                                                     <outlet property="delegate" destination="WjI-If-nhi" id="hLA-mI-Sen"/>
                                                 </connections>
                                             </textField>
-                                            <textField hidden="YES" opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="det-Xs-RMz" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="-24" y="0.0" width="0.0" height="45"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
-                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="delegate" destination="WjI-If-nhi" id="iEg-6v-BTz"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="bTn-XO-GQU"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-r9-NZf">
-                                        <rect key="frame" x="12" y="444" width="319" height="35"/>
+                                        <rect key="frame" x="12" y="482" width="319" height="35"/>
                                         <color key="backgroundColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="nwz-nH-NYh"/>
@@ -1262,7 +1234,7 @@
                                     <constraint firstItem="w9r-o7-qxw" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="7cI-W9-sAw"/>
                                     <constraint firstItem="YV9-Xe-g43" firstAttribute="top" secondItem="w9r-o7-qxw" secondAttribute="bottom" constant="12" id="8VN-Nq-cpQ"/>
                                     <constraint firstItem="Jny-Or-R4H" firstAttribute="top" secondItem="YV9-Xe-g43" secondAttribute="bottom" constant="12" id="C4H-FT-z2P"/>
-                                    <constraint firstAttribute="height" constant="487" id="KUO-U4-bXP"/>
+                                    <constraint firstAttribute="height" constant="525" id="KUO-U4-bXP"/>
                                     <constraint firstAttribute="trailing" secondItem="vcH-r9-NZf" secondAttribute="trailing" constant="12" id="LRk-OA-svN"/>
                                     <constraint firstAttribute="bottom" secondItem="vcH-r9-NZf" secondAttribute="bottom" constant="8" id="XBN-4F-nIw"/>
                                     <constraint firstAttribute="trailing" secondItem="YV9-Xe-g43" secondAttribute="trailing" constant="8" id="Zd1-h0-Mwx"/>
@@ -1288,7 +1260,7 @@
                             <constraint firstItem="opI-Lx-zjj" firstAttribute="trailing" secondItem="Zi5-Mv-aJE" secondAttribute="trailing" constant="16" id="K9x-1k-FHz"/>
                             <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerX" secondItem="AP8-C9-tb4" secondAttribute="centerX" id="YGY-FZ-GVo"/>
                             <constraint firstItem="06H-kG-4Qb" firstAttribute="leading" secondItem="opI-Lx-zjj" secondAttribute="leading" id="dVc-Hw-z5O"/>
-                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerY" secondItem="AP8-C9-tb4" secondAttribute="centerY" constant="18" id="lTi-OO-K7K"/>
+                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerY" secondItem="AP8-C9-tb4" secondAttribute="centerY" constant="9" id="lTi-OO-K7K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="opI-Lx-zjj"/>
                     </view>
@@ -1296,9 +1268,8 @@
                         <outlet property="btnClose_ref" destination="GNM-2X-MpX" id="cQI-Ef-l6h"/>
                         <outlet property="btnDone_ref" destination="vcH-r9-NZf" id="A0e-43-c1d"/>
                         <outlet property="hotSpotImageView" destination="w9r-o7-qxw" id="Ry5-F8-qMz"/>
-                        <outlet property="txtEndDate" destination="det-Xs-RMz" id="XaT-GI-7Zp"/>
-                        <outlet property="txtEndTime" destination="JgG-yD-Lq8" id="1EE-mI-8oS"/>
                         <outlet property="txtLocation" destination="hLn-QP-10r" id="hgD-tx-Rbe"/>
+                        <outlet property="txtPrice" destination="itH-hJ-Zik" id="v33-i2-Exc"/>
                         <outlet property="txtStartDate" destination="q6C-QZ-XTX" id="hp6-NS-U68"/>
                         <outlet property="txtStartTime" destination="Bhp-fB-o6j" id="PvO-Gv-4nd"/>
                         <outlet property="txtStoreItem" destination="LiC-uy-anw" id="7og-hF-25q"/>
@@ -1307,6 +1278,154 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZC-xd-4Ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="336.88155922038982"/>
+        </scene>
+        <!--Time Slot View Controller-->
+        <scene sceneID="aEu-YS-kBh">
+            <objects>
+                <viewController storyboardIdentifier="TimeSlotViewController" id="Iqf-GK-qMm" customClass="TimeSlotViewController" customModule="Wodeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Vi-bE-dlb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GxZ-Yq-9PN">
+                                <rect key="frame" x="0.0" y="10" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-Ic-KaB">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Time Slot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXy-05-Ah7">
+                                        <rect key="frame" x="111" y="20" width="123" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="jiL-Lz-dTc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-lN-H7t">
+                                        <rect key="frame" x="295" y="8" width="40" height="40"/>
+                                        <color key="tintColor" red="0.89632189269999996" green="0.1122413054" blue="0.13725781440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="cancel_icon">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnClose_Action:" destination="Iqf-GK-qMm" eventType="touchUpInside" id="ghZ-th-7N4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1p-3C-xhu">
+                                        <rect key="frame" x="11.5" y="584" width="319" height="35"/>
+                                        <color key="backgroundColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Omc-8j-8SR"/>
+                                        </constraints>
+                                        <state key="normal" title="Apply">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDone_Action:" destination="Iqf-GK-qMm" eventType="touchUpInside" id="9o2-x7-X4W"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nxb-ZM-eKq">
+                                        <rect key="frame" x="0.0" y="49" width="343" height="527"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="527" id="2LZ-KB-659"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeSlotTableViewCell" rowHeight="50" id="iMC-BU-A3g" customClass="TimeSlotTableViewCell" customModule="Wodeliver" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iMC-BU-A3g" id="XCx-h7-ahS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czP-ZF-uHG">
+                                                            <rect key="frame" x="10" y="0.0" width="271" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="43V-gQ-3Le"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2b-6n-ab9">
+                                                            <rect key="frame" x="301" y="9" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="b7g-Is-ma3"/>
+                                                                <constraint firstAttribute="height" constant="30" id="oV2-38-ruI"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="usN-xd-BCd"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="czP-ZF-uHG" firstAttribute="centerY" secondItem="XCx-h7-ahS" secondAttribute="centerY" id="8po-eZ-58Y"/>
+                                                        <constraint firstAttribute="bottom" secondItem="czP-ZF-uHG" secondAttribute="bottom" id="Bh5-rU-hTA"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="d2b-6n-ab9" secondAttribute="trailing" constant="-3" id="U3y-X2-LJw"/>
+                                                        <constraint firstItem="czP-ZF-uHG" firstAttribute="top" secondItem="XCx-h7-ahS" secondAttribute="top" id="Wqk-7l-I7b"/>
+                                                        <constraint firstItem="d2b-6n-ab9" firstAttribute="top" secondItem="XCx-h7-ahS" secondAttribute="top" constant="9" id="mKt-ed-8S3"/>
+                                                        <constraint firstItem="d2b-6n-ab9" firstAttribute="leading" secondItem="czP-ZF-uHG" secondAttribute="trailing" constant="20" id="seC-HF-0LO"/>
+                                                        <constraint firstItem="czP-ZF-uHG" firstAttribute="leading" secondItem="XCx-h7-ahS" secondAttribute="leadingMargin" constant="-5" id="xgV-ht-Xef"/>
+                                                        <constraint firstItem="d2b-6n-ab9" firstAttribute="bottom" secondItem="XCx-h7-ahS" secondAttribute="bottomMargin" id="zzA-1N-XBF"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lblSlotItem" destination="czP-ZF-uHG" id="EE6-od-9Sl"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Iqf-GK-qMm" id="JIu-cz-TZD"/>
+                                            <outlet property="delegate" destination="Iqf-GK-qMm" id="PbG-eG-X8w"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nxb-ZM-eKq" secondAttribute="trailing" id="1EJ-5k-06B"/>
+                                    <constraint firstItem="P1p-3C-xhu" firstAttribute="top" secondItem="Nxb-ZM-eKq" secondAttribute="bottom" constant="8" id="1Fh-w3-8bA"/>
+                                    <constraint firstAttribute="trailing" secondItem="P1p-3C-xhu" secondAttribute="trailing" constant="12" id="HkJ-nk-aCQ"/>
+                                    <constraint firstItem="NXy-05-Ah7" firstAttribute="leading" secondItem="5ee-Ic-KaB" secondAttribute="leading" constant="111" id="IBx-mC-my9"/>
+                                    <constraint firstAttribute="trailing" secondItem="wMA-lN-H7t" secondAttribute="trailing" constant="8" id="K4A-x5-3Rx"/>
+                                    <constraint firstItem="wMA-lN-H7t" firstAttribute="top" secondItem="5ee-Ic-KaB" secondAttribute="top" constant="8" id="Ry4-zg-m5F"/>
+                                    <constraint firstItem="NXy-05-Ah7" firstAttribute="top" secondItem="5ee-Ic-KaB" secondAttribute="top" constant="20" id="Weu-nv-fvW"/>
+                                    <constraint firstItem="Nxb-ZM-eKq" firstAttribute="centerX" secondItem="5ee-Ic-KaB" secondAttribute="centerX" id="bNO-3M-thf"/>
+                                    <constraint firstItem="Nxb-ZM-eKq" firstAttribute="top" secondItem="wMA-lN-H7t" secondAttribute="bottom" constant="1" id="fTD-mr-WG6"/>
+                                    <constraint firstItem="P1p-3C-xhu" firstAttribute="top" secondItem="Nxb-ZM-eKq" secondAttribute="bottom" constant="8" id="lyZ-H2-D7s"/>
+                                    <constraint firstItem="wMA-lN-H7t" firstAttribute="leading" secondItem="NXy-05-Ah7" secondAttribute="trailing" constant="61" id="nFk-7F-nwJ"/>
+                                    <constraint firstItem="Nxb-ZM-eKq" firstAttribute="top" secondItem="NXy-05-Ah7" secondAttribute="bottom" constant="8" id="nSZ-eD-AY6"/>
+                                    <constraint firstItem="Nxb-ZM-eKq" firstAttribute="top" secondItem="5ee-Ic-KaB" secondAttribute="top" constant="49" id="nqi-l5-FUe"/>
+                                    <constraint firstItem="P1p-3C-xhu" firstAttribute="leading" secondItem="5ee-Ic-KaB" secondAttribute="leading" constant="12" id="orG-ZH-YxP"/>
+                                    <constraint firstAttribute="bottom" secondItem="P1p-3C-xhu" secondAttribute="bottom" constant="8" id="rpO-mJ-eoh"/>
+                                    <constraint firstItem="Nxb-ZM-eKq" firstAttribute="leading" secondItem="5ee-Ic-KaB" secondAttribute="leading" id="x6b-JO-4WQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GxZ-Yq-9PN" secondAttribute="trailing" id="4Qf-q1-O5W"/>
+                            <constraint firstItem="6hM-HW-jSV" firstAttribute="bottom" secondItem="GxZ-Yq-9PN" secondAttribute="bottom" constant="10" id="E1d-Kk-RM7"/>
+                            <constraint firstItem="5ee-Ic-KaB" firstAttribute="top" secondItem="6hM-HW-jSV" secondAttribute="top" id="IfL-R5-UPT"/>
+                            <constraint firstItem="GxZ-Yq-9PN" firstAttribute="centerX" secondItem="5ee-Ic-KaB" secondAttribute="centerX" id="Ld9-bN-btx"/>
+                            <constraint firstItem="5ee-Ic-KaB" firstAttribute="leading" secondItem="7Vi-bE-dlb" secondAttribute="leadingMargin" id="O0L-8W-XB7"/>
+                            <constraint firstItem="GxZ-Yq-9PN" firstAttribute="centerY" secondItem="5ee-Ic-KaB" secondAttribute="centerY" id="Sla-kU-Mz0"/>
+                            <constraint firstAttribute="bottom" secondItem="5ee-Ic-KaB" secondAttribute="bottom" constant="20" symbolic="YES" id="SwF-bs-oCk"/>
+                            <constraint firstItem="GxZ-Yq-9PN" firstAttribute="leading" secondItem="7Vi-bE-dlb" secondAttribute="leading" id="dbn-Ro-wFW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6hM-HW-jSV"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="5ee-Ic-KaB" id="BoQ-GW-Yfq"/>
+                        <outlet property="btnClose_ref" destination="wMA-lN-H7t" id="L8J-5O-raf"/>
+                        <outlet property="btnDone_ref" destination="P1p-3C-xhu" id="J9P-9v-wZ8"/>
+                        <outlet property="timeTableView" destination="Nxb-ZM-eKq" id="xmx-fg-IJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TK7-7p-SqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2556" y="336.88155922038982"/>
         </scene>
     </scenes>
     <resources>

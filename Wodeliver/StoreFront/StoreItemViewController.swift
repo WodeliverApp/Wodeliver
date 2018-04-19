@@ -15,17 +15,24 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var segment_ref: UISegmentedControl!
     var storeItemList : [JSON] = []
     var storeAdvertismentList : [JSON] = []
+    var bannerList : [JSON] = []
+    var hotspotList : [JSON] = []
     var itemCategory = UserManager.getItemCategory()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblHistory.register(UINib(nibName: "StoreHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "StoreHistoryTableViewCell")
         self.viewCostomization()
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshData(data:)), name:Notification.Name.init("refreshItemData") , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshItemData(data:)), name:Notification.Name.init("refreshItemData") , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshBannerData(data:)), name:Notification.Name.init("refreshBannerData") , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshHotSpotData(data:)), name:Notification.Name.init("refreshHotSpotData") , object: nil)
+        self.getBannerList()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.init("refreshItemData"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.init("refreshBannerData"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.init("refreshHotSpotData"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,10 +55,16 @@ class StoreItemViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    @objc func refreshData(data: Notification) {
+    @objc func refreshItemData(data: Notification) {
         self.getItemList()
     }
-    
+    @objc func refreshBannerData(data: Notification) {
+        self.getItemList()
+    }
+    @objc func refreshHotSpotData(data: Notification) {
+        self.getItemList()
+    }
+
     @IBAction func segmentValueChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -179,10 +192,15 @@ extension StoreItemViewController{
             guard let json = json else {
                 return
             }
-            DispatchQueue.main.async {
-                self.storeItemList = json["response"].arrayValue
+            self.storeItemList = json["response"].arrayValue
+            if self.storeItemList.count == 0{
+                OtherHelper.simpleDialog("Error", "No record found.", self)
+            }else{
+                UserManager.setStoreItemList(detail: json["response"])
                 self.tblHistory.reloadData()
             }
+            
+            
         })
     }
     
@@ -195,9 +213,40 @@ extension StoreItemViewController{
             guard let json = json else {
                 return
             }
-            DispatchQueue.main.async {
-                self.storeAdvertismentList = json["response"].arrayValue
-                self.tblHistory.reloadData()
+            
+            self.storeAdvertismentList = json["response"].arrayValue
+            self.tblHistory.reloadData()
+            
+        })
+    }
+    func getBannerList()  {
+        let urlStr = Path.bannerList+UserManager.getStoreId()
+        NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard let json = json else {
+                return
+            }
+            print(json)
+            self.bannerList = json["response"].arrayValue
+            if self.bannerList.count == 0{
+                OtherHelper.simpleDialog("Error", "No record found.", self)
+            }else{
+                // self.remarksTableView.reloadData()
+            }
+        })
+    }
+    func getHotspotList()  {
+        let urlStr = Path.hotspotList+UserManager.getStoreId()
+        NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
+            guard let `self` = self else { return }
+            guard let json = json else {
+                return
+            }
+            self.hotspotList = json["response"].arrayValue
+            if self.hotspotList.count == 0{
+                OtherHelper.simpleDialog("Error", "No record found.", self)
+            }else{
+               // self.remarksTableView.reloadData()
             }
         })
     }

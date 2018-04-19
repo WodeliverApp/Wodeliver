@@ -63,6 +63,8 @@
 		30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57F2073D4D500791A81 /* MenuViewController.swift */; };
 		30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */; };
 		30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */; };
+		30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */; };
+		30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
 		5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */; };
 		5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1DC1FED302600B704B1 /* ProfileViewController.swift */; };
@@ -199,11 +201,13 @@
 		30EBB57F2073D4D500791A81 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotViewController.swift; sourceTree = "<group>"; };
+		30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
 		5342D1DA1FED1E2400B704B1 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		5342D1DC1FED302600B704B1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
-		53CB7A481FEB7A3600D70254 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		53CB7A481FEB7A3600D70254 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		53CB7A4B1FEB9FD200D70254 /* CurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTableViewCell.swift; sourceTree = "<group>"; };
 		53CB7A4C1FEB9FD200D70254 /* CurrentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentTableViewCell.xib; sourceTree = "<group>"; };
 		53CB7A4F1FEBA77100D70254 /* CurrentStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 				3013237120696782003D4DF7 /* AddHotspotViewController.swift */,
 				30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */,
 				30EBB57F2073D4D500791A81 /* MenuViewController.swift */,
+				30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */,
 			);
 			path = StoreFront;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */,
 				30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */,
 				30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */,
+				30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */,
 			);
 			path = StoreCell;
 			sourceTree = "<group>";
@@ -876,6 +882,7 @@
 				3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */,
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
+				30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */,
 				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
@@ -899,6 +906,7 @@
 				30617D25205AF80E0010948E /* RemarkCell.swift in Sources */,
 				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
+				30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
 				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,

@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SwiftyJSON
+import SDWebImage
 
-class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, TimeSlotProtocol  {
+    
     @IBOutlet weak var txtStartDate: FloatLabelTextField!
-    @IBOutlet weak var txtEndDate: FloatLabelTextField!
     @IBOutlet weak var txtStartTime: FloatLabelTextField!
-    @IBOutlet weak var txtEndTime: FloatLabelTextField!
     @IBOutlet weak var txtLocation: FloatLabelTextField!
     @IBOutlet weak var txtStoreItem: FloatLabelTextField!
+    @IBOutlet weak var txtPrice: FloatLabelTextField!
     @IBOutlet weak var btnDone_ref: UIButton!
     @IBOutlet weak var btnClose_ref: UIButton!
     @IBOutlet weak var hotSpotImageView: UIImageView!
@@ -26,23 +27,40 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
     var PORTRAIT_KEYBOARD_HEIGHT: CGFloat! = 216
     var animatedDistance: CGFloat!
     var imagePicker = UIImagePickerController()
-    var isItemImg: Bool = false
+    var isItemImg: Bool = true
     var pickerView : UIPickerView!
+    var itemListPicker : UIPickerView!
+    var selectedSlotIds = [String]()
+    var locationList : [[String : String]] = [["id": "0","name":"Home"],["id": "1","name":"Store Category"],["id": "2","name":"Store Search Result"]]
+    var selectedLocationId : String = ""
+    var storeItemList : [JSON] = []
+    var selectedStoreItem : String = ""
+    var startDate = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.createPicker()
+        self.storeItemList = UserManager.getStoreItemList().arrayValue
     }
-
+    
     //MARK:- Create Picker
     
     func createPicker(){
         self.pickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
-        self.pickerView.backgroundColor = UIColor.white
-        txtLocation.inputView = self.pickerView
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.backgroundColor = UIColor.white
+        pickerView.tag = 5001
+        txtLocation.inputView = pickerView
+        
+        itemListPicker = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        itemListPicker.delegate = self
+        itemListPicker.dataSource = self
+        itemListPicker.backgroundColor = UIColor.white
+        itemListPicker.tag = 5003
+        txtStoreItem.inputView = itemListPicker
         
         // ToolBar
         let toolBar = UIToolbar()
@@ -59,14 +77,12 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         txtStartDate.inputAccessoryView = toolBar
-        txtEndDate.inputAccessoryView = toolBar
-        txtStartTime.inputAccessoryView = toolBar
-        txtEndTime.inputAccessoryView = toolBar
         txtLocation.inputAccessoryView = toolBar
         txtStoreItem.inputAccessoryView = toolBar
-        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(self.imagePicker(_:)))
-        hotSpotImageView.addGestureRecognizer(imageGesture)
-        hotSpotImageView.isUserInteractionEnabled = true
+        txtPrice.inputAccessoryView = toolBar
+        //        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(self.imagePicker(_:)))
+        //        hotSpotImageView.addGestureRecognizer(imageGesture)
+        //        hotSpotImageView.isUserInteractionEnabled = true
         imagePicker.delegate = self
     }
     
@@ -85,26 +101,12 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     @objc func handleDatePicker(sender: UIDatePicker) {
-        
-        //  textfieldjobdate.text = dateFormatter.string(from: sender.date)
         switch sender.tag {
         case 2001:
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy"
             txtStartDate.text = dateFormatter.string(from: sender.date)
-       /* case 2002:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM yyyy"
-            txtEndDate.text = dateFormatter.string(from: sender.date)
-        case 2004:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            txtEndTime.text = dateFormatter.string(from: sender.date)
-        case 2003:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            txtStartTime.text = dateFormatter.string(from: sender.date)
-       */
+            startDate = sender.date
         default:
             break
         }
@@ -131,12 +133,28 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
         alertController.addAction(cancel)
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     // MARK: - UIButton Action
     
     @IBAction func btnDone_Action(_ sender: Any) {
         self.view.endEditing(true)
         if self.isValidate() {
+            //  let imgBase64 = OtherHelper.convertImageToBase64(image: self.hotSpotImageView.image!)
+            var iso8601String : String = ""
+            if #available(iOS 10.0, *) {
+                let dateFormatter = ISO8601DateFormatter()
+                iso8601String = dateFormatter.string(from: startDate)
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                iso8601String = dateFormatter.string(from: startDate)
+                print(iso8601String)
+            }
+            print(iso8601String)
+            
+            let param = ["date": iso8601String, "storeId": UserManager.getStoreId() ,"slot": selectedSlotIds, "location": selectedLocationId,"slotFor":"2","hotspotItems": [selectedStoreItem]] as [String : Any]
+            saveHotSpotItem(param: param)
         }
     }
     
@@ -148,28 +166,24 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func isValidate() -> Bool  {
         if self.txtStartDate.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
             return false
         }
-        /*else if self.txtEndDate.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemPriceValidation, self)
-            return false
-        }
-        else if self.txtEndTime.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemDescValidation, self)
-            return false
-        }*/
         else if self.txtStartTime.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemCatValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
             return false
         }
-      
+            
         else if self.txtLocation.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemDescValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.hotSpotLocationValidation, self)
             return false
         }
         else if (self.isItemImg != true){
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemImgValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.hotspotImgValidation, self)
+            return false
+        }
+        else if self.txtPrice.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemPriceValidation, self)
             return false
         }
         return true
@@ -177,51 +191,39 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     //MARK:- Server Action
     
-    func getAvailableTimeSlot(param : [String : Any]){
-        NetworkHelper.get(url: Path.getTimeSlot, param: param, self, completionHandler: {[weak self] json, error in
-            guard let `self` = self else { return }
-            guard (json != nil) else {
-                return
-            }
-        
-            let jsonDict = json?.dictionaryValue
-            var arr = [String]()
-          
-            for (key, value) in jsonDict! {
-                arr.append("\(key) \(value)")
-            }
-            print(arr)
-//            let dict : String = (json?.stringValue)!
-//            let myData = dict.split(separator: ",")
-            //print(myData)
-            print(arr[0])
-        })
-    }
-    
-    func saveItem(param : [String : Any]){
+    func saveHotSpotItem(param : [String : Any]){
         NetworkHelper.post(url: Path.addHotSpotItem, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
             }
-            //print(json)
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name: Notification.Name.init("refreshItemData"), object: nil, userInfo: nil)
-                self.dismiss(animated: true, completion: nil)
+                NotificationCenter.default.post(name: Notification.Name.init("refreshHotSpotData"), object: nil, userInfo: nil)
+                OtherHelper.buttonDialog("Success", "Hotspot Item added Successfully", self, "OK", false, completionHandler: {
+                    self.dismiss(animated: true, completion: nil)
+                    })
             }
         })
     }
     
-    /*
+    
+    // MARK: - Custom Delegate TimeSlotProtocol
+    
+    func setTimeSlots(selectedIds : [String], selectedTimes : [String]) {
+        txtStartTime.text = selectedTimes.map { String($0) }.joined(separator: ", ")
+        selectedSlotIds = selectedIds
+    }
+    
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    
 }
 extension AddHotspotViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
@@ -230,6 +232,7 @@ extension AddHotspotViewController: UINavigationControllerDelegate, UIImagePicke
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                UIImageJPEGRepresentation(pickedImage, 0.5)
                 self.hotSpotImageView.image = pickedImage
                 self.isItemImg = true
             }
@@ -242,6 +245,28 @@ extension AddHotspotViewController: UINavigationControllerDelegate, UIImagePicke
     
 }
 extension AddHotspotViewController: UITextFieldDelegate{
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 1003:
+            if self.txtStartDate.text?.isEmpty == true {
+                OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
+            }else{
+                let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
+                viewController.modalPresentationStyle = .overFullScreen
+                viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                viewController.isHotSpotItem = true
+                viewController.delegate = self
+                self.present(viewController, animated: false, completion: nil)
+            }
+            return false
+        default:
+            break
+        }
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
         case 1001:
@@ -250,25 +275,33 @@ extension AddHotspotViewController: UITextFieldDelegate{
             textField.inputView = datePickerView
             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
             datePickerView.tag = 2001
-      /*  case 1002:
-            let datePickerView = UIDatePicker()
-            datePickerView.datePickerMode = .date
-            textField.inputView = datePickerView
-            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-            datePickerView.tag = 2002
-        case 1004:
-            let datePickerView = UIDatePicker()
-            datePickerView.datePickerMode = .time
-            textField.inputView = datePickerView
-            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-            datePickerView.tag = 2004
         case 1003:
-            let datePickerView = UIDatePicker()
-            datePickerView.datePickerMode = .time
-            textField.inputView = datePickerView
-            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-            datePickerView.tag = 2003
-        */
+            let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+            let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
+            viewController.modalPresentationStyle = .overFullScreen
+            viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            viewController.isHotSpotItem = true
+            viewController.delegate = self
+            self.present(viewController, animated: false, completion: nil)
+            /*  case 1002:
+             let datePickerView = UIDatePicker()
+             datePickerView.datePickerMode = .date
+             textField.inputView = datePickerView
+             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+             datePickerView.tag = 2002
+             case 1004:
+             let datePickerView = UIDatePicker()
+             datePickerView.datePickerMode = .time
+             textField.inputView = datePickerView
+             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+             datePickerView.tag = 2004
+             case 1003:
+             let datePickerView = UIDatePicker()
+             datePickerView.datePickerMode = .time
+             textField.inputView = datePickerView
+             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+             datePickerView.tag = 2003
+             */
         default:
             break
         }
@@ -276,8 +309,9 @@ extension AddHotspotViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField.tag {
         case 1001:
-            let param = ["slotFor":"1", "date":textField.text!] as [String : Any]
-            self.getAvailableTimeSlot(param: param)
+            //            let param = ["slotFor":"2", "date":textField.text!] as [String : Any]
+            //         //   self.getAvailableTimeSlot(param: param)
+            break
         default:
             break
         }
@@ -288,15 +322,32 @@ extension AddHotspotViewController{
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //  return pickOption.count
-        return 10
+        if pickerView.tag == 5001{
+            return locationList.count
+        }else{
+            return storeItemList.count
+        }
+        
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        // return pickOption[row]["name"].stringValue
-        return "Test"
+        if pickerView.tag == 5001{
+            return locationList[row]["name"]
+        }else{
+            return storeItemList[row]["item"].stringValue
+        }
+        
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //        txtLocation.text = pickOption[row]["name"].stringValue
-        //        selectedItemCategory = pickOption[row]["_id"].stringValue
+        if pickerView.tag == 5001{
+            txtLocation.text = locationList[row]["name"]
+            selectedLocationId = locationList[row]["id"]!
+        }else{
+            txtStoreItem.text = storeItemList[row]["item"].stringValue
+            selectedStoreItem = storeItemList[row]["_id"].stringValue
+            // if !isItemImg{
+            hotSpotImageView.sd_setImage(with: URL(string:Path.baseURL + storeItemList[row]["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+            //}
+        }
+        
     }
 }

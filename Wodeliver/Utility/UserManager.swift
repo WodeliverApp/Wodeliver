@@ -22,6 +22,7 @@ class UserManager{
     static let storeId = "storeId"
     static let categoryItem = "_categoryItem"
     static let category = "_category"
+    static let storeMenu = "_storeMenu"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
@@ -133,6 +134,15 @@ class UserManager{
     }
     static func getCategory() -> JSON {
         if let json = UserDefaults.standard.string(forKey: category) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static public func setStoreItemList(detail:JSON)    {
+        UserDefaults.standard.set(detail.rawString()!, forKey: storeMenu)
+    }
+    static func getStoreItemList() -> JSON  {
+        if let json = UserDefaults.standard.string(forKey: storeMenu) {
             return JSON.init(parseJSON: json)
         }
         return JSON.null

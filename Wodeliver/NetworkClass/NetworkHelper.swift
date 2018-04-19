@@ -15,6 +15,7 @@ class NetworkHelper{
     static func request(method: HTTPMethod, url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
@@ -80,6 +81,7 @@ class NetworkHelper{
     static func post(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["Content-Type"] = "application/json"
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
@@ -119,6 +121,7 @@ class NetworkHelper{
     static func get(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["Content-Type"] = "application/json"
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
@@ -158,7 +161,7 @@ class NetworkHelper{
     static func put(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //  headers["Myu-Auth-Token"] = UserManager.getAuthToken()
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
@@ -190,6 +193,7 @@ class NetworkHelper{
     static func patch(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
@@ -255,6 +259,7 @@ class NetworkHelper{
     static func delete(url: String, param: [String: Any], _ controller:UIViewController?, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)
@@ -297,7 +302,7 @@ class NetworkHelper{
                             errorReport = error
                             completionHandler(nil,error)
                         }
-                     //   var reportParam = param
+                        //   var reportParam = param
                     }
                 }else{
                     if let updateInfoText = response.response?.allHeaderFields["updateInfoText"] as? String {
@@ -324,7 +329,7 @@ class NetworkHelper{
     static func upload(url: String, param: [String: Any], _ controller:UIViewController?, _ media: Any, completionHandler: @escaping (JSON?, Error?) -> ()) {
         var json: JSON!
         var headers:[String:String] = [:]
-        //        headers["Myu-Auth-Token"] = UserManager.getAuthToken()
+        headers["timezone"] =  OtherHelper.deviceTimeZone()
         headers["appVersion"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         if let controller = controller {
             ProgressBar.showActivityIndicator(view: (controller.view)!, withOpaqueOverlay: true)

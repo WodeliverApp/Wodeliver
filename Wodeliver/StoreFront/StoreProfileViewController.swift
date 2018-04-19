@@ -73,7 +73,10 @@ class StoreProfileViewController: UIViewController, UIPickerViewDataSource, UIPi
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-    @IBAction func setting_Action(_ sender: Any) {
+    @IBAction func save_Action(_ sender: UIBarButtonItem) {
+        
+    }
+    @IBAction func setting_Action(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message:nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         let logoutAction = UIAlertAction(title: "Logout".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             
@@ -269,6 +272,7 @@ extension StoreProfileViewController: UINavigationControllerDelegate, UIImagePic
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                UIImageJPEGRepresentation(pickedImage, 0.5)
                 self.imgProfile.image = pickedImage
             }
         })

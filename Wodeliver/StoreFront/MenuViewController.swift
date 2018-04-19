@@ -21,7 +21,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.menuTableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuTableViewCell")
         self.menuTableView.delegate = self
         self.menuTableView.dataSource = self
-        itemCategoryId = "5a37fbc17c67920e2ccebed4"
+   //     itemCategoryId = "5a37fbc17c67920e2ccebed4"
         getMenuList()
         menuTableView.separatorColor = UIColor.clear
     }

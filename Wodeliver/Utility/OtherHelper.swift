@@ -86,6 +86,17 @@ class OtherHelper {
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
     }
 
+    static func deviceTimeZone() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone.local
+        dateFormatter.dateFormat = "Z"
+        let localTimeZoneOffset = dateFormatter.string(from: Date())
+        let one = (localTimeZoneOffset as NSString).substring(to: 1)
+        let two = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 1, length: 2))
+        let three = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 3, length: 2))
+        let result = "UTC\(one )\(two):\(three)"
+        return result
+    }
 }
 
 class ProgressBar{
@@ -100,7 +111,7 @@ class ProgressBar{
             overlay.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
                 //CGRectMake(0.0, 0.0, view.frame.width, view.frame.height)
             overlay.layer.backgroundColor = UIColor.lightText.cgColor
-            overlay.alpha = 0.7
+            overlay.alpha = 1
             overlay.tag = 1
             overlay.center = superView.center
             overlay.isHidden = false
@@ -108,7 +119,6 @@ class ProgressBar{
             superView.bringSubview(toFront: overlay)
             superView = overlay
         }
-        
         let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         
         indicator.center = superView.center

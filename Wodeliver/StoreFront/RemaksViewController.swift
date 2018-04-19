@@ -48,7 +48,6 @@ class RemaksViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getCommentFromSevver(pageNumber : String) {
         let urlStr = Path.commentList+entityId+"&skip=\(pageNumber)"
-        print(urlStr)
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard let json = json else {
@@ -56,7 +55,6 @@ class RemaksViewController: UIViewController, UITableViewDataSource, UITableView
             }
             self.commentList = json["response"].arrayValue
             if self.commentList.count == 0{
-                self.dismiss(animated: true, completion: nil)
                 OtherHelper.simpleDialog("Error", "No record found.", self)
             }else{
                 self.remarksTableView.reloadData()

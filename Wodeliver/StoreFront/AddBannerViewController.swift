@@ -8,13 +8,12 @@
 
 import UIKit
 
-class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, TimeSlotProtocol {
 
     @IBOutlet weak var txtStartDate: FloatLabelTextField!
-    @IBOutlet weak var txtEndDate: FloatLabelTextField!
     @IBOutlet weak var txtStartTime: FloatLabelTextField!
-    @IBOutlet weak var txtEndTime: FloatLabelTextField!
     @IBOutlet weak var txtLocation: FloatLabelTextField!
+    @IBOutlet weak var txtPrice: FloatLabelTextField!
     @IBOutlet weak var btnDone_ref: UIButton!
     @IBOutlet weak var btnClose_ref: UIButton!
     @IBOutlet weak var bannerImageView: UIImageView!
@@ -27,7 +26,10 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var imagePicker = UIImagePickerController()
     var isItemImg: Bool = false
     var pickerView : UIPickerView!
-    var locationList : [[String : String]] = [["id": "1","name":"Home"],["id": "1","name":"Home"],["id": "1","name":"Home"]]
+    var locationList : [[String : String]] = [["id": "0","name":"Home"],["id": "1","name":"Store Category"],["id": "2","name":"Store Search Result"]]
+    var selectedSlotIds = [String]()
+    var selectedLocationId : String = ""
+    var startDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,6 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
         self.view.addGestureRecognizer(tapGesture)
         self.createPicker()
-        print(locationList[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,10 +69,8 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         txtStartDate.inputAccessoryView = toolBar
-        txtEndDate.inputAccessoryView = toolBar
-        txtStartTime.inputAccessoryView = toolBar
-        txtEndTime.inputAccessoryView = toolBar
         txtLocation.inputAccessoryView = toolBar
+        txtPrice.inputAccessoryView = toolBar
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(self.imagePicker(_:)))
         bannerImageView.addGestureRecognizer(imageGesture)
         bannerImageView.isUserInteractionEnabled = true
@@ -95,18 +94,19 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM yyyy"
             txtStartDate.text = dateFormatter.string(from: sender.date)
-        case 2002:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM yyyy"
-            txtEndDate.text = dateFormatter.string(from: sender.date)
-        case 2003:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            txtStartTime.text = dateFormatter.string(from: sender.date)
-        case 2004:
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            txtEndTime.text = dateFormatter.string(from: sender.date)
+            startDate = sender.date
+            
+//            let df = DateFormatter()
+//            df.timeZone = NSTimeZone.local
+//            df.dateFormat = "Z"
+//            let localTimeZoneOffset = df.string(from: Date())
+//            print("\(localTimeZoneOffset)")
+//            let one = (localTimeZoneOffset as NSString).substring(to: 1)
+//            let two = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 1, length: 2))
+//            let three = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 3, length: 2))
+//            let result = "utc\(one )\(two):\(three)"
+//            print("result : \(result)")
+            
         default:
             break
         }
@@ -136,22 +136,34 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //MARK:- UIToolBar Button Actions
     
     @objc func doneClick() {
-        //categoryTF.resignFirstResponder()
         self.view.endEditing(true)
     }
     @objc func cancelClick() {
-        //categoryTF.resignFirstResponder()
         self.view.endEditing(true)
     }
     
     @objc func dismissView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
     // MARK: - UIButton Action
     
     @IBAction func btnDone_Action(_ sender: Any) {
         self.view.endEditing(true)
         if self.isValidate() {
+            var iso8601String : String = ""
+            if #available(iOS 10.0, *) {
+                let dateFormatter = ISO8601DateFormatter()
+                iso8601String = dateFormatter.string(from: startDate)
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                iso8601String = dateFormatter.string(from: startDate)
+            }
+            let imgBase64 = OtherHelper.convertImageToBase64(image: bannerImageView.image!)
+            let param = ["date": iso8601String, "storeId": UserManager.getStoreId() ,"slot": selectedSlotIds, "location": selectedLocationId, "image": imgBase64,"banner":"banner", "price":txtPrice.text ?? "","seqeunce":"1","slotFor":"1"] as [String : Any]
+            saveBanner(param: param)
         }
     }
     
@@ -163,27 +175,23 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func isValidate() -> Bool  {
         if self.txtStartDate.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemValidation, self)
-            return false
-        }
-        else if self.txtEndDate.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemPriceValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
             return false
         }
         else if self.txtStartTime.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemCatValidation, self)
-            return false
-        }
-        else if self.txtEndTime.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemDescValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.startTimeValidation, self)
             return false
         }
         else if self.txtLocation.text?.isEmpty == true {
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemDescValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.locationValidation, self)
             return false
         }
         else if (self.isItemImg != true){
-            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemImgValidation, self)
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.bannerImgValidation, self)
+            return false
+        }
+        else if self.txtPrice.text?.isEmpty == true {
+            OtherHelper.simpleDialog("Validation Fails", AlertMessages.itemPriceValidation, self)
             return false
         }
         return true
@@ -191,19 +199,28 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     //MARK:- Server Action
     
-    func saveItem(param : [String : Any]){
+    func saveBanner(param : [String : Any]){
         NetworkHelper.post(url: Path.addBannner, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
             }
-            //print(json)
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name: Notification.Name.init("refreshItemData"), object: nil, userInfo: nil)
-                self.dismiss(animated: true, completion: nil)
+                NotificationCenter.default.post(name: Notification.Name.init("refreshBannerData"), object: nil, userInfo: nil)
+                OtherHelper.buttonDialog("Success", "Banner added Successfully", self, "OK", false, completionHandler: {
+                    self.dismiss(animated: true, completion: nil)
+                })
             }
         })
     }
+    
+    // MARK: - Custom Delegate TimeSlotProtocol
+    
+    func setTimeSlots(selectedIds : [String], selectedTimes : [String]) {
+        txtStartTime.text = selectedTimes.map { String($0) }.joined(separator: ", ")
+        selectedSlotIds = selectedIds
+    }
+    
     
     /*
     // MARK: - Navigation
@@ -223,6 +240,7 @@ extension AddBannerViewController: UINavigationControllerDelegate, UIImagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: {
             if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                UIImageJPEGRepresentation(pickedImage, 0.5)
                 self.bannerImageView.image = pickedImage
                 self.isItemImg = true
             }
@@ -239,19 +257,38 @@ extension AddBannerViewController{
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-      //  return pickOption.count
-        return 10
+        return locationList.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       // return pickOption[row]["name"].stringValue
-        return "Test"
+        return locationList[row]["name"]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        txtLocation.text = pickOption[row]["name"].stringValue
-//        selectedItemCategory = pickOption[row]["_id"].stringValue
+        txtLocation.text = locationList[row]["name"]
+        selectedLocationId = locationList[row]["id"]!
     }
 }
 extension AddBannerViewController: UITextFieldDelegate{
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 1003:
+            if self.txtStartDate.text?.isEmpty == true {
+                OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
+            }else{
+                let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+                let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
+                viewController.modalPresentationStyle = .overFullScreen
+                viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+                viewController.isHotSpotItem = true
+                viewController.delegate = self
+                self.present(viewController, animated: false, completion: nil)
+            }
+            return false
+        default:
+            break
+        }
+       return true
+    }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
         case 1001:
@@ -267,17 +304,18 @@ extension AddBannerViewController: UITextFieldDelegate{
             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
             datePickerView.tag = 2002
         case 1003:
-            let datePickerView = UIDatePicker()
-            datePickerView.datePickerMode = .time
-            textField.inputView = datePickerView
-            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-            datePickerView.tag = 2003
-        case 1004:
-            let datePickerView = UIDatePicker()
-            datePickerView.datePickerMode = .time
-            textField.inputView = datePickerView
-            datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-            datePickerView.tag = 2004
+            if self.txtStartDate.text?.isEmpty == true {
+                OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
+            }
+//            else{
+//                let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
+//                let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
+//                viewController.modalPresentationStyle = .overFullScreen
+//                viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+//                viewController.isHotSpotItem = true
+//                viewController.delegate = self
+//                self.present(viewController, animated: false, completion: nil)
+//            }
         default:
             break
         }
