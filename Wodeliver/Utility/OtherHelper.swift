@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class OtherHelper {
     static func simpleDialog(_ title: String, _ message: String, _ controller:UIViewController) {
@@ -97,6 +98,21 @@ class OtherHelper {
         let result = "UTC\(one )\(two):\(three)"
         return result
     }
+    
+    static func getISOString(date : Date) -> String{
+        var iso8601String : String = ""
+        if #available(iOS 10.0, *) {
+            let dateFormatter = ISO8601DateFormatter()
+            iso8601String = dateFormatter.string(from: date)
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            iso8601String = dateFormatter.string(from: date)
+            
+        }
+        return iso8601String
+    }
 }
 
 class ProgressBar{
@@ -106,11 +122,12 @@ class ProgressBar{
         var superView: UIView = view
         
         // if we want an opaque overlay, do that work first then put the activity indicator within that view; else just use the passed UIView to center it
+        
         if withOpaqueOverlay {
             let overlay = UIView()
             overlay.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
                 //CGRectMake(0.0, 0.0, view.frame.width, view.frame.height)
-            overlay.layer.backgroundColor = UIColor.lightText.cgColor
+            overlay.layer.backgroundColor = UIColor.clear.cgColor
             overlay.alpha = 1
             overlay.tag = 1
             overlay.center = superView.center
@@ -124,21 +141,16 @@ class ProgressBar{
         indicator.center = superView.center
         indicator.tag = 1
         indicator.isHidden = false
-        
         superView.addSubview(indicator)
         superView.bringSubview(toFront: indicator)
-        
         indicator.startAnimating()
-        
         // also indicate network activity in the status bar
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     static func hideActivityIndicator(view: UIView) {
-        
         // stop the network activity animation in the status bar
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        
         // remove the activity indicator and optional overlay views
         view.viewWithTag(1)?.removeFromSuperview()
         view.viewWithTag(1)?.removeFromSuperview()

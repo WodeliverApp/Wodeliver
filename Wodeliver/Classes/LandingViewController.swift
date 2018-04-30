@@ -10,9 +10,9 @@ import UIKit
 import SideMenu
 import SwiftyJSON
 import SDWebImage
+import BBBadgeBarButtonItem
+
 class LandingViewController: UIViewController {
-    
-    
     
     @IBOutlet weak var itemCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -24,6 +24,7 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var hotstarHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var itemCategoryLabel_ref: UILabel!
     @IBOutlet weak var hotStarLable_ref: UILabel!
+    @IBOutlet weak var btnCart_ref: BBBadgeBarButtonItem!
     
     var categoryJson : [JSON] = []
     var itemJson : [JSON] = []
@@ -57,6 +58,12 @@ class LandingViewController: UIViewController {
         if !UserDefaults.standard.bool(forKey: AppConstant.isCurrentLocationSaved){
             self.performSegue(withIdentifier: "getLocationSegue", sender: nil)
         }
+        btnCart_ref.badgeFont = UIFont.boldSystemFont(ofSize: 12)
+        btnCart_ref.badgeValue = "2"
+        btnCart_ref.badgeTextColor = UIColor.white
+    }
+    @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "showCartSegue", sender: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

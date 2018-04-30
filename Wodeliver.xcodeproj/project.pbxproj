@@ -21,8 +21,11 @@
 		30067489200BC4A60021A08C /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067488200BC4A50021A08C /* String+Util.swift */; };
 		3006748B200BC5230021A08C /* Date + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748A200BC5230021A08C /* Date + Util.swift */; };
 		3006748D200C5A290021A08C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748C200C5A290021A08C /* Enum.swift */; };
+		300EDACB2091AEE100396640 /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300EDACA2091AEE100396640 /* AddCartViewController.swift */; };
 		30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013236F206966FF003D4DF7 /* AddBannerViewController.swift */; };
 		3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013237120696782003D4DF7 /* AddHotspotViewController.swift */; };
+		302584432089B0EB0096FA42 /* AdvertismentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302584412089B0EB0096FA42 /* AdvertismentTableViewCell.swift */; };
+		302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302584422089B0EB0096FA42 /* AdvertismentTableViewCell.xib */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 		30331AB61FE388E200A8B1F1 /* WodeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AB51FE388E200A8B1F1 /* WodeliverTests.swift */; };
 		30331AC11FE388E200A8B1F1 /* WodeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */; };
 		30331AD01FE3897200A8B1F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331ACF1FE3897200A8B1F1 /* Constants.swift */; };
+		30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD3208F90C1002C4432 /* CartTableViewCell.swift */; };
+		30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30489CD4208F90C1002C4432 /* CartTableViewCell.xib */; };
+		30489CD8209054B0002C4432 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD7209054B0002C4432 /* CartViewController.swift */; };
 		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
 		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
 		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
@@ -142,8 +148,11 @@
 		30067488200BC4A50021A08C /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3006748A200BC5230021A08C /* Date + Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Util.swift"; sourceTree = "<group>"; };
 		3006748C200C5A290021A08C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		300EDACA2091AEE100396640 /* AddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		3013236F206966FF003D4DF7 /* AddBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBannerViewController.swift; sourceTree = "<group>"; };
 		3013237120696782003D4DF7 /* AddHotspotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotspotViewController.swift; sourceTree = "<group>"; };
+		302584412089B0EB0096FA42 /* AdvertismentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertismentTableViewCell.swift; sourceTree = "<group>"; };
+		302584422089B0EB0096FA42 /* AdvertismentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvertismentTableViewCell.xib; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +168,9 @@
 		30331AC01FE388E200A8B1F1 /* WodeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverUITests.swift; sourceTree = "<group>"; };
 		30331AC21FE388E200A8B1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30331ACF1FE3897200A8B1F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30489CD3208F90C1002C4432 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		30489CD4208F90C1002C4432 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		30489CD7209054B0002C4432 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
 		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
 		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
@@ -449,6 +461,8 @@
 				30067482200B7E210021A08C /* StoreNotificationTableViewCell.swift */,
 				30067483200B7E210021A08C /* StoreNotificationTableViewCell.xib */,
 				30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */,
+				302584412089B0EB0096FA42 /* AdvertismentTableViewCell.swift */,
+				302584422089B0EB0096FA42 /* AdvertismentTableViewCell.xib */,
 			);
 			path = StoreCell;
 			sourceTree = "<group>";
@@ -497,6 +511,8 @@
 				A1B3C596200D0830009C8C0D /* DeliveryBoyViewController.swift */,
 				30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */,
 				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
+				30489CD7209054B0002C4432 /* CartViewController.swift */,
+				300EDACA2091AEE100396640 /* AddCartViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -529,6 +545,8 @@
 				30617D24205AF80E0010948E /* RemarkCell.xib */,
 				30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */,
 				30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */,
+				30489CD3208F90C1002C4432 /* CartTableViewCell.swift */,
+				30489CD4208F90C1002C4432 /* CartTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -658,6 +676,7 @@
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
 				30067476200B33430021A08C /* StoreDetailCell.xib in Resources */,
 				30617D26205AF80E0010948E /* RemarkCell.xib in Resources */,
+				30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
@@ -669,6 +688,7 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */,
 				30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */,
 				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
 			);
@@ -730,6 +750,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wodeliver/Pods-Wodeliver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -740,6 +761,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -871,6 +893,7 @@
 				307732F920106C050045A4B0 /* Store.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
+				30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
@@ -904,10 +927,12 @@
 				307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */,
 				30067487200B86FC0021A08C /* StoreNotificationViewController.swift in Sources */,
 				30617D25205AF80E0010948E /* RemarkCell.swift in Sources */,
+				302584432089B0EB0096FA42 /* AdvertismentTableViewCell.swift in Sources */,
 				307716E4200B253F00D073A0 /* OtherHelper.swift in Sources */,
 				53CB7A661FEBB71400D70254 /* ChatViewController.swift in Sources */,
 				30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */,
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
+				30489CD8209054B0002C4432 /* CartViewController.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
 				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
@@ -925,6 +950,7 @@
 				A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
+				300EDACB2091AEE100396640 /* AddCartViewController.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,

@@ -261,7 +261,6 @@ extension AddItemViewController{
     
     func saveItem(param : [String : Any]){
         NetworkHelper.post(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
@@ -276,13 +275,11 @@ extension AddItemViewController{
     }
     
     func updateItem(param : [String : Any]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.put(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
             }
-            ProgressBar.hideActivityIndicator(view: self.view)
             self.dismiss(animated: true, completion: nil)
         })
     }

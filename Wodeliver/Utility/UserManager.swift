@@ -23,6 +23,7 @@ class UserManager{
     static let categoryItem = "_categoryItem"
     static let category = "_category"
     static let storeMenu = "_storeMenu"
+    static let cartItem = "_cartItem"
     
     static public func setUserDetail(detail:JSON)   {
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
@@ -81,6 +82,17 @@ class UserManager{
             return "Completed".localized
         case .delivery:
             return "Delivery".localized
+        }
+    }
+    
+    static func getBannerTypeName(type: BannerType) -> String {
+        switch type {
+        case .home:
+            return "Home".localized
+        case .storeCategory:
+            return "Store Category".localized
+        case .storeSearchResult:
+            return "Store Search Result".localized
         }
     }
     
@@ -146,5 +158,69 @@ class UserManager{
             return JSON.init(parseJSON: json)
         }
         return JSON.null
+    }
+    
+    static public func setCartList(detail:JSON)    {
+        UserDefaults.standard.set(detail.rawString()!, forKey: cartItem)
+    }
+    static func getCartList() -> JSON  {
+        if let json = UserDefaults.standard.string(forKey: cartItem) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    
+    static public func saveCartItem(cart :JSON, id : String, quantity: String){
+//        if let json = UserDefaults.standard.string(forKey: cartItem) {
+//        //    return JSON.init(parseJSON: json)
+//        }
+        let item : [String:Any] = ["item": cart, "quantity":quantity,"id" : id]
+        
+        let itemArray = [item]
+        
+        if UserDefaults.standard.array(forKey: cartItem) != nil{
+            var getItemArray = UserDefaults.standard.array(forKey: cartItem)!
+            
+            if getItemArray.count == 0{
+                UserDefaults.standard.set(itemArray, forKey: cartItem)
+            }else{
+                getItemArray.append(item)
+                UserDefaults.standard.set(getItemArray, forKey: cartItem)
+            }
+        }else{
+            //UserDefaults.standard.set(itemArray, forKey: "cartItem")
+             UserDefaults.standard.set(itemArray, forKey: "temp123456")
+        }
+        
+        
+        
+//        var itemList = UserDefaults.standard.array(forKey: cartItem)
+//        let item : [String:Any] = ["item": cart.rawString()!, "quantity":quantity,"id" : id]
+//        itemList?.append(item)
+//        UserDefaults.standard.set(itemList, forKey: cartItem)
+//    
+//        
+//        if var items = UserDefaults.standard.array(forKey: cartItem){
+//            let item : [String:Any] = ["item": cart.rawString()!, "quantity":quantity,"id" : id]
+//            items.append(item)
+//            UserDefaults.standard.set(item, forKey: cartItem)
+//        }
+        
+    }
+
+    static public func getCart() -> Array<Any>{
+       // let item = UserDefaults.standard.value(forKey: cartItem)
+       // print(item)
+         if let items = UserDefaults.standard.array(forKey: cartItem){
+            return items
+        }
+        return []
+    }
+    
+    static func getCartCount() -> Int  {
+        if let json = UserDefaults.standard.array(forKey: cartItem) {
+            return json.count
+        }
+        return 0
     }
 }

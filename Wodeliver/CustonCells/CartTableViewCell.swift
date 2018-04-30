@@ -1,32 +1,31 @@
 //
-//  MenuTableViewCell.swift
+//  CartTableViewCell.swift
 //  Wodeliver
 //
-//  Created by Anuj Singh on 03/04/18.
+//  Created by Anuj Singh on 24/04/18.
 //  Copyright © 2018 Anuj Singh. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewCell: UITableViewCell {
+class CartTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var lblMenuName: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
-    @IBOutlet weak var lblCommentConut: UILabel!
-    @IBOutlet weak var lblSoldCount: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var cartImageView: UIImageView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var lblItemCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         self.selectionStyle = .none
         self.backView.layer.cornerRadius = 5.0
         self.backView.clipsToBounds = true
-        self.menuImageView.layer.cornerRadius = 5.0
-        self.menuImageView.clipsToBounds = true
+        self.cartImageView.layer.cornerRadius = 5.0
+        self.cartImageView.clipsToBounds = true
         self.contentView.backgroundColor = Colors.viewBackgroundColor
     }
 
@@ -35,7 +34,5 @@ class MenuTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    class func getCellHeight() -> CGFloat {
-        return 120.0
-    }
+    
 }

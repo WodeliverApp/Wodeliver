@@ -22,6 +22,11 @@ enum OrderStatus: Int32 {
     case delivery = 3
 }
 
+enum BannerType: Int32 {
+    case home = 0
+    case storeCategory = 1
+    case storeSearchResult = 2
+}
 
 protocol Printable {
     var description: String { get }
@@ -39,6 +44,22 @@ enum UserTypeString: Int, Printable {
         case .storeManager   : return "Delivery Boy"
         case .deliveryBoy  : return "Store Front"
        
+        }
+    }
+}
+
+enum BannerTypeString: Int, Printable {
+    case home = 0
+    case storeCategory = 1
+    case storeSearchResult = 2
+    static var count: Int { return UserTypeString.deliveryBoy.hashValue + 1  }
+    
+    var description: String {
+        switch self {
+        case .home: return "Home"
+        case .storeCategory   : return "Store Category"
+        case .storeSearchResult  : return "Store Search Result"
+            
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 protocol TimeSlotProtocol {
-    func setTimeSlots(selectedIds : [String], selectedTimes : [String]) // this function the first controllers
+    func setTimeSlots(selectedIds : [String], selectedTimes : [String], selectedIdsInt : [Int]) // this function the first controllers
 }
 
 class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -22,9 +22,11 @@ class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableView
     var delegate: TimeSlotProtocol?
     var timeSlot : [JSON] = []
     var isHotSpotItem : Bool = false
-    var dateString : String = ""
     var selectedIds = [String]()
     var selectedTimes = [String]()
+    var selectedIdsInt = [Int]()
+    var startDate = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backView.layer.cornerRadius = 5.0
@@ -32,10 +34,10 @@ class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableView
         backView.clipsToBounds = true
         self.timeTableView.allowsMultipleSelection = true
         if isHotSpotItem{
-            let param = ["slotFor":"2", "date":dateString] as [String : Any]
+            let param = ["slotFor":"2", "date":OtherHelper.getISOString(date: startDate)] as [String : Any]
             self.getAvailableTimeSlot(param: param)
         }else{
-            let param = ["slotFor":"1", "date":dateString] as [String : Any]
+            let param = ["slotFor":"1", "date":OtherHelper.getISOString(date: startDate)] as [String : Any]
             self.getAvailableTimeSlot(param: param)
         }
     }
@@ -48,12 +50,12 @@ class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - UIButton Actions
     
     @IBAction func btnClose_Action(_ sender: UIButton) {
-        delegate?.setTimeSlots(selectedIds: selectedIds, selectedTimes: selectedTimes)
+        delegate?.setTimeSlots(selectedIds: selectedIds, selectedTimes: selectedTimes, selectedIdsInt: selectedIdsInt)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnDone_Action(_ sender: UIButton) {
-        delegate?.setTimeSlots(selectedIds: selectedIds, selectedTimes: selectedTimes)
+        delegate?.setTimeSlots(selectedIds: selectedIds, selectedTimes: selectedTimes, selectedIdsInt: selectedIdsInt)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -79,6 +81,7 @@ class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableView
         if !selectedIds.contains(timeSlot[indexPath.row]["id"].stringValue){
             selectedIds.append(timeSlot[indexPath.row]["id"].stringValue)
             selectedTimes.append(timeSlot[indexPath.row]["slot"].stringValue)
+            selectedIdsInt.append(timeSlot[indexPath.row]["slot"].intValue)
         }
     }
     
@@ -89,6 +92,7 @@ class TimeSlotViewController: UIViewController, UITableViewDelegate, UITableView
             if selectedIds[i] == self.timeSlot[indexPath.row]["id"].stringValue{
                 selectedIds.remove(at: i)
                 selectedTimes.remove(at: i)
+                selectedIdsInt.remove(at: i)
                 break
             }
         }

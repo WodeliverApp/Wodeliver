@@ -127,14 +127,11 @@ class ViewController: UIViewController {
         return true
     }
     func userSignUp(param : [String : Any]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.post(url: Path.signUpURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return
             }
-            ProgressBar.hideActivityIndicator(view: self.view)
-            print(json!)
             UserManager.setUserDetail(detail: json!["userData"])
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)

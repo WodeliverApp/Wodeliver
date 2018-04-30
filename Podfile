@@ -16,6 +16,7 @@ target 'Wodeliver' do
     pod 'GooglePlaces'
     pod 'GoogleMaps'
     pod 'HockeySDK'
+    pod 'BBBadgeBarButtonItem'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing
