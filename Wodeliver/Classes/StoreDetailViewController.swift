@@ -64,9 +64,11 @@ class StoreDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
         if segue.identifier == "menuSegue" {
-            if let viewController = segue.destination as? MenuViewController {
-               if let store = storeDetail{
-                    viewController.itemCategoryId = store["_id"].stringValue
+            if let viewController = segue.destination as? UINavigationController {
+                if let menuController =  viewController.viewControllers.first as? MenuViewController{
+                    if let store = storeDetail{
+                        menuController.itemCategoryId = store["_id"].stringValue
+                    }
                 }
             }
         }

@@ -66,7 +66,6 @@ class StoreHomeViewController: UIViewController {
             self.getCurrentOrderList()
         }else if sender.selectedSegmentIndex == 1{
             tabIndex = 2
-            historyOrderList = []
             self.getHistoryOrderList()
         }
     }
@@ -212,7 +211,7 @@ extension StoreHomeViewController {
             if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TotalOrderTableViewCell.self)) as! TotalOrderTableViewCell
                 cell.layoutMargins = UIEdgeInsets.zero
-                cell.lblTotalAmount.text = self.historyOrderList[indexPath.row]["price"].stringValue
+                cell.lblTotalAmount.text = self.historyOrderList[indexPath.row - 3]["price"].stringValue
                 cell.showSeparator()
                 return cell
             }else  if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -240,10 +239,8 @@ extension StoreHomeViewController {
 extension StoreHomeViewController{
     
     func getCurrentOrderList()  {
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         let urlStr = Path.storeCurrentOrder+"5a38069dccec263d205cdb4d"
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
@@ -267,25 +264,17 @@ extension StoreHomeViewController{
         })
     }
     func getHistoryOrderList()  {
-        
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         let urlStr = Path.storeHistorytOrder+"5a38069dccec263d205cdb4d"
         NetworkHelper.get(url: urlStr, param: [:], self, completionHandler: {[weak self] json, error in
-            ProgressBar.hideActivityIndicator(view: (self?.view)!)
             guard let `self` = self else { return }
             guard let json = json else {
                 return
             }
+            self.historyOrderList = []
+            self.historyHeaderTitles = []
+            self.historyItemData = []
             self.historyOrderList = json["response"].arrayValue
             for item in self.historyOrderList{
-                
-                //                let dateFormatter = DateFormatter()
-                //                dateFormatter.dateFormat = "dd-mm-yyyy" //Your date format
-                //                dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00") //Current time zone
-                //                let date = dateFormatter.date(from: item["createdAt"].stringValue) //according to date format your date string
-                //                print(date ?? "") //Convert String to Date
-                //
-                print(item["createdAt"].stringValue)
                 self.historyHeaderTitles.append(" " + item["user"]["name"].stringValue + " Time: " + item["createdAt"].stringValue)
                 self.historyItemData.append(item["items"])
                 

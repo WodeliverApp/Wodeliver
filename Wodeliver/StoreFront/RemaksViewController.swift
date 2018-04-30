@@ -18,7 +18,7 @@ class RemaksViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
       //  entityId = "5a38069dccec263d205cdb54"
-        self.viewCostomization()
+        self.viewCustomization()
         self.remarksTableView.register(UINib(nibName: "RemarkCell", bundle: nil), forCellReuseIdentifier: "RemarkCell")
         self.remarksTableView.delegate = self
         self.remarksTableView.dataSource = self
@@ -34,7 +34,7 @@ class RemaksViewController: UIViewController, UITableViewDataSource, UITableView
         self.dismiss(animated: true, completion: nil)
     }
     
-    func viewCostomization(){
+    func viewCustomization(){
         self.title = "Remarks"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white

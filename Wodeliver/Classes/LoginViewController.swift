@@ -107,14 +107,12 @@ class LoginViewController: UIViewController {
     }
     
     func userLogin(param : [String : String]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 self.btnLogin_ref.isEnabled = true
                 return
             }
-            ProgressBar.hideActivityIndicator(view: self.view)
             UserManager.setUserDetail(detail: json!["userData"])
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)

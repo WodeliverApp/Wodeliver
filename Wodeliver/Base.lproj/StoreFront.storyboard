@@ -960,6 +960,9 @@
                                                         <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="g2f-ko-QyQ" id="Bpj-mU-tQY"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-z2-G4H" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="55" width="327" height="45"/>
@@ -1082,7 +1085,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zi5-Mv-aJE">
-                                <rect key="frame" x="16" y="80" width="343" height="525"/>
+                                <rect key="frame" x="16" y="80" width="343" height="500"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add HotSpot Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpX-kb-9tW">
                                         <rect key="frame" x="111" y="20" width="122.5" height="21"/>
@@ -1138,25 +1141,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VfV-Ig-KFd">
-                                        <rect key="frame" x="8" y="307" width="327" height="155"/>
+                                        <rect key="frame" x="8" y="307" width="327" height="105"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Banner Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLn-QP-10r" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
-                                                <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
-                                                        <color key="value" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="delegate" destination="WjI-If-nhi" id="oP0-Go-YzI"/>
-                                                </connections>
-                                            </textField>
                                             <textField opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Store Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-uy-anw" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="55" width="327" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="47.5"/>
                                                 <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1171,7 +1159,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itH-hJ-Zik" customClass="FloatLabelTextField" customModule="Wodeliver" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="110" width="327" height="45"/>
+                                                <rect key="frame" x="0.0" y="57.5" width="327" height="47.5"/>
                                                 <color key="tintColor" red="0.84081500768661499" green="0.11029293388128281" blue="0.13294640183448792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1187,7 +1175,7 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="155" id="yqk-NR-BtC"/>
+                                            <constraint firstAttribute="height" constant="105" id="yqk-NR-BtC"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-Xe-g43">
@@ -1214,7 +1202,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-r9-NZf">
-                                        <rect key="frame" x="12" y="482" width="319" height="35"/>
+                                        <rect key="frame" x="12" y="445" width="319" height="35"/>
                                         <color key="backgroundColor" red="0.86666666670000003" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="nwz-nH-NYh"/>
@@ -1234,9 +1222,9 @@
                                     <constraint firstItem="w9r-o7-qxw" firstAttribute="leading" secondItem="Zi5-Mv-aJE" secondAttribute="leading" constant="8" id="7cI-W9-sAw"/>
                                     <constraint firstItem="YV9-Xe-g43" firstAttribute="top" secondItem="w9r-o7-qxw" secondAttribute="bottom" constant="12" id="8VN-Nq-cpQ"/>
                                     <constraint firstItem="Jny-Or-R4H" firstAttribute="top" secondItem="YV9-Xe-g43" secondAttribute="bottom" constant="12" id="C4H-FT-z2P"/>
-                                    <constraint firstAttribute="height" constant="525" id="KUO-U4-bXP"/>
+                                    <constraint firstAttribute="height" constant="500" id="KUO-U4-bXP"/>
                                     <constraint firstAttribute="trailing" secondItem="vcH-r9-NZf" secondAttribute="trailing" constant="12" id="LRk-OA-svN"/>
-                                    <constraint firstAttribute="bottom" secondItem="vcH-r9-NZf" secondAttribute="bottom" constant="8" id="XBN-4F-nIw"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcH-r9-NZf" secondAttribute="bottom" constant="20" id="XBN-4F-nIw"/>
                                     <constraint firstAttribute="trailing" secondItem="YV9-Xe-g43" secondAttribute="trailing" constant="8" id="Zd1-h0-Mwx"/>
                                     <constraint firstAttribute="trailing" secondItem="w9r-o7-qxw" secondAttribute="trailing" constant="8" id="bgk-PX-0sX"/>
                                     <constraint firstItem="ZpX-kb-9tW" firstAttribute="top" secondItem="Zi5-Mv-aJE" secondAttribute="top" constant="20" id="fnd-Td-xhU"/>
@@ -1260,7 +1248,7 @@
                             <constraint firstItem="opI-Lx-zjj" firstAttribute="trailing" secondItem="Zi5-Mv-aJE" secondAttribute="trailing" constant="16" id="K9x-1k-FHz"/>
                             <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerX" secondItem="AP8-C9-tb4" secondAttribute="centerX" id="YGY-FZ-GVo"/>
                             <constraint firstItem="06H-kG-4Qb" firstAttribute="leading" secondItem="opI-Lx-zjj" secondAttribute="leading" id="dVc-Hw-z5O"/>
-                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerY" secondItem="AP8-C9-tb4" secondAttribute="centerY" constant="9" id="lTi-OO-K7K"/>
+                            <constraint firstItem="Zi5-Mv-aJE" firstAttribute="centerY" secondItem="AP8-C9-tb4" secondAttribute="centerY" constant="-3.5" id="lTi-OO-K7K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="opI-Lx-zjj"/>
                     </view>
@@ -1268,7 +1256,6 @@
                         <outlet property="btnClose_ref" destination="GNM-2X-MpX" id="cQI-Ef-l6h"/>
                         <outlet property="btnDone_ref" destination="vcH-r9-NZf" id="A0e-43-c1d"/>
                         <outlet property="hotSpotImageView" destination="w9r-o7-qxw" id="Ry5-F8-qMz"/>
-                        <outlet property="txtLocation" destination="hLn-QP-10r" id="hgD-tx-Rbe"/>
                         <outlet property="txtPrice" destination="itH-hJ-Zik" id="v33-i2-Exc"/>
                         <outlet property="txtStartDate" destination="q6C-QZ-XTX" id="hp6-NS-U68"/>
                         <outlet property="txtStartTime" destination="Bhp-fB-o6j" id="PvO-Gv-4nd"/>

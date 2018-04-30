@@ -9,6 +9,7 @@
 import UIKit
 
 class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, TimeSlotProtocol {
+    
 
     @IBOutlet weak var txtStartDate: FloatLabelTextField!
     @IBOutlet weak var txtStartTime: FloatLabelTextField!
@@ -28,6 +29,7 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var pickerView : UIPickerView!
     var locationList : [[String : String]] = [["id": "0","name":"Home"],["id": "1","name":"Store Category"],["id": "2","name":"Store Search Result"]]
     var selectedSlotIds = [String]()
+    var selectedSlotIdInt = [Int]()
     var selectedLocationId : String = ""
     var startDate = Date()
     
@@ -95,18 +97,6 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
             dateFormatter.dateFormat = "dd MMM yyyy"
             txtStartDate.text = dateFormatter.string(from: sender.date)
             startDate = sender.date
-            
-//            let df = DateFormatter()
-//            df.timeZone = NSTimeZone.local
-//            df.dateFormat = "Z"
-//            let localTimeZoneOffset = df.string(from: Date())
-//            print("\(localTimeZoneOffset)")
-//            let one = (localTimeZoneOffset as NSString).substring(to: 1)
-//            let two = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 1, length: 2))
-//            let three = (localTimeZoneOffset as NSString).substring(with: NSRange(location: 3, length: 2))
-//            let result = "utc\(one )\(two):\(three)"
-//            print("result : \(result)")
-            
         default:
             break
         }
@@ -151,18 +141,9 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func btnDone_Action(_ sender: Any) {
         self.view.endEditing(true)
         if self.isValidate() {
-            var iso8601String : String = ""
-            if #available(iOS 10.0, *) {
-                let dateFormatter = ISO8601DateFormatter()
-                iso8601String = dateFormatter.string(from: startDate)
-            } else {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                iso8601String = dateFormatter.string(from: startDate)
-            }
             let imgBase64 = OtherHelper.convertImageToBase64(image: bannerImageView.image!)
-            let param = ["date": iso8601String, "storeId": UserManager.getStoreId() ,"slot": selectedSlotIds, "location": selectedLocationId, "image": imgBase64,"banner":"banner", "price":txtPrice.text ?? "","seqeunce":"1","slotFor":"1"] as [String : Any]
+            let param = ["date": OtherHelper.getISOString(date: startDate), "storeId": UserManager.getStoreId() ,"slot": selectedSlotIdInt, "location": selectedLocationId, "image": imgBase64,"banner":"banner", "price":txtPrice.text ?? "","seqeunce":"1","slotFor":"1"] as [String : Any]
+              print(["date": OtherHelper.getISOString(date: startDate), "storeId": UserManager.getStoreId() ,"slot": selectedSlotIdInt, "location": selectedLocationId, "image": "imgBase64","banner":"banner", "price":txtPrice.text ?? "","seqeunce":"1","slotFor":"1"])
             saveBanner(param: param)
         }
     }
@@ -216,9 +197,10 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     // MARK: - Custom Delegate TimeSlotProtocol
     
-    func setTimeSlots(selectedIds : [String], selectedTimes : [String]) {
+    func setTimeSlots(selectedIds : [String], selectedTimes : [String], selectedIdsInt : [Int]) {
         txtStartTime.text = selectedTimes.map { String($0) }.joined(separator: ", ")
         selectedSlotIds = selectedIds
+        selectedSlotIdInt = selectedIdsInt
     }
     
     
@@ -277,6 +259,7 @@ extension AddBannerViewController: UITextFieldDelegate{
             }else{
                 let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
                 let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
+                viewController.startDate = startDate
                 viewController.modalPresentationStyle = .overFullScreen
                 viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
                 viewController.isHotSpotItem = true
@@ -290,6 +273,28 @@ extension AddBannerViewController: UITextFieldDelegate{
        return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        let textFieldRect: CGRect = self.view.window!.convert(textField.bounds, from: textField)
+        let viewRect: CGRect = self.view.window!.convert(self.view.bounds, from: self.view!)
+        let midline: CGFloat = textFieldRect.origin.y + 0.5 * textFieldRect.size.height
+        let numerator: CGFloat = midline - viewRect.origin.y - MINIMUM_SCROLL_FRACTION * viewRect.size.height
+        let denominator: CGFloat = (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION) * viewRect.size.height
+        var heightFraction: CGFloat = numerator / denominator
+        if heightFraction < 0.0 {
+            heightFraction = 0.0
+        }
+        else if heightFraction > 1.0 {
+            heightFraction = 1.0
+        }
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction)
+        var viewFrame: CGRect = self.view.frame
+        viewFrame.origin.y -= animatedDistance
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(0.3)
+        self.view!.frame = viewFrame
+        UIView.commitAnimations()
+        self.view.layoutIfNeeded()
+        
         switch textField.tag {
         case 1001:
             let datePickerView = UIDatePicker()
@@ -303,21 +308,20 @@ extension AddBannerViewController: UITextFieldDelegate{
             textField.inputView = datePickerView
             datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
             datePickerView.tag = 2002
-        case 1003:
-            if self.txtStartDate.text?.isEmpty == true {
-                OtherHelper.simpleDialog("Validation Fails", AlertMessages.startDateValidation, self)
-            }
-//            else{
-//                let storyboard : UIStoryboard = UIStoryboard(name: "StoreFront", bundle: nil)
-//                let viewController : TimeSlotViewController = storyboard.instantiateViewController(withIdentifier: "TimeSlotViewController") as! TimeSlotViewController
-//                viewController.modalPresentationStyle = .overFullScreen
-//                viewController.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-//                viewController.isHotSpotItem = true
-//                viewController.delegate = self
-//                self.present(viewController, animated: false, completion: nil)
-//            }
         default:
             break
         }
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        var viewFrame: CGRect = self.view.frame
+        viewFrame.origin.y += animatedDistance
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(0.3)
+        self.view!.frame = viewFrame
+        UIView.commitAnimations()
+        self.view.layoutIfNeeded()
+    }
+    
 }

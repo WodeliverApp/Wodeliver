@@ -97,7 +97,6 @@ class ForgotPasswordViewController: UIViewController {
     
     
     func forgotPassword(param : [String : String]){
-        ProgressBar.showActivityIndicator(view: self.view, withOpaqueOverlay: true)
         NetworkHelper.post(url: Path.forgotPasswordURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
@@ -105,7 +104,6 @@ class ForgotPasswordViewController: UIViewController {
                 return
             }
            // print(json)
-            ProgressBar.hideActivityIndicator(view: self.view)
 //            if UserManager.getUserType() == .storeManager{
 //                let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
 //                let logInViewController = strBoard.instantiateViewController(withIdentifier: "StoreFronTTabBarController")

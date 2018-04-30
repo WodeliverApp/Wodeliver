@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.1)
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
+  - BBBadgeBarButtonItem (1.2)
   - ExpyTableView (0.3.1)
   - GoogleMaps (2.6.0):
     - GoogleMaps/Maps (= 2.6.0)
@@ -23,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityIndicator
+  - BBBadgeBarButtonItem
   - ExpyTableView (~> 0.3.1)
   - GoogleMaps
   - GooglePlaces
@@ -35,6 +37,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   ExpyTableView: e6380c5ac1f6c1044fbc63800380c64b3477e53b
   GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 348602319749ca4af1123910cc4cd13e1b56ecb7
+PODFILE CHECKSUM: 7f534057dbc6769d20780a3aa738e09faf43dc90
 
 COCOAPODS: 1.4.0

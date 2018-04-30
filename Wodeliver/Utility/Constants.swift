@@ -13,7 +13,6 @@ struct Colors {
     static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
     static let viewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     static let fullViewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
-    
 }
 
 
