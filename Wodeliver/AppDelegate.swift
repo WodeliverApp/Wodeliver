@@ -12,6 +12,7 @@ import CoreLocation
 import GooglePlaces
 import GoogleMaps
 import HockeySDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             BITHockeyManager.shared().crashManager.crashManagerStatus = BITCrashManagerStatus.autoSend
             hockeySDKIsSetup = true;
         }
+        FirebaseApp.configure()
         return true
     }
     
@@ -58,6 +60,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func applicationWillTerminate(_ application: UIApplication) {
         
+    }
+    
+    // MARK: - Get Device Token for Push Notification
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        if deviceTokenString != UserManager.getDeviceToken(){
+            if UserManager.checkIfLogin() {
+                UserManager.setDeviceToken(token: deviceTokenString)
+            }else {
+                UserManager.setDeviceToken(token: deviceTokenString)
+            }
+        }
+    }
+    
+    // MARK: - failed to register fot push Notification
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Print the error to console (you should alert the user that registration failed)
+        print("APNs registration failed: \(error)")
     }
     
     // MARK: - CLLocationManager Delegate

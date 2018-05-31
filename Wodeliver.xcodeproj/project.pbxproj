@@ -38,6 +38,7 @@
 		30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD3208F90C1002C4432 /* CartTableViewCell.swift */; };
 		30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30489CD4208F90C1002C4432 /* CartTableViewCell.xib */; };
 		30489CD8209054B0002C4432 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD7209054B0002C4432 /* CartViewController.swift */; };
+		30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30534FA220A0B38F00070453 /* GoogleService-Info.plist */; };
 		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
 		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
 		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
@@ -171,6 +172,7 @@
 		30489CD3208F90C1002C4432 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		30489CD4208F90C1002C4432 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		30489CD7209054B0002C4432 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		30534FA220A0B38F00070453 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
 		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
 		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
 				307716D82009FB5900D073A0 /* StoreFront.storyboard */,
 				30331AAC1FE388E100A8B1F1 /* Info.plist */,
+				30534FA220A0B38F00070453 /* GoogleService-Info.plist */,
 				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
 				30914A2B200284C1008D6E52 /* Customer.storyboard */,
 			);
@@ -688,6 +691,7 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */,
 				302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */,
 				30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */,
 				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
@@ -752,10 +756,12 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -763,10 +769,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

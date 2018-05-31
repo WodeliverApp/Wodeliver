@@ -17,6 +17,7 @@ target 'Wodeliver' do
     pod 'GoogleMaps'
     pod 'HockeySDK'
     pod 'BBBadgeBarButtonItem'
+    pod 'Firebase/Core'
   target 'WodeliverTests' do
     inherit! :search_paths
     # Pods for testing

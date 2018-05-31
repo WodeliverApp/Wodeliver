@@ -61,6 +61,7 @@ class LandingViewController: UIViewController {
         btnCart_ref.badgeFont = UIFont.boldSystemFont(ofSize: 12)
         btnCart_ref.badgeValue = "2"
         btnCart_ref.badgeTextColor = UIColor.white
+        
     }
     @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showCartSegue", sender: nil)
