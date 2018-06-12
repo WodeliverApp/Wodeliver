@@ -13,7 +13,6 @@ import SDWebImage
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tblCart: UITableView!
-    var cartList : [JSON] = []
     var cartListItem = UserDefaults.standard.array(forKey: UserManager.cartItem)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         else{
             OtherHelper.simpleDialog("Error", "No cart item found.", self)
         }
-        
     }
     
     func viewCustomization(){
@@ -49,7 +47,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func btnPlaceOrder_Action(_ sender: Any) {
-        OtherHelper.simpleDialog("Coming Soon", "Work in Progress", self)
+        //self.view = nil
+       // OtherHelper.simpleDialog("Coming Soon", "Work in Progress", self)
+        self.performSegue(withIdentifier: "orderNowSegue", sender: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

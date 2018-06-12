@@ -27,8 +27,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         //     itemCategoryId = "5a37fbc17c67920e2ccebed4"
         getMenuList()
         menuTableView.separatorColor = UIColor.clear
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshItemData(data:)), name:Notification.Name.init("cartItemRefresh") , object: nil)
+       
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.init("cartItemRefresh"), object: nil)
     }
     
+    @objc func refreshItemData(data: Notification) {
+        self.menuTableView.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         menuTableView.reloadData()

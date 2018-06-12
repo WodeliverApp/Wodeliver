@@ -15,26 +15,35 @@ class StoreDetailViewController: UIViewController {
     @IBOutlet weak var menuSegment_ref: UISegmentedControl!
     @IBOutlet weak var storeDetailTableView: UITableView!
     var storeDetail : JSON?
-    
+    @IBOutlet weak var btnCart_ref: UIBarButtonItem!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
         // Do any additional setup after loading the view.
         
     }
-    
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        btnCart_ref.addBadge(number: UserManager.getCart().count)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "showCartSegue", sender: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        self.viewWillLayoutSubviews()
         menuSegment_ref.selectedSegmentIndex = -1
         super.viewWillAppear(animated)
         self.title = "Storepoint Detail"
