@@ -138,7 +138,7 @@ class AddBannerViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     // MARK: - UIButton Action
     
-    @IBAction func btnDone_Action(_ sender: Any) {
+    @IBAction func btnDone_Action(_ sender: UIButton) {
         self.view.endEditing(true)
         if self.isValidate() {
             let imgBase64 = OtherHelper.convertImageToBase64(image: bannerImageView.image!)

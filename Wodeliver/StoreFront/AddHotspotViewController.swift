@@ -164,8 +164,6 @@ class AddHotspotViewController: UIViewController, UIPickerViewDataSource, UIPick
     //MARK:- Server Action
     
     func saveHotSpotItem(param : [String : Any]){
-        print(param)
-        print(Path.addHotSpotItem)
         NetworkHelper.post(url: Path.addHotSpotItem, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {

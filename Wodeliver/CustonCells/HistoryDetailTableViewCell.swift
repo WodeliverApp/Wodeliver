@@ -10,6 +10,10 @@ import UIKit
 
 class HistoryDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblTotalItemAmount: UILabel!
+    @IBOutlet weak var lblItemPrice: UILabel!
+    @IBOutlet weak var lblQuantity: UILabel!
+    @IBOutlet weak var lblItemName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
          self.selectionStyle = .none

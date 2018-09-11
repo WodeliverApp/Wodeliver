@@ -14,9 +14,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tblCart: UITableView!
     var cartListItem = UserDefaults.standard.array(forKey: UserManager.cartItem)
+    var storesName : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         self.tblCart.register(UINib(nibName: "CartTableViewCell", bundle: nil), forCellReuseIdentifier: "CartTableViewCell")
         viewCustomization()
@@ -49,6 +49,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func btnPlaceOrder_Action(_ sender: Any) {
         //self.view = nil
        // OtherHelper.simpleDialog("Coming Soon", "Work in Progress", self)
+        if !UserManager.checkIfLogin(){
+            OtherHelper.simpleDialog("Error", "Please login before place order", self)
+            return
+        }
         self.performSegue(withIdentifier: "orderNowSegue", sender: nil)
     }
     override func didReceiveMemoryWarning() {
@@ -57,15 +61,33 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if segue.identifier == "orderNowSegue"{
+            if let viewController = segue.destination as? OrderScreenViewController {
+                do {
+                    //Convert to Data
+                    let jsonData = try JSONSerialization.data(withJSONObject: cartListItem ?? [], options: JSONSerialization.WritingOptions.prettyPrinted)
+                    //Convert back to string. Usually only do this for debugging
+                    if let JSONString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                        let itemJson = JSON.init(parseJSON: JSONString )
+                        print(itemJson)
+                        viewController.cartList = itemJson
+                        viewController.storeName = storesName
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+            }
+        }
      }
-     */
+    
     
 }
 extension CartViewController{
@@ -91,6 +113,13 @@ extension CartViewController{
                 cell.lblName.text = "Store : \(itemJson["storeId"]["name"].stringValue)"
                 cell.lblPrice.text = "Price : \(itemJson["price"].stringValue)"
                 cell.cartImageView.sd_setImage(with: URL(string:Path.baseURL + itemJson["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
+                if storesName.count == 0{
+                   storesName = itemJson["storeId"]["name"].stringValue
+                }else{
+                    if storesName.lowercased().range(of:itemJson["storeId"]["name"].stringValue) == nil {
+                        storesName = storesName + itemJson["storeId"]["name"].stringValue
+                    }
+                }
             }
             if let quantity = result["quantity"] as? String{
                 cell.lblItemCount.text = quantity

@@ -19,6 +19,44 @@ extension UIButton {
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
     }
+    
+    func loadingIndicator(_ show: Bool) {
+        let tag = 9876
+        if show {
+            let indicator = UIActivityIndicatorView()
+            indicator.activityIndicatorViewStyle = .gray
+            let buttonHeight = self.bounds.size.height
+            let buttonWidth = self.bounds.size.width
+            indicator.center = CGPoint.init(x: buttonWidth-indicator.bounds.size.width-20, y: buttonHeight/2)
+            indicator.tag = tag
+            self.addSubview(indicator)
+            indicator.startAnimating()
+        } else {
+            if let indicator = self.viewWithTag(tag) as? UIActivityIndicatorView {
+                indicator.stopAnimating()
+                indicator.removeFromSuperview()
+            }
+        }
+    }
+    
+    func centerLoadingIndicator(_ show: Bool) {
+        let tag = 9875
+        if show {
+            let indicator = UIActivityIndicatorView()
+            indicator.activityIndicatorViewStyle = .gray
+            indicator.center = CGPoint.init(x: self.frame.size.width/2, y: self.frame.size.height/2)
+            indicator.tag = tag
+            self.addSubview(indicator)
+            indicator.startAnimating()
+            self.isEnabled = false
+        } else {
+            if let indicator = self.viewWithTag(tag) as? UIActivityIndicatorView {
+                indicator.stopAnimating()
+                indicator.removeFromSuperview()
+            }
+            self.isEnabled = true
+        }
+    }
 }
 
 extension Dictionary {

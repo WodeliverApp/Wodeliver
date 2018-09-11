@@ -50,6 +50,7 @@ class StoreProfileViewController: UIViewController, UIPickerViewDataSource, UIPi
         self.pickerView.dataSource = self
         self.pickerView.backgroundColor = UIColor.white
         txtCategory.inputView = self.pickerView
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {

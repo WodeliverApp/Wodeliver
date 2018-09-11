@@ -33,6 +33,7 @@ class LandingViewController: UIViewController {
     var comingFrom:String! = "store"
     var selectedItemId:String! = ""
     var hotStarHeight : CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewCostomization()
@@ -58,8 +59,6 @@ class LandingViewController: UIViewController {
             self.performSegue(withIdentifier: "getLocationSegue", sender: nil)
         }
     }
-    
-    
     
     @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showCartSegue", sender: nil)

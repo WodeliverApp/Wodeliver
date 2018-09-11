@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     @IBAction func btnSignUpAction(_ sender: Any) {
         self.view.endEditing(false)
         if self.isValidate() {
-            let params :[String : Any] = ["name":nameTextField.text!,"email":emailTextField.text!,"password":passwordTextField.text!,"accountType": selectedUserType,"phone":""]
+            let params :[String : Any] = ["name":nameTextField.text!,"email":emailTextField.text!,"password":passwordTextField.text!,"accountType": selectedUserType,"phone":"","deviceToken":UserManager.getDeviceToken()]
             self.userSignUp(param: params)
         }
     }

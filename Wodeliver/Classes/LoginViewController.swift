@@ -101,7 +101,7 @@ class LoginViewController: UIViewController {
 //        self.present(logInViewController, animated: true, completion: nil)
         
         if self.isValidate() {
-            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS)]
+            let params = ["email":emailTextField.text!,"password":passwordTextField.text!,"device":String(describing: DeviceType.iOS),"deviceToken":UserManager.getDeviceToken()]
             self.userLogin(param: params)
         }
     }
@@ -121,8 +121,10 @@ class LoginViewController: UIViewController {
                 self.present(logInViewController, animated: true, completion: nil)
             }else if UserManager.getUserType() == .deliveryBoy{
                 self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
+            }else if UserManager.getUserType() == .customer{
+               self.dismiss(animated: true, completion: nil)
             }else{
-                OtherHelper.simpleDialog("Error", "Coming soon", self)
+                 OtherHelper.simpleDialog("Error", "Coming soon", self)
             }
             
         })
