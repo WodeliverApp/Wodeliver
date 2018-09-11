@@ -102,9 +102,8 @@ class AddCartViewController: UIViewController {
             }
             
         }
-        
-        let arr = UserManager.getCart()
-        print(arr.count)
+        NotificationCenter.default.post(name: Notification.Name.init("cartItemRefresh"), object: nil, userInfo: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnCancel_Action(_ sender: Any) {

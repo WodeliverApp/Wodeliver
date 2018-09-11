@@ -24,8 +24,13 @@ class UserManager{
     static let category = "_category"
     static let storeMenu = "_storeMenu"
     static let cartItem = "_cartItem"
-    
+    static let deliveryBoyProfile="deliveryBoyProfile"
     static public func setUserDetail(detail:JSON)   {
+//        if let token = detail["deviceToken"].string{
+//            
+//        }else{
+//            detail["deviceToken"] = ""
+//        }
         UserDefaults.standard.set(detail.rawString()!, forKey: userDetailsKey)
         UserDefaults.standard.set(detail[userIdKey].stringValue, forKey: userIdKey)
         UserDefaults.standard.set(detail[customerId].int64Value, forKey: customerId)
@@ -40,13 +45,22 @@ class UserManager{
             "__v": detail["__v"].intValue,
             "updatedAt": detail["updatedAt"].stringValue,
             "customerId": detail["customerId"].intValue,
-            "address": detail["address"].arrayValue,
+          //  "address": detail["address"].arrayValue,
             "accountType" : detail["accountType"].intValue
         ]
         UserDefaults.standard.set(profile, forKey: userProfile)
     }
     static func getUserDetail() -> JSON {
         if let json = UserDefaults.standard.string(forKey: userDetailsKey) {
+            return JSON.init(parseJSON: json)
+        }
+        return JSON.null
+    }
+    static public func setDeliveryBoyProfile(detail:JSON)   {
+        UserDefaults.standard.set(detail.rawString()!, forKey: deliveryBoyProfile)
+    }
+    static func getDeliveryBoyProfile() -> JSON {
+        if let json = UserDefaults.standard.string(forKey: deliveryBoyProfile) {
             return JSON.init(parseJSON: json)
         }
         return JSON.null

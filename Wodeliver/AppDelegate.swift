@@ -12,6 +12,8 @@ import CoreLocation
 import GooglePlaces
 import GoogleMaps
 import HockeySDK
+import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -20,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var hockeySDKIsSetup = false;
     var  clLocationCoordinate: CLLocationCoordinate2D?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey(GooglePlace.googlePlaceKey)
         GMSServices.provideAPIKey(GooglePlace.googleAPIKey)
@@ -30,6 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
                 //self.present(logInViewController, animated: true, completion: nil)
                 self.window?.rootViewController = logInViewController
+            }else if UserManager.getUserType() == .deliveryBoy{
+                let strBoard = UIStoryboard(name: "Main", bundle: nil)
+                let logInViewController = strBoard.instantiateViewController(withIdentifier: "TabBarController")
+                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                //self.present(logInViewController, animated: true, completion: nil)
+                self.window?.rootViewController = logInViewController
             }
         }
         if !hockeySDKIsSetup {
@@ -37,6 +46,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             BITHockeyManager.shared().start()
             BITHockeyManager.shared().crashManager.crashManagerStatus = BITCrashManagerStatus.autoSend
             hockeySDKIsSetup = true;
+        }
+        FirebaseApp.configure()
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound], completionHandler: { granted, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                guard granted else { return }
+                self.getNotificationSettings()
+            })
+            //UNUserNotificationCenter.current().delegate = self
+        }else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
         }
         return true
     }
@@ -55,11 +78,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             UserDefaults.standard.set(false, forKey: AppConstant.isCurrentLocationSaved)
         }
     }
-    
+  
     func applicationWillTerminate(_ application: UIApplication) {
         
     }
     
+    // MARK: - Get Device Token for Push Notification
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        if deviceTokenString != UserManager.getDeviceToken(){
+            if UserManager.checkIfLogin() {
+                UserManager.setDeviceToken(token: deviceTokenString)
+            }else {
+                UserManager.setDeviceToken(token: deviceTokenString)
+            }
+        }
+    }
+    
+    // MARK: - failed to register fot push Notification
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Print the error to console (you should alert the user that registration failed)
+        print("APNs registration failed: \(error)")
+    }
+    
+    @available(iOS 10.0, *)
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
     // MARK: - CLLocationManager Delegate
     
     //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

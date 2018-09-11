@@ -24,6 +24,7 @@ class CustomButton: UIButton {
          self.backgroundColor = Colors.redBackgroundColor
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
+        self.clipsToBounds = true
     }
 
 }

@@ -21,7 +21,8 @@ class StorePointViewController: UIViewController {
     var selectedItemId:String!
     var storeList: [JSON] = []
     var categoryList: [JSON] = []
-    
+    @IBOutlet weak var btnCart_ref: UIBarButtonItem!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCustomCell()
@@ -29,6 +30,11 @@ class StorePointViewController: UIViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        btnCart_ref.addBadge(number: UserManager.getCart().count)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,6 +42,7 @@ class StorePointViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewWillLayoutSubviews()
         self.title = "Storepoint Listing"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -63,6 +70,11 @@ class StorePointViewController: UIViewController {
         self.storepointTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
         
     }
+    
+    @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "showCartSegue", sender: nil)
+    }
+    
     @IBAction func segmentValueChnage(_ sender: Any) {
     }
     @objc func changeSegmentValue(sender: UISegmentedControl) {

@@ -23,8 +23,10 @@ struct Path {
     static let loginURL : String = "\(baseURL)login"
     static let signUpURL : String = "\(baseURL)user"
     static let categoryURL : String = "\(baseURL)category"
-    static let storeListURL : String = "\(iosBaseURL)store/category/location/?"
-    static let itemListURL : String = "\(iosBaseURL)menu/itemCategory/?"
+//    static let storeListURL : String = "\(iosBaseURL)store/category/location/?"
+//    static let itemListURL : String = "\(iosBaseURL)menu/itemCategory/?"
+    static let storeListURL : String = "\(baseURL)store/category/location/?"
+    static let itemListURL : String = "\(baseURL)menu/itemCategory/?"
     static let hotspotListURL : String = "\(baseURL)hotspot?storeId="
     static let searchURL : String = "\(baseURL)searchlist"
     static let forgotPasswordURL = "\(userURL)forgotPassword"
@@ -41,10 +43,12 @@ struct Path {
     static let getTimeSlot : String = "\(baseURL)getEmptySlotList"
     static let bannerList = "\(baseURL)banner?storeId="
     static let hotspotList = "\(baseURL)hotspot?storeId="
+    static let addressList = "\(baseURL)address/?userId="
+    static let addAddress = "\(baseURL)address"
 }
 
 struct AlertMessages {
-    //Login
+    //MARK:-Login
     static let userNameValidation = "Please enter your name."
     static let userLastValidation = "Please enter your last name."
     static let userSurNameValidation = "Please enter your surname."
@@ -66,28 +70,28 @@ struct AlertMessages {
     static let userReleasionShipValidation = "Please enter relationship."
     
     static let seesionInvalidForLogoutMessage = "Your session is expired. Please login again."
-    //Forgot Password
+    //MARK:- Forgot Password
     static let forgotPassword = "Forgot Password?\nPlease enter your email address"
     
     static let imageNotSelectedFromLibrary = "Please select image."
     
-    // Server issue
+    //MARK:- Server issue
     static let serverError = "Server error.Please try again."
     static let InvalidResponsegMessage = "Invalid response.Please Try again"
     static let InvalidRequestMessage = "Invalid request. Try again"
     static let logoutAlertMessage = "Are you really want to logout?"
     
-    // Request View
+    //MARK:- Request View
     static let NoDateAndTimeAlertMessage = "Please select atleast one time slot."
     static let NoDateAlertMessage = "Please select date"
     static let NoTimeAlertMessage = "Please select time"
     
     static let ErrorTimeForCurrentDateAlertMessage = "Please select valid date and time."
     
-    //Feedback
+    //MARK:- Feedback
     static let feedbackValidationMessage = "Please enter your feedback."
     
-    // Filter
+    //MARK:- Filter
     static let moveInValidationMessage = "Please select move in date."
     static let moveOutSelectionValidationMessage = "Please select move in date first."
     static let moveOutValidationMessage = "Please select move out date first."
@@ -98,7 +102,7 @@ struct AlertMessages {
     static let maximumBedRoomForNumberOfPeopleValidationMessage = "Maximum bedroom should be greater than number of seraching people"
     static let peopleValidationMessage = "Please select number of people"
     
-    // Payment info
+    //MARK:- Payment info
     static let userCardHolderNameValidation = "Please enter your name."
     static let userCardNumberValidation = "Please enter card number."
     static let userCardTypeValidation = "Please select card type."
@@ -106,20 +110,20 @@ struct AlertMessages {
     static let userCardCSVValidation = "Please enter card csv."
     static let userCardExpiryValidValidation = "Please select valid date."
     
-    //InboxDetail
+    //MARK:- InboxDetail
     
     static let textViewPlaceholderText = "  Write an answer here..."
     
     static let ComingSoonMessage = "Coming soon.."
     
-    // Store: Item
+    //MARK:- Store: Item
     static let itemValidation = "Please Enter Item Name."
     static let itemPriceValidation = "Please Enter Price."
     static let itemCatValidation = "Please Eelect Category."
     static let itemDescValidation = "Please Enter Description."
     static let itemImgValidation = "Please Select Item Image."
     
-    // Store: Banner
+    //MARK:- Store: Banner
     static let startDateValidation = "Please Select Start Date."
     static let endDateValidation = "Please Select End Date."
     static let startTimeValidation = "Please Time Slot."
@@ -127,12 +131,13 @@ struct AlertMessages {
     static let locationValidation = "Please Select Banner Location"
     static let bannerImgValidation = "Please Select Banner Image."
     
-    // Store: Banner
+    //MARK:- Store: Banner
 
     static let hotSpotLocationValidation = "Please Select Hotspot Location"
     static let hotspotImgValidation = "Please Select Hotspot Image."
     
-    // Store: Profile
+    //MARK:- Store: Profile
+    
     static let storeCategory = "Please Select Category."
     static let storeProfileImage = "Please Select Image."
     static let storeName = "Please Enter Store Name."
@@ -146,6 +151,7 @@ struct AlertMessages {
 struct AppConstant {
     static let isCurrentLocationSaved = "_isCurrentLocationSaved"
     static let currentUserLocation = "_userLocation"
+    static let userSelectedAddress = "_userSelectedAddress"
 }
 
 struct GooglePlace {

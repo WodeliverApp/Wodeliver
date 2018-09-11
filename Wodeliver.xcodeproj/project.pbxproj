@@ -26,6 +26,8 @@
 		3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013237120696782003D4DF7 /* AddHotspotViewController.swift */; };
 		302584432089B0EB0096FA42 /* AdvertismentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302584412089B0EB0096FA42 /* AdvertismentTableViewCell.swift */; };
 		302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302584422089B0EB0096FA42 /* AdvertismentTableViewCell.xib */; };
+		3032371421189AB000951014 /* DeliveryProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032371321189AB000951014 /* DeliveryProfileViewController.swift */; };
+		3032371621189C7F00951014 /* WodeliverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032371521189C7F00951014 /* WodeliverImageView.swift */; };
 		30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */; };
 		30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30331A9F1FE388E100A8B1F1 /* ViewController.swift */; };
 		30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30331AA11FE388E100A8B1F1 /* Main.storyboard */; };
@@ -38,9 +40,13 @@
 		30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD3208F90C1002C4432 /* CartTableViewCell.swift */; };
 		30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30489CD4208F90C1002C4432 /* CartTableViewCell.xib */; };
 		30489CD8209054B0002C4432 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD7209054B0002C4432 /* CartViewController.swift */; };
+		30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30534FA220A0B38F00070453 /* GoogleService-Info.plist */; };
 		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
 		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
 		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
+		30726DE22144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30726DE02144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift */; };
+		30726DE32144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30726DE12144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib */; };
+		307400C520C83F600016E655 /* OrderScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307400C420C83F600016E655 /* OrderScreenViewController.swift */; };
 		307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D020090A2200D073A0 /* StoreItemViewController.swift */; };
 		307716D420090A7D00D073A0 /* StoreHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */; };
 		307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */; };
@@ -65,10 +71,18 @@
 		30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
 		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
+		30D0BDE32148167800460420 /* HistoryFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE12148167800460420 /* HistoryFooterTableViewCell.swift */; };
+		30D0BDE42148167800460420 /* HistoryFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */; };
+		30D0BDE721482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */; };
+		30D0BDE821482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */; };
+		30D490B620DA93E90066459F /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D490B420DA93E90066459F /* AddressTableViewCell.swift */; };
+		30D490B720DA93E90066459F /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D490B520DA93E90066459F /* AddressTableViewCell.xib */; };
 		30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */; };
 		30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57F2073D4D500791A81 /* MenuViewController.swift */; };
 		30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */; };
 		30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */; };
+		30F650F520CFCB870048CAA8 /* AddressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F650F420CFCB870048CAA8 /* AddressListViewController.swift */; };
+		30F650F720CFCBA20048CAA8 /* NewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */; };
 		30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */; };
 		30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
@@ -153,6 +167,8 @@
 		3013237120696782003D4DF7 /* AddHotspotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotspotViewController.swift; sourceTree = "<group>"; };
 		302584412089B0EB0096FA42 /* AdvertismentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertismentTableViewCell.swift; sourceTree = "<group>"; };
 		302584422089B0EB0096FA42 /* AdvertismentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvertismentTableViewCell.xib; sourceTree = "<group>"; };
+		3032371321189AB000951014 /* DeliveryProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryProfileViewController.swift; sourceTree = "<group>"; };
+		3032371521189C7F00951014 /* WodeliverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeliverImageView.swift; sourceTree = "<group>"; };
 		30331A9A1FE388E100A8B1F1 /* Wodeliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wodeliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30331A9D1FE388E100A8B1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30331A9F1FE388E100A8B1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,9 +187,13 @@
 		30489CD3208F90C1002C4432 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		30489CD4208F90C1002C4432 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		30489CD7209054B0002C4432 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		30534FA220A0B38F00070453 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
 		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
 		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
+		30726DE02144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOrderTableViewCell.swift; sourceTree = "<group>"; };
+		30726DE12144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentOrderTableViewCell.xib; sourceTree = "<group>"; };
+		307400C420C83F600016E655 /* OrderScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderScreenViewController.swift; sourceTree = "<group>"; };
 		307716D020090A2200D073A0 /* StoreItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemViewController.swift; sourceTree = "<group>"; };
 		307716D220090A7D00D073A0 /* StoreHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		307716D320090A7D00D073A0 /* StoreHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -209,10 +229,19 @@
 		30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
 		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
+		30D0BDE12148167800460420 /* HistoryFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFooterTableViewCell.swift; sourceTree = "<group>"; };
+		30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryFooterTableViewCell.xib; sourceTree = "<group>"; };
+		30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBoyNotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryBoyNotificationsTableViewCell.xib; sourceTree = "<group>"; };
+		30D490B420DA93E90066459F /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		30D490B520DA93E90066459F /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaksViewController.swift; sourceTree = "<group>"; };
 		30EBB57F2073D4D500791A81 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		30EF5F9320E0C18F00A34F38 /* Wodeliver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wodeliver.entitlements; sourceTree = "<group>"; };
+		30F650F420CFCB870048CAA8 /* AddressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListViewController.swift; sourceTree = "<group>"; };
+		30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddressViewController.swift; sourceTree = "<group>"; };
 		30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotViewController.swift; sourceTree = "<group>"; };
 		30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +363,14 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		3032371221189A7600951014 /* DeliveryBoy */ = {
+			isa = PBXGroup;
+			children = (
+				3032371321189AB000951014 /* DeliveryProfileViewController.swift */,
+			);
+			path = DeliveryBoy;
+			sourceTree = "<group>";
+		};
 		30331A911FE388E100A8B1F1 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +396,7 @@
 		30331A9C1FE388E100A8B1F1 /* Wodeliver */ = {
 			isa = PBXGroup;
 			children = (
+				30EF5F9320E0C18F00A34F38 /* Wodeliver.entitlements */,
 				307732E1201043EC0045A4B0 /* Models */,
 				307716E0200B248500D073A0 /* NetworkClass */,
 				30CC2E1F2004A1A000A45A6D /* StoreFront */,
@@ -373,6 +411,7 @@
 				30331AA91FE388E100A8B1F1 /* LaunchScreen.storyboard */,
 				307716D82009FB5900D073A0 /* StoreFront.storyboard */,
 				30331AAC1FE388E100A8B1F1 /* Info.plist */,
+				30534FA220A0B38F00070453 /* GoogleService-Info.plist */,
 				30331AA41FE388E100A8B1F1 /* Wodeliver.xcdatamodeld */,
 				30914A2B200284C1008D6E52 /* Customer.storyboard */,
 			);
@@ -408,6 +447,7 @@
 				30067479200B3D290021A08C /* UserManager.swift */,
 				3006748C200C5A290021A08C /* Enum.swift */,
 				30617D27205B8F170010948E /* TimeAgo.swift */,
+				3032371521189C7F00951014 /* WodeliverImageView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -495,6 +535,7 @@
 		53CB7A471FEB7A1A00D70254 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3032371221189A7600951014 /* DeliveryBoy */,
 				53CB7A481FEB7A3600D70254 /* LoginViewController.swift */,
 				53CB7A631FEBB6F800D70254 /* MyViewController.swift */,
 				53CB7A651FEBB71400D70254 /* ChatViewController.swift */,
@@ -513,6 +554,9 @@
 				30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */,
 				30489CD7209054B0002C4432 /* CartViewController.swift */,
 				300EDACA2091AEE100396640 /* AddCartViewController.swift */,
+				307400C420C83F600016E655 /* OrderScreenViewController.swift */,
+				30F650F420CFCB870048CAA8 /* AddressListViewController.swift */,
+				30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -547,6 +591,14 @@
 				30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */,
 				30489CD3208F90C1002C4432 /* CartTableViewCell.swift */,
 				30489CD4208F90C1002C4432 /* CartTableViewCell.xib */,
+				30D490B420DA93E90066459F /* AddressTableViewCell.swift */,
+				30D490B520DA93E90066459F /* AddressTableViewCell.xib */,
+				30726DE02144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift */,
+				30726DE12144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib */,
+				30D0BDE12148167800460420 /* HistoryFooterTableViewCell.swift */,
+				30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */,
+				30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */,
+				30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -629,6 +681,11 @@
 					30331A991FE388E100A8B1F1 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 					30331AB01FE388E200A8B1F1 = {
 						CreatedOnToolsVersion = 9.1;
@@ -670,15 +727,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
+				30726DE32144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib in Resources */,
 				A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */,
 				307716DA2009FB5900D073A0 /* StoreFront.storyboard in Resources */,
 				30914A3720028606008D6E52 /* Localizable.strings in Resources */,
+				30D0BDE42148167800460420 /* HistoryFooterTableViewCell.xib in Resources */,
 				A1B3C5892004651B009C8C0D /* StorepointListingCell.xib in Resources */,
 				30067476200B33430021A08C /* StoreDetailCell.xib in Resources */,
 				30617D26205AF80E0010948E /* RemarkCell.xib in Resources */,
 				30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
+				30D490B720DA93E90066459F /* AddressTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
 				30914A29200284C1008D6E52 /* Customer.storyboard in Resources */,
 				53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */,
@@ -688,8 +748,10 @@
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
+				30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */,
 				302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */,
 				30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */,
+				30D0BDE821482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib in Resources */,
 				30067485200B7E210021A08C /* StoreNotificationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,10 +814,12 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -763,10 +827,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -896,8 +962,11 @@
 				30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */,
+				3032371621189C7F00951014 /* WodeliverImageView.swift in Sources */,
+				30D490B620DA93E90066459F /* AddressTableViewCell.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
 				3006748D200C5A290021A08C /* Enum.swift in Sources */,
+				30F650F720CFCBA20048CAA8 /* NewAddressViewController.swift in Sources */,
 				307732FB20106D330045A4B0 /* Items.swift in Sources */,
 				53CB7A591FEBADEA00D70254 /* HistoryDetailTableViewCell.swift in Sources */,
 				307716D120090A2200D073A0 /* StoreItemViewController.swift in Sources */,
@@ -906,11 +975,15 @@
 				5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */,
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
 				30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */,
+				30D0BDE721482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift in Sources */,
 				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
+				30726DE22144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
+				307400C520C83F600016E655 /* OrderScreenViewController.swift in Sources */,
+				30D0BDE32148167800460420 /* HistoryFooterTableViewCell.swift in Sources */,
 				30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */,
 				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				307732F32010689C0045A4B0 /* ItemCategory.swift in Sources */,
@@ -941,11 +1014,13 @@
 				30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */,
 				A1CDCD0F2058457A008877D2 /* AddItemViewController.swift in Sources */,
 				30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */,
+				3032371421189AB000951014 /* DeliveryProfileViewController.swift in Sources */,
 				307716E2200B249C00D073A0 /* NetworkHelper.swift in Sources */,
 				307716DF200A287600D073A0 /* LeftMenuTableViewController.swift in Sources */,
 				307732F1201068890045A4B0 /* HotspotItem.swift in Sources */,
 				307732F7201069340045A4B0 /* Banner.swift in Sources */,
 				307732FD20106F110045A4B0 /* LatLong.swift in Sources */,
+				30F650F520CFCB870048CAA8 /* AddressListViewController.swift in Sources */,
 				3006748B200BC5230021A08C /* Date + Util.swift in Sources */,
 				A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
@@ -1169,6 +1244,7 @@
 			baseConfigurationReference = 661BDC2B100436A6A5BB7D96 /* Pods-Wodeliver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wodeliver/Wodeliver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47A8956Q4F;
 				ENABLE_BITCODE = NO;
@@ -1187,6 +1263,7 @@
 			baseConfigurationReference = 86B04C9212C37B1D33F64E9A /* Pods-Wodeliver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wodeliver/Wodeliver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47A8956Q4F;
 				ENABLE_BITCODE = NO;

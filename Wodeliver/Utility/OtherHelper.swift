@@ -86,6 +86,18 @@ class OtherHelper {
         let imageData = UIImageJPEGRepresentation(image, 0.5)!
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
     }
+    
+    static func convertDateToString(date : String) -> String{
+        let formatter = Foundation.DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone.init(abbreviation: "UTC")
+        formatter.locale = Locale.init(identifier: "en_US")
+        let date1  = formatter.date(from: date)
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+       // formatter.dateFormat = "dd-MMM-yyyy hh:mm a"
+        formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
+        return formatter.string(from: date1!)
+    }
 
     static func deviceTimeZone() -> String{
         let dateFormatter = DateFormatter()

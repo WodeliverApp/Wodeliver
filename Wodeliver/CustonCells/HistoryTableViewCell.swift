@@ -10,6 +10,9 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnComment_ref: UIButton!
+    @IBOutlet weak var lblOrderNo: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
          self.selectionStyle = .none
