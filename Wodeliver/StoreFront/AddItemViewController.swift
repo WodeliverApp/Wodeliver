@@ -139,7 +139,7 @@ class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         self.view.endEditing(true)
         if self.isValidate() {
             let imgBase64 = OtherHelper.convertImageToBase64(image: self.itemImageView.image!)
-            let param = ["itemCategory": [self.selectedItemCategory!], "category": [], "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId()] as [String : Any]
+            let param = ["itemCategory": [self.selectedItemCategory!], "category": [], "item": self.itemTF.text ?? "", "price": self.priceTF.text ?? "", "image": imgBase64, "member": "123", "description": self.descriptionTF.text ?? "", "storeId": UserManager.getStoreId(), "_id": itemObject!["id"]?.stringValue ?? "" ] as [String : Any]
             if itemObject != nil{
               self.updateItem(param: param)
             }else{
@@ -276,6 +276,8 @@ extension AddItemViewController{
     
     func updateItem(param : [String : Any]){
         NetworkHelper.put(url: Path.storeAddItem, param: param, self, completionHandler: {[weak self] json, error in
+            print(json)
+            print(error)
             guard let `self` = self else { return }
             guard (json != nil) else {
                 return

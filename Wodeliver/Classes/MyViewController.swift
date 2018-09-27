@@ -183,7 +183,7 @@ extension MyViewController: UITableViewDelegate,UITableViewDataSource {
     @objc func btnComment_action(sender: UIButton) {
         let buttonPosition = sender.convert(CGPoint.zero, to: self.myTableView)
         if let indexPath = self.myTableView.indexPathForRow(at: buttonPosition){
-            print(indexPath)
+            self.performSegue(withIdentifier: "commentSegue", sender: historyOrderList[indexPath.row])
         }
       
     }
@@ -199,6 +199,15 @@ extension MyViewController{
             if let order = sender as? JSON{
                 if let destination = segue.destination as? HistoryDeatilViewController{
                     destination.order = order
+                }
+            }
+        }
+        else if segue.identifier == "commentSegue" {
+            if let navController = segue.destination as? UINavigationController {
+                if let viewController = navController.viewControllers.first as? RemaksViewController{
+                    if let store = sender as? JSON{
+                        viewController.entityId = store["_id"].stringValue
+                    }
                 }
             }
         }

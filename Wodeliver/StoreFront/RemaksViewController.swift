@@ -53,6 +53,7 @@ class RemaksViewController: UIViewController, UITableViewDataSource, UITableView
             guard let json = json else {
                 return
             }
+            print(json)
             self.commentList = json["response"].arrayValue
             if self.commentList.count == 0{
                 OtherHelper.simpleDialog("Error", "No record found.", self)
@@ -86,11 +87,9 @@ extension RemaksViewController{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RemarkCell") as! RemarkCell
-        if Int(indexPath.row )%2 == 0 {
-//            cell.menuImageView.layer.borderColor = Colors.redBackgroundColor.cgColor
-//            cell.menuImageView.clipsToBounds = true
-//            cell.menuImageView.layer.cornerRadius = 2.0
-        }
+        cell.lblName.text = commentList[indexPath.row]["name"].stringValue
+        cell.lblTitle.text = commentList[indexPath.row]["title"].stringValue
+        cell.lblComment.text = commentList[indexPath.row]["comment"].stringValue
         return cell
     }
     

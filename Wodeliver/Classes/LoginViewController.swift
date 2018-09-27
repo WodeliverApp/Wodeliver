@@ -123,6 +123,12 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
             }else if UserManager.getUserType() == .customer{
                self.dismiss(animated: true, completion: nil)
+                
+//                let strBoard = UIStoryboard(name: "Main", bundle: nil)
+//                let logInViewController = strBoard.instantiateViewController(withIdentifier: "TabBarController")
+//                logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+//                self.present(logInViewController, animated: true, completion: nil)
+              //  self.window?.rootViewController = logInViewController
             }else{
                  OtherHelper.simpleDialog("Error", "Coming soon", self)
             }

@@ -25,9 +25,10 @@ class UserManager{
     static let storeMenu = "_storeMenu"
     static let cartItem = "_cartItem"
     static let deliveryBoyProfile="deliveryBoyProfile"
+    static let deliveryBoyId="deliveryBoyId"
     static public func setUserDetail(detail:JSON)   {
 //        if let token = detail["deviceToken"].string{
-//            
+//
 //        }else{
 //            detail["deviceToken"] = ""
 //        }
@@ -36,6 +37,9 @@ class UserManager{
         UserDefaults.standard.set(detail[customerId].int64Value, forKey: customerId)
         UserDefaults.standard.set(detail[userTypeIdKey].int32Value, forKey: userTypeIdKey)
          UserDefaults.standard.set(detail[storeId].stringValue, forKey: storeId)
+        if detail[deliveryBoyId].string != nil{
+            UserDefaults.standard.set(detail[deliveryBoyId].stringValue, forKey: deliveryBoyId)
+        }
         let profile: [String:Any] = [
             "name": detail["name"].stringValue,
             "_id": detail["_id"].stringValue,
@@ -74,7 +78,9 @@ class UserManager{
     static func getUserType() -> UserType {
         return UserType(rawValue: Int32(UserDefaults.standard.integer(forKey: userTypeIdKey)))!
     }
-    
+    static func getDeliveryBoyId() -> String {
+        return UserDefaults.standard.string(forKey: deliveryBoyId) ?? ""
+    }
     static func getUserTypeName(type: UserType) -> String {
         switch type {
         case .customer:
@@ -121,6 +127,8 @@ class UserManager{
         UserDefaults.standard.removeObject(forKey: userDetailsKey)
         UserDefaults.standard.removeObject(forKey: userIdKey)
         UserDefaults.standard.removeObject(forKey: userTypeIdKey)
+        UserDefaults.standard.removeObject(forKey: deliveryBoyId)
+        UserDefaults.standard.removeObject(forKey: deliveryBoyProfile)
         let appDomain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: appDomain) 
     }

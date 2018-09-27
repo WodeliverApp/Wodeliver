@@ -47,8 +47,8 @@ class HistoryDeatilViewController: UIViewController {
     
     func registerCustomCell(){
         self.historyDetailTableView.register(UINib(nibName: "HistoryHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryHeaderTableViewCell")
+         self.historyDetailTableView.register(UINib(nibName: "HistoryFooterTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryFooterTableViewCell")
         self.historyDetailTableView.register(UINib(nibName: "HistoryDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryDetailTableViewCell")
-        self.historyDetailTableView.register(UINib(nibName: "HistoryFooterTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryFooterTableViewCell")
     }
     
     func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
@@ -61,7 +61,6 @@ class HistoryDeatilViewController: UIViewController {
         self.historyDetailTableView.layer.shouldRasterize = true
         self.historyDetailTableView.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-
 }
 extension HistoryDeatilViewController: UITableViewDelegate,UITableViewDataSource {
     

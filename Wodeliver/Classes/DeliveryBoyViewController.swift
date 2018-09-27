@@ -78,10 +78,10 @@ extension DeliveryBoyViewController: UITableViewDelegate,UITableViewDataSource {
         cell.lblOrderStatus.text = notification[indexPath.row]["content"]["body"].stringValue
         cell.lblOrderTitle.text = notification[indexPath.row]["content"]["title"].stringValue
         cell.lblDate.text = OtherHelper.convertDateToString(date: notification[indexPath.row]["createdAt"].stringValue)
-        if indexPath.row == self.notification.count - 1 && loadMore {
-            loadMore = false
-            getNotification()
-        }
+//        if indexPath.row == self.notification.count - 1 && loadMore {
+//            loadMore = false
+//            getNotification()
+//        }
         return cell
     }
     
@@ -89,27 +89,40 @@ extension DeliveryBoyViewController: UITableViewDelegate,UITableViewDataSource {
         return 113.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.performSegue(withIdentifier: "notificationDetails", sender: notification[indexPath.row])
     }
     
-//     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//            if indexPath.row >= (notification.count  ) && loadMore {
-//                page += 1
-//                loadMore = false
-//                self.getNotification()
-//            }
-//    }
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            if indexPath.row >= (notification.count  ) && loadMore {
+                page += 1
+                loadMore = false
+                self.getNotification()
+            }
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "notificationDetails"{
+            if let order = sender as? JSON{
+                if let destination = segue.destination as? NotificationDetailTableViewController{
+                    destination.itemDetail = order["data"].dictionaryValue
+                    destination.deliveryBoyStatus = order["data"]["deliveryBoyStatus"].stringValue
+                }
+            }
+        }
+    }
 }
 
 extension DeliveryBoyViewController{
-    
     func getNotification() {
-        NetworkHelper.get(url: Path.baseURL+"notification", param: ["userId": UserManager.getUserId(), "skip": notification.count], self, completionHandler: {[weak self] json, error in
+        NetworkHelper.get(url: Path.baseURL+"notification", param: ["userId": UserManager.getUserId(), "skip": 10], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             self.loadMore = true
             guard let json = json else {
                 return
             }
+            print(json)
             if let notifications = json["response"].array{
                 for notification in notifications {
                     self.notification.append(notification)
@@ -124,5 +137,4 @@ extension DeliveryBoyViewController{
             print(self.notification.count)
         })
     }
-    
 }

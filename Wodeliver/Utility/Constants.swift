@@ -45,6 +45,11 @@ struct Path {
     static let hotspotList = "\(baseURL)hotspot?storeId="
     static let addressList = "\(baseURL)address/?userId="
     static let addAddress = "\(baseURL)address"
+    static let deliveryBoySetting = "\(baseURL)deliveryBoy"
+    static let logOut : String = "\(baseURL)logout"
+    static let notificationValidity : String = "\(baseURL)notificationValidity?notificationId="
+    static let depositAmount : String = "\(baseURL)depositAmount"
+    static let acceptOrder : String = "\(baseURL)acceptOrder"
 }
 
 struct AlertMessages {

@@ -41,6 +41,18 @@
 		30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30489CD4208F90C1002C4432 /* CartTableViewCell.xib */; };
 		30489CD8209054B0002C4432 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30489CD7209054B0002C4432 /* CartViewController.swift */; };
 		30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30534FA220A0B38F00070453 /* GoogleService-Info.plist */; };
+		305D1A07214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A06214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift */; };
+		305D1A09214E687100F4318A /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A08214E687100F4318A /* CustomSlider.swift */; };
+		305D1A0C2153A0C100F4318A /* AssignTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A0A2153A0C100F4318A /* AssignTableViewCell.swift */; };
+		305D1A0D2153A0C100F4318A /* AssignTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305D1A0B2153A0C100F4318A /* AssignTableViewCell.xib */; };
+		305D1A122153A14C00F4318A /* StoreInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A102153A14C00F4318A /* StoreInfoTableViewCell.swift */; };
+		305D1A132153A14C00F4318A /* StoreInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305D1A112153A14C00F4318A /* StoreInfoTableViewCell.xib */; };
+		305D1A182153A1EE00F4318A /* ShopperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A162153A1EE00F4318A /* ShopperTableViewCell.swift */; };
+		305D1A192153A1EE00F4318A /* ShopperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305D1A172153A1EE00F4318A /* ShopperTableViewCell.xib */; };
+		305D1A1C2153A28000F4318A /* ItemListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A1A2153A28000F4318A /* ItemListTableViewCell.swift */; };
+		305D1A1D2153A28000F4318A /* ItemListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305D1A1B2153A28000F4318A /* ItemListTableViewCell.xib */; };
+		305D1A2021540F8F00F4318A /* ShopperReguestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A1E21540F8F00F4318A /* ShopperReguestTableViewCell.swift */; };
+		305D1A2121540F8F00F4318A /* ShopperReguestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305D1A1F21540F8F00F4318A /* ShopperReguestTableViewCell.xib */; };
 		30617D25205AF80E0010948E /* RemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D23205AF80E0010948E /* RemarkCell.swift */; };
 		30617D26205AF80E0010948E /* RemarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30617D24205AF80E0010948E /* RemarkCell.xib */; };
 		30617D28205B8F170010948E /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30617D27205B8F170010948E /* TimeAgo.swift */; };
@@ -75,6 +87,7 @@
 		30D0BDE42148167800460420 /* HistoryFooterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */; };
 		30D0BDE721482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */; };
 		30D0BDE821482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */; };
+		30D0BDEA214A807500460420 /* NotificationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */; };
 		30D490B620DA93E90066459F /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D490B420DA93E90066459F /* AddressTableViewCell.swift */; };
 		30D490B720DA93E90066459F /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D490B520DA93E90066459F /* AddressTableViewCell.xib */; };
 		30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */; };
@@ -83,6 +96,7 @@
 		30EBB5842073D64D00791A81 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EBB5822073D64D00791A81 /* MenuTableViewCell.xib */; };
 		30F650F520CFCB870048CAA8 /* AddressListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F650F420CFCB870048CAA8 /* AddressListViewController.swift */; };
 		30F650F720CFCBA20048CAA8 /* NewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */; };
+		30FAF4942154C3A6004704FA /* AcceptOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FAF4932154C3A6004704FA /* AcceptOrderViewController.swift */; };
 		30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */; };
 		30FB6B152085C08F0000DAD0 /* TimeSlotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */; };
 		5342D1D91FED1DFD00B704B1 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */; };
@@ -188,6 +202,18 @@
 		30489CD4208F90C1002C4432 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		30489CD7209054B0002C4432 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		30534FA220A0B38F00070453 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		305D1A06214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDeliveryBoyTableViewController.swift; sourceTree = "<group>"; };
+		305D1A08214E687100F4318A /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		305D1A0A2153A0C100F4318A /* AssignTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignTableViewCell.swift; sourceTree = "<group>"; };
+		305D1A0B2153A0C100F4318A /* AssignTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignTableViewCell.xib; sourceTree = "<group>"; };
+		305D1A102153A14C00F4318A /* StoreInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfoTableViewCell.swift; sourceTree = "<group>"; };
+		305D1A112153A14C00F4318A /* StoreInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInfoTableViewCell.xib; sourceTree = "<group>"; };
+		305D1A162153A1EE00F4318A /* ShopperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopperTableViewCell.swift; sourceTree = "<group>"; };
+		305D1A172153A1EE00F4318A /* ShopperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopperTableViewCell.xib; sourceTree = "<group>"; };
+		305D1A1A2153A28000F4318A /* ItemListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTableViewCell.swift; sourceTree = "<group>"; };
+		305D1A1B2153A28000F4318A /* ItemListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemListTableViewCell.xib; sourceTree = "<group>"; };
+		305D1A1E21540F8F00F4318A /* ShopperReguestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopperReguestTableViewCell.swift; sourceTree = "<group>"; };
+		305D1A1F21540F8F00F4318A /* ShopperReguestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopperReguestTableViewCell.xib; sourceTree = "<group>"; };
 		30617D23205AF80E0010948E /* RemarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCell.swift; sourceTree = "<group>"; };
 		30617D24205AF80E0010948E /* RemarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkCell.xib; sourceTree = "<group>"; };
 		30617D27205B8F170010948E /* TimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
@@ -233,6 +259,7 @@
 		30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryFooterTableViewCell.xib; sourceTree = "<group>"; };
 		30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBoyNotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryBoyNotificationsTableViewCell.xib; sourceTree = "<group>"; };
+		30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailTableViewController.swift; sourceTree = "<group>"; };
 		30D490B420DA93E90066459F /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		30D490B520DA93E90066459F /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaksViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +269,7 @@
 		30EF5F9320E0C18F00A34F38 /* Wodeliver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wodeliver.entitlements; sourceTree = "<group>"; };
 		30F650F420CFCB870048CAA8 /* AddressListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListViewController.swift; sourceTree = "<group>"; };
 		30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddressViewController.swift; sourceTree = "<group>"; };
+		30FAF4932154C3A6004704FA /* AcceptOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptOrderViewController.swift; sourceTree = "<group>"; };
 		30FB6B1220830DC70000DAD0 /* TimeSlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotViewController.swift; sourceTree = "<group>"; };
 		30FB6B142085C08F0000DAD0 /* TimeSlotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotTableViewCell.swift; sourceTree = "<group>"; };
 		5342D1D81FED1DFD00B704B1 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +354,7 @@
 				30022BCF1FE38E34001E6268 /* FloatLabelFields */,
 				53CB7A441FEB740A00D70254 /* CustomSegmentControl.swift */,
 				30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */,
+				305D1A08214E687100F4318A /* CustomSlider.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -366,7 +395,11 @@
 		3032371221189A7600951014 /* DeliveryBoy */ = {
 			isa = PBXGroup;
 			children = (
+				30D0BDEB214A823A00460420 /* CustomCell */,
 				3032371321189AB000951014 /* DeliveryProfileViewController.swift */,
+				30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */,
+				305D1A06214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift */,
+				30FAF4932154C3A6004704FA /* AcceptOrderViewController.swift */,
 			);
 			path = DeliveryBoy;
 			sourceTree = "<group>";
@@ -507,6 +540,23 @@
 			path = StoreCell;
 			sourceTree = "<group>";
 		};
+		30D0BDEB214A823A00460420 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				305D1A0A2153A0C100F4318A /* AssignTableViewCell.swift */,
+				305D1A0B2153A0C100F4318A /* AssignTableViewCell.xib */,
+				305D1A102153A14C00F4318A /* StoreInfoTableViewCell.swift */,
+				305D1A112153A14C00F4318A /* StoreInfoTableViewCell.xib */,
+				305D1A162153A1EE00F4318A /* ShopperTableViewCell.swift */,
+				305D1A172153A1EE00F4318A /* ShopperTableViewCell.xib */,
+				305D1A1A2153A28000F4318A /* ItemListTableViewCell.swift */,
+				305D1A1B2153A28000F4318A /* ItemListTableViewCell.xib */,
+				305D1A1E21540F8F00F4318A /* ShopperReguestTableViewCell.swift */,
+				305D1A1F21540F8F00F4318A /* ShopperReguestTableViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		3670FC2E1F575B7DE2280E7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,8 +684,6 @@
 				30331AAD1FE388E200A8B1F1 /* Sources */,
 				30331AAE1FE388E200A8B1F1 /* Frameworks */,
 				30331AAF1FE388E200A8B1F1 /* Resources */,
-				5DF7BBB7051EA28294A3E532 /* [CP] Embed Pods Frameworks */,
-				C86D6F8E6C36BFCB99C7F875 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -655,8 +703,6 @@
 				30331AB81FE388E200A8B1F1 /* Sources */,
 				30331AB91FE388E200A8B1F1 /* Frameworks */,
 				30331ABA1FE388E200A8B1F1 /* Resources */,
-				57D0CD35ADC43419F7F957BA /* [CP] Embed Pods Frameworks */,
-				771EB54A021B396E6279F289 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -726,6 +772,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305D1A0D2153A0C100F4318A /* AssignTableViewCell.xib in Resources */,
 				30331AAB1FE388E100A8B1F1 /* LaunchScreen.storyboard in Resources */,
 				30726DE32144DA0E00FAA0B1 /* CurrentOrderTableViewCell.xib in Resources */,
 				A1B3C595200D031A009C8C0D /* ChatTableViewCell.xib in Resources */,
@@ -743,10 +790,14 @@
 				30914A29200284C1008D6E52 /* Customer.storyboard in Resources */,
 				53CB7A5A1FEBADEB00D70254 /* HistoryDetailTableViewCell.xib in Resources */,
 				53CB7A5E1FEBB09700D70254 /* HistoryNewTableViewCell.xib in Resources */,
+				305D1A1D2153A28000F4318A /* ItemListTableViewCell.xib in Resources */,
+				305D1A2121540F8F00F4318A /* ShopperReguestTableViewCell.xib in Resources */,
 				30331AA31FE388E100A8B1F1 /* Main.storyboard in Resources */,
+				305D1A192153A1EE00F4318A /* ShopperTableViewCell.xib in Resources */,
 				53CB7A521FEBA77100D70254 /* CurrentStatusTableViewCell.xib in Resources */,
 				53CB7A561FEBAC3000D70254 /* HistoryTableViewCell.xib in Resources */,
 				307716D520090A7D00D073A0 /* StoreHistoryTableViewCell.xib in Resources */,
+				305D1A132153A14C00F4318A /* StoreInfoTableViewCell.xib in Resources */,
 				53CB7A4E1FEB9FD200D70254 /* CurrentTableViewCell.xib in Resources */,
 				30534FA320A0B38F00070453 /* GoogleService-Info.plist in Resources */,
 				302584442089B0EB0096FA42 /* AdvertismentTableViewCell.xib in Resources */,
@@ -773,36 +824,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		57D0CD35ADC43419F7F957BA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5DF7BBB7051EA28294A3E532 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6BDFB3ED45D8D2192B232627 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -857,21 +878,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		771EB54A021B396E6279F289 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverUITests/Pods-WodeliverUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		998A051D5FEC8874FC181FB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -888,21 +894,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C86D6F8E6C36BFCB99C7F875 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WodeliverTests/Pods-WodeliverTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB50482901E17E3BBC1D05A5 /* [CP] Copy Pods Resources */ = {
@@ -959,12 +950,15 @@
 				307732F920106C050045A4B0 /* Store.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
+				30D0BDEA214A807500460420 /* NotificationDetailTableViewController.swift in Sources */,
 				30489CD5208F90C1002C4432 /* CartTableViewCell.swift in Sources */,
 				53CB7A551FEBAC3000D70254 /* HistoryTableViewCell.swift in Sources */,
 				30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */,
+				305D1A122153A14C00F4318A /* StoreInfoTableViewCell.swift in Sources */,
 				3032371621189C7F00951014 /* WodeliverImageView.swift in Sources */,
 				30D490B620DA93E90066459F /* AddressTableViewCell.swift in Sources */,
 				53CB7A681FEBB73200D70254 /* MapViewController.swift in Sources */,
+				305D1A0C2153A0C100F4318A /* AssignTableViewCell.swift in Sources */,
 				3006748D200C5A290021A08C /* Enum.swift in Sources */,
 				30F650F720CFCBA20048CAA8 /* NewAddressViewController.swift in Sources */,
 				307732FB20106D330045A4B0 /* Items.swift in Sources */,
@@ -976,14 +970,18 @@
 				A1B3C58B200475C7009C8C0D /* StorePointViewController.swift in Sources */,
 				30FB6B1320830DC70000DAD0 /* TimeSlotViewController.swift in Sources */,
 				30D0BDE721482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift in Sources */,
+				305D1A07214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift in Sources */,
 				30617D28205B8F170010948E /* TimeAgo.swift in Sources */,
+				305D1A2021540F8F00F4318A /* ShopperReguestTableViewCell.swift in Sources */,
 				A1B3C5882004651B009C8C0D /* StorepointListingCell.swift in Sources */,
 				30726DE22144DA0E00FAA0B1 /* CurrentOrderTableViewCell.swift in Sources */,
 				53CB7A641FEBB6F800D70254 /* MyViewController.swift in Sources */,
+				305D1A1C2153A28000F4318A /* ItemListTableViewCell.swift in Sources */,
 				53CB7A511FEBA77100D70254 /* CurrentStatusTableViewCell.swift in Sources */,
 				30331A9E1FE388E100A8B1F1 /* AppDelegate.swift in Sources */,
 				307400C520C83F600016E655 /* OrderScreenViewController.swift in Sources */,
 				30D0BDE32148167800460420 /* HistoryFooterTableViewCell.swift in Sources */,
+				305D1A09214E687100F4318A /* CustomSlider.swift in Sources */,
 				30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */,
 				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				307732F32010689C0045A4B0 /* ItemCategory.swift in Sources */,
@@ -1026,11 +1024,13 @@
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
 				300EDACB2091AEE100396640 /* AddCartViewController.swift in Sources */,
+				305D1A182153A1EE00F4318A /* ShopperTableViewCell.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,
 				A1B3C594200D031A009C8C0D /* ChatTableViewCell.swift in Sources */,
 				53CB7A4D1FEB9FD200D70254 /* CurrentTableViewCell.swift in Sources */,
+				30FAF4942154C3A6004704FA /* AcceptOrderViewController.swift in Sources */,
 				30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */,
 				30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */,
 			);

@@ -98,6 +98,18 @@ class OtherHelper {
         formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
         return formatter.string(from: date1!)
     }
+    
+    static func getTimeFromDateString(date : String) -> String{
+        let formatter = Foundation.DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.timeZone = TimeZone.init(abbreviation: "UTC")
+      //  formatter.locale = Locale.init(identifier: "en_US")
+        let date1  = formatter.date(from: date)
+       // formatter.timeZone = TimeZone(abbreviation: "UTC")
+        // formatter.dateFormat = "dd-MMM-yyyy hh:mm a"
+        formatter.dateFormat = "hh:mm:ss a"
+        return formatter.string(from: date1!)
+    }
 
     static func deviceTimeZone() -> String{
         let dateFormatter = DateFormatter()
@@ -119,7 +131,7 @@ class OtherHelper {
         } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+           // dateFormatter.locale = Locale(identifier: "en_US")
             iso8601String = dateFormatter.string(from: date)
             
         }

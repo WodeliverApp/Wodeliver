@@ -48,7 +48,29 @@ class DeliveryProfileViewController: UIViewController {
         getInfoFromServer(id: UserManager.getUserDetail()["_id"].stringValue)
         txtEmail.isEnabled = false
     }
-
+    
+    @IBAction func btnSetting_Action(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message:nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let logoutAction = UIAlertAction(title: "Logout".localized, style: UIAlertActionStyle.destructive) { (result : UIAlertAction) -> Void in
+            
+            UserManager.logout(isDisable: true)
+            
+            let strBoard = UIStoryboard(name: "Main", bundle: nil)
+            let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
+            logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+            self.present(logInViewController, animated: true, completion: nil)
+        }
+        let settingAction = UIAlertAction(title: "Setting".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            
+            self.performSegue(withIdentifier: "settingSegue", sender: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized, style: UIAlertActionStyle.cancel)
+        alertController.addAction(settingAction)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.upperView.backgroundColor = UIColor.white
@@ -109,13 +131,18 @@ class DeliveryProfileViewController: UIViewController {
     //MARK:- UIButton Methods
     
     @IBAction func btnSave_Action(_ sender: Any) {
+        self.view.endEditing(true)
         if (txtFullName.text?.count)! == 0 || (txtCountry.text?.count)! == 0 || (txtCity.text?.count)! == 0 || (txtAddress.text?.count)! == 0 || (txtPhonePrefix.text?.count)! == 0 || (txtPhone.text?.count)! == 0 {
             OtherHelper.simpleDialog("Error", "All fields are required", self)
             return
         }
+        if (txtPhonePrefix.text?.count)! > 3{
+            OtherHelper.simpleDialog("Error", "Invalid ISD Code", self)
+            return
+        }
         let imgBase64 = OtherHelper.convertImageToBase64(image: self.imgProfile.image!)
-      //    let param = ["name": txtFullName.text ?? "", "city":txtCity.text ?? "", "country": txtCountry.text ?? "", "phone": txtPhone.text ?? "","address":txtAddress.text ?? "", "_id": UserManager.getUserId()] as [String : Any]
-        let param = ["name": txtFullName.text ?? "", "city":txtCity.text ?? "", "country": txtCountry.text ?? "", "phone": txtPhone.text ?? "","address":txtAddress.text ?? "", "image": imgBase64, "_id": UserManager.getUserId()] as [String : Any]
+        let phone = "\(txtPhonePrefix.text ?? "")-\(txtPhone.text ?? "")"
+        let param = ["name": txtFullName.text ?? "", "city":txtCity.text ?? "", "country": txtCountry.text ?? "", "phone": phone ,"address":txtAddress.text ?? "", "image": imgBase64, "_id": UserManager.getUserId()] as [String : Any]
         saveProfile(param: param)
     }
     
@@ -229,7 +256,13 @@ extension DeliveryProfileViewController{
         txtFullName.text = profileInfo["name"].stringValue
         txtEmail.text = profileInfo["email"].stringValue
         imgProfile.sd_setImage(with: URL(string:Path.baseURL + profileInfo["image"].stringValue.replace(target: " ", withString: "%20")), placeholderImage: UIImage(named: "no_image"))
-        txtPhone.text = profileInfo["phone"].stringValue
+        let phone = profileInfo["phone"].stringValue.components(separatedBy: "-")
+        if phone.count == 2{
+            txtPhonePrefix.text = phone[0]
+            txtPhone.text = phone[1]
+        }else{
+            txtPhone.text = profileInfo["phone"].stringValue
+        }
         if let address = profileInfo["address"].array{
             txtCountry.text = address.first!["country"].stringValue
             txtAddress.text = address.first!["address"].stringValue
@@ -238,6 +271,7 @@ extension DeliveryProfileViewController{
     }
     
     func saveProfile(param : [String:Any])  {
+     
         NetworkHelper.put(url: "\(Path.baseURL)deliveryBoy/personalInfo", param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
@@ -251,4 +285,6 @@ extension DeliveryProfileViewController{
             }
         })
     }
+    
+    
 }

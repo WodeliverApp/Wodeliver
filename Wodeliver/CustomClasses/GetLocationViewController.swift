@@ -133,8 +133,12 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                         addressString = addressString + pm.thoroughfare! + ", "
                     }
                     if pm.locality != nil {
-                        address["state"] = pm.locality!
+                        address["city"] = pm.locality!
                         addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.administrativeArea != nil {
+                        address["state"] = pm.administrativeArea!
+                        addressString = addressString + pm.administrativeArea! + ", "
                     }
                     if pm.country != nil {
                         address["country"] = pm.country!

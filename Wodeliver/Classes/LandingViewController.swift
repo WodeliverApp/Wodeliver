@@ -86,6 +86,7 @@ class LandingViewController: UIViewController {
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
+        
         // Set up a cool background image for demo purposes
         // SideMenuManager.default.menuAnimationBackgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
@@ -290,6 +291,8 @@ extension LandingViewController: UISideMenuNavigationControllerDelegate {
     func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
         print("SideMenu Disappeared! (animated: \(animated))")
     }
-    
 }
 
+extension UISideMenuNavigationController{
+    
+}
