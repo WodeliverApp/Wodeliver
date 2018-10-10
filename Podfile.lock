@@ -39,6 +39,7 @@ PODS:
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
   - SideMenu (3.1.5)
+  - Stripe (13.2.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
   - SDWebImage (~> 4.0)
   - SideMenu
+  - Stripe
   - SwiftyJSON
 
 SPEC REPOS:
@@ -73,6 +75,7 @@ SPEC REPOS:
     - nanopb
     - SDWebImage
     - SideMenu
+    - Stripe
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -92,8 +95,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  Stripe: 2c69e216061d54d9c538204bb4f58bd597ddfc5b
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 95da0fbf2b54b2bad0ccad0ac8b51fd8478cc0e0
+PODFILE CHECKSUM: d6ba6bd239d346f36cb70f5b7adc607162ff53aa
 
 COCOAPODS: 1.5.3

@@ -31,6 +31,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         doneNavigation_ref.isEnabled = false
         self.viewCostomization()
         self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         placesClient = GMSPlacesClient.shared()
         
     }
@@ -149,7 +150,6 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
                         addressString = addressString + pm.postalCode! + " "
                     }
                     address ["full_address"] =  addressString
-                    print(addressString)
                     UserDefaults.standard.set(address, forKey: AppConstant.currentUserLocation)
                     UserDefaults.standard.set(true, forKey: AppConstant.isCurrentLocationSaved)
                     self.lblAddressDetails.text = addressString

@@ -9,16 +9,20 @@
 import UIKit
 import SideMenu
 class LeftMenuTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var imgProfile: WodeliverImageView!
+    @IBOutlet weak var lblAddress: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.navigationController?.isNavigationBarHidden = true
+        if view.tag != 1001{
+            lblAddress.numberOfLines = 0
+            lblAddress.sizeToFit()
+            let address : [String: String] = UserDefaults.standard.value(forKey: AppConstant.currentUserLocation) as! [String : String]
+            lblAddress.text = address["full_address"]!
+            imgProfile.sd_setImage(with: URL(string:Path.baseURL + (UserManager.getUserDetail()["image"].stringValue.replace(target: " ", withString: "%20"))), placeholderImage: UIImage(named: "no_image"))
+            lblAddress.layoutIfNeeded()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,79 +30,66 @@ class LeftMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-        guard SideMenuManager.default.menuBlurEffectStyle == nil else {
-            return
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let sideMenuNavigationController = segue.destination as? UISideMenuNavigationController {
+//            sideMenuNavigationController.sideMenuManager = customSideMenuManager
+//        }
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath) as! UITableViewVibrantCell
-        cell.blurEffectStyle = SideMenuManager.default.menuBlurEffectStyle
-        
-        return cell
-    }
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0{
-            self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+        if self.view.tag == 1001{
+            if indexPath.section == 0{
+                switch (indexPath.row) {
+                case 0:
+                    dismiss(animated: true, completion: nil)
+                    break
+                case 1:
+                    
+                    break
+                case 8:
+                   dismiss(animated: true, completion: nil)
+                    break
+                default:
+                    dismiss(animated: true, completion: nil)
+                }
+            }
+        }else{
+            if indexPath.section == 1 {
+                switch (indexPath.row) {
+                case 2:
+                    performSegue(withIdentifier: "resetPasswordSegue", sender: nil)
+                    break
+                case 3:
+                    performSegue(withIdentifier: "walletSegue", sender: nil)
+                case 4:
+                    self.performSegue(withIdentifier: "notificationSegue", sender: nil)
+                    break
+                case 5:
+                    self.performSegue(withIdentifier: "orderSegue", sender: nil)
+                    break
+                case 6:
+                    self.performSegue(withIdentifier: "addAddressSegue", sender: nil)
+                    break
+                case 7:
+                    self.performSegue(withIdentifier: "transactionSegue", sender: nil)
+                    break
+                case 8:
+                    OtherHelper.buttonDialog("Are you sure?", "Do you want to logout", self, "OK", true) {
+                        UserManager.logout(isDisable: true)
+                        let strBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
+                        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+                        self.present(logInViewController, animated: true, completion: nil)
+                    }
+                    break
+                default:
+                   dismiss(animated: true, completion: nil)
+                }
+            }
         }
+        
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
+

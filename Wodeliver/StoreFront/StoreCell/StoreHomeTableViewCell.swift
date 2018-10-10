@@ -83,13 +83,17 @@ class TotalOrderTableViewCell: UITableViewCell {
 
 class AgentConfirmCell: UITableViewCell {
     @IBOutlet weak var txtAgent: UITextField!
-    
     @IBOutlet weak var btnConfirm_ref: UIButton!
+    @IBOutlet weak var btnOrderStatus: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         btnConfirm_ref.layer.cornerRadius = 5.0
         btnConfirm_ref.clipsToBounds = true
+        
+        btnOrderStatus.layer.cornerRadius = 5.0
+        btnOrderStatus.clipsToBounds = true
     }
 }
 extension UITableViewCell {

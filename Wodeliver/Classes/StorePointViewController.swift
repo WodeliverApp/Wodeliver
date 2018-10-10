@@ -68,7 +68,6 @@ class StorePointViewController: UIViewController {
     {
         self.storepointTableView.register(UINib(nibName: "StorepointListingCell", bundle: nil), forCellReuseIdentifier: "StorepointListingCell")
         self.storepointTableView.register(UINib(nibName: "SearchByItemCell", bundle: nil), forCellReuseIdentifier: "SearchByItemCell")
-        
     }
     
     @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {

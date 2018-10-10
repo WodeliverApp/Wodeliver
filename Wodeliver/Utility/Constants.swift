@@ -164,6 +164,11 @@ struct GooglePlace {
     static let googleAPIKey = "AIzaSyDdRtWVaZ7JWm-uaLRronAx036agZx07dU"
 }
 
+struct StripeCredential {
+    static let publishableKey = "pk_test_5ViExuhDe63yCqMrNJw05hV5"
+    static let appleMerchantId = "merchant.com.spotcodes.wodeliver"
+}
+
 struct HockeyKeys {
     static let appId = "9b325bb316c2440a8c1de3a4e6da73ab"
     static let secret = "21fc1ba22633acdb6def9d05f009556d"

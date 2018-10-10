@@ -21,6 +21,9 @@
 		30067489200BC4A60021A08C /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067488200BC4A50021A08C /* String+Util.swift */; };
 		3006748B200BC5230021A08C /* Date + Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748A200BC5230021A08C /* Date + Util.swift */; };
 		3006748D200C5A290021A08C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3006748C200C5A290021A08C /* Enum.swift */; };
+		300A31902165CFB600C6BBCB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A318F2165CFB600C6BBCB /* ResetPasswordViewController.swift */; };
+		300A31922165DA6300C6BBCB /* CustomerOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A31912165DA6300C6BBCB /* CustomerOrderViewController.swift */; };
+		300A319421666B9900C6BBCB /* AddAccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A319321666B9900C6BBCB /* AddAccountDetailViewController.swift */; };
 		300EDACB2091AEE100396640 /* AddCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300EDACA2091AEE100396640 /* AddCartViewController.swift */; };
 		30132370206966FF003D4DF7 /* AddBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013236F206966FF003D4DF7 /* AddBannerViewController.swift */; };
 		3013237220696782003D4DF7 /* AddHotspotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013237120696782003D4DF7 /* AddHotspotViewController.swift */; };
@@ -90,6 +93,10 @@
 		30D0BDEA214A807500460420 /* NotificationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */; };
 		30D490B620DA93E90066459F /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D490B420DA93E90066459F /* AddressTableViewCell.swift */; };
 		30D490B720DA93E90066459F /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D490B520DA93E90066459F /* AddressTableViewCell.xib */; };
+		30D7357F216C769D00E67B92 /* MyTransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7357E216C769D00E67B92 /* MyTransactionsViewController.swift */; };
+		30D73582216C795C00E67B92 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D73580216C795C00E67B92 /* TransactionTableViewCell.swift */; };
+		30D73583216C795C00E67B92 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D73581216C795C00E67B92 /* TransactionTableViewCell.xib */; };
+		30D73585216CB42000E67B92 /* MyWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D73584216CB42000E67B92 /* MyWalletViewController.swift */; };
 		30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */; };
 		30EBB5802073D4D500791A81 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB57F2073D4D500791A81 /* MenuViewController.swift */; };
 		30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */; };
@@ -176,6 +183,9 @@
 		30067488200BC4A50021A08C /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3006748A200BC5230021A08C /* Date + Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date + Util.swift"; sourceTree = "<group>"; };
 		3006748C200C5A290021A08C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		300A318F2165CFB600C6BBCB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		300A31912165DA6300C6BBCB /* CustomerOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerOrderViewController.swift; sourceTree = "<group>"; };
+		300A319321666B9900C6BBCB /* AddAccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountDetailViewController.swift; sourceTree = "<group>"; };
 		300EDACA2091AEE100396640 /* AddCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartViewController.swift; sourceTree = "<group>"; };
 		3013236F206966FF003D4DF7 /* AddBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBannerViewController.swift; sourceTree = "<group>"; };
 		3013237120696782003D4DF7 /* AddHotspotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotspotViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +272,10 @@
 		30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailTableViewController.swift; sourceTree = "<group>"; };
 		30D490B420DA93E90066459F /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		30D490B520DA93E90066459F /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		30D7357E216C769D00E67B92 /* MyTransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTransactionsViewController.swift; sourceTree = "<group>"; };
+		30D73580216C795C00E67B92 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		30D73581216C795C00E67B92 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		30D73584216CB42000E67B92 /* MyWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWalletViewController.swift; sourceTree = "<group>"; };
 		30EBB57D2073D4BE00791A81 /* RemaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaksViewController.swift; sourceTree = "<group>"; };
 		30EBB57F2073D4D500791A81 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		30EBB5812073D64D00791A81 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -607,6 +621,11 @@
 				307400C420C83F600016E655 /* OrderScreenViewController.swift */,
 				30F650F420CFCB870048CAA8 /* AddressListViewController.swift */,
 				30F650F620CFCBA20048CAA8 /* NewAddressViewController.swift */,
+				300A318F2165CFB600C6BBCB /* ResetPasswordViewController.swift */,
+				300A31912165DA6300C6BBCB /* CustomerOrderViewController.swift */,
+				300A319321666B9900C6BBCB /* AddAccountDetailViewController.swift */,
+				30D7357E216C769D00E67B92 /* MyTransactionsViewController.swift */,
+				30D73584216CB42000E67B92 /* MyWalletViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -649,6 +668,8 @@
 				30D0BDE22148167800460420 /* HistoryFooterTableViewCell.xib */,
 				30D0BDE521482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.swift */,
 				30D0BDE621482C1D00460420 /* DeliveryBoyNotificationsTableViewCell.xib */,
+				30D73580216C795C00E67B92 /* TransactionTableViewCell.swift */,
+				30D73581216C795C00E67B92 /* TransactionTableViewCell.xib */,
 			);
 			path = CustonCells;
 			sourceTree = "<group>";
@@ -785,6 +806,7 @@
 				30489CD6208F90C1002C4432 /* CartTableViewCell.xib in Resources */,
 				A1B3C58F2008F4DB009C8C0D /* SearchByItemCell.xib in Resources */,
 				53CB7A621FEBB29B00D70254 /* HistoryHeaderTableViewCell.xib in Resources */,
+				30D73583216C795C00E67B92 /* TransactionTableViewCell.xib in Resources */,
 				30D490B720DA93E90066459F /* AddressTableViewCell.xib in Resources */,
 				30331AA81FE388E100A8B1F1 /* Assets.xcassets in Resources */,
 				30914A29200284C1008D6E52 /* Customer.storyboard in Resources */,
@@ -839,6 +861,7 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -852,6 +875,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -946,7 +970,9 @@
 				30067484200B7E210021A08C /* StoreNotificationTableViewCell.swift in Sources */,
 				307716D7200927B400D073A0 /* StoreProfileViewController.swift in Sources */,
 				A1B3C591200B3A4C009C8C0D /* StoreDetailViewController.swift in Sources */,
+				300A31922165DA6300C6BBCB /* CustomerOrderViewController.swift in Sources */,
 				30331AA01FE388E100A8B1F1 /* ViewController.swift in Sources */,
+				30D73585216CB42000E67B92 /* MyWalletViewController.swift in Sources */,
 				307732F920106C050045A4B0 /* Store.swift in Sources */,
 				30022BD21FE38E34001E6268 /* FloatLabelTextView.swift in Sources */,
 				53CB7A6C1FEC11B600D70254 /* HistoryDeatilViewController.swift in Sources */,
@@ -983,14 +1009,17 @@
 				30D0BDE32148167800460420 /* HistoryFooterTableViewCell.swift in Sources */,
 				305D1A09214E687100F4318A /* CustomSlider.swift in Sources */,
 				30EBB57E2073D4BE00791A81 /* RemaksViewController.swift in Sources */,
+				300A319421666B9900C6BBCB /* AddAccountDetailViewController.swift in Sources */,
 				3006747A200B3D290021A08C /* UserManager.swift in Sources */,
 				307732F32010689C0045A4B0 /* ItemCategory.swift in Sources */,
 				30022BDD1FE39A85001E6268 /* CustomView.swift in Sources */,
 				A1B3C58E2008F4DB009C8C0D /* SearchByItemCell.swift in Sources */,
 				53CB7A5D1FEBB09700D70254 /* HistoryNewTableViewCell.swift in Sources */,
+				30D7357F216C769D00E67B92 /* MyTransactionsViewController.swift in Sources */,
 				30067489200BC4A60021A08C /* String+Util.swift in Sources */,
 				5342D1DB1FED1E2400B704B1 /* NewOrderViewController.swift in Sources */,
 				30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */,
+				300A31902165CFB600C6BBCB /* ResetPasswordViewController.swift in Sources */,
 				30EBB5832073D64D00791A81 /* MenuTableViewCell.swift in Sources */,
 				53CB7A451FEB740A00D70254 /* CustomSegmentControl.swift in Sources */,
 				30022BD31FE38E34001E6268 /* FloatLabelTextField.swift in Sources */,
@@ -1025,6 +1054,7 @@
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,
 				300EDACB2091AEE100396640 /* AddCartViewController.swift in Sources */,
 				305D1A182153A1EE00F4318A /* ShopperTableViewCell.swift in Sources */,
+				30D73582216C795C00E67B92 /* TransactionTableViewCell.swift in Sources */,
 				5342D1DD1FED302600B704B1 /* ProfileViewController.swift in Sources */,
 				53CB7A491FEB7A3600D70254 /* LoginViewController.swift in Sources */,
 				A1B3C5832003B7D4009C8C0D /* LandingViewController.swift in Sources */,

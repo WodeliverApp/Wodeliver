@@ -107,12 +107,15 @@ class LoginViewController: UIViewController {
     }
     
     func userLogin(param : [String : String]){
+        btnLogin_ref.loadingIndicator(true)
         NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 self.btnLogin_ref.isEnabled = true
+                self.btnLogin_ref.loadingIndicator(false)
                 return
             }
+            self.btnLogin_ref.loadingIndicator(false)
             UserManager.setUserDetail(detail: json!["userData"])
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)

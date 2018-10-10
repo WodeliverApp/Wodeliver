@@ -60,6 +60,18 @@ class LandingViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+      //  setupSideMenu()
+    }
+    @IBAction func btnMenu_Action(_ sender: Any) {
+        if UserManager.checkIfLogin(){
+            self.performSegue(withIdentifier: "sideMenuCustomer", sender: nil)
+        }else{
+            self.performSegue(withIdentifier: "sideMenuLoginSegue", sender: nil)
+        }
+    }
+    
     @IBAction func btnCart_Action(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showCartSegue", sender: nil)
     }
@@ -79,16 +91,16 @@ class LandingViewController: UIViewController {
     }
     fileprivate func setupSideMenu() {
         // Define the menus
-        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+        if UserManager.checkIfLogin(){
+            SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "CustomerMenuNavigationController") as? UISideMenuNavigationController
+            SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+            SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        }else{
+            SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+            SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+            SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        }
         
-        // Enable gestures. The left and/or right menus must be set up above for these to work.
-        // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        
-        
-        // Set up a cool background image for demo purposes
-        // SideMenuManager.default.menuAnimationBackgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -256,7 +268,6 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
         return 5
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView.tag {
         case 1001:
@@ -277,20 +288,24 @@ extension LandingViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension LandingViewController: UISideMenuNavigationControllerDelegate {
     
     func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print(menu)
         print("SideMenu Appearing! (animated: \(animated))")
     }
     
     func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) {
+         print(menu)
         print("SideMenu Appeared! (animated: \(animated))")
     }
     
     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+         print(menu)
         print("SideMenu Disappearing! (animated: \(animated))")
     }
     
     func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
         print("SideMenu Disappeared! (animated: \(animated))")
     }
+    
 }
 
 extension UISideMenuNavigationController{

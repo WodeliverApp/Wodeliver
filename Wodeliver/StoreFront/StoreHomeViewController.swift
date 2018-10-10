@@ -38,7 +38,6 @@ class StoreHomeViewController: UIViewController {
         tblHome.expandingAnimation = .fade
         tblHome.collapsingAnimation = .fade
         tblHome.tableFooterView = UIView()
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
         self.viewCostomization()
         tabIndex = 1
     }
@@ -72,14 +71,6 @@ class StoreHomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc private func orientationDidChange() {
-//        switch UIDevice.current.orientation {
-//        case .portrait, .portraitUpsideDown, .landscapeLeft, .landscapeRight:
-//            tblHome.reloadSections(IndexSet(Array(tblHome.visibleSections.keys)), with: .none)
-//        default:break
-//        }
     }
     /*
      // MARK: - Navigation
@@ -131,33 +122,11 @@ extension StoreHomeViewController: ExpyTableViewDelegate {
 }
 
 extension StoreHomeViewController {
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return (section % 3 == 0) ? "iPhone Models" : nil
-    //    }
-}
-
-extension StoreHomeViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //If you don't deselect the row here, seperator of the above cell of the selected cell disappears.
-        //Check here for detail: https://stackoverflow.com/questions/18924589/uitableviewcell-separator-disappearing-in-ios7
-        
         tableView.deselectRow(at: indexPath, animated: false)
-    //    print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //        if indexPath.section == 0 {
-        //            return 55
-        //        }
-        //        if indexPath.row == tableView.numberOfSections - 1 || indexPath.row == indexPath.section {
-        ////            if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-        ////                return 100
-        ////            }
-        //            return 85
-        //        }else{
-        //        return 55
-        //        }
         return 55
     }
 }
@@ -186,7 +155,7 @@ extension StoreHomeViewController {
             if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TotalOrderTableViewCell.self)) as! TotalOrderTableViewCell
                 cell.layoutMargins = UIEdgeInsets.zero
-                cell.lblTotalAmount.text = self.currentOrderList[indexPath.row]["price"].stringValue
+                cell.lblTotalAmount.text = self.currentOrderList[indexPath.section]["totalPrice"].stringValue
                 cell.showSeparator()
                 return cell
             }else  if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -211,7 +180,7 @@ extension StoreHomeViewController {
             if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TotalOrderTableViewCell.self)) as! TotalOrderTableViewCell
                 cell.layoutMargins = UIEdgeInsets.zero
-                cell.lblTotalAmount.text = self.historyOrderList[indexPath.row - 3]["price"].stringValue
+                cell.lblTotalAmount.text = self.historyOrderList[indexPath.section]["totalPrice"].stringValue
                 cell.showSeparator()
                 return cell
             }else  if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
@@ -222,8 +191,6 @@ extension StoreHomeViewController {
             }
             else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeListingTableViewCell.self)) as! HomeListingTableViewCell
-                
-                
                 cell.lblProductName.text = historyItemData[indexPath.section][indexPath.row - 1]["item"].stringValue
                 cell.lblUnit.text = historyItemData[indexPath.section][indexPath.row - 1]["qty"].stringValue
                 cell.lblPrice.text = historyItemData[indexPath.section][indexPath.row - 1]["amount"].stringValue

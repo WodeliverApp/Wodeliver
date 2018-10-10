@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "319A181D4896AD410E0A368098944E08"
+               BlueprintIdentifier = "C4E0593783A94E870F91F746BD696F54"
                BlueprintName = "ExpyTableView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "ExpyTableView.framework">

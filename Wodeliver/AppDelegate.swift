@@ -14,6 +14,7 @@ import GoogleMaps
 import HockeySDK
 import Firebase
 import UserNotifications
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey(GooglePlace.googlePlaceKey)
         GMSServices.provideAPIKey(GooglePlace.googleAPIKey)
+        STPPaymentConfiguration.shared().publishableKey = StripeCredential.publishableKey
+        STPPaymentConfiguration.shared().appleMerchantIdentifier = StripeCredential.appleMerchantId
         if UserManager.checkIfLogin(){
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
