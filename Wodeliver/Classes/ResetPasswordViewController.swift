@@ -29,17 +29,43 @@ class ResetPasswordViewController: UIViewController {
         viewCustomization()
         txtEmail.text =  UserManager.getUserDetail()["email"].stringValue
         txtEmail.isEnabled = false
+        navigationController?.navigationBar.isHidden = false
         
     }
     
     func viewCustomization(){
-        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        //self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        // self.tblCart.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.shadowView.backgroundColor = UIColor.white
     }
     
     @IBAction func btnSave_Action(_ sender: UIButton) {
+        if txtOldPassword.text?.count == 0{
+            OtherHelper.simpleDialog("Error", "Please enter old password", self)
+            return
+        }
+        if txtNewPassword.text?.count == 0{
+            OtherHelper.simpleDialog("Error", "Please enter new password", self)
+            return
+        }
+        if txtConfirmPassword.text?.count == 0{
+            OtherHelper.simpleDialog("Error", "Please enter confirm password", self)
+            return
+        }
+        if txtNewPassword.text != txtConfirmPassword.text{
+            OtherHelper.simpleDialog("Error", "New password and confirm password must be same.", self)
+            return
+        }
+        
         btnSave_ref.loadingIndicator(true)
-        NetworkHelper.post(url: Path.loginURL, param: ["email":txtEmail.text ?? "" , "oldPassword":txtOldPassword.text ?? "", "newPassword": txtNewPassword.text ?? ""    ], self, completionHandler: {[weak self] json, error in
+        NetworkHelper.post(url: Path.resetPassword, param: ["email":txtEmail.text ?? "" , "oldPassword":txtOldPassword.text ?? "", "newPassword": txtNewPassword.text ?? ""    ], self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             self.btnSave_ref.loadingIndicator(false)
             guard (json != nil) else {

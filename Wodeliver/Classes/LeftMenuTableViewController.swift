@@ -76,10 +76,12 @@ class LeftMenuTableViewController: UITableViewController {
                 case 8:
                     OtherHelper.buttonDialog("Are you sure?", "Do you want to logout", self, "OK", true) {
                         UserManager.logout(isDisable: true)
-                        let strBoard = UIStoryboard(name: "Main", bundle: nil)
-                        let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
-                        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-                        self.present(logInViewController, animated: true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
+                        exit(0)
+//                        let strBoard = UIStoryboard(name: "Main", bundle: nil)
+//                        let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
+//                        logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+//                        self.present(logInViewController, animated: true, completion: nil)
                     }
                     break
                 default:

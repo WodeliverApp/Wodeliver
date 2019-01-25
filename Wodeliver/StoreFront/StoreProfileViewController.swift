@@ -87,6 +87,7 @@ class StoreProfileViewController: UIViewController, UIPickerViewDataSource, UIPi
             let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
             logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
             self.present(logInViewController, animated: true, completion: nil)
+            exit(0)
         }
         let cancel = UIAlertAction(title: "Cancel".localized, style: UIAlertActionStyle.cancel)
         alertController.addAction(logoutAction)

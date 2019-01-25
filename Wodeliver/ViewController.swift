@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     func viewCustomization(){
-        userTypePicker = UIPickerView()
+        userTypePicker = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         userTypePicker.dataSource = self
         userTypePicker.delegate = self
         userTypePicker.backgroundColor = .white
@@ -212,7 +212,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return UserTypeString.count.hashValue
+        return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

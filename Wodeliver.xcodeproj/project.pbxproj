@@ -83,7 +83,9 @@
 		30A0E15120136BA0002EA101 /* SearchControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */; };
 		30A0E15320148AFF002EA101 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E15220148AFF002EA101 /* CoreLocation.framework */; };
 		30A0E1A3201655F4002EA101 /* GetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */; };
+		30A65EAB217F2DCA0011CFA1 /* LeftMenuDeliveryBoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A65EAA217F2DCA0011CFA1 /* LeftMenuDeliveryBoy.swift */; };
 		30AADF182035E5AE002994B7 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */; };
+		30B1320D2191BF6F00A59FE0 /* DeliveryWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1320C2191BF6F00A59FE0 /* DeliveryWalletViewController.swift */; };
 		30CC2E212004A1CD00A45A6D /* StoreHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */; };
 		30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */; };
 		30D0BDE32148167800460420 /* HistoryFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0BDE12148167800460420 /* HistoryFooterTableViewCell.swift */; };
@@ -262,7 +264,9 @@
 		30A0E15020136BA0002EA101 /* SearchControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerViewController.swift; sourceTree = "<group>"; };
 		30A0E15220148AFF002EA101 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		30A0E1A2201655F4002EA101 /* GetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationViewController.swift; sourceTree = "<group>"; };
+		30A65EAA217F2DCA0011CFA1 /* LeftMenuDeliveryBoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuDeliveryBoy.swift; sourceTree = "<group>"; };
 		30AADF172035E5AE002994B7 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		30B1320C2191BF6F00A59FE0 /* DeliveryWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryWalletViewController.swift; sourceTree = "<group>"; };
 		30CC2E202004A1CD00A45A6D /* StoreHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeViewController.swift; sourceTree = "<group>"; };
 		30CC2E232004C2FD00A45A6D /* StoreHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHomeTableViewCell.swift; sourceTree = "<group>"; };
 		30D0BDE12148167800460420 /* HistoryFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFooterTableViewCell.swift; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 				30D0BDE9214A807500460420 /* NotificationDetailTableViewController.swift */,
 				305D1A06214D0E9900F4318A /* SettingDeliveryBoyTableViewController.swift */,
 				30FAF4932154C3A6004704FA /* AcceptOrderViewController.swift */,
+				30A65EAA217F2DCA0011CFA1 /* LeftMenuDeliveryBoy.swift */,
+				30B1320C2191BF6F00A59FE0 /* DeliveryWalletViewController.swift */,
 			);
 			path = DeliveryBoy;
 			sourceTree = "<group>";
@@ -859,6 +865,7 @@
 				"${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
@@ -873,6 +880,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpyTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
@@ -1034,6 +1042,7 @@
 				30022BDA1FE39869001E6268 /* CustomButton.swift in Sources */,
 				30489CD8209054B0002C4432 /* CartViewController.swift in Sources */,
 				53CB7A611FEBB29B00D70254 /* HistoryHeaderTableViewCell.swift in Sources */,
+				30B1320D2191BF6F00A59FE0 /* DeliveryWalletViewController.swift in Sources */,
 				53CB7A6A1FEBB74600D70254 /* TracingViewController.swift in Sources */,
 				30CC2E242004C2FD00A45A6D /* StoreHomeTableViewCell.swift in Sources */,
 				30331AA61FE388E100A8B1F1 /* Wodeliver.xcdatamodeld in Sources */,
@@ -1049,6 +1058,7 @@
 				307732FD20106F110045A4B0 /* LatLong.swift in Sources */,
 				30F650F520CFCB870048CAA8 /* AddressListViewController.swift in Sources */,
 				3006748B200BC5230021A08C /* Date + Util.swift in Sources */,
+				30A65EAB217F2DCA0011CFA1 /* LeftMenuDeliveryBoy.swift in Sources */,
 				A1B3C597200D0830009C8C0D /* DeliveryBoyViewController.swift in Sources */,
 				30022BD71FE39600001E6268 /* Extensions.swift in Sources */,
 				30067475200B33430021A08C /* StoreDetailCell.swift in Sources */,

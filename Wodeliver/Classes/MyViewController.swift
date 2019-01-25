@@ -24,6 +24,7 @@ class MyViewController: UIViewController {
     
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var mySegmentView: MySegmentedControl!
+    @IBOutlet weak var menuButton_ref: UIButton!
     @IBOutlet weak var redBackgroundView: UIView!
     
     var currentOrderList : [JSON] = []
@@ -33,7 +34,13 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
       self.viewCustomization()
         // Do any additional setup after loading the view.
-        getCurrentOrderList()
+      //  getCurrentOrderList()
+         registerCustomCell()
+        
+    }
+    
+    @IBAction func btnMenu_Action(_ sender: UIButton) {
+            self.performSegue(withIdentifier: "sideMenuDeliveryBoy", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +67,7 @@ class MyViewController: UIViewController {
         self.mySegmentView.addTarget(self, action: #selector(changeSegmentValue(sender:)), for: .valueChanged)
         segmentDetail.isCurrent = true
        // self.dropShadow(color: .lightGray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
-        registerCustomCell()
+       
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
         let statusBarColor = Colors.redBackgroundColor
         statusBarView.backgroundColor = statusBarColor

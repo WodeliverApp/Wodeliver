@@ -9,7 +9,7 @@
 import UIKit
 
 class AddAccountDetailViewController: UIViewController {
-
+    
     let KEYBOARD_ANIMATION_DURATION: CGFloat! = 0.3
     let MINIMUM_SCROLL_FRACTION: CGFloat! = 0.2
     let MAXIMUM_SCROLL_FRACTION: CGFloat! = 0.8
@@ -26,17 +26,32 @@ class AddAccountDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
-        title = "Add Bank Account Details"
-       geBankDetails()
+        
+        // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endViewEditing(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+        viewCustomization()
+        geBankDetails()
     }
+    @objc func endViewEditing(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        viewCustomization()
+        
     }
     func viewCustomization(){
+        self.title = "Add Bank Account Details"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        //  self.tblTransactions.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         self.stackView.backgroundColor = UIColor.white
     }
@@ -47,17 +62,18 @@ class AddAccountDetailViewController: UIViewController {
             saveBankDetails(param: param)
         }else{
             OtherHelper.simpleDialog("Error", "All fields are required", self)
+           
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     func saveBankDetails(param : [String : Any])  {
         NetworkHelper.post(url: Path.baseURL+"bank", param: param, self, completionHandler: {[weak self] json, error in
@@ -65,7 +81,9 @@ class AddAccountDetailViewController: UIViewController {
             guard (json != nil) else {
                 return
             }
-          OtherHelper.simpleDialog("Save", "Bank Detail Updated", self!)
+            OtherHelper.buttonDialog("Save", "Bank Detail Updated", self!, "OK", false, completionHandler: {
+                self?.navigationController?.popViewController(animated: true)
+            })
         })
     }
     
@@ -75,17 +93,17 @@ class AddAccountDetailViewController: UIViewController {
             guard let json = json else {
                 return
             }
-            if let response = json["response"].array{
+            if let response = json["response"].array, response.count > 0{
                 self.txtBankName.text = response.first!["bankName"].stringValue
                 self.txtAccountName.text = response.first!["accountHolderName"].stringValue
                 self.txtSwift.text = response.first!["swiftCode"].stringValue
-                 self.txtAddress.text = response.first!["bankAddress"].stringValue
-                 self.txtAccountNumber.text = response.first!["accountNumber"].stringValue
+                self.txtAddress.text = response.first!["bankAddress"].stringValue
+                self.txtAccountNumber.text = response.first!["accountNumber"].stringValue
             }
             
         })
     }
-
+    
 }
 extension AddAccountDetailViewController: UITextFieldDelegate{
     

@@ -21,7 +21,7 @@ class CustomButton: UIButton {
  
     override public func layoutSubviews() {
         super.layoutSubviews()
-         self.backgroundColor = Colors.redBackgroundColor
+        self.backgroundColor = Colors.redBackgroundColor
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
         self.clipsToBounds = true

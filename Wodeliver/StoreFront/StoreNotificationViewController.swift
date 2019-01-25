@@ -65,6 +65,7 @@ class StoreNotificationViewController: UIViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return StoreNotificationTableViewCell.getCellHeight()
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }

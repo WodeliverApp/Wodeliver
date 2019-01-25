@@ -37,14 +37,26 @@ class MyWalletViewController: UIViewController,STPAddCardViewControllerDelegate,
     @IBOutlet weak var btnDone_ref: CustomButton!
     @IBOutlet weak var btnTopUp_ref: CustomButton!
     @IBOutlet weak var upperView: UIView!
-    
+  //  let customerContext = STPCustomerContext(keyProvider: MyAPIClient.sharedClient)
     let paymentCardTextField = STPPaymentCardTextField()
   
+//    init() {
+//        self.paymentContext = STPPaymentContext(customerContext: customerContext)
+//        super.init(nibName: nil, bundle: nil)
+//        self.paymentContext.delegate = self
+//        self.paymentContext.hostViewController = self
+//        self.paymentContext.paymentAmount = 5000 // This is in cents, i.e. $50 USD
+//    }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCustomization()
-        getWalletBalance()
+        customToolBar()
+        
         paymentView.isHidden = true
         btnDone_ref.isEnabled = false
         
@@ -53,6 +65,17 @@ class MyWalletViewController: UIViewController,STPAddCardViewControllerDelegate,
         // Add payment card text field to view
         paymentCardTextField.frame = CGRect.init(x: 10, y: 200, width: self.view.frame.width - 20, height: 30)
       //  view.addSubview(paymentCardTextField)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getWalletBalance()
+    }
+    
+    @objc func dismissView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
@@ -72,6 +95,33 @@ class MyWalletViewController: UIViewController,STPAddCardViewControllerDelegate,
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    func customToolBar()  {
+        
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = Colors.redBackgroundColor
+        toolBar.sizeToFit()
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        //        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
+        toolBar.setItems([spaceButton,doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        txtAmount.inputAccessoryView = toolBar
+    }
+    
+    //MARK:- UIToolBar Button Actions
+    
+    @objc func doneClick() {
+        self.view.endEditing(true)
+    }
+    @objc func cancelClick() {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - UIButton Actions
     
     @IBAction func btnWalleToBank_action(_ sender: CustomButton) {
@@ -82,12 +132,12 @@ class MyWalletViewController: UIViewController,STPAddCardViewControllerDelegate,
         }
     }
     @IBAction func btnTopUp_Action(_ sender: CustomButton) {
-//        let addCardViewController = STPAddCardViewController()
-//        addCardViewController.delegate = self
-//
-//        // Present add card view controller
-//        let navigationController = UINavigationController(rootViewController: addCardViewController)
-//        present(navigationController, animated: true)
+        let addCardViewController = STPAddCardViewController()
+        addCardViewController.delegate = self
+
+        // Present add card view controller
+        let navigationController = UINavigationController(rootViewController: addCardViewController)
+        present(navigationController, animated: true)
         
         
 //        // Setup customer context

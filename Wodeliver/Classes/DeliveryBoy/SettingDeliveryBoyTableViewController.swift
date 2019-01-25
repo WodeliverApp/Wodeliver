@@ -33,7 +33,7 @@ class SettingDeliveryBoyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewCustomization()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissView(_:)))
         self.view.addGestureRecognizer(tapGesture)
         
@@ -98,6 +98,17 @@ class SettingDeliveryBoyTableViewController: UITableViewController {
         getDetailsFromServer()
     }
     
+    func viewCustomization(){
+        self.title = "Setting"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        //  self.tblTransactions.backgroundColor = Colors.viewBackgroundColor
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
     //MARK:- UIToolBar Button Actions
     
     @objc func doneClick() {

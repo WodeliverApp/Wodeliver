@@ -47,6 +47,7 @@ class DeliveryProfileViewController: UIViewController {
        
         getInfoFromServer(id: UserManager.getUserDetail()["_id"].stringValue)
         txtEmail.isEnabled = false
+        viewCostomization()
     }
     
     @IBAction func btnSetting_Action(_ sender: UIBarButtonItem) {
@@ -59,6 +60,7 @@ class DeliveryProfileViewController: UIViewController {
             let logInViewController = strBoard.instantiateViewController(withIdentifier: "LoginViewController")
             logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
             self.present(logInViewController, animated: true, completion: nil)
+            exit(0)
         }
         let settingAction = UIAlertAction(title: "Setting".localized, style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             
@@ -81,21 +83,22 @@ class DeliveryProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: .UIKeyboardDidHide, object: nil)
-        self.title = "My"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
-        self.navigationController?.navigationBar.isHidden = false
-        self.view.backgroundColor = Colors.viewBackgroundColor
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-      //  self.view.backgroundColor = Colors.redBackgroundColor
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardDidHide, object: nil)
+    }
+    
+    func viewCostomization(){
+        self.title = "My"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors.redBackgroundColor
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     @objc func keyboardDidShow(_ notification: NSNotification) {

@@ -30,6 +30,7 @@ class GetLocationViewController: UIViewController , CLLocationManagerDelegate{
         btnUseMyLocation_ref.clipsToBounds  = true
         doneNavigation_ref.isEnabled = false
         self.viewCostomization()
+        locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         placesClient = GMSPlacesClient.shared()

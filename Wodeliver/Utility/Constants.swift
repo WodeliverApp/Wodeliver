@@ -13,6 +13,7 @@ struct Colors {
     static let redBackgroundColor = UIColor(red: 226.0/255.0, green: 36.0/255.0, blue: 44.0/255.0, alpha: 1.0)
     static let viewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
     static let fullViewBackgroundColor = UIColor(red: 243.0/255.0, green: 243.0/255.0, blue: 243.0/255.0, alpha: 1.0)
+    static let blueButtonColor = UIColor(red: 0/255.0, green: 174.0/255.0, blue: 239.0/255.0, alpha: 1.0)
 }
 
 
@@ -23,6 +24,7 @@ struct Path {
     static let loginURL : String = "\(baseURL)login"
     static let signUpURL : String = "\(baseURL)user"
     static let categoryURL : String = "\(baseURL)category"
+    static let resetPassword : String = "\(baseURL)user/changePassword"
 //    static let storeListURL : String = "\(iosBaseURL)store/category/location/?"
 //    static let itemListURL : String = "\(iosBaseURL)menu/itemCategory/?"
     static let storeListURL : String = "\(baseURL)store/category/location/?"

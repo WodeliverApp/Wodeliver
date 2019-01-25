@@ -36,6 +36,9 @@ class LoginViewController: UIViewController {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: .UIKeyboardDidShow , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: .UIKeyboardDidHide , object: nil)
+        if !UserDefaults.standard.bool(forKey: AppConstant.isCurrentLocationSaved){
+            self.performSegue(withIdentifier: "getLocationSegue", sender: nil)
+        }
     }
     
     deinit {
@@ -107,15 +110,12 @@ class LoginViewController: UIViewController {
     }
     
     func userLogin(param : [String : String]){
-        btnLogin_ref.loadingIndicator(true)
         NetworkHelper.post(url: Path.loginURL, param: param, self, completionHandler: {[weak self] json, error in
             guard let `self` = self else { return }
             guard (json != nil) else {
                 self.btnLogin_ref.isEnabled = true
-                self.btnLogin_ref.loadingIndicator(false)
                 return
             }
-            self.btnLogin_ref.loadingIndicator(false)
             UserManager.setUserDetail(detail: json!["userData"])
             if UserManager.getUserType() == .storeManager{
                 let strBoard = UIStoryboard(name: "StoreFront", bundle: nil)
@@ -123,9 +123,13 @@ class LoginViewController: UIViewController {
                 logInViewController.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
                 self.present(logInViewController, animated: true, completion: nil)
             }else if UserManager.getUserType() == .deliveryBoy{
+                UserManager.setDeliveryBoyProfile(detail: json!["userData"])
                 self.performSegue(withIdentifier: "loginToTabbar", sender: nil)
             }else if UserManager.getUserType() == .customer{
-               self.dismiss(animated: true, completion: nil)
+                DispatchQueue.main.sync {
+                    self.dismiss(animated: true, completion: nil)
+                }
+               
                 
 //                let strBoard = UIStoryboard(name: "Main", bundle: nil)
 //                let logInViewController = strBoard.instantiateViewController(withIdentifier: "TabBarController")

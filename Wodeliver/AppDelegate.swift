@@ -17,7 +17,7 @@ import UserNotifications
 import Stripe
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, MessagingDelegate {
     
     var locationManager = CLLocationManager()
     var window: UIWindow?
@@ -64,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
         }
+        Messaging.messaging().delegate = self
+        Messaging.messaging().isAutoInitEnabled = true
         return true
     }
     
@@ -92,11 +94,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         if deviceTokenString != UserManager.getDeviceToken(){
             if UserManager.checkIfLogin() {
+                Messaging.messaging().apnsToken = deviceToken
                 UserManager.setDeviceToken(token: deviceTokenString)
+//                InstanceID.instanceID().instanceID { (result, error) in
+//                    if let error = error {
+//                        print("Error fetching remote instange ID: \(error)")
+//                    } else if let result = result {
+//                        print("Remote instance ID token: \(result.token)")
+//                        self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
+//                    }
+//                }
             }else {
                 UserManager.setDeviceToken(token: deviceTokenString)
             }
         }
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
     
     // MARK: - failed to register fot push Notification

@@ -6,7 +6,7 @@ target 'Wodeliver' do
   use_frameworks!
 
   # Pods for Wodeliver
-  pod 'Alamofire'
+    pod 'Alamofire'
     pod 'AlamofireNetworkActivityIndicator'
     pod 'SwiftyJSON'
     pod 'ExpyTableView', '~> 0.3.1'
@@ -18,6 +18,7 @@ target 'Wodeliver' do
     pod 'HockeySDK'
     pod 'BBBadgeBarButtonItem'
     pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     pod 'Stripe'
   target 'WodeliverTests' do
     inherit! :search_paths
